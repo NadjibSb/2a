@@ -1,7 +1,6 @@
 <Alloy>
 	<View class="container">
-    <ImageView id="Imagebackground" class="Fill"/>
-    <ImageView id="ImageLogo"></ImageView>
+    <Require src="/Commun/ecranLogo"></Require>
     <View id="ViewLine"/>
     <View id="containerContact" class="containerItem" onClick="clickItem" itemId="contact">
       <ImageView id="imageIconContact"></ImageView>

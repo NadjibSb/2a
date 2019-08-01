@@ -1,0 +1,4 @@
+<Alloy>
+  <ImageView id="Imagebackground" class="Fill"/>
+  <ImageView id="ImageLogo"></ImageView>
+</Alloy>

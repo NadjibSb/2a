@@ -1,0 +1,9 @@
+'#Imagebackground': {
+  image: "/images/background image.png"
+}
+
+'#ImageLogo': {
+  image: "/images/logo_2a_blue.png",
+  top: 43,
+
+}

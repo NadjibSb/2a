@@ -1,0 +1,117 @@
+
+".container" : {
+
+}
+
+'#Imagebackground': {
+  image: "/images/background image.png"
+}
+
+'#ImageLogo': {
+  image: "/images/logo_2a_blue.png",
+  top: 43,
+
+}
+// the line view
+'#ViewLine': {
+  height: 5,
+  width: 242,
+  borderWidth: 5,
+  borderStyle: Ti.UI.INPUT_BORDERSTYLE_LINE,
+  borderColor: 'rgb(206, 170, 140)',
+  top: 227,
+}
+
+'.containerItem': {
+  borderRadius: 5,
+  height: 112.9,
+  width: 124,
+  backgroundImage: "/images/img_button_main_menu.png"
+}
+
+'.imageBackgroundItem': {
+  image: '/images/img_button_main_menu.png'
+}
+
+// contact
+'#imageIconContact': {
+  image: "/images/icn_checkhand.png",
+  top: 23.7
+}
+
+'#containerContact': {
+  top: 255,
+  left: 53
+}
+
+'#lableContact': {
+  text: "MES\nCONTRACTS",
+}
+// label general
+'.labelHome': {
+  color: 'white',
+  textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+  font: {
+    fontSize: 14,
+  },
+  top: 73
+}
+// devis
+'#imageIconDevis': {
+  image: "/images/icn_devis.png",
+  top: 23.1
+}
+
+'#containerDevis': {
+  top: 255,
+  right: 52
+}
+
+
+'#lableDevis': {
+  text: "DEMANDER UN\n DEVIS"
+}
+
+// sinistre
+'#containerSinistre': {
+  top: 389,
+  left:53
+}
+
+'#imageIconSinistre': {
+  image: "/images/icn_sinistre_white.png",
+  top:24.9
+}
+
+'#lableSinistre': {
+  text: "MES\n SINISTRES",
+}
+
+// agence
+'#containerAgence': {
+  top: 389,
+  right: 52
+}
+
+'#imageIconAgence': {
+  image: "/images/icn_localization_white_big.png",
+  top: 24
+}
+
+'#lableAgence': {
+  text: "TROUVER\n UNE AGENCE",
+}
+
+// divers
+'#containerDivers': {
+  top: 523,
+}
+
+'#imageIconDivers': {
+  image: "/images/icn_divers_white_big.png",
+  top: 24
+}
+
+'#lableDivers': {
+  text: "DIVERS",
+}

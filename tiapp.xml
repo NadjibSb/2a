@@ -12,7 +12,7 @@
   <fullscreen>false</fullscreen>
   <navbar-hidden>false</navbar-hidden>
   <analytics>true</analytics>
-  <guid>1f1e2e38-bd25-4f34-9bbb-afe565e7a9ac</guid>
+  <guid>51c8f22d-bf81-4570-9999-a01554cbfc65</guid>
   <property name="ti.ui.defaultunit" type="string">dp</property>
   <property name="run-on-main-thread" type="bool">true</property>
   <ios>
@@ -62,15 +62,15 @@
   <plugins>
     <plugin version="1.0">ti.alloy</plugin>
   </plugins>
-  <property name="appc-app-id" type="string">5d3f04569d0740030f817093</property>
-  <property name="acs-authbase-url-development" type="string"></property>
+  <property name="appc-app-id" type="string">5d41ae3653dcf96c96247fb7</property>
+  <property name="acs-authbase-url-development" type="string"/>
   <property name="acs-base-url-development" type="string">https://api.cloud.appcelerator.com</property>
   <property name="acs-oauth-secret-development" type="string">7R1xgyMgp35IKIxkdNtbmp3fEbBaIWQr</property>
   <property name="acs-oauth-key-development" type="string">GWCft07iFGnvqYZZ7kx3U1tjfhgQFjAT</property>
   <property name="acs-api-key-development" type="string">9bvQ55vFJ1hepEAHtWHGoMqsfPQumIbW</property>
   <property name="acs-username-development" type="string">appc_app_user_dev</property>
   <property name="acs-password-development" type="string">F85KhyECa5i2AAP1rg</property>
-  <property name="acs-authbase-url-production" type="string"></property>
+  <property name="acs-authbase-url-production" type="string"/>
   <property name="acs-base-url-production" type="string">https://api.cloud.appcelerator.com</property>
   <property name="acs-oauth-secret-production" type="string">uEfo5dH8gqejml5Jg4AIl5m0PzAyFmim</property>
   <property name="acs-oauth-key-production" type="string">ICnLYC1TzG2Jx7cO61U034maxkNH3Axo</property>

@@ -46,3 +46,7 @@ ACS.Users.login({
 
 })();
 
+
+
+Alloy.Globals.isAndroid = (Ti.Platform.osname=='android') ? true : false;
+Alloy.Globals.isIOS = (Ti.Platform.osname=='iphone') ? true : false;

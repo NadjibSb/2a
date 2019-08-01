@@ -1,5 +1,1 @@
-<Alloy>
-  <Window>
-	   <Require src="/Home/index"></Require>
-  </Window>
-</Alloy>
+<Alloy/>

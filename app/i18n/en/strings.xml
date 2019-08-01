@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Ressources>
+	<string name="language_app">fr</string>
+    <string name="on_boarding_btn_next">Suivant</string>
+    <string name="on_boarding_btn_begin">Commencer</string>
+    <string name="on_boarding_title_1">Bienvenu !</string>
+    <string name="on_boarding_text_1">Rejoigner My 2a, une application mobile qui permet au client d'avoir tous les services d'assurance sous la main là ou ils veulent, quand ils veulent</string>
+    <string name="on_boarding_title_2">Prenez soin de vos déclarations</string>
+    <string name="on_boarding_text_2">Rejoigner My 2a,Rejoigner My 2a,Rejoigner My 2a,Rejoigner My 2a,Rejoigner My 2a,</string>
+    <string name="on_boarding_title_3">Les indispensables</string>
+    <string name="on_boarding_text_3">Rejoigner My 2a,Rejoigner My 2a,Rejoigner My 2a,Rejoigner My 2a,Rejoigner My 2a,</string>
+</Ressources>

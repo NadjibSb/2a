@@ -1,0 +1,32 @@
+<Alloy>
+	<Window class="container background">
+        <View class="vlayout">
+            <View class="logoContainer">
+                <ImageView id="logo"></ImageView>
+                <View id="separator"></View>
+            </View>
+            <View class="scrollableViewContainer ">
+                <ScrollableView id="scrollableView" onScrollend="onScrollend" onScroll="onScroll">
+                    <View id="view1" class="vlayout">
+                        <Label id="title1" class="title"></Label>
+                        <Label id="text1"class="text"></Label>
+                    </View>
+                    <View id="view2" class="vlayout">
+                        <Label id="title2" class="title"></Label>
+                        <Label id="text2"class="text"></Label>
+                    </View>
+                    <View id="view3" class="vlayout">
+                        <Label id="title3" class="title"></Label>
+                        <Label id="text3"class="text"></Label>
+                    </View>
+                </ScrollableView>
+                <View id="treePoint">
+        			<View class="point" id="point1"></View>
+        			<View class="point" id="point2"></View>
+        			<View class="point" id="point3"></View>
+        		</View>
+        		<Button id="btStart" onClick="btnClicked"></Button>
+            </View>
+        </View>
+	</Window>
+</Alloy>

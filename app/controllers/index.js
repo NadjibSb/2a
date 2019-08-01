@@ -1,5 +1,4 @@
-function doClick(e) {
-	alert($.label.text);
-}
 
-$.index.open();
+
+Alloy.createController("/onBoarding/index").getView().open();
+//Alloy.createController("/Home/index").getView().open();

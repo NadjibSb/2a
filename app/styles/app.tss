@@ -15,15 +15,29 @@ overrode the settings with other TSS, XML, or JS settings:
 	color: '#000' // all platforms except Android and Windows default to black
 }
 
-'Window': {
-	backgroundColor: '#fff' // white background instead of default transparent or black
-}
+
 
 'TextField[platform=android]': {
 	height: Ti.UI.SIZE
 }
 
 */
+
+'Window': {
+	backgroundColor: 'white'
+}
+
+"Window[if=Alloy.Globals.isAndroid]": {
+    theme: "Theme.AppCompat.NoTitleBar"
+}
+
+".container[if=Alloy.Globals.isIOS]" : {
+    top: 20
+}
+
+".background":{
+    backgroundImage: "/images/background_image.png"
+}
 
 // Sizes
 ".wFill":{
@@ -50,6 +64,19 @@ overrode the settings with other TSS, XML, or JS settings:
 ".Size":{
 	width: Ti.UI.SIZE,
 	height: Ti.UI.SIZE
+}
+
+".iOSwindowTop[if=Alloy.Globals.isIOS]":{
+    top: 25
+}
+//layouts
+
+".vlayout":{
+    layout: 'vertical'
+}
+
+".hlayout":{
+    layout: 'horizontal'
 }
 
 //Separators

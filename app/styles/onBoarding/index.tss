@@ -10,9 +10,7 @@
 }
 
 '#logo': {
-    image: "/images/logo/logo_2a_blue.png",
-    top: 45,
-    height: 180,
+    image: "/images/logo_2a_blue.png",
 }
 
 
@@ -36,13 +34,13 @@
 	backgroundColor : "white",
 	opacity : 0.5
 },
-"#premPoint": {
+"#point1": {
 	left : 0
 },
-"#secondPoint" : {
+"#point2" : {
 	left : 18
 },
-"#troisiemePoint" : {
+"#point3" : {
 	left : 36
 },
 
@@ -53,6 +51,7 @@
 	borderRadius : 5,
 	backgroundColor : "rgb(241,238,238)",
     font: {
+        fontFamily: Alloy.CFG.design.fonts.Medium,
         fontSize: 16
     },
     color: Alloy.CFG.design.colors.PrimaryColor,
@@ -73,7 +72,7 @@
         multiply: 20
     },
     color: 'white',
-    width: "90%"
+    width: "75%"
 }
 
 '.title': {
@@ -87,6 +86,38 @@
     width: "90%",
 }
 
-'.imgBackground': {
-    backgroundImage: "/images/background/img_onboarding_1.png"
+// First View
+'#view1': {
+    backgroundImage: "/images/img_onboarding_1.png"
+}
+'#title1': {
+    text: L("on_boarding_title_1")
+}
+
+'#text1': {
+    text: L("on_boarding_text_1")
+}
+
+// Second View
+'#view2': {
+    backgroundImage: "/images/img_onboarding_2.png"
+}
+'#title2': {
+    text: L("on_boarding_title_2")
+}
+
+'#text2': {
+    text: L("on_boarding_text_2")
+}
+
+// Third view
+'#view3': {
+    backgroundImage: "/images/img_onboarding_1.png"
+}
+'#title3': {
+    text: L("on_boarding_title_3")
+}
+
+'#text3': {
+    text: L("on_boarding_text_3")
 }

@@ -27,12 +27,16 @@ overrode the settings with other TSS, XML, or JS settings:
 	backgroundColor: 'white'
 }
 
+"Window[if=Alloy.Globals.isAndroid]": {
+    theme: "Theme.AppCompat.NoTitleBar"
+}
+
 ".container[if=Alloy.Globals.isIOS]" : {
     top: 20
 }
 
 ".background":{
-    backgroundImage: "/images/background/background_image.png"
+    backgroundImage: "/images/background_image.png"
 }
 
 // Sizes

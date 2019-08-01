@@ -19,7 +19,7 @@
       <ImageView id="imageIconAgence"></ImageView>
       <Label id="lableAgence" class="labelHome"></Label>
     </View>
-    <View id="containerDivers" class="containerItem" onClick="clickItem" itemId="divers">
+    <View id="containerDivers" class="containerItem" onClick="clickItem" itemId="diver">
       <ImageView id="imageIconDivers"></ImageView>
       <Label id="lableDivers" class="labelHome"></Label>
     </View>

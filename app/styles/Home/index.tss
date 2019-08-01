@@ -2,15 +2,6 @@
 ".container" : {
 
 }
-// the line view
-'#ViewLine': {
-  height: 5,
-  width: 242,
-  borderWidth: 5,
-  borderStyle: Ti.UI.INPUT_BORDERSTYLE_LINE,
-  borderColor: 'rgb(206, 170, 140)',
-  top: 227,
-}
 
 '.containerItem': {
   borderRadius: 5,

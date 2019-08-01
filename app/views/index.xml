@@ -1,5 +1,5 @@
 <Alloy>
   <Window>
-	   <Require src="/Home/index"></Require>
+	   <Require src="/Auth/login"></Require>
   </Window>
 </Alloy>

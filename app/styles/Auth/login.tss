@@ -1,0 +1,87 @@
+
+".container" : {
+
+}
+"#textFieldEmail" : {
+	left : 34,
+	right : 34,
+	top : 343,
+	hintText : "Adresse email ou N° de téléphone ",
+	errorColor : "red",
+	focusBarColor : "rgb(55, 67, 121)",
+	blurBarColor : "rgb(151, 151, 151)",
+	validations : {email : ""},
+	autocapitalization : Titanium.UI.TEXT_AUTOCAPITALIZATION_NONE,
+	errorMessage : "L’adresse e-mail saisie n’est pas valide.",
+  defaultErrorMessage : "remplie le champ de mail ou N° Telephone",
+	keyboardType : Titanium.UI.KEYBOARD_TYPE_EMAIL,
+},
+
+"#textFieldPassword" : {
+	left : 34,
+	right : 34,
+	top : 405,
+	hintText : "Mot de passe",
+	passwordMask : true,
+	errorColor : "red",
+	focusBarColor : "rgb(55, 67, 121)",
+	blurBarColor : "rgb(151, 151, 151)",
+	validations : {length : 8},
+	errorMessage : "Votre mot de passe doit avoir une longueur de 8 caractères minimum.",
+  defaultErrorMessage : "remplie le champ Mot de passe"
+},
+
+"#btnLogin" : {
+	left : 24,
+	right : 25,
+	top : 540,
+	title : "Se connecter"
+},
+
+"#lbForgotPassword" : {
+  top: 500,
+  right: 25,
+	font : {fontSize : 14},
+	color : "rgb(55 ,67 ,121)",
+	text : "Mot de passe oublié ?",
+	underlineText:"Mot de passe oublié ?"
+}
+
+'#labelIdentification': {
+  text: "Identification",
+  top : 310,
+  font: {
+    fontSize: 20,
+    fontWeight: "bold",
+  },
+  textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+  color: "rgb(55 ,67 ,121)"
+}
+
+'#Imagebackground': {
+  image: "/images/background image.png"
+}
+
+'#ImageLogo': {
+  image: "/images/logo_2a_blue.png",
+  top: 63,
+}
+
+// the line view
+'#ViewLine': {
+  height: 5,
+  width: 242,
+  borderWidth: 5,
+  borderStyle: Ti.UI.INPUT_BORDERSTYLE_LINE,
+  borderColor: 'rgb(206, 170, 140)',
+  top: 259,
+}
+
+'#labelInscrire': {
+  top: 665,
+  right: 25,
+	font : {fontSize : 20},
+	color : "rgb (55 ,67 ,121)",
+	text : "S’inscrire",
+	underlineText:"S’inscrire"
+}

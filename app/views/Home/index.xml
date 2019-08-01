@@ -1,7 +1,7 @@
 <Alloy>
 	<View class="container">
     <Require src="/Commun/ecranLogo"></Require>
-    <View id="ViewLine"/>
+    
     <View id="containerContact" class="containerItem" onClick="clickItem" itemId="contact">
       <ImageView id="imageIconContact"></ImageView>
       <Label id="lableContact" class="labelHome"></Label>

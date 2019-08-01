@@ -6,5 +6,7 @@
 	"os:android": {},
 	"os:ios": {},
 	"os:windows": {},
-	"dependencies": {}
+	"dependencies": {
+    "dzmob.widget.TextField": "*"
+  }
 }

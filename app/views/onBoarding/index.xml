@@ -1,0 +1,32 @@
+<Alloy>
+	<Window class="container background">
+        <View class="vlayout">
+            <View class="logoContainer">
+                <ImageView id="logo"></ImageView>
+                <View id="separator"></View>
+            </View>
+            <View class="scrollableViewContainer ">
+                <ScrollableView id="scrollableView">
+                    <View class="vlayout imgBackground">
+                        <Label class="title">Bienvenue</Label>
+                        <Label id="text"class="text">Rejoigner My 2a,Rejoigner My 2a,Rejoigner My 2a,Rejoigner My 2a,Rejoigner My 2a,</Label>
+                    </View>
+                    <View class="vlayout imgBackground">
+                        <Label class="title">Bienvenue</Label>
+                        <Label id="text"class="text">Rejoigner My 2a,Rejoigner My 2a,Rejoigner My 2a,Rejoigner My 2a,Rejoigner My 2a,</Label>
+                    </View>
+                    <View class="vlayout imgBackground">
+                        <Label class="title">Bienvenue</Label>
+                        <Label id="text"class="text">Rejoigner My 2a,Rejoigner My 2a,Rejoigner My 2a,Rejoigner My 2a,Rejoigner My 2a,</Label>
+                    </View>
+                </ScrollableView>
+                <View id="treePoint">
+        			<View class="point" id="premPoint"></View>
+        			<View class="point" id="secondPoint"></View>
+        			<View class="point" id="troisiemePoint"></View>
+        		</View>
+        		<Button id="btStart"></Button>
+            </View>
+        </View>
+	</Window>
+</Alloy>

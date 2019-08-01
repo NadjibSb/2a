@@ -1,0 +1,92 @@
+
+".container" : {
+    title: "onBoarding",
+    navBarHidden: false
+}
+
+
+'.logoContainer': {
+    height: "37%"
+}
+
+'#logo': {
+    image: "/images/logo/logo_2a_blue.png",
+    top: 45,
+    height: 180,
+}
+
+
+'#separator': {
+    bottom: 0,
+    height: 5,
+    backgroundColor: Alloy.CFG.design.colors.SecondaryColor,
+}
+
+
+"#treePoint" : {
+	height : 20,
+	width : 46,
+    bottom: 135,
+},
+
+".point" :{
+	borderRadius: 5,
+	width: 10,
+	height: 10,
+	backgroundColor : "white",
+	opacity : 0.5
+},
+"#premPoint": {
+	left : 0
+},
+"#secondPoint" : {
+	left : 18
+},
+"#troisiemePoint" : {
+	left : 36
+},
+
+"#btStart" : {
+    bottom: 40,
+	width : 325,
+	height : 45,
+	borderRadius : 5,
+	backgroundColor : "rgb(241,238,238)",
+    font: {
+        fontSize: 16
+    },
+    color: Alloy.CFG.design.colors.PrimaryColor,
+    title: L('on_boarding_btn_next')
+
+},
+
+
+'.text': {
+    top: 16,
+    font: {
+        fontFamily: Alloy.CFG.design.fonts.Medium,
+        fontSize: 14
+    },
+    textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+    lineSpacing: {
+        add: 20,
+        multiply: 20
+    },
+    color: 'white',
+    width: "90%"
+}
+
+'.title': {
+    top: 50,
+    font: {
+        fontFamily: Alloy.CFG.design.fonts.Medium,
+        fontSize: 22,
+    },
+    textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+    color: 'white',
+    width: "90%",
+}
+
+'.imgBackground': {
+    backgroundImage: "/images/background/img_onboarding_1.png"
+}

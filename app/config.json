@@ -1,5 +1,19 @@
 {
-	"global": {},
+	"global": {
+        "design":{
+            "colors":{
+                "PrimaryColor": "rgb(18,20,83)",
+                "SecondaryColor": "rgb(206,170,140)"
+            },
+            "fonts":{
+                "Medium":"AvenirLTStd-Medium",
+                "Black":"AvenirLTStd-Black",
+                "Light":"AvenirLTStd-Light",
+                "Heavy":"AvenirLTStd-Heavy"
+            }
+
+        }
+    },
 	"env:development": {},
 	"env:test": {},
 	"env:production": {},

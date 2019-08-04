@@ -13,7 +13,7 @@
  * debug log : log(tag).d({args});
  * error log : log(tag).e({args});
  */
-function log(args){
+module.exports = function log(args){
   //Ti.API.info(args);
   var params = {};
 	switch( typeof( args ) ) {
@@ -57,14 +57,4 @@ function log(args){
 	};
 
 	return logger;
-}
-
-
-
-
-
-// exports
-
-export {
-  log
 }

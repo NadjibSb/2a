@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Ressources>
-	<string name="language_app">fr</string>
+	<string name="language_app">en</string>
+
+	<!-- HTTP ERROR -->
+	<string name="HTTP_CLIENT_NETWORK_TIMEOUT">Merci de vérifier votre connexion internet.</string>
+	<string name="HTTP_CLIENT_NETWORK_OFFLINE">Merci de vérifier votre connexion internet.</string>
+	<string name="HTTP_CLIENT_URL_NOT_FOUND">Une erreur s'est produite, merci de réessayer plus tard.</string>
+	<string name="HTTP_CLIENT_REQUEST_ERROR">Une erreur s'est produite, merci de réessayer plus tard.</string>
+	<string name="HTTP_CLIENT_API_ERROR">Une erreur s'est produite, merci de réessayer plus tard.</string>
+	<string name="HTTP_CLIENT_ERROR_ONLOAD">Une erreur s'est produite, merci de réessayer plus tard.</string>
+	<string name="HTTP_CLIENT_SUCCESS_CALLBACK_ERROR">Une erreur s'est produite, merci de réessayer plus tard.</string>
+	<string name="HTTP_CLIENT_ERROR_ONERROR">Une erreur s'est produite, merci de réessayer plus tard.</string>
+	<string name="HTTP_CLIENT_ERROR_SEND">Une erreur s'est produite, merci de réessayer plus tard.</string>
+	<string name="HTTP_DEFAULT_ERROR">Une erreur s'est produite, merci de réessayer plus tard.</string>
+
+	<!-- on Boarding -->
     <string name="on_boarding_btn_next">Suivant</string>
     <string name="on_boarding_btn_begin">Commencer</string>
     <string name="on_boarding_title_1">Bienvenu !</string>

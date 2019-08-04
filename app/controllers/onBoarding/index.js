@@ -1,11 +1,12 @@
 // Arguments passed into this controller can be accessed via the `$.args` object directly or:
 var args = $.args;
 
+// constructor
 (function contructor(){
     $.treePoint.children[ $.scrollableView.currentPage ].opacity = 1;
 })();
 
-
+// Events Functions
 function onScrollend( e ) {
 	var index = $.scrollableView.currentPage;
 	for( var i = 0; i < 3; i++ ) {

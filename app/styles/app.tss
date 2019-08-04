@@ -27,11 +27,11 @@ overrode the settings with other TSS, XML, or JS settings:
 	backgroundColor: 'white'
 }
 
-"Window[if=Alloy.Globals.isAndroid]": {
+".androidNoActionBar[if=Alloy.Globals.isAndroid]": {
     theme: "Theme.AppCompat.NoTitleBar"
 }
 
-".container[if=Alloy.Globals.isIOS]" : {
+".iosMarginTop[if=Alloy.Globals.isIOS]" : {
     top: 20
 }
 

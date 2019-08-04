@@ -67,10 +67,7 @@
         fontSize: 14
     },
     textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
-    lineSpacing: {
-        add: 20,
-        multiply: 20
-    },
+    wordWrap: true,
     color: 'white',
     width: "75%"
 }

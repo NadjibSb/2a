@@ -1,5 +1,6 @@
 // Arguments passed into this controller can be accessed via the `$.args` object directly or:
 var args = $.args;
+import {log} from '/config/logger'
 
 // constructor
 (function contructor(){
@@ -25,7 +26,7 @@ function onScroll(e){
 
 function btnClicked(e){
     if ($.scrollableView.currentPage == 2) {
-        Ti.API.info('Go to Login');
+        log('onBoarding')("Go to Login");
     }else {
         $.scrollableView.moveNext();
     }

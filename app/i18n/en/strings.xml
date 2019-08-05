@@ -23,4 +23,15 @@
     <string name="on_boarding_text_2">Plus besoin de vous déplacer en agence pour déclarer vos sinistres, maintenant faites le à distance via votre application My2a App et un expert sera mis à votre disposition pour la visite</string>
     <string name="on_boarding_title_3">Les indispensables</string>
     <string name="on_boarding_text_3">My 2a vous facilite votre quotidien. vous n'aurez plus à vous soucier de l'échéancier de vos contrats d'assurances, du contrôle technique de votre véhicule et bien d'autres tâches selon vos besoins</string>
+
+	<!-- Sinistres index -->
+    <string name="sinistres_type">Type de sinistres : </string>
+    <string name="sinistres_num_contrat">Nº de Contrat : </string>
+    <string name="sinistres_date">Date de sinistre : </string>
+    <string name="sinistres_status">Status : </string>
+    <string name="sinistres_create_sinistre">Déclarer un sinistre</string>
+    <string name="sinistres_MesSinistres">Mes sinistes</string>
+    <string name="sinistres_Hisorique">Hisorique</string>
+
+
 </Ressources>

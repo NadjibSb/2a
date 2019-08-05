@@ -1,5 +1,5 @@
 // Exemple of httpManager
-
+/*
 var session = require('/dataHandler/session');
 var log = require( 'utility/logger' )( {
 		tag: "index",
@@ -22,7 +22,9 @@ session.login(
         log("error "+e);
     }
 );
+*/
 // end of exemple -------------------------
 
-Alloy.createController("/onBoarding/index").getView().open();
+//Alloy.createController("/onBoarding/index").getView().open();
 //Alloy.createController("/Home/index").getView().open();
+Alloy.createController("/Sinistres/index").getView().open();

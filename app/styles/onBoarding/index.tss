@@ -54,7 +54,7 @@
         fontFamily: Alloy.CFG.design.fonts.Medium,
         fontSize: 16
     },
-    color: Alloy.CFG.design.colors.PrimaryColor,
+    color: Alloy.CFG.design.fonts.PrimaryColor,
     title: L('on_boarding_btn_next')
 
 },

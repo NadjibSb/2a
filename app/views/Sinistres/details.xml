@@ -1,0 +1,47 @@
+<Alloy>
+    <Window class="background androidNoActionBar iosMarginTop">
+        <View class="container vlayout">
+            <View id="topBar">
+                <View class="hlayout wSize hSize">
+                    <ImageView id="topBar_img" class="wSize hSize"></ImageView>
+                    <Label id="topBar_text" class="wSize hSize"></Label>
+                </View>
+            </View>
+            <ScrollView>
+                <View class="mainContent vlayout hSize" top="0">
+                    <View class="vlayout hSize">
+                        <Label id="num_contrat" class="textItem hSize"></Label>
+                        <View class="separator"></View>
+                    </View>
+                    <View class="vlayout hSize">
+                        <Label id="adresse" class="textItem hSize"></Label>
+                        <View class="separator"></View>
+                    </View>
+                    <View class="vlayout hSize">
+                        <Label id="date" class="textItem hSize"></Label>
+                        <View class="separator"></View>
+                    </View>
+                    <View class="vlayout hSize">
+                        <Label id="lieu" class="textItem hSize"></Label>
+                        <View class="separator"></View>
+                    </View>
+                    <View class="vlayout hSize">
+                        <Label id="degats" class="textItem hSize"></Label>
+                        <View class="separator"></View>
+                    </View>
+                    <View class="vlayout hSize">
+                        <Label id="circonstances" class="textItem hSize"></Label>
+                        <View class="separator"></View>
+                    </View>
+                    <View class="vlayout hSize">
+                        <Label id="status" class="textItem hSize"></Label>
+                        <View class="separator"></View>
+                    </View>
+                </View>
+                <View id="btRendezvous" >
+                    <Label class="btRendezvous"></Label>
+                </View>
+            </ScrollView>
+        </View>
+    </Window>
+</Alloy>

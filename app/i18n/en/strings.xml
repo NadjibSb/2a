@@ -33,5 +33,15 @@
     <string name="sinistres_MesSinistres">Mes sinistes</string>
     <string name="sinistres_Hisorique">Hisorique</string>
 
+	<!-- Sinistres details -->
+    <string name="sinistres_details_num_contrat">Numéro de contrat : </string>
+    <string name="sinistres_details_adresse">Adresse du bien : </string>
+    <string name="sinistres_details_date">Date de sinistre : </string>
+    <string name="sinistres_details_lieu">Lieu de sinistre : </string>
+    <string name="sinistres_details_degats">Nature des dégats : </string>
+    <string name="sinistres_details_circonstances">Circonstances de l'accident : </string>
+    <string name="sinistres_details_status">Status : </string>
+    <string name="sinistres_details_btn_Rendezvous">Choisissez un rendez-vous</string>
+
 
 </Ressources>

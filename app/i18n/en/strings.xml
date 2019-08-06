@@ -44,4 +44,13 @@
     <string name="sinistres_details_btn_Rendezvous">Choisissez un rendez-vous</string>
 
 
+	<!-- Sinistres details -->
+    <string name="sinistres_rendezvous_title">Choisissez la proposition de rendez-vous de l'expert qui vous convient.</string>
+    <string name="sinistres_rendezvous_expert">Expert : </string>
+    <string name="sinistres_rendezvous_agence">Agence : </string>
+    <string name="sinistres_rendezvous_details_agence">Détails sur l'agence</string>
+    <string name="sinistres_rendezvous_btn_accepte">Accepter</string>
+    <string name="sinistres_rendezvous_btn_accepted">Accepté</string>
+
+
 </Ressources>

@@ -26,7 +26,14 @@ var log = require( 'utility/logger' )( {
     stringStyling($.circonstances,sinistre.circonstances);
     stringStyling($.status,sinistre.status,'red');
     //$.btRendezvous.hide();
+    //openModal();
+    $.chooseRendezvousView.open();
 })();
+
+
+function openRendezvousView(e){
+    $.chooseRendezvousView.open();
+}
 
 
 // change the font of the first string and color the second
@@ -50,4 +57,8 @@ function stringStyling(label, textToAdd, color){
         ]
     });
     label.attributedString = attr;
+}
+
+function close(e){
+    log(e);
 }

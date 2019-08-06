@@ -49,9 +49,6 @@
     color: Alloy.CFG.design.fonts.PrimaryColor
 }
 
-'.noBackground': {
-    backgroundColor: "rgba(255,0,0,0)"
-}
 
 '.itemContainer': {
     top: 16,

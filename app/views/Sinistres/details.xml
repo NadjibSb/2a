@@ -38,10 +38,11 @@
                         <View class="separator"></View>
                     </View>
                 </View>
-                <View id="btRendezvous" >
+                <View id="btRendezvous" onClick="openRendezvousView">
                     <Label class="btRendezvous"></Label>
                 </View>
             </ScrollView>
         </View>
+        <Require src="/Sinistres/chooseRendezvous" id="chooseRendezvousView" onClose="close"></Require>
     </Window>
 </Alloy>

@@ -39,6 +39,10 @@ overrode the settings with other TSS, XML, or JS settings:
     backgroundImage: "/images/background_image.png"
 }
 
+'.noBackground': {
+    backgroundColor: "rgba(0,0,0,0)"
+}
+
 // Sizes
 ".wFill":{
 	width: Ti.UI.FILL,

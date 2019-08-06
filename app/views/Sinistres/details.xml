@@ -1,4 +1,4 @@
-<Alloy>
+<Alloy autoStyle="true">
     <Window class="background androidNoActionBar iosMarginTop">
         <View class="container vlayout">
             <View id="topBar">
@@ -7,8 +7,8 @@
                     <Label id="topBar_text" class="wSize hSize"></Label>
                 </View>
             </View>
-            <ScrollView>
-                <View class="mainContent vlayout hSize" top="0">
+            <ScrollView class="vlayout">
+                <View class="details vlayout hSize" top="0">
                     <View class="vlayout hSize">
                         <Label id="num_contrat" class="textItem hSize"></Label>
                         <View class="separator"></View>
@@ -39,10 +39,38 @@
                     </View>
                 </View>
                 <View id="btRendezvous" onClick="openRendezvousView">
-                    <Label class="btRendezvous"></Label>
+                    <Label id="btRendezvousText"></Label>
+                </View>
+                <View id="expertDetails" class="hSize vlayout">
+                    <View class="hSize vlayout" >
+                        <Label class="attention" text="L('sinistres_details_note_btn')"></Label>
+                        <Label class="attentionText" text="L('sinistres_details_note_btn_text')"></Label>
+                    </View>
+                    <View class="topMargin hSize vlayout">
+                        <View class="vlayout hSize">
+                            <Label id="choisenExpert" class="textItem hSize"></Label>
+                            <View class="separator"></View>
+                        </View>
+                        <View class="vlayout hSize">
+                            <Label id="dateRendezvous" class="textItem hSize"></Label>
+                            <View class="separator"></View>
+                        </View>
+                        <View class="vlayout hSize">
+                            <Label id="numtlf" class="textItem hSize"></Label>
+                            <View class="separator"></View>
+                        </View>
+                    </View>
+                    <View class="mapContainer hSize vlayout">
+                        <Label class="mapText" text="L('sinistres_details_follow_expert')"></Label>
+                        <ImageView id="icn_arrow"></ImageView>
+                        <View class="rounded hSize wSize">
+                            <ImageView id="icn_map"></ImageView>
+                        </View>
+                        <Label class="mapText" text="L('sinistres_details_note_map')"></Label>
+                    </View>
                 </View>
             </ScrollView>
         </View>
-        <Require src="/Sinistres/chooseRendezvous" id="chooseRendezvousView" onClose="close"></Require>
+        <Require src="/Sinistres/chooseRendezvous" id="rendezvousView" onClose="close"></Require>
     </Window>
 </Alloy>

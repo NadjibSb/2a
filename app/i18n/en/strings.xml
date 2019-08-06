@@ -41,8 +41,15 @@
     <string name="sinistres_details_degats">Nature des dégats : </string>
     <string name="sinistres_details_circonstances">Circonstances de l'accident : </string>
     <string name="sinistres_details_status">Status : </string>
-    <string name="sinistres_details_btn_Rendezvous">Choisissez un rendez-vous</string>
-
+    <string name="sinistres_details_btn_choix_Rendezvous">Choisissez un rendez-vous</string>
+    <string name="sinistres_details_btn_change_Rendezvous">Changer de rendez-vous</string>
+    <string name="sinistres_details_note_btn">Attentions !</string>
+    <string name="sinistres_details_note_btn_text">Le changement n'est plus possible à partir de 24h avant la date de rendez-vous choisie.</string>
+    <string name="sinistres_details_expert">Expert choisi : </string>
+    <string name="sinistres_details_date_rendezvous">Date de rendez-vous : </string>
+    <string name="sinistres_details_tlf">Nº de téléphone : </string>
+    <string name="sinistres_details_follow_expert">Suivez votre expert sur carte</string>
+    <string name="sinistres_details_note_map">Cette option sera active 30min avantle rendez-vous avec votre expert</string>
 
 	<!-- Sinistres details -->
     <string name="sinistres_rendezvous_title">Choisissez la proposition de rendez-vous de l'expert qui vous convient.</string>

@@ -45,7 +45,6 @@ exports.open =  function open(){
       opacity:1,
       duration: 400,
     });
-    matrix2d = null;
 }
 
 // privates functions
@@ -63,7 +62,6 @@ function close(e){
     },()=>{
         $.expertslistContainer.hide();
     });
-    matrix2d = null;
     // renvoie du close event
     $.trigger('close', _.extend(e,{id:"test"}));
 }

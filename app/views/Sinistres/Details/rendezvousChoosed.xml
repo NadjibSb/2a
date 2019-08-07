@@ -1,0 +1,30 @@
+<Alloy>
+    <View id="expertDetails" class="hSize vlayout">
+        <View class="hSize vlayout" >
+            <Label class="attention" text="L('sinistres_details_note_btn')"></Label>
+            <Label class="attentionText" text="L('sinistres_details_note_btn_enable_text')"></Label>
+        </View>
+        <View class="topMargin hSize vlayout">
+            <View class="vlayout hSize" >
+                <Label id="choisenExpert" class="textItem hSize"></Label>
+                <View class="separator"></View>
+            </View>
+            <View class="vlayout hSize">
+                <Label id="dateRendezvous" class="textItem hSize"></Label>
+                <View class="separator"></View>
+            </View>
+            <View class="vlayout hSize">
+                <Label id="numtlf" class="textItem hSize"></Label>
+                <View class="separator"></View>
+            </View>
+        </View>
+        <View class="mapContainer hSize vlayout">
+            <Label class="mapText" text="L('sinistres_details_follow_expert')"></Label>
+            <ImageView id="icn_arrow"></ImageView>
+            <View class="rounded hSize wSize">
+                <ImageView id="icn_map"></ImageView>
+            </View>
+            <Label class="mapText" text="L('sinistres_details_note_map')"></Label>
+        </View>
+    </View>
+</Alloy>

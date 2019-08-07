@@ -1,7 +1,4 @@
 
-".container" : {
-
-}
 
 '#topBar': {
     height: 55,
@@ -24,7 +21,7 @@
 }
 
 '.details': {
-    top: 32,
+    top: 16,
     left: 32,
     right: 32
 }
@@ -73,18 +70,6 @@
     text: L('sinistres_details_status')
 }
 
-'#choisenExpert': {
-    text: L('sinistres_details_expert')
-}
-
-'#dateRendezvous': {
-    text: L('sinistres_details_date_rendezvous')
-}
-
-'#numtlf': {
-    text: L('sinistres_details_tlf')
-}
-
 
 '#btRendezvous': {
     backgroundColor: Alloy.CFG.design.colors.PrimaryColor,
@@ -102,66 +87,4 @@
         fontSize: 16,
         fontFamily: Alloy.CFG.design.fonts.Medium
     }
-}
-
-'#expertDetails': {
-    left: 32,
-    right: 32,
-    bottom: 32
-}
-
-'.attention': {
-    left: 0,
-    font: {
-        fontSize: 16,
-        fontFamily: Alloy.CFG.design.fonts.Medium
-    },
-    color: Alloy.CFG.design.fonts.PrimaryColor
-}
-
-'.attentionText': {
-    left: 0,
-    top: 8,
-    font: {
-        fontSize: 14,
-        fontFamily: Alloy.CFG.design.fonts.Light
-    },
-    color: Alloy.CFG.design.fonts.PrimaryColor
-}
-
-'.topMargin': {
-    top: 40
-}
-
-'.mapContainer': {
-    width: "60%",
-    top: 32,
-    bottom: 32,
-}
-
-'.mapText': {
-    top: 16,
-    font: {
-        fontSize: 16,
-        fontFamily: Alloy.CFG.design.fonts.Light
-    },
-    color: Alloy.CFG.design.fonts.PrimaryColor,
-    textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER
-}
-
-'#icn_arrow': {
-    image: "/images/icn_downtriangle_blue_pdf.png",
-    top: 8
-}
-
-'#icn_map': {
-    image: "/images/icn_map_desactivated.png"
-}
-
-'.rounded': {
-    backgroundColor: 'white',
-    top: 16,
-    height: 80,
-    width: 80,
-    borderRadius: 40
 }

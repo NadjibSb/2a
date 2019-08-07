@@ -5,7 +5,8 @@
                 "PrimaryColor": "rgb(55,67,121)",
                 "SecondaryColor": "rgb(209,176,147)",
                 "Gray": "rgb(176,176,176)",
-                "Red": "rgb(213,37,5)"
+                "Red": "rgb(213,37,5)",
+                "Green": "rgb(44,159,99)"
             },
             "fonts":{
                 "PrimaryColor": "rgb(18,20,83)",

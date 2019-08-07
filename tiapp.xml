@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ti:app 
+<ti:app
   xmlns:ti="http://ti.appcelerator.org">
   <id>com.aa.assures</id>
   <name>aa_assures</name>
@@ -14,8 +14,10 @@
   <analytics>true</analytics>
   <!-- Iselm
   <guid>51c8f22d-bf81-4570-9999-a01554cbfc65</guid>
--->
+  -->
+  <!--nadjib-->
   <guid>a5aedf31-be3d-4fd4-9444-1459404ae74f</guid>
+
   <property name="ti.ui.defaultunit" type="string">dp</property>
   <property name="run-on-main-thread" type="bool">true</property>
   <ios>
@@ -53,9 +55,9 @@
       </dict>
     </plist>
   </ios>
-  <android 
+  <android
     xmlns:android="http://schemas.android.com/apk/res/android">
-    <manifest 
+    <manifest
       xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1">
     </manifest>
   </android>

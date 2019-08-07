@@ -20,7 +20,7 @@
             }
 
         },
-        "environment": "prod"
+        "environment": "dev"
     },
 	"env:development": {},
 	"env:test": {},

@@ -1,4 +1,24 @@
 <Alloy>
-	<View class="container">
-	</View>
+  <Window>
+    <View class="container" >
+      <Label id="labelIntro" class="labelLogin"></Label>
+      <Label id="labelClient" class="labelLogin"></Label>
+      <ImageView id="imageUnchecked" class="check"></ImageView>
+      <Label id="labelOuiClient"></Label>
+      <ImageView id="imageChecked" class="uncheck"></ImageView>
+      <Label id="labelNonClient"></Label>
+      <Widget src="dzmob.widget.TextField" id="textFieldNumClient"></Widget>
+      <Label id="recupNumClient"></Label>
+      <ImageView id="iconNumClient"></ImageView>
+      <Widget src="dzmob.widget.TextField" id="textFieldNom"></Widget>
+      <Widget src="dzmob.widget.TextField" id="textFieldPrenom"></Widget>
+      <Widget src="dzmob.widget.TextField" id="textFieldNumTel"></Widget>
+      <Widget src="dzmob.widget.TextField" id="textFieldEmailR"></Widget>
+      <Widget src="dzmob.widget.TextField" id="textFieldPasswordR"></Widget>
+      <Label id="champsObligatoire"></Label>
+      <ImageView id="imageCheckCondition" class="uncheck"></ImageView>
+      <Label id="labelCondition"></Label>
+      <Button id="buttonInscreption" class="validationButton"></Button>
+    </View>
+  </Window>
 </Alloy>

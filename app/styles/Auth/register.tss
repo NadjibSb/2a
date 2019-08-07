@@ -1,4 +1,141 @@
 
 ".container" : {
-  
+}
+
+'#labelIntro': {
+  text: "Inscrivez-vous et bénéficiez de toutes\nnos offres",
+  top: 97,
+  left: 35
+
+}
+
+'#labelClient': {
+  text: "Êtes-vous un client ?",
+  top: 162,
+  left: 35
+}
+
+'#imageUnchecked': {
+  top: 196.5,
+  left: 35
+}
+
+
+'#labelOuiClient': {
+  text: "Oui",
+  top:196.5,
+  left: 62.9
+}
+
+
+'#imageChecked': {
+  top: 196.5,
+  left: 120.4
+}
+
+
+
+'#labelNonClient': {
+  text: "Non",
+  top:196.5,
+  left:149.9
+}
+
+'#textFieldNumClient': {
+  hintText : "Saisissez votre numéro client *",
+	errorColor : "red",
+	focusBarColor : "rgb(55, 67, 121)",
+	blurBarColor : "rgb(151, 151, 151)",
+	validations : {email : ""},
+	autocapitalization : Titanium.UI.TEXT_AUTOCAPITALIZATION_NONE,
+	errorMessage : "L’adresse e-mail saisie n’est pas valide.",
+  defaultErrorMessage : "remplie le champ de mail ou N° Telephone",
+	keyboardType : Titanium.UI.KEYBOARD_TYPE_EMAIL,
+}
+
+'#recupNumClient': {
+  text: "Comment récupérer votre n°client"
+}
+
+
+'#iconNumClient': {
+  image: "/images/icn_help.png"
+}
+
+'#textFieldNom': {
+  hintText : "Saisissez votre numéro client *",
+	errorColor : "red",
+	focusBarColor : "rgb(55, 67, 121)",
+	blurBarColor : "rgb(151, 151, 151)",
+	validations : {email : ""},
+	autocapitalization : Titanium.UI.TEXT_AUTOCAPITALIZATION_NONE,
+	errorMessage : "L’adresse e-mail saisie n’est pas valide.",
+  defaultErrorMessage : "remplie le champ de mail ou N° Telephone",
+	keyboardType : Titanium.UI.KEYBOARD_TYPE_EMAIL,
+}
+
+'#textFieldPrenom': {
+  hintText : "Saisissez votre numéro client *",
+	errorColor : "red",
+	focusBarColor : "rgb(55, 67, 121)",
+	blurBarColor : "rgb(151, 151, 151)",
+	validations : {email : ""},
+	autocapitalization : Titanium.UI.TEXT_AUTOCAPITALIZATION_NONE,
+	errorMessage : "L’adresse e-mail saisie n’est pas valide.",
+  defaultErrorMessage : "remplie le champ de mail ou N° Telephone",
+	keyboardType : Titanium.UI.KEYBOARD_TYPE_EMAIL,
+}
+
+'#textFieldNumTel': {
+  hintText : "Saisissez votre numéro client *",
+	errorColor : "red",
+	focusBarColor : "rgb(55, 67, 121)",
+	blurBarColor : "rgb(151, 151, 151)",
+	validations : {email : ""},
+	autocapitalization : Titanium.UI.TEXT_AUTOCAPITALIZATION_NONE,
+	errorMessage : "L’adresse e-mail saisie n’est pas valide.",
+  defaultErrorMessage : "remplie le champ de mail ou N° Telephone",
+	keyboardType : Titanium.UI.KEYBOARD_TYPE_EMAIL,
+}
+
+'#textFieldEmailR': {
+  hintText : "Saisissez votre numéro client *",
+	errorColor : "red",
+	focusBarColor : "rgb(55, 67, 121)",
+	blurBarColor : "rgb(151, 151, 151)",
+	validations : {email : ""},
+	autocapitalization : Titanium.UI.TEXT_AUTOCAPITALIZATION_NONE,
+	errorMessage : "L’adresse e-mail saisie n’est pas valide.",
+  defaultErrorMessage : "remplie le champ de mail ou N° Telephone",
+	keyboardType : Titanium.UI.KEYBOARD_TYPE_EMAIL,
+}
+
+'#textFieldPasswordR': {
+  hintText : "Saisissez votre numéro client *",
+	errorColor : "red",
+	focusBarColor : "rgb(55, 67, 121)",
+	blurBarColor : "rgb(151, 151, 151)",
+	validations : {email : ""},
+	autocapitalization : Titanium.UI.TEXT_AUTOCAPITALIZATION_NONE,
+	errorMessage : "L’adresse e-mail saisie n’est pas valide.",
+  defaultErrorMessage : "remplie le champ de mail ou N° Telephone",
+	keyboardType : Titanium.UI.KEYBOARD_TYPE_EMAIL,
+}
+
+'#champsObligatoire': {
+}
+
+'.check': {
+    image: "/images/icn_oval_unchecked.png"
+}
+
+'.uncheck': {
+  image: "/images/icn_oval_checked.png"
+}
+
+'#labelCondition': {
+}
+
+'#buttonInscreption': {
+  title: "S’inscrire"
 }

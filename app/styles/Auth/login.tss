@@ -58,9 +58,7 @@
   color: "rgb(55 ,67 ,121)"
 }
 
-'#Imagebackground': {
-  image: "/images/background image.png"
-}
+
 
 '#ImageLogo': {
   image: "/images/logo_2a_blue.png",

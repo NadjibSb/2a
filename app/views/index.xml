@@ -1,5 +1,3 @@
 <Alloy>
-  <Window>
-	   <Require src="/Auth/login"></Require>
-  </Window>
+	   <Require src="/Auth/register"></Require>
 </Alloy>

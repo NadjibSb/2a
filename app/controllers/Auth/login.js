@@ -13,11 +13,14 @@ function clickLogin(e){
 }
 function clickForgot(e){
   Alloy.createController("/Auth/passwordForgot").getView().open();
-
+  $.login.close();
 }
 
 function clickInscrire(e){
   Alloy.createController("/Auth/register").getView().open();
+  $.login.close();
 }
 
 // traintement
+
+$.login.open()

@@ -10,9 +10,9 @@
 }
 
 '.marging': {
-    top: 24,
-    left: 32,
-    right: 32
+    top: 16,
+    left: 16,
+    right: 16
 }
 
 '.enabled': {
@@ -67,7 +67,7 @@
 
 '#sinistreList': {
     separatorStyle: Ti.UI.TABLE_VIEW_SEPARATOR_STYLE_NONE,
-    top:0
+    top: 24
 }
 
 '.detailItem': {
@@ -96,11 +96,10 @@
 }
 
 '#contentView': {
-    top: 24
 }
 
 '#creatSinistre': {
-    bottom: 24,
+    bottom: 0,
     backgroundColor: "rgba(55,67,121,0.93)",
     height: 60
 }

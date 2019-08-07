@@ -50,7 +50,7 @@
     <string name="sinistres_details_date_rendezvous">Date de rendez-vous : </string>
     <string name="sinistres_details_tlf">Nº de téléphone : </string>
     <string name="sinistres_details_follow_expert">Suivez votre expert sur carte</string>
-    <string name="sinistres_details_note_map">Cette option sera active 30min avantle rendez-vous avec votre expert</string>
+    <string name="sinistres_details_note_map">Cette option sera active 30min avant le rendez-vous avec votre expert</string>
     <string name="sinistres_details_btn_expertise_done">Marquez comme expertise réalisé</string>
     <string name="sinistres_details_btn_expertise_done_note">Appuiyez sur ce bouton pour confirmer la réalisation de l'expertise (juste après la visite de l'expert).</string>
 

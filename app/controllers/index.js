@@ -27,5 +27,5 @@ session.login(
 
 //Alloy.createController("/onBoarding/index").getView().open();
 //Alloy.createController("/Home/index").getView().open();
-//Alloy.createController("/Sinistres/index").getView().open();
-Alloy.createController("/Sinistres/Details/details").getView().open();
+Alloy.createController("/Sinistres/index").getView().open();
+//Alloy.createController("/Sinistres/Details/details").getView().open();

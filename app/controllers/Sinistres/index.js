@@ -8,27 +8,26 @@ var log = require( 'utility/logger' )( {
 var data = [];
 var _data = [];
 
+// fill data
 for (var i = 0; i < 7; i++) {
-    var c;
+    var c,
+    font = {
+        fontSize: 14,
+        fontFamily: Alloy.CFG.design.fonts.Heavy
+    };
     i%2==0 ? c=Alloy.CFG.design.fonts.PrimaryColor : c = Alloy.CFG.design.fonts.GreenColor;
     data.push({
         template: "sinistreTemplate",
         type: {
             text: "type",
-            font: {
-                fontSize: 14,
-                fontFamily: Alloy.CFG.design.fonts.Heavy
-            }
+            font: font
         },
         numContrat: {text: "type"},
         date: {text: "type"},
         status: {
             text: "type",
             color:c,
-            font: {
-                fontSize: 14,
-                fontFamily: Alloy.CFG.design.fonts.Heavy
-            }
+            font: font
         },
         image: {image: "/images/icn_cars_white.png"}
     });
@@ -37,20 +36,14 @@ for (var i = 0; i < 7; i++) {
         template: "sinistreTemplate",
         type: {
             text: "histo",
-            font: {
-                fontSize: 14,
-                fontFamily: Alloy.CFG.design.fonts.Heavy
-            }
+            font: font
         },
         numContrat: {text: "histo"},
         date: {text: "histo"},
         status: {
             text: "histo",
             color:c,
-            font: {
-                fontSize: 14,
-                fontFamily: Alloy.CFG.design.fonts.Heavy
-            }
+            font: font
         },
         image: {image: "/images/icn_building_white.png"}
     });

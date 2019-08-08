@@ -2,11 +2,20 @@
     bottom: 8,
     left: 8,
     right: 8,
-    height: 1,
-    opacity: 0,
+    height: "5%",
+    opacity: 0.1,
     viewShadowOffset: {x:0,y:1},
     viewShadowColor: "gray",
+    backgroundColor: 'olive',
     visible: false
+}
+'.border[if=Alloy.Globals.isAndroid]': {
+    borderWidth: 1,
+    borderColor: "#19999999"
+}
+
+'.container': {
+    backgroundColor: "rgba(255,255,255,0.2)",
 }
 
 '#btclose': {
@@ -116,8 +125,4 @@
         fontFamily: Alloy.CFG.design.fonts.Medium
     },
     color: 'white'
-}
-
-'.container': {
-    backgroundColor: "rgba(255,255,255,0.2)",
 }

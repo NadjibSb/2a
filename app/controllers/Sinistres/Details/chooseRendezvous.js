@@ -30,21 +30,25 @@ var log = require( 'utility/logger' )( {
 
 // open the rendezvous view to select an expert
 exports.open =  function open(){
+    //$.expertslistContainer.height = '5%';
     $.expertslistContainer.show();
     // restore scale
     var matrix2d = Ti.UI.create2DMatrix();
     matrix2d = matrix2d.scale(1);
     $.expertslistContainer.animate({
-      duration: 1,
-      transform: matrix2d
+          duration: 1,
+          transform: matrix2d
+        },()=>{
+            $.expertslistContainer.animate({
+                height : '98%',
+                top:8,
+                opacity:1,
+                duration: 300,
+            });
     });
+
     // animate
-    $.expertslistContainer.animate({
-      height : '98%',
-      top:8,
-      opacity:1,
-      duration: 400,
-    });
+
 }
 
 // privates functions
@@ -53,14 +57,14 @@ exports.open =  function open(){
 // close rendezvous view
 function close(e){
     var matrix2d = Ti.UI.create2DMatrix();
-    matrix2d = matrix2d.scale(0); // scale to 1.5 times original size
+    matrix2d = matrix2d.scale(0.2);
     $.expertslistContainer.animate({
-      top: "100%",
-      opacity:0.1,
-      duration: 400,
-      transform: matrix2d
-    },()=>{
-        $.expertslistContainer.hide();
+          top: "100%",
+          opacity:0.1,
+          duration: 400,
+          transform: matrix2d
+        },()=>{
+            $.expertslistContainer.hide();
     });
     // renvoie du close event
     $.trigger('close', _.extend(e,{id:"test"}));

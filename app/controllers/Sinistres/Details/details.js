@@ -35,7 +35,7 @@ const ONGOING_DISABLED_STATE = 3;
 function openRendezvousView(e){
     $.rendezvousView.open();
     setTimeout(function(){
-        updateView(ONGOING_DISABLED_STATE);
+        //updateView(ONGOING_DISABLED_STATE);
     }, 1000);
 
 }

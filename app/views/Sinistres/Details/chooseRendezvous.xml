@@ -1,5 +1,5 @@
-<Alloy>
-    <View id="expertslistContainer" class=" background">
+<Alloy autoStyle="true">
+    <View id="expertslistContainer" class="background border">
         <View class="container vlayout">
             <View class="hSize" >
                 <ImageView id="btclose" onClick="close"></ImageView>

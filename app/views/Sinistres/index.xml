@@ -1,7 +1,7 @@
 <Alloy autoStyle="true">
     <Window class="background androidNoActionBar iosMarginTop">
         <View class="vlayout">
-            <View class="marging hlayout wSize hSize">
+            <View class="marging hSize" >
                 <View id="btMesSinistres" class="tabButton enabled" onClick="displayMesSinistres">
                     <Label class="btTitle whiteFont" text="L('sinistres_MesSinistres')"></Label>
                 </View>
@@ -10,49 +10,51 @@
                 </View>
             </View>
             <View id="contentView">
-                <ListView id="sinistreList" class="noBackground">
-                    <Templates>
-                        <ItemTemplate name="sinistreTemplate" class="noBackground">
-                            <View class="vlayout hSize">
-                                <View class="itemContainer hlayout hSize" >
-                                    <View class="imageContainer">
-                                        <ImageView  bindId="image"></ImageView>
+                <View id="bottomMargin">
+                    <ListView id="sinistreList" class="noBackground" onItemclick="onItemclick">
+                        <Templates>
+                            <ItemTemplate name="sinistreTemplate" class="noBackground">
+                                <View class="vlayout hSize">
+                                    <View class="itemContainer hlayout hSize" >
+                                        <View class="imageContainer">
+                                            <ImageView  bindId="image"></ImageView>
+                                        </View>
+                                        <View class="detailsContainer vlayout">
+                                            <View class="detailItem">
+                                                <View class="hlayout hSize">
+                                                    <Label class="detailText" text="L('sinistres_type')"></Label>
+                                                    <Label class="detailContent" bindId="type"></Label>
+                                                </View>
+                                            </View>
+                                            <View class="detailItem">
+                                                <View class="hlayout hSize">
+                                                    <Label class="detailText" text="L('sinistres_num_contrat')"></Label>
+                                                    <Label class="detailContent" bindId="numContrat"></Label>
+                                                </View>
+                                            </View>
+                                            <View class="detailItem">
+                                                <View class="hlayout hSize">
+                                                    <Label class="detailText" text="L('sinistres_date')"></Label>
+                                                    <Label class="detailContent" bindId="date"></Label>
+                                                </View>
+                                            </View>
+                                            <View class="detailItem">
+                                                <View class="hlayout hSize">
+                                                    <Label class="detailText" text="L('sinistres_status')"></Label>
+                                                    <Label class="detailContent" bindId="status"></Label>
+                                                </View>
+                                            </View>
+                                        </View>
                                     </View>
-                                    <View class="detailsContainer vlayout">
-                                        <View class="detailItem">
-                                            <View class="hlayout hSize">
-                                                <Label class="detailText" text="L('sinistres_type')"></Label>
-                                                <Label class="detailContent" bindId="type"></Label>
-                                            </View>
-                                        </View>
-                                        <View class="detailItem">
-                                            <View class="hlayout hSize">
-                                                <Label class="detailText" text="L('sinistres_num_contrat')"></Label>
-                                                <Label class="detailContent" bindId="numContrat"></Label>
-                                            </View>
-                                        </View>
-                                        <View class="detailItem">
-                                            <View class="hlayout hSize">
-                                                <Label class="detailText" text="L('sinistres_date')"></Label>
-                                                <Label class="detailContent" bindId="date"></Label>
-                                            </View>
-                                        </View>
-                                        <View class="detailItem">
-                                            <View class="hlayout hSize">
-                                                <Label class="detailText" text="L('sinistres_status')"></Label>
-                                                <Label class="detailContent" bindId="status"></Label>
-                                            </View>
-                                        </View>
-                                    </View>
+                                    <ImageView class="hSize" image="/images/line_separation_grey.png"></ImageView>
                                 </View>
-                                <ImageView class="hSize" image="/images/line_separation_grey.png"></ImageView>
-                            </View>
-                        </ItemTemplate>
-                    </Templates>
-                    <ListSection id="sinistreSection"></ListSection>
-                </ListView>
+                            </ItemTemplate>
+                        </Templates>
+                        <ListSection id="sinistreSection"></ListSection>
+                    </ListView>
+                </View>
 
-                <View id="creatSinistre" class="hSize">
+                <View id="creatSinistre" class="hSize" onClick="creatSinistre">
                     <View class="hlayout hSize wSize">
                         <ImageView id="add_icon"></ImageView>
                         <Label id="add_text"></Label>

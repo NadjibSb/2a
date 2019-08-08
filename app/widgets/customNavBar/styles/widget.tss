@@ -1,0 +1,56 @@
+
+"#navBarContainer":{
+	left : 0,
+	top: 0,
+	height: 64
+}
+
+
+"#zoneClickLeft":{
+	top: 0,
+	left: 0,
+	width: Titanium.UI.SIZE,
+	visible : false,
+	touchEnabled: false
+}
+
+"#zoneClickRight":{
+	top: 0,
+	right : 0,
+	width: Ti.UI.SIZE,
+	visible : false,
+	touchEnabled: false
+}
+
+"#separator":{
+	height: 1,
+	backgroundColor: "transparent",
+	bottom : 0,
+	touchEnabled: false,
+	bubbleParent: true
+}
+
+".iconContainer" : {
+    left: 16,
+    right: 16,
+    bottom: 11,
+    height: 24,
+    width: 24
+}
+".iconContainer[platform=android]" : {
+    bottom: 18
+}
+
+'#titleWindow': {
+  color: "white",
+  font: {
+    fontSize: 20,
+    fontFamily: Alloy.CFG.design.fonts.Heavy
+  },
+  height: 23,
+
+}
+'#titleWindow[platform=ios]': {
+  bottom:5,
+
+}

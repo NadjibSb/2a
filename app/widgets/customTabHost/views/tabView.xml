@@ -1,0 +1,9 @@
+<Alloy>
+	<View id="tabViewContainer" onClick="onTabSelected" touchEnabled="true">
+		<View id="IconTitleContainer" layout="vertical">
+			<ImageView id="tabIcon" touchEnabled="false"/>
+			<Label id="tabTitle" touchEnabled="false"/>
+		</View>
+		<View id="tabSeparator"/>
+	</View>
+</Alloy>

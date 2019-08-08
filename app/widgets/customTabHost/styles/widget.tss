@@ -1,0 +1,41 @@
+"#tabBar": {
+	width : Titanium.UI.FILL,
+	height : 57,
+	bottom : 0,
+	left: -1,
+	right: -1,
+	backgroundColor : "transparent",
+	borderColor: '#DBDBDB',
+	borderWidth: 1,
+	layout : "horizontal"
+}
+
+"#viewTitle":{
+	top: -1,
+	left: -1,
+	right: -1,
+	height: 57,
+	backgroundColor: "#F8F8F8",
+	borderColor: '#DBDBDB',
+	borderWidth: 1,
+	zIndex: 99,
+}
+
+"#tabContent": {
+	top : 50,
+	bottom : 0,
+	backgroundColor : "white"
+}
+
+".stackView":{
+	bottom : 50,
+	visible : false
+}
+
+"#stackContract": {
+	visible : true
+}
+
+"#tabHost": {
+	exitOnClose : true
+}

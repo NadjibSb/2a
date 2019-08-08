@@ -117,3 +117,7 @@
     },
     color: 'white'
 }
+
+'#navBar': {
+  title : "Mes sinistres",
+}

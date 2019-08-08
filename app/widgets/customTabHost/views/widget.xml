@@ -1,0 +1,10 @@
+<Alloy>
+	<Window id="tabHost" onOpen="stackOpened" onFocus="onStackFocused">
+		<View id="tabBar"/>
+		<View class="stackView" id="stackDivers"/>
+		<View class="stackView" id="stackAgence"/>
+		<View class="stackView" id="stackSinistre"/>
+		<View class="stackView" id="stackDevis"/>
+		<View class="stackView" id="stackContract"/>
+	</Window>
+</Alloy>

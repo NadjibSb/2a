@@ -88,3 +88,6 @@ function displayHistorique(e){
     $.sinistreSection.setItems(_data);
     $.sinistreList.scrollToItem(0,0,true);
 }
+
+function pressBack(e){
+}

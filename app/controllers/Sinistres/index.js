@@ -1,0 +1,93 @@
+// Dependencies
+var log = require( 'utility/logger' )( {
+		tag: "Sinistres_index",
+		hideLog: false
+	} );
+
+
+var data = [];
+var _data = [];
+
+// fill data
+for (var i = 0; i < 7; i++) {
+    var c,
+    font = {
+        fontSize: 14,
+        fontFamily: Alloy.CFG.design.fonts.Heavy
+    };
+    i%2==0 ? c=Alloy.CFG.design.fonts.PrimaryColor : c = Alloy.CFG.design.fonts.GreenColor;
+    data.push({
+        template: "sinistreTemplate",
+        type: {
+            text: "type",
+            font: font
+        },
+        numContrat: {text: "type"},
+        date: {text: "type"},
+        status: {
+            text: "type",
+            color:c,
+            font: font
+        },
+        image: {image: "/images/icn_cars_white.png"}
+    });
+    i%2==1 ? c=Alloy.CFG.design.fonts.PrimaryColor : c = Alloy.CFG.design.fonts.GreenColor;
+    _data.push({
+        template: "sinistreTemplate",
+        type: {
+            text: "histo",
+            font: font
+        },
+        numContrat: {text: "histo"},
+        date: {text: "histo"},
+        status: {
+            text: "histo",
+            color:c,
+            font: font
+        },
+        image: {image: "/images/icn_building_white.png"}
+    });
+    $.sinistreSection.setItems(data);
+}
+
+
+
+
+
+
+
+// Private Functions
+
+
+function displayMesSinistres(e){
+    // button setup
+    $.removeClass($.btHistorique, 'enabled');
+    $.removeClass($.btMesSinistres, 'disabled');
+    $.addClass($.btHistorique, 'disabled');
+    $.addClass($.btMesSinistres, 'enabled');
+    $.btHistorique.children[0].color = Alloy.CFG.design.colors.PrimaryColor;
+    $.btMesSinistres.children[0].color = "white";
+    // show the bottom button
+    $.creatSinistre.show();
+    // update list
+    $.sinistreSection.setItems(data);
+    $.sinistreList.scrollToItem(0,0);
+}
+
+function displayHistorique(e){
+    // button setup
+    $.removeClass($.btMesSinistres, 'enabled');
+    $.removeClass($.btHistorique, 'disabled');
+    $.addClass($.btMesSinistres, 'disabled');
+    $.addClass($.btHistorique, 'enabled');
+    $.btMesSinistres.children[0].color = Alloy.CFG.design.colors.PrimaryColor;
+    $.btHistorique.children[0].color = "white";
+    // hide the bottom button
+    $.creatSinistre.hide();
+    // update list
+    $.sinistreSection.setItems(_data);
+    $.sinistreList.scrollToItem(0,0,true);
+}
+
+function pressBack(e){
+}

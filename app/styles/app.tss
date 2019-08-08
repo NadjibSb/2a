@@ -15,15 +15,33 @@ overrode the settings with other TSS, XML, or JS settings:
 	color: '#000' // all platforms except Android and Windows default to black
 }
 
-'Window': {
-	backgroundColor: '#fff' // white background instead of default transparent or black
-}
+
 
 'TextField[platform=android]': {
 	height: Ti.UI.SIZE
 }
 
 */
+
+'Window': {
+	backgroundColor: 'white'
+}
+
+".androidNoActionBar[if=Alloy.Globals.isAndroid]": {
+    theme: "Theme.AppCompat.NoTitleBar"
+}
+
+".iosMarginTop[if=Alloy.Globals.isIOS]" : {
+    top: 20
+}
+
+".background":{
+    backgroundImage: "/images/background_image.png"
+}
+
+'.noBackground': {
+    backgroundColor: "rgba(0,0,0,0)"
+}
 
 // Sizes
 ".wFill":{
@@ -50,6 +68,19 @@ overrode the settings with other TSS, XML, or JS settings:
 ".Size":{
 	width: Ti.UI.SIZE,
 	height: Ti.UI.SIZE
+}
+
+".iOSwindowTop[if=Alloy.Globals.isIOS]":{
+    top: 25
+}
+//layouts
+
+".vlayout":{
+    layout: 'vertical'
+}
+
+".hlayout":{
+    layout: 'horizontal'
 }
 
 //Separators
@@ -93,6 +124,7 @@ overrode the settings with other TSS, XML, or JS settings:
 	color: "blue"
 }
 
+
 ".validationButton" : {
     color: "white",
     backgroundColor: "rgb(55,67,121)",
@@ -117,4 +149,27 @@ overrode the settings with other TSS, XML, or JS settings:
     fontSize: 16
   },
   color: "rgb (55 ,67 ,121)"
+}
+"Window[platform=android]":{
+    theme : 'Theme.AppCompat.NoTitleBar',
+    top: 25
+}
+
+"Window[platform=ios]":{
+  navBarHidden: "true",
+}
+
+'.navBar': {
+  backgroundGradient: {
+    type: "linear",
+    startPoint: {
+        x : '50%',
+        y : '0%'
+    },
+    endPoint: {
+      x: '50%',
+      y : '100%'
+    },
+    colors: ["#141e56", "#6e7db2"]
+  },
 }

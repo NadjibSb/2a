@@ -1,8 +1,8 @@
 // Arguments passed into this controller can be accessed via the `$.args` object directly or:
-
-// import
-import {log} from '/config/logger'
-
+var log = require( 'utility/logger' )( {
+		tag: "Home_index",
+		hideLog: false
+	} );
 // variable
 var args = $.args;
 

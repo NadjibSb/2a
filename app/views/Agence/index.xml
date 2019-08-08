@@ -1,0 +1,7 @@
+<Alloy>
+  <Window>
+    <View id="container">
+      <Label>Agence</Label>
+  	</View>
+  </Window>
+</Alloy>

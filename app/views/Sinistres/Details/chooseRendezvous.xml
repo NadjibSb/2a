@@ -1,0 +1,42 @@
+<Alloy>
+    <View id="expertslistContainer" class=" background">
+        <View class="container vlayout">
+            <View class="hSize" >
+                <ImageView id="btclose" onClick="close"></ImageView>
+            </View>
+            <View class="content vlayout">
+                <Label id="title"></Label>
+                <ListView id="listView" class="noBackground">
+                    <Templates>
+                        <ItemTemplate name="rendezvousTemplate" class="noBackground">
+                            <View class="itemContainer vlayout hSize">
+                                <View class="hSize hlayout">
+                                    <Label class="itemText" text="L('sinistres_rendezvous_expert')"></Label>
+                                    <Label class="expertName" bindId="expertName"></Label>
+                                </View>
+                                <View class="hSize hlayout marginTop">
+                                    <Label class="itemText" text="L('sinistres_rendezvous_agence')"></Label>
+                                    <Label class="itemText" bindId="agenceName"></Label>
+                                </View>
+                                <View class="hSize hlayout marginTop">
+                                    <Label class="date" bindId="date"></Label>
+                                </View>
+                                <View class="hSize btnContainer">
+                                    <View class="detailsContainer hSize wSize hlayout">
+                                        <ImageView class="imgdetails"></ImageView>
+                                        <Label class="lbdetails" text="L('sinistres_rendezvous_details_agence')"></Label>
+                                    </View>
+                                    <View class="btchoose" bindId="button">
+                                        <Label class="lbchoose" bindId="buttonText"></Label>
+                                    </View>
+                                </View>
+                                <ImageView class="hSize" image="/images/line_separation_grey.png"></ImageView>
+                            </View>
+                        </ItemTemplate>
+                    </Templates>
+                    <ListSection id="rendezvousSection"></ListSection>
+                </ListView>
+            </View>
+        </View>
+    </View>
+</Alloy>

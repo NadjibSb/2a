@@ -1,0 +1,7 @@
+<Alloy>
+  <Window>
+    <View id="container">
+      <Label> contract </Label>
+  	</View>
+  </Window>
+</Alloy>

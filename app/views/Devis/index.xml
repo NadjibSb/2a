@@ -1,0 +1,7 @@
+<Alloy>
+  <Window>
+    <View id="container">
+      <Label> Devis </Label>
+  	</View>
+  </Window>
+</Alloy>

@@ -1,0 +1,119 @@
+
+".container" : {
+    title: "onBoarding",
+}
+
+
+'.logoContainer': {
+    height: "37%"
+}
+
+'#logo': {
+    image: "/images/logo_2a_blue.png",
+}
+
+
+'#separator': {
+    bottom: 0,
+    height: 5,
+    backgroundColor: Alloy.CFG.design.colors.SecondaryColor,
+}
+
+
+"#treePoint" : {
+	height : 20,
+	width : 46,
+    bottom: 135,
+},
+
+".point" :{
+	borderRadius: 5,
+	width: 10,
+	height: 10,
+	backgroundColor : "white",
+	opacity : 0.5
+},
+"#point1": {
+	left : 0
+},
+"#point2" : {
+	left : 18
+},
+"#point3" : {
+	left : 36
+},
+
+"#btStart" : {
+    bottom: 40,
+	width : 325,
+	height : 45,
+	borderRadius : 5,
+	backgroundColor : "rgb(241,238,238)",
+    font: {
+        fontFamily: Alloy.CFG.design.fonts.Medium,
+        fontSize: 16
+    },
+    color: Alloy.CFG.design.fonts.PrimaryColor,
+    title: L('on_boarding_btn_next')
+
+},
+
+
+'.text': {
+    top: 16,
+    font: {
+        fontFamily: Alloy.CFG.design.fonts.Medium,
+        fontSize: 14
+    },
+    textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+    wordWrap: true,
+    color: 'white',
+    width: "75%"
+}
+
+'.title': {
+    top: 50,
+    font: {
+        fontFamily: Alloy.CFG.design.fonts.Medium,
+        fontSize: 22,
+    },
+    textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+    color: 'white',
+    width: "90%",
+}
+
+// First View
+'#view1': {
+    backgroundImage: "/images/img_onboarding_1.png"
+}
+'#title1': {
+    text: L("on_boarding_title_1")
+}
+
+'#text1': {
+    text: L("on_boarding_text_1")
+}
+
+// Second View
+'#view2': {
+    backgroundImage: "/images/img_onboarding_2.png"
+}
+'#title2': {
+    text: L("on_boarding_title_2")
+}
+
+'#text2': {
+    text: L("on_boarding_text_2")
+}
+
+// Third view
+'#view3': {
+    backgroundImage: "/images/img_onboarding_1.png"
+}
+'#title3': {
+    text: L("on_boarding_title_3")
+}
+
+'#text3': {
+    text: L("on_boarding_text_3")
+}

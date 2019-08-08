@@ -1,0 +1,123 @@
+
+".container" : {
+
+}
+
+'.tabButton': {
+    height: 50,
+    width: "48%",
+    borderRadius: 5,
+}
+
+'.marging': {
+    top: 16,
+    left: 16,
+    right: 16
+}
+
+'.enabled': {
+    backgroundColor: Alloy.CFG.design.colors.PrimaryColor,
+}
+
+'.disabled': {
+    borderWidth: 2,
+    borderRadius: 5,
+    borderStyle: Ti.UI.INPUT_BORDERSTYLE_NONE,
+    borderColor: Alloy.CFG.design.colors.PrimaryColor,
+}
+
+'.btTitle': {
+    font: {
+        fontSize: 16,
+        fontFamily: Alloy.CFG.design.fonts.Medium
+    },
+}
+
+
+'#btMesSinistres': {
+    right: "4%"
+}
+
+'#btHistorique': {
+}
+
+'.whiteFont': {
+    color: "white"
+}
+
+'.blueFont': {
+    color: Alloy.CFG.design.fonts.PrimaryColor
+}
+
+
+'.itemContainer': {
+    top: 16,
+    bottom: 16,
+    right: 32,
+    left: 32
+}
+
+'.imageContainer': {
+    width: 36,
+    height: 90,
+    backgroundColor: Alloy.CFG.design.colors.SecondaryColor,
+    borderRadius: 5,
+
+}
+
+'#sinistreList': {
+    separatorStyle: Ti.UI.TABLE_VIEW_SEPARATOR_STYLE_NONE,
+    top: 24
+}
+
+'.detailItem': {
+    left: 8,
+    height: "25%",
+}
+
+'.detailText': {
+    font: {
+        fontSize: 14,
+        fontFamily: Alloy.CFG.design.fonts.Light
+    },
+    color: Alloy.CFG.design.fonts.PrimaryColor
+}
+
+'.detailContent': {
+    font: {
+        fontSize: 14,
+        fontFamily: Alloy.CFG.design.fonts.Medium
+    },
+    color: Alloy.CFG.design.fonts.PrimaryColor
+}
+
+'.detailsContainer': {
+    height: 90
+}
+
+'#contentView': {
+}
+
+'#creatSinistre': {
+    bottom: 0,
+    backgroundColor: "rgba(55,67,121,0.93)",
+    height: 60
+}
+
+'#add_icon': {
+    image:"/images/icn_add_sinistre.png",
+    right: 16,
+}
+
+'#add_text': {
+    text: L('sinistres_create_sinistre'),
+    font: {
+        fontSize: 16,
+        fontFamily: Alloy.CFG.design.fonts.Medium
+    },
+    color: 'white'
+}
+
+'#navBar': {
+  title : "Mes sinistres",
+}

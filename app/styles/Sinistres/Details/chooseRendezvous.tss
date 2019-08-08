@@ -1,0 +1,123 @@
+'#expertslistContainer': {
+    bottom: 8,
+    left: 8,
+    right: 8,
+    height: 1,
+    opacity: 0,
+    viewShadowOffset: {x:0,y:1},
+    viewShadowColor: "gray",
+    visible: false
+}
+
+'#btclose': {
+    right: 8,
+    top:8,
+    image: "/images/icn_close_blue.png",
+    height: 16
+}
+
+'.content': {
+    right: 16,
+    left: 16,
+    bottom: 16,
+    top: 8,
+}
+
+'#title': {
+    text: L('sinistres_rendezvous_title'),
+    font: {
+        fontSize: 16,
+        fontFamily: Alloy.CFG.design.fonts.Heavy
+    },
+    color: Alloy.CFG.design.fonts.PrimaryColor
+}
+
+'#listView': {
+    separatorStyle: Ti.UI.TABLE_VIEW_SEPARATOR_STYLE_NONE,
+    top: 16
+}
+
+'.itemText': {
+    font: {
+        fontSize: 14,
+        fontFamily: Alloy.CFG.design.fonts.Light
+    },
+    color: Alloy.CFG.design.fonts.PrimaryColor
+}
+
+'.expertName': {
+    font: {
+        fontSize: 14,
+        fontFamily: Alloy.CFG.design.fonts.Medium
+    },
+    color: Alloy.CFG.design.fonts.PrimaryColor
+}
+
+
+'.date': {
+    font: {
+        fontSize: 12,
+        fontFamily: Alloy.CFG.design.fonts.Medium
+    },
+    color: Alloy.CFG.design.fonts.SecondaryColorLight
+}
+
+'.lbdetails': {
+    font: {
+        fontSize: 12,
+        fontFamily: Alloy.CFG.design.fonts.Medium
+    },
+    color: Alloy.CFG.design.fonts.SecondaryColorDark,
+}
+
+'.btnContainer': {
+    bottom: 8,
+    right: 8
+}
+
+'.asLabel': {
+    attributes: [
+        {
+            type: Ti.UI.ATTRIBUTE_UNDERLINES_STYLE,
+            value: Titanium.UI.ATTRIBUTE_UNDERLINE_STYLE_SINGLE,
+            range: [0,8]
+        }
+    ]
+}
+
+'.imgdetails': {
+    image: "/images/icn_localization_gold.png",
+    width: 8,
+    right: 4
+}
+
+'.detailsContainer': {
+    right: 110
+}
+
+'.btchoose': {
+    height: 35,
+    width: 95,
+    right: 0,
+    borderRadius: 5
+}
+
+'.marginTop': {
+    top: 8
+}
+
+'.itemContainer': {
+    top: 16
+}
+
+'.lbchoose': {
+    font: {
+        fontSize: 13,
+        fontFamily: Alloy.CFG.design.fonts.Medium
+    },
+    color: 'white'
+}
+
+'.container': {
+    backgroundColor: "rgba(255,255,255,0.2)",
+}

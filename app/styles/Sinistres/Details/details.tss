@@ -1,0 +1,90 @@
+
+
+'#topBar': {
+    height: 55,
+    top: 0,
+    backgroundColor: 'white',
+}
+
+'#topBar_img': {
+    image: "/images/icn_house_blue_title.png",
+    right: 16
+}
+
+'#topBar_text': {
+    font: {
+        fontSize: 18,
+        fontFamily: Alloy.CFG.design.fonts.Heavy
+    },
+    color: Alloy.CFG.design.fonts.PrimaryColor,
+    bottom: 0
+}
+
+'.details': {
+    top: 16,
+    left: 32,
+    right: 32
+}
+
+'.separator': {
+    height: 1,
+    backgroundColor: "rgba(151,151,151,0.2)"
+}
+
+'.textItem': {
+    top: 16,
+    left: 0,
+    bottom: 8,
+    font: {
+        fontSize: 14,
+        fontFamily: Alloy.CFG.design.fonts.Light
+    },
+    color: Alloy.CFG.design.fonts.PrimaryColor,
+}
+
+'#num_contrat': {
+    text: L('sinistres_details_num_contrat')
+}
+
+'#adresse': {
+    text: L('sinistres_details_adresse')
+}
+
+'#date': {
+    text: L('sinistres_details_num_contrat')
+}
+
+'#lieu': {
+    text: L('sinistres_details_lieu')
+}
+
+'#degats': {
+    text: L('sinistres_details_degats')
+}
+
+'#circonstances': {
+    text: L('sinistres_details_circonstances')
+}
+
+'#status': {
+    text: L('sinistres_details_status')
+}
+
+
+'#btRendezvous': {
+    backgroundColor: Alloy.CFG.design.colors.PrimaryColor,
+    borderRadius: 5,
+    height: 50,
+    top: 48,
+    bottom: 16,
+    left: 32,
+    right: 32
+}
+
+'#btRendezvousText': {
+    color: 'white',
+    font: {
+        fontSize: 16,
+        fontFamily: Alloy.CFG.design.fonts.Medium
+    }
+}

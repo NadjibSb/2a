@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Ressources>
+	<string name="language_app">en</string>
+
+	<!-- HTTP ERROR -->
+	<string name="HTTP_CLIENT_NETWORK_TIMEOUT">Merci de vérifier votre connexion internet.</string>
+	<string name="HTTP_CLIENT_NETWORK_OFFLINE">Merci de vérifier votre connexion internet.</string>
+	<string name="HTTP_CLIENT_URL_NOT_FOUND">Une erreur s'est produite, merci de réessayer plus tard.</string>
+	<string name="HTTP_CLIENT_REQUEST_ERROR">Une erreur s'est produite, merci de réessayer plus tard.</string>
+	<string name="HTTP_CLIENT_API_ERROR">Une erreur s'est produite, merci de réessayer plus tard.</string>
+	<string name="HTTP_CLIENT_ERROR_ONLOAD">Une erreur s'est produite, merci de réessayer plus tard.</string>
+	<string name="HTTP_CLIENT_SUCCESS_CALLBACK_ERROR">Une erreur s'est produite, merci de réessayer plus tard.</string>
+	<string name="HTTP_CLIENT_ERROR_ONERROR">Une erreur s'est produite, merci de réessayer plus tard.</string>
+	<string name="HTTP_CLIENT_ERROR_SEND">Une erreur s'est produite, merci de réessayer plus tard.</string>
+	<string name="HTTP_DEFAULT_ERROR">Une erreur s'est produite, merci de réessayer plus tard.</string>
+
+	<!-- on Boarding -->
+    <string name="on_boarding_btn_next">Suivant</string>
+    <string name="on_boarding_btn_begin">Commencer</string>
+    <string name="on_boarding_title_1">Bienvenu !</string>
+    <string name="on_boarding_text_1">Rejoigner My 2a, une application mobile qui permet au client d'avoir tous les services d'assurance sous la main là où ils veulent, quand ils veulent</string>
+    <string name="on_boarding_title_2">Prenez soin de vos déclarations</string>
+    <string name="on_boarding_text_2">Plus besoin de vous déplacer en agence pour déclarer vos sinistres, maintenant faites le à distance via votre application My2a App et un expert sera mis à votre disposition pour la visite</string>
+    <string name="on_boarding_title_3">Les indispensables</string>
+    <string name="on_boarding_text_3">My 2a vous facilite votre quotidien. vous n'aurez plus à vous soucier de l'échéancier de vos contrats d'assurances, du contrôle technique de votre véhicule et bien d'autres tâches selon vos besoins</string>
+
+	<!-- Sinistres index -->
+    <string name="sinistres_type">Type de sinistres : </string>
+    <string name="sinistres_num_contrat">Nº de Contrat : </string>
+    <string name="sinistres_date">Date de sinistre : </string>
+    <string name="sinistres_status">Status : </string>
+    <string name="sinistres_create_sinistre">Déclarer un sinistre</string>
+    <string name="sinistres_MesSinistres">Mes sinistes</string>
+    <string name="sinistres_Hisorique">Hisorique</string>
+
+	<!-- Sinistres details -->
+    <string name="sinistres_details_num_contrat">Numéro de contrat : </string>
+    <string name="sinistres_details_adresse">Adresse du bien : </string>
+    <string name="sinistres_details_date">Date de sinistre : </string>
+    <string name="sinistres_details_lieu">Lieu de sinistre : </string>
+    <string name="sinistres_details_degats">Nature des dégats : </string>
+    <string name="sinistres_details_circonstances">Circonstances de l'accident : </string>
+    <string name="sinistres_details_status">Status : </string>
+    <string name="sinistres_details_btn_choix_Rendezvous">Choisissez un rendez-vous</string>
+    <string name="sinistres_details_btn_change_Rendezvous">Changer de rendez-vous</string>
+    <string name="sinistres_details_note_btn">Attentions !</string>
+    <string name="sinistres_details_note_btn_enable_text">Le changement n'est plus possible à partir de 24h avant la date de rendez-vous choisie.</string>
+    <string name="sinistres_details_note_btn_disable_text">Vous ne pouvez plus changer de rendez-vous</string>
+    <string name="sinistres_details_expert">Expert choisi : </string>
+    <string name="sinistres_details_date_rendezvous">Date de rendez-vous : </string>
+    <string name="sinistres_details_tlf">Nº de téléphone : </string>
+    <string name="sinistres_details_follow_expert">Suivez votre expert sur carte</string>
+    <string name="sinistres_details_note_map">Cette option sera active 30min avant le rendez-vous avec votre expert</string>
+    <string name="sinistres_details_btn_expertise_done">Marquez comme expertise réalisé</string>
+    <string name="sinistres_details_btn_expertise_done_note">Appuiyez sur ce bouton pour confirmer la réalisation de l'expertise (juste après la visite de l'expert).</string>
+
+	<!-- Sinistres details -->
+    <string name="sinistres_rendezvous_title">Choisissez la proposition de rendez-vous de l'expert qui vous convient.</string>
+    <string name="sinistres_rendezvous_expert">Expert : </string>
+    <string name="sinistres_rendezvous_agence">Agence : </string>
+    <string name="sinistres_rendezvous_details_agence">Détails sur l'agence</string>
+    <string name="sinistres_rendezvous_btn_accepte">Accepter</string>
+    <string name="sinistres_rendezvous_btn_accepted">Accepté</string>
+
+
+</Ressources>

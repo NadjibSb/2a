@@ -1,0 +1,20 @@
+<Alloy>
+	<TabGroup id="tabGroup" backgroundColor = "white" platform="ios">
+		<Tab id="contractTab">
+			<Require src="/Sinistres/index" type="view"/>
+		</Tab>
+		<Tab id="devisTab">
+			<Require src="/Sinistres/index" type="view"/>
+		</Tab>
+		<Tab id="sinistreTab" >
+			<Require src="/Sinistres/index" type="view"/>
+		</Tab>
+		<Tab id="agenceTab">
+			<Require src="/Sinistres/index" type="view"/>
+		</Tab>
+		<Tab id="diversTab" >
+			<Require src="/Sinistres/index" type="view"/>
+		</Tab>
+	</TabGroup>
+	<Widget id="tabGroup" src="customTabHost" platform="android"/>
+</Alloy>

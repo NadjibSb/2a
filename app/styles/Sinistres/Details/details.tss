@@ -91,6 +91,6 @@
 }
 
 '#navBar': {
-    title: "Détails sinistres",
+    title: L('sinistres_details_title'),
     leftIcon: "/images/icn_topbar_back.png"
 }

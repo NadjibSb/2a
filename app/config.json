@@ -11,7 +11,7 @@
             "fonts":{
                 "PrimaryColor": "rgb(18,20,83)",
                 "SecondaryColorLight": "rgb(202,154,117)",
-                "SecondaryColorDark": "rgb(205,126,67)",
+                "SecondaryColorDark": "#cd7e43",
                 "GreenColor": "rgb(28,153,87)",
                 "Medium":"AvenirLTStd-Medium",
                 "Black":"AvenirLTStd-Black",

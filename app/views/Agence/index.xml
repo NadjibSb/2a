@@ -1,7 +1,7 @@
 <Alloy>
   <Window>
     <View id="container">
-      <Label>Agence</Label>
+      <Label onClick="onclock">Agence knblkl</Label>
   	</View>
   </Window>
 </Alloy>

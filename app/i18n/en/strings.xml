@@ -25,6 +25,7 @@
     <string name="on_boarding_text_3">My 2a vous facilite votre quotidien. vous n'aurez plus à vous soucier de l'échéancier de vos contrats d'assurances, du contrôle technique de votre véhicule et bien d'autres tâches selon vos besoins</string>
 
 	<!-- Sinistres index -->
+    <string name="sinistres_title">Mes sinistres</string>
     <string name="sinistres_type">Type de sinistres : </string>
     <string name="sinistres_num_contrat">Nº de Contrat : </string>
     <string name="sinistres_date">Date de sinistre : </string>
@@ -34,6 +35,7 @@
     <string name="sinistres_Hisorique">Hisorique</string>
 
 	<!-- Sinistres details -->
+    <string name="sinistres_details_title">Détails sinistres</string>
     <string name="sinistres_details_num_contrat">Numéro de contrat : </string>
     <string name="sinistres_details_adresse">Adresse du bien : </string>
     <string name="sinistres_details_date">Date de sinistre : </string>
@@ -54,13 +56,21 @@
     <string name="sinistres_details_btn_expertise_done">Marquez comme expertise réalisé</string>
     <string name="sinistres_details_btn_expertise_done_note">Appuiyez sur ce bouton pour confirmer la réalisation de l'expertise (juste après la visite de l'expert).</string>
 
-	<!-- Sinistres details -->
+	<!-- Sinistres details rendezvous -->
     <string name="sinistres_rendezvous_title">Choisissez la proposition de rendez-vous de l'expert qui vous convient.</string>
     <string name="sinistres_rendezvous_expert">Expert : </string>
     <string name="sinistres_rendezvous_agence">Agence : </string>
     <string name="sinistres_rendezvous_details_agence">Détails sur l'agence</string>
     <string name="sinistres_rendezvous_btn_accepte">Accepter</string>
     <string name="sinistres_rendezvous_btn_accepted">Accepté</string>
+
+    <!-- Agences -->
+
+
+    <!-- Agences details -->
+    <string name="agence_details_title">Détails de l'agence</string>
+    <string name="agence_details_agence_code">Code de l'agence : </string>
+    <string name="agence_details_see_maps">Voir sur la carte</string>
 
 
 </Ressources>

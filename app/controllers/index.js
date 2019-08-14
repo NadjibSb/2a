@@ -25,7 +25,7 @@ session.login(
 */
 // end of exemple -------------------------
 
-//Alloy.createController("/onBoarding/index").getView().open();
+Alloy.createController("/onBoarding/index").getView().open();
 //Alloy.createController("/Home/index").getView().open();
 //Alloy.createController("/Sinistres/index").getView().open();
 //Alloy.createController("/Sinistres/Details/details").getView().open();

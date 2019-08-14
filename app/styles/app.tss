@@ -40,7 +40,7 @@ overrode the settings with other TSS, XML, or JS settings:
 }
 
 '.noBackground': {
-    backgroundColor: "rgba(0,0,0,0)"
+    backgroundColor: "rgba(1,0,0,0)"
 }
 
 // Sizes

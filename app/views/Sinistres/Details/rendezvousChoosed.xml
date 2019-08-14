@@ -13,11 +13,12 @@
                 <Label id="dateRendezvous" class="textItem hSize"></Label>
                 <View class="separator"></View>
             </View>
-            <View class="vlayout hSize">
+            <View class="vlayout hSize" onClick="phoneCall">
                 <Label id="numtlf" class="textItem hSize"></Label>
                 <View class="separator"></View>
             </View>
         </View>
+        
         <View class="mapContainer hSize vlayout">
             <Label class="mapText" text="L('sinistres_details_follow_expert')"></Label>
             <ImageView id="icn_arrow"></ImageView>

@@ -35,10 +35,11 @@
 
 
 '#btMesSinistres': {
-    right: "4%"
+    left: 0
 }
 
 '#btHistorique': {
+    right: 0
 }
 
 '.whiteFont': {
@@ -67,7 +68,7 @@
 
 '#sinistreList': {
     separatorStyle: Ti.UI.TABLE_VIEW_SEPARATOR_STYLE_NONE,
-    top: 24
+    top: 24,
 }
 
 '.detailItem': {
@@ -116,6 +117,10 @@
         fontFamily: Alloy.CFG.design.fonts.Medium
     },
     color: 'white'
+}
+
+'#bottomMargin': {
+    bottom: 60,
 }
 
 '#navBar': {

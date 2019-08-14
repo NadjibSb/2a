@@ -12,11 +12,10 @@
   <fullscreen>false</fullscreen>
   <navbar-hidden>false</navbar-hidden>
   <analytics>true</analytics>
-  <!-- Iselm -->
-  <guid>51c8f22d-bf81-4570-9999-a01554cbfc65</guid>
-  <!--nadjib
+  <!-- Iselm 
+  <guid>51c8f22d-bf81-4570-9999-a01554cbfc65</guid>-->
+  <!--nadjib-->
   <guid>a5aedf31-be3d-4fd4-9444-1459404ae74f</guid>
--->
   <property name="ti.ui.defaultunit" type="string">dp</property>
   <property name="run-on-main-thread" type="bool">true</property>
   <ios>

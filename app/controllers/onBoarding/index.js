@@ -30,6 +30,7 @@ function onScroll(e){
 function btnClicked(e){
     if ($.scrollableView.currentPage == 2) {
         log("Go to Login");
+        Alloy.createController("/Sinistres/index").getView().open();
     }else {
         $.scrollableView.moveNext();
     }

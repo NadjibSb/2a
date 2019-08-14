@@ -1,0 +1,36 @@
+"#tabViewContainer": {
+	width : "20%",
+	height : Titanium.UI.FILL,
+	backgroundColor: '#FCFCFC',
+	horizontalWrap : false,
+
+}
+
+"#tabIcon": {
+	top:10,
+	height : 21,
+	top : 5,
+	defaultImage : ""
+}
+
+"#tabTitle": {
+	top: 0,
+  bottom: 7,
+	font : {
+		fontSize : 11,
+		fontFamily: Alloy.CFG.design.fonts.Medium,
+	},
+	wordWrap : false
+}
+
+"#tabSeparator": {
+	width : 0.5,
+	top : 15,
+	bottom : 15,
+	right : 0,
+	backgroundColor : "#FCFCFC"
+}
+
+'#IconTitleContainer': {
+  top: 10
+}

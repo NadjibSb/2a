@@ -1,0 +1,16 @@
+<Alloy>
+	<View id="navBarContainer" class="backgroundGradient">
+		<Label id="titleWindow" class="navBarTitle" />
+		<View id="separator" />
+		<View id="zoneClickRight" module="module/touchView" onClick="rightButtonClick">
+			<View class="iconContainer" right="16">
+				<ImageView id="rightButton" class="touchDisable" />
+			</View>
+		</View>
+		<View id="zoneClickLeft" module="module/touchView" onClick="leftButtonClick">
+			<View class="iconContainer" left="16">
+				<ImageView id="leftButton" class="touchDisable" />
+			</View>
+		</View>
+	</View>
+</Alloy>

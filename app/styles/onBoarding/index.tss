@@ -1,7 +1,6 @@
 
 ".container" : {
     title: "onBoarding",
-    navBarHidden: false
 }
 
 

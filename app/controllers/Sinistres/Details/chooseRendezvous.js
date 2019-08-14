@@ -11,8 +11,8 @@ var log = require( 'utility/logger' )( {
 
     for (var i = 0; i <6; i++) {
         var bg,text;
-        i%2==0 ? bg=Alloy.CFG.design.colors.SecondaryColor : bg="rgb(176,176,176)";
-        i%2==0 ? text = L('sinistres_rendezvous_btn_accepte') : text = L('sinistres_rendezvous_btn_accepted');
+        i==2 ? bg="rgb(176,176,176)" : bg=Alloy.CFG.design.colors.SecondaryColor;
+        i==2 ? text = L('sinistres_rendezvous_btn_accepted') : text = L('sinistres_rendezvous_btn_accepte');
 
         data.push({
             template: 'rendezvousTemplate',
@@ -30,25 +30,25 @@ var log = require( 'utility/logger' )( {
 
 // open the rendezvous view to select an expert
 exports.open =  function open(){
-    //$.expertslistContainer.height = '5%';
+    //$.expertslistContainer.height = "97%";
+    //$.expertslistContainer.opacity =  1;
+    log("enter " + $.expertslistContainer.height);
     $.expertslistContainer.show();
     // restore scale
-    var matrix2d = Ti.UI.create2DMatrix();
-    matrix2d = matrix2d.scale(1);
+    var matrix2d = Ti.UI.createMatrix2D();
+    matrix2d = matrix2d.scale(1,1);
     $.expertslistContainer.animate({
           duration: 1,
           transform: matrix2d
         },()=>{
+            log("visible "+$.expertslistContainer.visible);
             $.expertslistContainer.animate({
-                height : '98%',
+                height : '97%',
                 top:8,
                 opacity:1,
                 duration: 300,
             });
     });
-
-    // animate
-
 }
 
 // privates functions
@@ -56,8 +56,9 @@ exports.open =  function open(){
 
 // close rendezvous view
 function close(e){
-    var matrix2d = Ti.UI.create2DMatrix();
-    matrix2d = matrix2d.scale(0.2);
+    //$.expertslistContainer.hide();
+    var matrix2d = Ti.UI.createMatrix2D();
+    matrix2d = matrix2d.scale(0.2,0.2);
     $.expertslistContainer.animate({
           top: "100%",
           opacity:0.1,
@@ -67,5 +68,5 @@ function close(e){
             $.expertslistContainer.hide();
     });
     // renvoie du close event
-    $.trigger('close', _.extend(e,{id:"test"}));
+    $.trigger('close', _.extend(e.source,{id:"test"}));
 }

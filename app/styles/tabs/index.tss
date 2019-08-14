@@ -1,0 +1,36 @@
+
+".container" : {
+
+}
+"#contractTab":{
+  activeIcon: "/images/icn_checkhand_blue_tapbar.png" ,
+  icon: "/images/icn_checkhand.png",
+	title: "Contracts"
+}
+
+"#devisTab": {
+  activeIcon:"/images/icn_devis_blue_tabbar.png" ,
+  icon: "/images/icn_devis.png",
+	title:"Devis & Achat"
+}
+
+"#sinistreTab": {
+  activeIcon: "/images/icn_sinistre_blue_tabbar.png",
+  icon: "/images/icn_sinistre_grey.png",
+	title: "Sinistres"
+}
+
+"#agenceTab": {
+  activeIcon: "/images/icn_localization_blue_tabbar.png",
+  icon: "/images/icn_localization_grey_tapbar.png",
+	title: "Agences 2a"
+}
+
+"#diversTab": {
+  activeIcon:"/images/icn_divers_blue.png" ,
+  icon: "/images/icn_divers_grey_tapbar.png",
+	title: "Divers"
+}
+'TabGroup': {
+  navBarHidden: true,
+}

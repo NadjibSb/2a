@@ -81,10 +81,16 @@
     right: 32
 }
 
+
 '#btRendezvousText': {
     color: 'white',
     font: {
         fontSize: 16,
         fontFamily: Alloy.CFG.design.fonts.Medium
     }
+}
+
+'#navBar': {
+    title: "Détails sinistres",
+    leftIcon: "/images/icn_topbar_back.png"
 }

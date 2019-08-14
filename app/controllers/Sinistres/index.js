@@ -2,7 +2,8 @@
 var log = require( 'utility/logger' )( {
 		tag: "Sinistres_index",
 		hideLog: false
-	} );
+	} ),
+    navManager = require("/utility/navmanager");
 
 var data = [];
 var _data = [];
@@ -97,9 +98,14 @@ function displayHistorique(e){
 }
 
 function creatSinistre(e){
-    Alloy.createController("/Sinistres/Details/details").getView().open();
+    //Alloy.createController("/Sinistres/Details/details").getView().open();
+    log("Create Sinistre");
 }
 
 function onItemclick(e){
     log(e.itemIndex);
+    navManager.openWindow("/Sinistres/Details/details");
+}
+
+function pressBack(e){
 }

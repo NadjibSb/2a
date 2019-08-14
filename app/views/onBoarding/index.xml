@@ -1,6 +1,6 @@
 <Alloy>
 	<Window class="container background androidNoActionBar iosMarginTop">
-        <View class="vlayout">
+        <View id="container" class="vlayout">
             <View class="logoContainer">
                 <ImageView id="logo"></ImageView>
                 <View id="separator"></View>

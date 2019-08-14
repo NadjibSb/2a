@@ -26,4 +26,5 @@ exports.close = function(){
 
 function phoneCall(e){
     Ti.Platform.openURL("tel:0552469175");
+    Ti.API.info("call");
 }

@@ -123,3 +123,26 @@ overrode the settings with other TSS, XML, or JS settings:
 ".txtBlue":{
 	color: "blue"
 }
+"Window[platform=android]":{
+    theme : 'Theme.AppCompat.NoTitleBar',
+    top: 25
+}
+
+"Window[platform=ios]":{
+  navBarHidden: "true",
+}
+
+'.navBar': {
+  backgroundGradient: {
+    type: "linear",
+    startPoint: {
+        x : '50%',
+        y : '0%'
+    },
+    endPoint: {
+      x: '50%',
+      y : '100%'
+    },
+    colors: ["#141e56", "#6e7db2"]
+  },
+}

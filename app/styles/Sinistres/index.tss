@@ -122,3 +122,7 @@
 '#bottomMargin': {
     bottom: 60,
 }
+
+'#navBar': {
+  title : "Mes sinistres",
+}

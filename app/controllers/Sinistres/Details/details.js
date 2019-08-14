@@ -1,9 +1,10 @@
 // Dependencies
-var log = require( 'utility/logger' )( {
+var log = require( 'utility/logger' )({
 		tag: "Sinistres_details",
 		hideLog: false
-	} );
-var str = require('/utility/stringUtil');
+	}),
+    str = require('/utility/stringUtil'),
+    navManager = require("/utility/navmanager");
 
 // varriables----------------------------------------------
 const WITHRAWN_STATE = 0;
@@ -21,12 +22,12 @@ const ONGOING_DISABLED_STATE = 3;
         date: "13/02/2019",
         lieu: "Mosta",
         degats: 'blzlk v lknvre noknr',
-        circonstances: "langyue langue text, langyue langue text, langyue langue text, langyue langue text, langyue langue text, langyue langue text,",
+        circonstances: "long text, long text, long text, long text, long text, long text, long text, long text, long text, long text, long text, long text, ",
         status: "activé"
     };
     UIsetup(sinistre);
     //updateView(ONGOING_DISABLED_STATE);
-    updateView(ONGOING_ENABLED_STATE);
+    updateView(ACTIVE_STATE);
 
 })();
 
@@ -35,7 +36,7 @@ const ONGOING_DISABLED_STATE = 3;
 function openRendezvousView(e){
     $.rendezvousView.open();
     setTimeout(function(){
-        //updateView(ONGOING_DISABLED_STATE);
+        updateView(ONGOING_ENABLED_STATE);
     }, 1000);
 
 }
@@ -91,4 +92,8 @@ function UIsetup(sinistre){
     str.labelStyling($.degats,sinistre.degats);
     str.labelStyling($.circonstances,sinistre.circonstances);
     str.labelStyling($.status,sinistre.status,'red');
+}
+
+function pressBack(e){
+    navManager.closeWindow($.details);
 }

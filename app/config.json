@@ -20,7 +20,7 @@
             }
 
         },
-        "environment": "prod"
+        "environment": "dev"
     },
 	"env:development": {},
 	"env:test": {},
@@ -28,5 +28,8 @@
 	"os:android": {},
 	"os:ios": {},
 	"os:windows": {},
-	"dependencies": {}
+	"dependencies": {
+    "customTabHost": "1.0",
+    "customNavBar": "*"
+  }
 }

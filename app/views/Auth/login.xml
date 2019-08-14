@@ -8,8 +8,9 @@
       <Widget src="dzmob.widget.TextField" id="textFieldEmail" ></Widget>
       <Widget src="dzmob.widget.TextField" id="textFieldPassword"></Widget>
       <Button id="btnLogin" class="validationButton" onClick="clickLogin" ></Button>
-      <Label id="lbForgotPassword" module="module/underlineText" onClick="clickForgot"></Label>
       <Label id="labelInscrire" module="module/underlineText" onClick="clickInscrire"></Label>
+      <Label id="lbForgotPassword" module="module/underlineText" onClick="clickForgot"></Label>
+      <Widget src="customIndicator" id="activityIndicator" blockScreen="true"/>
   	</View>
   </Window>
 </Alloy>

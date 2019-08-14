@@ -19,8 +19,7 @@
                 "Heavy":"AvenirLTStd-Heavy"
             }
 
-        },
-        "environment": "dev"
+        }
     },
 	"env:development": {},
 	"env:test": {},
@@ -29,7 +28,7 @@
 	"os:ios": {},
 	"os:windows": {},
 	"dependencies": {
-
+    "customIndicator": "*",
     "dzmob.widget.TextField": "*",
     "customTabHost": "1.0",
     "customNavBar": "*"

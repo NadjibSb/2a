@@ -148,7 +148,7 @@ overrode the settings with other TSS, XML, or JS settings:
   font: {
     fontSize: 16
   },
-  color: "rgb (55 ,67 ,121)"
+  color: "#374379",
 }
 "Window[platform=android]":{
     theme : 'Theme.AppCompat.NoTitleBar',
@@ -173,3 +173,22 @@ overrode the settings with other TSS, XML, or JS settings:
     colors: ["#141e56", "#6e7db2"]
   },
 }
+
+
+".fontMedium" : {
+  font: {
+    fontFamily : Alloy.CFG.design.fonts.Medium,	
+  }
+}
+".fontLight" : {
+  font: {
+    fontFamily : Alloy.CFG.design.fonts.Light,	
+  }
+}
+
+".fontHeavy" : {
+  font: {
+    fontFamily : Alloy.CFG.design.fonts.Heavy,	
+  }
+}
+

@@ -1,3 +1,7 @@
+const log = require('/utility/logger')({
+	tag : "module/textunderline",
+	hidelag : false
+  })
 // PUBLIC INTERFACE
 var $ = module.exports = {
 	createLabel: createLabel,

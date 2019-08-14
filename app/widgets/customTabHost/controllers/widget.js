@@ -45,7 +45,7 @@ $.init = function() {
 	// onglet:
 	var ContractTabController = createTabViewController({
 		title :"Contract",
-		defaultIcon : "/images/icn_checkhand.png",
+		defaultIcon : "/images/icn_checkhand_grey_tapbar.png",
 		selectedIcon : "/images/icn_checkhand_blue_tapbar.png",
 		tabIndex : 0
 	});

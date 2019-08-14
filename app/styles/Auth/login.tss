@@ -10,9 +10,9 @@
 	errorColor : "red",
 	focusBarColor : "rgb(55, 67, 121)",
 	blurBarColor : "rgb(151, 151, 151)",
-	validations : {email : ""},
+	validations : {emailTel : ""},
 	autocapitalization : Titanium.UI.TEXT_AUTOCAPITALIZATION_NONE,
-	errorMessage : "L’adresse e-mail saisie n’est pas valide.",
+	errorMessage : "L’adresse e-mail ou telephone saisie n’est pas valide.",
   defaultErrorMessage : "remplie le champ de mail ou N° Telephone",
 	keyboardType : Titanium.UI.KEYBOARD_TYPE_EMAIL,
 },
@@ -26,7 +26,7 @@
 	errorColor : "red",
 	focusBarColor : "rgb(55, 67, 121)",
 	blurBarColor : "rgb(151, 151, 151)",
-	validations : {length : 8},
+	validations:{length : 8},
 	errorMessage : "Votre mot de passe doit avoir une longueur de 8 caractères minimum.",
   defaultErrorMessage : "remplie le champ Mot de passe"
 },
@@ -75,11 +75,21 @@
   top: 259,
 }
 
-'#labelInscrire': {
-  top: 665,
+'#labelInscrire[platform=android]': {
+  top: 610,
   right: 25,
-	font : {fontSize : 20},
-	color : "rgb (55 ,67 ,121)",
-	text : "S’inscrire",
+    font : {fontSize : 20},
+	color : "#374379",
+    text : "S’inscrire",
 	underlineText:"S’inscrire"
 }
+'#labelInscrire[platform=ios]': {
+  top: 650,
+  right: 25,
+    font : {fontSize : 20},
+	color : "#374379",
+    text : "S’inscrire",
+	underlineText:"S’inscrire"
+}
+
+

@@ -220,8 +220,8 @@ function isValid() {
 
 	for (var key in validations) {
 		switch(key) {
-			case "email" :
-				if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(value)) {
+			case "emailTel" :
+				if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(value) && !/^(00213|\+213|0)(5|6|7)[0-9]{8}$/.test(value)) {
 					objectValid.message = errorMessage;
 					setInvalid(objectValid);
 					return false;
@@ -252,6 +252,27 @@ function isValid() {
 				break;
 			case "multipleChoice" :
 				if ($.tfInput.value ==  title) {
+					objectValid.message = errorMessage;
+					setInvalid(objectValid);
+					return false;
+				}
+				break;
+			case "email" :
+				if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(value)) {
+					objectValid.message = errorMessage;
+					setInvalid(objectValid);
+					return false;
+				}
+				break;
+			case "Tel" :
+				if (!/^(00213|\+213|0)(5|6|7)[0-9]{8}$/.test(value)) {
+					objectValid.message = errorMessage;
+					setInvalid(objectValid);
+					return false;
+				}
+				break;
+			case "lengthstrict" :
+				if (value.length != validations.length) {
 					objectValid.message = errorMessage;
 					setInvalid(objectValid);
 					return false;

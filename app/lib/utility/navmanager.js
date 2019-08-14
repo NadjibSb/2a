@@ -1,15 +1,19 @@
 var tabGroup;
 var stackController = [];
-var controllerGarbage;
-var test = "t";
+var tabGroupWindow;
 var currentNavWindow= null;
+const log = require('/utility/logger')({
+  tag : "navigation",
+  hidelag : false
+})
 
 // set Tabgroup
 exports.setTabGroup = function(path) {
   // sauvgarder tab group
   var controller = Alloy.createController(path, {});
+  tabGroupWindow = controller.getView();
 	tabGroup = controller.tabGroup;
-  //si android
+  //si androidf
 	if (OS_ANDROID) {
 		tabGroup.init();
 		tabGroup.on('tabChange', function(evt) {
@@ -29,6 +33,7 @@ exports.setTabGroup = function(path) {
 // open the window
 var openWindow = exports.openWindow = function(path,tabgroup=1,params=null) {
 	try {
+    log("avant create controller")
 		var controller = Alloy.createController(path, params);
     Ti.API.info("taille stack cont :"+tailleStack(stackController));
     // si tabgroup
@@ -77,7 +82,7 @@ var openWindow = exports.openWindow = function(path,tabgroup=1,params=null) {
     }
 		return controller;
 	} catch(e) {
-    Ti.API.info(e);
+    log(e);
 	}
 };
 
@@ -92,7 +97,7 @@ var closeWindow = exports.closeWindow = function(window,tabgroup=1) {
   	}
     // if not tab group
   }else{
-
+    window.close();
   }
 };
 
@@ -147,4 +152,8 @@ var updateTitle = function(evt) {
 
 	previousEvent = evt;
 	previousStackSize = currentStack.length;
+};
+
+exports.closetabGroup = function(){
+  tabGroupWindow.close();
 };

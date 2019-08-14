@@ -1,128 +1,168 @@
 
 ".container" : {
 }
-
+'.containerRegister':{
+	top : 33
+}
 '#labelIntro': {
   text: "Inscrivez-vous et bénéficiez de toutes\nnos offres",
-  top: 97,
-  left: 35
+  left: 35,
+  font: {
+	  fontSize : 16,
+	  fontWeight : "bold"	
+  }
 
 }
+
 
 '#labelClient': {
   text: "Êtes-vous un client ?",
-  top: 162,
-  left: 35
+  top: 26,
+  left: 35,
+  font: {
+	  fontSize : 16,
+	  fontWeight : "bold"	
+  }
 }
-
+'.clientContainer':{
+	top: 15
+}
 '#imageUnchecked': {
-  top: 196.5,
   left: 35
 }
 
 
 '#labelOuiClient': {
   text: "Oui",
-  top:196.5,
-  left: 62.9
+  left: 62.9,
+  font: {
+	  fontSize : 16,
+	  fontWeight : "bold"	
+  },
+  color : "#434e85"
 }
 
 
 '#imageChecked': {
-  top: 196.5,
   left: 120.4
 }
 
-
-
 '#labelNonClient': {
   text: "Non",
-  top:196.5,
-  left:149.9
+  left:149.9,
+  font: {
+	  fontSize : 16,
+	  fontWeight : "bold"	
+  },
+  color :"#434e85"
 }
 
 '#textFieldNumClient': {
-  hintText : "Saisissez votre numéro client *",
+    hintText : "Saisissez votre numéro client *",
 	errorColor : "red",
 	focusBarColor : "rgb(55, 67, 121)",
 	blurBarColor : "rgb(151, 151, 151)",
-	validations : {email : ""},
+	validations : {lengthstrict : 11},
 	autocapitalization : Titanium.UI.TEXT_AUTOCAPITALIZATION_NONE,
-	errorMessage : "L’adresse e-mail saisie n’est pas valide.",
-  defaultErrorMessage : "remplie le champ de mail ou N° Telephone",
-	keyboardType : Titanium.UI.KEYBOARD_TYPE_EMAIL,
+	errorMessage : "le Numéro Client saisie n’est pas valide.",
+    defaultErrorMessage : "champ requis",
+	keyboardType : Titanium.UI.KEYBOARD,
+	
 }
-
+".containerAllClientNum":{
+	height: 0
+}
+".containerRecuperation":{
+	top : 11,
+}
 '#recupNumClient': {
-  text: "Comment récupérer votre n°client"
+  right: 57,
+	font : {
+		fontSize : 12,
+		fontFamily : Alloy.CFG.design.fonts.Medium	
+	},
+	color : "#374379",
+	text : "Comment récupérer votre n°client",
+	underlineText:"Comment récupérer votre n°client"
 }
 
 
 '#iconNumClient': {
-  image: "/images/icn_help.png"
+  image: "/images/icn_help.png",
+  right: 33,
+  width: 19,
+  height: 19
 }
-
+".textFeildRegistre":{
+	right: 34,
+	left: 34
+}
 '#textFieldNom': {
-  hintText : "Saisissez votre numéro client *",
+  hintText : "Nom *",
 	errorColor : "red",
 	focusBarColor : "rgb(55, 67, 121)",
 	blurBarColor : "rgb(151, 151, 151)",
-	validations : {email : ""},
 	autocapitalization : Titanium.UI.TEXT_AUTOCAPITALIZATION_NONE,
 	errorMessage : "L’adresse e-mail saisie n’est pas valide.",
-  defaultErrorMessage : "remplie le champ de mail ou N° Telephone",
-	keyboardType : Titanium.UI.KEYBOARD_TYPE_EMAIL,
+    defaultErrorMessage : "champ requis",
 }
 
 '#textFieldPrenom': {
-  hintText : "Saisissez votre numéro client *",
+  hintText : "Prénom *",
 	errorColor : "red",
 	focusBarColor : "rgb(55, 67, 121)",
 	blurBarColor : "rgb(151, 151, 151)",
-	validations : {email : ""},
 	autocapitalization : Titanium.UI.TEXT_AUTOCAPITALIZATION_NONE,
 	errorMessage : "L’adresse e-mail saisie n’est pas valide.",
-  defaultErrorMessage : "remplie le champ de mail ou N° Telephone",
-	keyboardType : Titanium.UI.KEYBOARD_TYPE_EMAIL,
+    defaultErrorMessage : "champ requis",
 }
 
 '#textFieldNumTel': {
-  hintText : "Saisissez votre numéro client *",
+    hintText : "N°Téléphone *",
 	errorColor : "red",
 	focusBarColor : "rgb(55, 67, 121)",
 	blurBarColor : "rgb(151, 151, 151)",
-	validations : {email : ""},
+	validations : {Tel : ""},
 	autocapitalization : Titanium.UI.TEXT_AUTOCAPITALIZATION_NONE,
-	errorMessage : "L’adresse e-mail saisie n’est pas valide.",
-  defaultErrorMessage : "remplie le champ de mail ou N° Telephone",
-	keyboardType : Titanium.UI.KEYBOARD_TYPE_EMAIL,
+	errorMessage : "le N°Téléphone saisie n’est pas valide.",
+  defaultErrorMessage : "champ requis",
+	keyboardType : Ti.UI.KEYBOARD_NUMBER_PAD,
 }
 
 '#textFieldEmailR': {
-  hintText : "Saisissez votre numéro client *",
+  hintText : "Adresse e-mail *",
 	errorColor : "red",
 	focusBarColor : "rgb(55, 67, 121)",
 	blurBarColor : "rgb(151, 151, 151)",
 	validations : {email : ""},
 	autocapitalization : Titanium.UI.TEXT_AUTOCAPITALIZATION_NONE,
 	errorMessage : "L’adresse e-mail saisie n’est pas valide.",
-  defaultErrorMessage : "remplie le champ de mail ou N° Telephone",
+    defaultErrorMessage : "champ requis",
 	keyboardType : Titanium.UI.KEYBOARD_TYPE_EMAIL,
 }
 
 '#textFieldPasswordR': {
-  hintText : "Saisissez votre numéro client *",
+  hintText : "Mot de passe *",
 	errorColor : "red",
+	passwordMask : true,
 	focusBarColor : "rgb(55, 67, 121)",
 	blurBarColor : "rgb(151, 151, 151)",
-	validations : {email : ""},
+	validations : {length : 8},
 	autocapitalization : Titanium.UI.TEXT_AUTOCAPITALIZATION_NONE,
-	errorMessage : "L’adresse e-mail saisie n’est pas valide.",
-  defaultErrorMessage : "remplie le champ de mail ou N° Telephone",
-	keyboardType : Titanium.UI.KEYBOARD_TYPE_EMAIL,
+	errorMessage : "le mot de passe doit etre au minimum 8 caractère de longeur.",
+    defaultErrorMessage : "champ requis",
 }
 
 '#champsObligatoire': {
+	text: "* champs obligatoires",
+	top :21,
+	left : 35.9,
+	color: "#434e85",
+	font: {
+		fontSize : 12,
+
+	}
+
 }
 
 '.check': {
@@ -134,8 +174,81 @@
 }
 
 '#labelCondition': {
+	top :21,
+	left : 35.9,
+	color: "#434e85",
+	
 }
 
 '#buttonInscreption': {
-  title: "S’inscrire"
+  title: "S’inscrire",
+  top: 14,
+  bottom : 33,
+  
+}
+'#navBar': {
+  title : "Inscription",
+  leftIcon: "/images/icn_topbar_back.png",
+  zIndex: 200,
+}
+
+"Picker": {
+    selectionIndicator: true
+},
+
+".containerConditionValidation":{
+	top:57,
+
+}
+
+"#imageCheckCondition":{
+	left: 34.4
+}
+"#accepteLabel":{
+
+}
+"#containerCondition":{
+	left: 63
+}
+
+".labelCondition":{
+	font: {
+		fontSize : 12	
+	}
+}
+".nonColoreLabel":{
+	color : "#7c7c7c"
+}
+
+".labelColore":{
+	color : "#c38a5f"
+}
+".containerScroll":{
+	top : 65
+}
+".civiliteContainer":{
+	top: 25,
+	right: 34,
+	left: 34
+}
+"#lineCivilite":{
+	top: 4,
+  height: 1,
+  borderWidth: 1,
+  borderStyle: Ti.UI.INPUT_BORDERSTYLE_LINE,
+  borderColor: '#979797',
+}
+
+"#labelCivilite":{
+	text: "Civilité *",
+	font: {
+		fontSize : 16,	
+	},
+	color: "#929292",
+	left : 0	
+}
+
+"#spinnerImage":{
+	image: "/images/icn_downtriangle_blue.png",
+	right: 0
 }

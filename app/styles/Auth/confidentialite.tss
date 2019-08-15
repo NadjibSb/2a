@@ -1,0 +1,10 @@
+
+".container" : {
+  
+}
+
+"#navBar": {
+    title : "Terme de Confidentialité",
+  leftIcon: "/images/icn_topbar_back.png",
+  zIndex: 200,	
+}

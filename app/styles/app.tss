@@ -192,3 +192,10 @@ overrode the settings with other TSS, XML, or JS settings:
   }
 }
 
+
+".fontBlack" : {
+  font: {
+    fontFamily : Alloy.CFG.design.fonts.Black,	
+  }
+}
+

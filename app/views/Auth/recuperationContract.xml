@@ -1,0 +1,9 @@
+<Alloy>
+	<Window>
+		<View class="container">
+		<View class="vlayout">
+        	<Widget src="customNavBar" id="navBar" class="navBar" onLeftButtonClick="pressBack"></Widget>
+			<ImageView id="imageContractRecuper"/>
+		</View>
+	</Window>
+</Alloy>

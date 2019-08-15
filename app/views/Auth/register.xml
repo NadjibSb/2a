@@ -1,6 +1,7 @@
 <Alloy>
   <Window>
     <View class="container " >
+      <Widget src="customIndicator" id="activityIndicator" blockScreen="true"/>
       <ImageView id="Imagebackground" class="Fill"/>
       <View class="vlayout">
         <Widget src="customNavBar" id="navBar" class="navBar" onLeftButtonClick="pressBack"></Widget>
@@ -12,24 +13,25 @@
             <View class="clientContainer hSize">
               <ImageView id="imageUnchecked" class="check" onClick="enableClientNum"></ImageView>
               <Label id="labelOuiClient"></Label>
-              <ImageView id="imageChecked" class="uncheck" onClick="disableClientNum"></ImageView>
+              <ImageView id="imageChecked" class="check" onClick="disableClientNum"></ImageView>
               <Label id="labelNonClient"></Label>
             </View> 
             <!-- si on a client num -->
             <View id="clientContainer" class="containerAllClientNum hSize vlayout">
               <Widget src="dzmob.widget.TextField" id="textFieldNumClient" class="textFeildRegistre"></Widget>
               <View class="containerRecuperation hSize">
-                <Label id="recupNumClient" module="module/underlineText"></Label>
+                <Label id="recupNumClient" onClick="clickRecuperation" module="module/underlineText" ></Label>
                 <ImageView id="iconNumClient"></ImageView>
               </View> 
             </View>
             <!-- civilite view -->
             <View class="civiliteContainer hSize vlayout">
-              <View class="hSize">
+              <View class="hSize" onClick="changeCivilite">
                 <Label id="labelCivilite" class="fontMedium"></Label>
                 <ImageView id="spinnerImage"></ImageView>
               </View>
               <View id="lineCivilite" class="hSize"/>
+              <Label id="labelErreur" class="fontMedium"></Label>
             </View>
             <!-- les text feilds -->
             <Widget src="dzmob.widget.TextField" id="textFieldNom" class="textFeildRegistre"></Widget>
@@ -43,9 +45,9 @@
               <ImageView id="imageCheckCondition" class="check" onClick="acceptCondition"></ImageView>
               <View id="containerCondition" class="hSize hlayout">
                 <Label id="accepteLabel" class="nonColoreLabel labelCondition fontMedium">J'ai lu et j'accepte les </Label>
-                <Label id="conditionUtilisation" class="labelColore labelCondition fontMedium">Condition d'utilisation </Label>
+                <Label id="conditionUtilisation" class="labelColore labelCondition fontMedium" onClick="toCondition">Condition d'utilisation </Label>
                 <Label id="accepteLabel" class="nonColoreLabel labelCondition fontMedium">ainsi que la </Label>
-                <Label id="labelpolitique" class="labelColore labelCondition fontMedium"> Politique de confidentailite</Label>
+                <Label id="labelpolitique" class="labelColore labelCondition fontMedium" onClick="toPolitique"> Politique de confidentailite</Label>
               </View>
             </View>
             <!-- Button d'envoi -->

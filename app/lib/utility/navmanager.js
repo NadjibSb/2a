@@ -8,20 +8,22 @@ const log = require('/utility/logger')({
 })
 
 // set Tabgroup
-exports.setTabGroup = function(path) {
+exports.setTabGroup = function(path,tabActive) {
   // sauvgarder tab group
   var controller = Alloy.createController(path, {});
   tabGroupWindow = controller.getView();
 	tabGroup = controller.tabGroup;
   //si androidf
 	if (OS_ANDROID) {
-		tabGroup.init();
+    tabGroup.init(tabActive);
 		tabGroup.on('tabChange', function(evt) {
 			updateTitle(evt);
-		});
+    });
 		exports.userPressedBackButton = tabGroup.userPressedBackButton;
-	}
+  }
+  
   controller.getView().open();
+  tabGroup.setActiveTab(tabActive)
   if (OS_IOS && currentNavWindow) {
     currentNavWindow.close();
     currentNavWindow = null;

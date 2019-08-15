@@ -11,8 +11,8 @@ function init(){
   var rootView;
   if (isLoginIn) {
     log("islogdin");
-    rootView = "tabs/index";
-    navigationWindow.setTabGroup(rootView)
+    rootView = "Home/index"; 
+    //navigationWindow.setTabGroup(rootView)
   }else{
     var appAlready = Ti.App.Properties.getBool( "APP_ALREADY_OPEN", false );
     if (appAlready) {
@@ -23,7 +23,8 @@ function init(){
       rootView = "onBoarding/index";
     }
     log("openLog")
-    navigationWindow.openWindow(rootView,0,{});
+    
   }
+  navigationWindow.openWindow(rootView,0,{});
 }
 init()

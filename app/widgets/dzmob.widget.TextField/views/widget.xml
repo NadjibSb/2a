@@ -2,7 +2,7 @@
 	<View id="container" onClick="focusInput">
 		<View id="subView">
 			<Label id="hintText" class="input"/>
-			<TextField id="tfInput" class="input" onFocus="onFocus" onChange="onChange" onReturn="onReturn" onBlur="onBlur" onClick="onClick" />
+			<TextField id="tfInput" class="input fontMedium" onFocus="onFocus" onChange="onChange" onReturn="onReturn" onBlur="onBlur" onClick="onClick" />
 			<View id="lineBar"></View>
 			<View id="mask" height="0"/>
 		</View>

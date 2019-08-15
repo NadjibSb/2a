@@ -15,7 +15,8 @@ const appSession = AppSession.AppSession()
 var $ = module.exports = {
 	login: login,
   isLogedIn : isLogedIn,
-  resetPassword : resetPassword
+  resetPassword : resetPassword,
+  signup : signup
 };
 
 
@@ -47,7 +48,8 @@ function onSuccessLogin(e){
   console.log("debut on succes");
   log(e)
   saveSessionInfo(e);
-  navmanager.setTabGroup("tabs/index");
+  //navmanager.setTabGroup("tabs/index");
+  navigationWindow.openWindow("Home/index",0,{});
 }
 
 //save the sessionInfo in device

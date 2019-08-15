@@ -50,7 +50,7 @@
 
 
 '#lableDevis': {
-  text: "DEMANDER UN\n DEVIS"
+  text: "DEMANDER\n UN DEVIS"
 }
 
 // sinistre
@@ -80,7 +80,7 @@
 }
 
 '#lableAgence': {
-  text: "TROUVER\n UNE AGENCE",
+  text: "TROUVER UNE\n AGENCE",
 }
 
 // divers

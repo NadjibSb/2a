@@ -42,6 +42,17 @@
   color : "#434e85"
 }
 
+'#labelOuiClient[platform=android]': {
+  text: "Oui",
+  left: 70,
+  font: {
+	  fontSize : 16,
+	  fontWeight : "bold"	
+  },
+  color : "#434e85"
+}
+
+
 
 '#imageChecked': {
   left: 120.4
@@ -56,17 +67,26 @@
   },
   color :"#434e85"
 }
+'#labelNonClient[platform=android]': {
+  text: "Non",
+  left:153,
+  font: {
+	  fontSize : 16,
+	  fontWeight : "bold"	
+  },
+  color :"#434e85"
+}
 
 '#textFieldNumClient': {
     hintText : "Saisissez votre numéro client *",
-	errorColor : "red",
+	errorColor : "#db2500",
 	focusBarColor : "rgb(55, 67, 121)",
 	blurBarColor : "rgb(151, 151, 151)",
 	validations : {lengthstrict : 11},
 	autocapitalization : Titanium.UI.TEXT_AUTOCAPITALIZATION_NONE,
 	errorMessage : "le Numéro Client saisie n’est pas valide.",
     defaultErrorMessage : "champ requis",
-	keyboardType : Titanium.UI.KEYBOARD,
+	keyboardType : Titanium.UI.KEYBOARD_NUMBER_PAD,
 	
 }
 ".containerAllClientNum":{
@@ -99,27 +119,29 @@
 }
 '#textFieldNom': {
   hintText : "Nom *",
-	errorColor : "red",
+	errorColor : "#db2500",
+	validations : { nom: ""},
 	focusBarColor : "rgb(55, 67, 121)",
 	blurBarColor : "rgb(151, 151, 151)",
 	autocapitalization : Titanium.UI.TEXT_AUTOCAPITALIZATION_NONE,
-	errorMessage : "L’adresse e-mail saisie n’est pas valide.",
+	errorMessage : "le nom contient des caractere speciaux.",
     defaultErrorMessage : "champ requis",
 }
 
 '#textFieldPrenom': {
   hintText : "Prénom *",
-	errorColor : "red",
+	errorColor : "#db2500",
 	focusBarColor : "rgb(55, 67, 121)",
 	blurBarColor : "rgb(151, 151, 151)",
+	validations : { nom: ""},
 	autocapitalization : Titanium.UI.TEXT_AUTOCAPITALIZATION_NONE,
-	errorMessage : "L’adresse e-mail saisie n’est pas valide.",
+	errorMessage : "le prénom contient des caractere speciaux.",
     defaultErrorMessage : "champ requis",
 }
 
 '#textFieldNumTel': {
     hintText : "N°Téléphone *",
-	errorColor : "red",
+	errorColor : "#db2500",
 	focusBarColor : "rgb(55, 67, 121)",
 	blurBarColor : "rgb(151, 151, 151)",
 	validations : {Tel : ""},
@@ -131,7 +153,7 @@
 
 '#textFieldEmailR': {
   hintText : "Adresse e-mail *",
-	errorColor : "red",
+	errorColor : "#db2500",
 	focusBarColor : "rgb(55, 67, 121)",
 	blurBarColor : "rgb(151, 151, 151)",
 	validations : {email : ""},
@@ -143,7 +165,7 @@
 
 '#textFieldPasswordR': {
   hintText : "Mot de passe *",
-	errorColor : "red",
+	errorColor : "#db2500",
 	passwordMask : true,
 	focusBarColor : "rgb(55, 67, 121)",
 	blurBarColor : "rgb(151, 151, 151)",
@@ -232,7 +254,7 @@
 	left: 34
 }
 "#lineCivilite":{
-	top: 4,
+	top: 8,
   height: 1,
   borderWidth: 1,
   borderStyle: Ti.UI.INPUT_BORDERSTYLE_LINE,
@@ -251,4 +273,15 @@
 "#spinnerImage":{
 	image: "/images/icn_downtriangle_blue.png",
 	right: 0
+}
+
+"#labelErreur":{
+	height : 0,
+	top :7,
+	left: 0,
+	text: "champ requis",
+	color: "#db2500",
+	font: {
+		fontSize : 13	
+	}
 }

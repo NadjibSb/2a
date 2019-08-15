@@ -1,14 +1,15 @@
 var args = arguments[0] || {};
 
-var inputColor = args.inputColor || "#4a495e" ;
-var errorColor = args.errorColor || "#ea4335";
+var inputColor = "#374379" ;
+Ti.API.info(inputColor);
+var errorColor = args.errorColor ;
 var validations = args.validations;
-var focusBarColor = args.focusBarColor || "#000";
-var blurBarColor = args.blurBarColor || "#F3F3F3";
-var errorMessage = args.errorMessage || "champs invalide";
+var focusBarColor = args.focusBarColor;
+var blurBarColor = args.blurBarColor ;
+var errorMessage = args.errorMessage;
 var isOptionDialog = args.isOptionDialog || false;
 var subjects = _.isString(args.subjects) ? args.subjects.split(",") : args.subjects;
-var defaultErrorMessage = args.defaultErrorMessage || L("default_error_message");
+var defaultErrorMessage = args.defaultErrorMessage;
 var title = args.title || "";
 var findError = false;
 var hintText = args.hintText
@@ -272,11 +273,20 @@ function isValid() {
 				}
 				break;
 			case "lengthstrict" :
-				if (value.length != validations.length) {
+				if (value.length != validations.lengthstrict || !/^[0-9]*$/.test(value) ) {
 					objectValid.message = errorMessage;
 					setInvalid(objectValid);
 					return false;
 				}
+				break;
+			case "nom" :
+				if (!/^[_A-z0-9]*((-|\s)*[_A-z0-9])*$/.test(value)) {
+					objectValid.message = errorMessage;
+					setInvalid(objectValid);
+					return false;
+				}
+				
+
 		}
 	}
 	objectValid.valid = true;

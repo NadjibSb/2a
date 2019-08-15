@@ -17,14 +17,14 @@
 	left : 0,
 	right : 0,
 	top: 9,
-	color:"rgb(55, 67, 121)",
+	inputColor : "#374379",
 	autocorrect : false,
 	font: {
 		fontSize : 16
 	},
 	height: Titanium.UI.FILL,
   autocapitalization: Ti.UI.TEXT_AUTOCAPITALIZATION_NONE,
-  hintTextColor: "rgb(146, 146, 146)",
+  hintTextColor: "#929292",
 },
 
 

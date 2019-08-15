@@ -1,6 +1,12 @@
+var log = require( "/utility/logger" )( {
+	tag: 'navbar',
+	hideLog: false
+} );
 
 $.open = function(e) {
+	log("open tabhost")
 	$.tabHost.open(e);
+	log("fin open")
 };
 
 $.add = function(view) {
@@ -27,20 +33,22 @@ var stackTabContact = [],
 
 exports.openWindow = function(windowController) {
 	if (OS_ANDROID) {
-    hideAllPrevious()
+		log("openWindow")
+        hideAllPrevious()
 		getCurrentStackView().add(windowController.container);
 		getCurrentStack().push(windowController);
 		callFocusOnWindow(windowController);
 		fireOnChange();
 	}
 };
-
+var fistTab = null;
 var tabViewControllers = [];
 $.activeTab = null;
 // keep an array reference on all stacks to better handle the iteration over all of them.
 var stackViewHolders = [$.stackContract, $.stackDevis, $.stackSinistre, $.stackAgence, $.stackDivers];
 
-$.init = function() {
+$.init = function(tabActive) {
+	log("debut init")
 	// --------- Tab Search ---------
 	// onglet:
 	var ContractTabController = createTabViewController({
@@ -122,6 +130,8 @@ $.init = function() {
 	stackTabAgance.push(rootControllerAgence);
 	$.stackDivers.add(rootControllerDivers.container);
 	stackTabDivers.push(rootControllerDivers);
+	log("avant on tab in init")
+	fistTab = tabActive
 };
 
 /*
@@ -140,11 +150,13 @@ function createTabViewController(args) {
 }
 
 function onTabSelected(selectedIndex) {
+	log("debut on tab selected")
 	if ($.activeTab !== selectedIndex) {
+		log("onTabSelected : selectedindex : "+selectedIndex)
 		if ($.activeTab !== null) {
 			tabViewControllers[$.activeTab].updateTabSelectionState(false);
 		}
-
+		
 		tabViewControllers[selectedIndex].updateTabSelectionState(true);
 		displayRequestedStack(selectedIndex);
 		$.activeTab = selectedIndex;
@@ -169,6 +181,7 @@ function onTabSelected(selectedIndex) {
 function displayRequestedStack(selectedIndex) {
 	_.each(stackViewHolders, function(stack, index) {
 		if (index == selectedIndex) {
+			log("index : " +index)
 			stack.visible = true;
 		} else {
 			stack.visible = false;
@@ -179,7 +192,7 @@ function displayRequestedStack(selectedIndex) {
 function stackOpened(e) {
 	$.activity = $.tabHost.activity;
 	exports.addEventListener = $.activity.addEventListener;
-	onTabSelected(0);
+	onTabSelected(fistTab);
 
 	$.activity.addEventListener('android:back', function() {
 		Ti.API.info('back button pressed');

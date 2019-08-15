@@ -2,15 +2,6 @@
 ".container" : {
 
 }
-// the line view
-'#ViewLine': {
-  height: 5,
-  width: 242,
-  borderWidth: 5,
-  borderStyle: Ti.UI.INPUT_BORDERSTYLE_LINE,
-  borderColor: 'rgb(206, 170, 140)',
-  top: 227,
-}
 
 '.containerItem': {
   borderRadius: 5,
@@ -59,7 +50,7 @@
 
 
 '#lableDevis': {
-  text: "DEMANDER UN\n DEVIS"
+  text: "DEMANDER\n UN DEVIS"
 }
 
 // sinistre
@@ -89,7 +80,7 @@
 }
 
 '#lableAgence': {
-  text: "TROUVER\n UNE AGENCE",
+  text: "TROUVER UNE\n AGENCE",
 }
 
 // divers

@@ -1,28 +1,28 @@
 <Alloy>
-    <Window>
-    	<View class="container">
-        <Require src="/Commun/ecranLogo"></Require>
-        <View id="ViewLine"/>
-        <View id="containerContact" class="containerItem" onClick="clickItem" itemId="contact">
-          <ImageView id="imageIconContact"></ImageView>
-          <Label id="lableContact" class="labelHome"></Label>
-        </View>
-        <View id="containerDevis" class="containerItem" onClick="clickItem" itemId="devis">
-          <ImageView id="imageIconDevis"></ImageView>
-          <Label id="lableDevis" class="labelHome"></Label>
-        </View>
-        <View id="containerSinistre" class="containerItem" onClick="clickItem" itemId="sinistre">
-          <ImageView id="imageIconSinistre"></ImageView>
-          <Label id="lableSinistre" class="labelHome"></Label>
-        </View>
-        <View id="containerAgence" class="containerItem" onClick="clickItem" itemId="agence">
-          <ImageView id="imageIconAgence"></ImageView>
-          <Label id="lableAgence" class="labelHome"></Label>
-        </View>
-        <View id="containerDivers" class="containerItem" onClick="clickItem" itemId="diver">
-          <ImageView id="imageIconDivers"></ImageView>
-          <Label id="lableDivers" class="labelHome"></Label>
-        </View>
-    	</View>
-    </Window>
+  <Window>
+    <View class="container">
+      <Require src="/Commun/ecranLogo"></Require>
+
+      <View id="containerContact" class="containerItem" onClick="clickItem" itemId="Contract">
+        <ImageView id="imageIconContact" itemId="Contract"></ImageView>
+        <Label id="lableContact" class="labelHome fontMedium" itemId="Contract"></Label>
+      </View>
+      <View id="containerDevis" class="containerItem" onClick="clickItem" itemId="devis">
+        <ImageView id="imageIconDevis" itemId="devis"></ImageView>
+        <Label id="lableDevis" class="labelHome fontMedium" itemId="devis"></Label>
+      </View>
+      <View id="containerSinistre" class="containerItem" onClick="clickItem" itemId="sinistre">
+        <ImageView id="imageIconSinistre" itemId="sinistre"></ImageView>
+        <Label id="lableSinistre" class="labelHome fontMedium" itemId="sinistre"></Label>
+      </View>
+      <View id="containerAgence" class="containerItem" onClick="clickItem" itemId="agence">
+        <ImageView id="imageIconAgence" itemId="agence"></ImageView>
+        <Label id="lableAgence" class="labelHome fontMedium" itemId="agence"></Label>
+      </View>
+      <View id="containerDivers" class="containerItem" onClick="clickItem" itemId="diver">
+        <ImageView id="imageIconDivers" itemId="diver"></ImageView>
+        <Label id="lableDivers" class="labelHome fontMedium" itemId="diver"></Label>
+      </View>
+    </View>
+  </Window>
 </Alloy>

@@ -4,13 +4,13 @@
 }
 "#contractTab":{
   activeIcon: "/images/icn_checkhand_blue_tapbar.png" ,
-  icon: "/images/icn_checkhand.png",
+  icon: "/images/icn_checkhand_grey_tapbar.png",
 	title: "Contracts"
 }
 
 "#devisTab": {
   activeIcon:"/images/icn_devis_blue_tabbar.png" ,
-  icon: "/images/icn_devis.png",
+  icon: "/images/icn_devis_grey.png",
 	title:"Devis & Achat"
 }
 

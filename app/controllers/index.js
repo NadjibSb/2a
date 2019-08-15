@@ -1,54 +1,32 @@
-// Exemple of httpManager
-/*
-var session = require('/dataHandler/session');
-var log = require( 'utility/logger' )( {
-		tag: "index",
-		hideLog: false
-	} );
 
-
-
-var data = {
-    email: "a@a.com",
-    password: "000"
-};
-
-session.login(
-    data,
-    (s)=>{
-        log("success "+s);
-    },
-    (e)=>{
-        log("error "+e);
-    }
-);
-*/
-// end of exemple -------------------------
-
-Alloy.createController("/onBoarding/index").getView().open();
-//Alloy.createController("/Home/index").getView().open();
-//Alloy.createController("/Sinistres/index").getView().open();
-//Alloy.createController("/Sinistres/Details/details").getView().open();
-const navigationWindow = require('/utility/navmanager')
-
-var isLoginIn = true;
-var appalready = true;
+const navigationWindow = require('/utility/navmanager');
+const session = require('/dataHandler/session');
+const log = require('/utility/logger')({
+  tag : "index",
+  hidelag : false
+})
+var isLoginIn = session.isLogedIn();
+var appAlready;
 
 function init(){
-  Ti.API.info("init");
+  log("init");
   var rootView;
   if (isLoginIn) {
-    Ti.API.info("islogdin");
-    rootView = "tabs/index";
-    navigationWindow.setTabGroup(rootView)
+    log("islogdin");
+    rootView = "Home/index"; 
+    //navigationWindow.setTabGroup(rootView)
   }else{
-    if (appalready) {
-      //rootView = "Auth/login";
+    var appAlready = Ti.App.Properties.getBool( "APP_ALREADY_OPEN", false );
+    if (appAlready) {
+      log("login")
+      rootView = "Auth/login";
     }else {
+      log("boarding")
       rootView = "onBoarding/index";
     }
-    navigationWindow.openWindow(rootView,0,{});
+    log("openLog")
+    
   }
-
+  navigationWindow.openWindow(rootView,0,{});
 }
 init()

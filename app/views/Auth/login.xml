@@ -1,0 +1,16 @@
+<Alloy>
+  <Window>
+  	<View class="container">
+      <ImageView id="Imagebackground" class="Fill"/>
+      <ImageView id="ImageLogo"></ImageView>
+      <View id="ViewLine"/>
+      <Label id="labelIdentification" class="fontBlack"></Label>
+      <Widget src="dzmob.widget.TextField" id="textFieldEmail" ></Widget>
+      <Widget src="dzmob.widget.TextField" id="textFieldPassword"></Widget>
+      <Button id="btnLogin" class="validationButton" onClick="clickLogin" ></Button>
+      <Label id="labelInscrire" class="fontLight" module="module/underlineText" onClick="clickInscrire"></Label>
+      <Label id="lbForgotPassword" class="fontLight" module="module/underlineText" onClick="clickForgot" ></Label>
+      <Widget src="customIndicator" id="activityIndicator" blockScreen="true"/>
+  	</View>
+  </Window>
+</Alloy>

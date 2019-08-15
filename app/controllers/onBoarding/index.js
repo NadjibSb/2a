@@ -1,3 +1,5 @@
+const navmanager = require('/utility/navmanager');
+
 // Dependencies
 var log = require( 'utility/logger' )( {
 		tag: "onBoarding",
@@ -30,7 +32,9 @@ function onScroll(e){
 function btnClicked(e){
     if ($.scrollableView.currentPage == 2) {
         log("Go to Login");
-        Alloy.createController("/Sinistres/index").getView().open();
+        Ti.App.Properties.setBool( "APP_ALREADY_OPEN", true )
+        log(Ti.App.Properties.getBool( "APP_ALREADY_OPEN", false ))
+        navmanager.openAndCloseAll("Auth/login",0,{});
     }else {
         $.scrollableView.moveNext();
     }

@@ -123,6 +123,33 @@ overrode the settings with other TSS, XML, or JS settings:
 ".txtBlue":{
 	color: "blue"
 }
+
+
+".validationButton" : {
+    color: "white",
+    backgroundColor: "rgb(55,67,121)",
+    height: 46,
+    borderRadius: 5,
+    left: 25,
+    right: 25,
+    textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+    font: {
+        fontSize: 16,
+        fontWeight: "semibold"
+    },
+
+}
+
+'#Imagebackground': {
+  image: "/images/background image.png"
+}
+
+'.labelLogin':{
+  font: {
+    fontSize: 16
+  },
+  color: "#374379",
+}
 "Window[platform=android]":{
     theme : 'Theme.AppCompat.NoTitleBar',
     top: 25
@@ -146,3 +173,29 @@ overrode the settings with other TSS, XML, or JS settings:
     colors: ["#141e56", "#6e7db2"]
   },
 }
+
+
+".fontMedium" : {
+  font: {
+    fontFamily : Alloy.CFG.design.fonts.Medium,	
+  }
+}
+".fontLight" : {
+  font: {
+    fontFamily : Alloy.CFG.design.fonts.Light,	
+  }
+}
+
+".fontHeavy" : {
+  font: {
+    fontFamily : Alloy.CFG.design.fonts.Heavy,	
+  }
+}
+
+
+".fontBlack" : {
+  font: {
+    fontFamily : Alloy.CFG.design.fonts.Black,	
+  }
+}
+

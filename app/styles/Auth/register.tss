@@ -1,0 +1,287 @@
+
+".container" : {
+}
+'.containerRegister':{
+	top : 33
+}
+'#labelIntro': {
+  text: "Inscrivez-vous et bénéficiez de toutes\nnos offres",
+  left: 35,
+  font: {
+	  fontSize : 16,
+	  fontWeight : "bold"	
+  }
+
+}
+
+
+'#labelClient': {
+  text: "Êtes-vous un client ?",
+  top: 26,
+  left: 35,
+  font: {
+	  fontSize : 16,
+	  fontWeight : "bold"	
+  }
+}
+'.clientContainer':{
+	top: 15
+}
+'#imageUnchecked': {
+  left: 35
+}
+
+
+'#labelOuiClient': {
+  text: "Oui",
+  left: 62.9,
+  font: {
+	  fontSize : 16,
+	  fontWeight : "bold"	
+  },
+  color : "#434e85"
+}
+
+'#labelOuiClient[platform=android]': {
+  text: "Oui",
+  left: 70,
+  font: {
+	  fontSize : 16,
+	  fontWeight : "bold"	
+  },
+  color : "#434e85"
+}
+
+
+
+'#imageChecked': {
+  left: 120.4
+}
+
+'#labelNonClient': {
+  text: "Non",
+  left:149.9,
+  font: {
+	  fontSize : 16,
+	  fontWeight : "bold"	
+  },
+  color :"#434e85"
+}
+'#labelNonClient[platform=android]': {
+  text: "Non",
+  left:153,
+  font: {
+	  fontSize : 16,
+	  fontWeight : "bold"	
+  },
+  color :"#434e85"
+}
+
+'#textFieldNumClient': {
+    hintText : "Saisissez votre numéro client *",
+	errorColor : "#db2500",
+	focusBarColor : "rgb(55, 67, 121)",
+	blurBarColor : "rgb(151, 151, 151)",
+	validations : {lengthstrict : 11},
+	autocapitalization : Titanium.UI.TEXT_AUTOCAPITALIZATION_NONE,
+	errorMessage : "le Numéro Client saisie n’est pas valide.",
+    defaultErrorMessage : "champ requis",
+	keyboardType : Titanium.UI.KEYBOARD_NUMBER_PAD,
+	
+}
+".containerAllClientNum":{
+	height: 0
+}
+".containerRecuperation":{
+	top : 11,
+}
+'#recupNumClient': {
+  right: 57,
+	font : {
+		fontSize : 12,
+		fontFamily : Alloy.CFG.design.fonts.Medium	
+	},
+	color : "#374379",
+	text : "Comment récupérer votre n°client",
+	underlineText:"Comment récupérer votre n°client"
+}
+
+
+'#iconNumClient': {
+  image: "/images/icn_help.png",
+  right: 33,
+  width: 19,
+  height: 19
+}
+".textFeildRegistre":{
+	right: 34,
+	left: 34
+}
+'#textFieldNom': {
+  hintText : "Nom *",
+	errorColor : "#db2500",
+	validations : { nom: ""},
+	focusBarColor : "rgb(55, 67, 121)",
+	blurBarColor : "rgb(151, 151, 151)",
+	autocapitalization : Titanium.UI.TEXT_AUTOCAPITALIZATION_NONE,
+	errorMessage : "le nom contient des caractere speciaux.",
+    defaultErrorMessage : "champ requis",
+}
+
+'#textFieldPrenom': {
+  hintText : "Prénom *",
+	errorColor : "#db2500",
+	focusBarColor : "rgb(55, 67, 121)",
+	blurBarColor : "rgb(151, 151, 151)",
+	validations : { nom: ""},
+	autocapitalization : Titanium.UI.TEXT_AUTOCAPITALIZATION_NONE,
+	errorMessage : "le prénom contient des caractere speciaux.",
+    defaultErrorMessage : "champ requis",
+}
+
+'#textFieldNumTel': {
+    hintText : "N°Téléphone *",
+	errorColor : "#db2500",
+	focusBarColor : "rgb(55, 67, 121)",
+	blurBarColor : "rgb(151, 151, 151)",
+	validations : {Tel : ""},
+	autocapitalization : Titanium.UI.TEXT_AUTOCAPITALIZATION_NONE,
+	errorMessage : "le N°Téléphone saisie n’est pas valide.",
+  defaultErrorMessage : "champ requis",
+	keyboardType : Ti.UI.KEYBOARD_NUMBER_PAD,
+}
+
+'#textFieldEmailR': {
+  hintText : "Adresse e-mail *",
+	errorColor : "#db2500",
+	focusBarColor : "rgb(55, 67, 121)",
+	blurBarColor : "rgb(151, 151, 151)",
+	validations : {email : ""},
+	autocapitalization : Titanium.UI.TEXT_AUTOCAPITALIZATION_NONE,
+	errorMessage : "L’adresse e-mail saisie n’est pas valide.",
+    defaultErrorMessage : "champ requis",
+	keyboardType : Titanium.UI.KEYBOARD_TYPE_EMAIL,
+}
+
+'#textFieldPasswordR': {
+  hintText : "Mot de passe *",
+	errorColor : "#db2500",
+	passwordMask : true,
+	focusBarColor : "rgb(55, 67, 121)",
+	blurBarColor : "rgb(151, 151, 151)",
+	validations : {length : 8},
+	autocapitalization : Titanium.UI.TEXT_AUTOCAPITALIZATION_NONE,
+	errorMessage : "le mot de passe doit etre au minimum 8 caractère de longeur.",
+    defaultErrorMessage : "champ requis",
+}
+
+'#champsObligatoire': {
+	text: "* champs obligatoires",
+	top :21,
+	left : 35.9,
+	color: "#434e85",
+	font: {
+		fontSize : 12,
+
+	}
+
+}
+
+'.check': {
+    image: "/images/icn_oval_unchecked.png"
+}
+
+'.uncheck': {
+  image: "/images/icn_oval_checked.png"
+}
+
+'#labelCondition': {
+	top :21,
+	left : 35.9,
+	color: "#434e85",
+	
+}
+
+'#buttonInscreption': {
+  title: "S’inscrire",
+  top: 14,
+  bottom : 33,
+  
+}
+'#navBar': {
+  title : "Inscription",
+  leftIcon: "/images/icn_topbar_back.png",
+  zIndex: 200,
+}
+
+"Picker": {
+    selectionIndicator: true
+},
+
+".containerConditionValidation":{
+	top:57,
+
+}
+
+"#imageCheckCondition":{
+	left: 34.4
+}
+"#accepteLabel":{
+
+}
+"#containerCondition":{
+	left: 63
+}
+
+".labelCondition":{
+	font: {
+		fontSize : 12	
+	}
+}
+".nonColoreLabel":{
+	color : "#7c7c7c"
+}
+
+".labelColore":{
+	color : "#c38a5f"
+}
+".containerScroll":{
+	top : 65
+}
+".civiliteContainer":{
+	top: 25,
+	right: 34,
+	left: 34
+}
+"#lineCivilite":{
+	top: 8,
+  height: 1,
+  borderWidth: 1,
+  borderStyle: Ti.UI.INPUT_BORDERSTYLE_LINE,
+  borderColor: '#979797',
+}
+
+"#labelCivilite":{
+	text: "Civilité *",
+	font: {
+		fontSize : 16,	
+	},
+	color: "#929292",
+	left : 0	
+}
+
+"#spinnerImage":{
+	image: "/images/icn_downtriangle_blue.png",
+	right: 0
+}
+
+"#labelErreur":{
+	height : 0,
+	top :7,
+	left: 0,
+	text: "champ requis",
+	color: "#db2500",
+	font: {
+		fontSize : 13	
+	}
+}

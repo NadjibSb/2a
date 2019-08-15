@@ -1,7 +1,63 @@
-<Alloy>
-  <Window>
-    <View id="container">
-      <Label>Agence</Label>
+<Alloy autoStyle="true">
+  <Window class="androidNoActionBar">
+    <View id="container" class="vlayout background">
+        <Widget src="customNavBar" class="navBar" title="L('agence_title')"></Widget>
+        <View class="btMarging hSize" >
+            <View id="btListe" class="tabButton enabled" onClick="displayListe">
+                <View class="hSize wSize hlayout">
+                    <ImageView id="btListeImg" class="btIcon" image="/images/icn_divers_white_big.png"></ImageView>
+                    <Label id="btListeText" class="btTitle whiteFont" text="L('agence_btn_liste')"></Label>
+                </View>
+            </View>
+            <View id="btCarte" class="tabButton disabled" onClick="displayCarte">
+                <View class="hSize wSize hlayout">
+                    <ImageView id="btCarteImg" class="btIcon" image="/images/icn_localization_blue_tabbar.png"></ImageView>
+                    <Label id="btCarteText" class="btTitle blueFont" text="L('agence_btn_carte')"></Label>
+                </View>
+            </View>
+        </View>
+        <View>
+            <ListView id="agenceList" class="noBackground" onItemclick="onItemclick">
+                <Templates>
+                    <ItemTemplate name="agenceTemplate" class="noBackground">
+                        <View class="vlayout hSize">
+                            <View class="itemContainer vlayout hSize" >
+                                <Label class="subItem itemTitle" bindId="title"></Label>
+                                <View class="subItem hSize">
+                                    <ImageView class="icon" image="/images/icn_localization_blue_tabbar.png" width="12"></ImageView>
+                                    <Label class="itemText" bindId="adresse"></Label>
+                                </View>
+                                <View class="subItem hSize">
+                                    <ImageView class="icon" image="/images/icn_tel_blue.png"></ImageView>
+                                    <Label class="itemText" bindId="tlf"></Label>
+                                </View>
+                                <View class="subItem hSize">
+                                    <ImageView class="icon" image="/images/icn_email_blue.png"></ImageView>
+                                    <Label class="itemText" bindId="email"></Label>
+                                </View>
+                            </View>
+                            <ImageView class="hSize" image="/images/line_separation_grey.png"></ImageView>
+                        </View>
+                    </ItemTemplate>
+                </Templates>
+                <ListSection id="agencesSection"></ListSection>
+            </ListView>
+            <View id="maps">
+                <View backgroundColor="olive">
+                    <Module module="ti.map" id="view_map"></Module>
+                </View>
+                <View class="bottomView hSize">
+                    <View class="bottomViewItem left hSize hlayout">
+                        <View class="dot" backgroundColor="green"></View>
+                        <Label class="bottomViewText" text="L('agence_open')" ></Label>
+                    </View>
+                    <View class="bottomViewItem right hSize hlayout">
+                        <View class="dot" backgroundColor="red"></View>
+                        <Label class="bottomViewText" text="L('agence_closed')"></Label>
+                    </View>
+                </View>
+            </View>
+        </View>
   	</View>
   </Window>
 </Alloy>

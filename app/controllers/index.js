@@ -12,7 +12,6 @@ function init(){
   log("init");
   var rootView;
   if (isLoginIn) {
-      
     log("islogdin");
     rootView = "Home/index"; 
     //navigationWindow.setTabGroup(rootView)

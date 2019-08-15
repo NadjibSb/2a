@@ -50,7 +50,7 @@ function onSuccessLogin(e){
   log(e)
   saveSessionInfo(e);
   //navmanager.setTabGroup("tabs/index");
-  navigationWindow.openWindow("Home/index",0,{});
+  navmanager.openWindow("Home/index",0,{});
 }
 
 //save the sessionInfo in device

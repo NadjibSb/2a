@@ -34,7 +34,7 @@
               <Label id="labelDeconnexion" class="lebelInsideButton fontMedium"></Label>
             </Button>
           </View>
-          <View id="containerAppel" class="hSize">
+          <View id="containerAppel" class="hSize wSize hlayout">
             <ImageView id="ApplerAssitanceImage"></ImageView>
             <Label id="labelAppelAssitance" module="module/underlineText"  ></Label>
           </View>

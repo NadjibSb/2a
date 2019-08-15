@@ -1,8 +1,8 @@
 <Alloy>
   <Window>
     <View class="container">
+    <ScrollView>
       <Require src="/Commun/ecranLogo"></Require>
-
       <View id="containerContact" class="containerItem" onClick="clickItem" itemId="Contract">
         <ImageView id="imageIconContact" itemId="Contract"></ImageView>
         <Label id="lableContact" class="labelHome fontMedium" itemId="Contract"></Label>
@@ -23,6 +23,7 @@
         <ImageView id="imageIconDivers" itemId="diver"></ImageView>
         <Label id="lableDivers" class="labelHome fontMedium" itemId="diver"></Label>
       </View>
+    </ScrollView>
     </View>
   </Window>
 </Alloy>

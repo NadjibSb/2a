@@ -199,6 +199,8 @@ function setValueSilently(value) {
 }
 
 function setMessageError(message) {
+	Ti.API.info("setMessage"+message);
+	
 	$.messageErorLogin.text = message;
 	$.messageErorLogin.height = Ti.UI.SIZE;
 	if (!isAndroid) $.messageErorLogin.visible = true;

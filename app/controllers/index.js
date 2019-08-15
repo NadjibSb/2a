@@ -11,8 +11,7 @@ var appAlready;
 function init(){
   log("init");
   var rootView;
-  //if (isLoginIn) {
-    if(true){
+  if (isLoginIn) {
       
     log("islogdin");
     rootView = "Home/index"; 

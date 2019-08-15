@@ -28,6 +28,7 @@ function clickLogin(e){
   session.login(data,function onError(code,response){
     $.activityIndicator.hide();
     log(code);
+    alert(response.error);
   })
 
 }

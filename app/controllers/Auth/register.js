@@ -86,7 +86,7 @@ function registerButton(e){
 			lastname : prenomClient.getValue(),
 			name : nomClient.getValue(),
 			phone : telephone.getValue(),
-			title : title
+			title : title,
 		}
 		if(enableClientNum){
 			userData.aa_client_id = numClient.getValue();
@@ -95,7 +95,33 @@ function registerButton(e){
 		//envoyer requete
 		session.signup(userData,(code,response)=>{
 			$.activityIndicator.hide();
-			log(response)
+			var listError = response.errors
+			var numberError = response.errors.length
+			log(listError)
+			log("nombre : "+numberError)
+			if(numberError > 1){
+				alert(response.errorMessage)
+			} 
+			listError.forEach((error,index)=>{
+				var objectValid = {valid : false, message :error[0].message};
+				log(error[0].code)
+				switch(error[0].code){
+					case "128" :
+						log("error tel")
+						telephone.setInvalid(objectValid)
+					break;
+					case "129" : 
+					log("error email")
+						email.setInvalid(objectValid)
+					break;
+					case "130" : 
+					log("error client");
+						numClient.setInvalid(objectValid)
+					break;
+				}
+			})
+			
+
 		})
 	}// fin if accepte
 	else{

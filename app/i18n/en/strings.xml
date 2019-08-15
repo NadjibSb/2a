@@ -65,6 +65,10 @@
     <string name="sinistres_rendezvous_btn_accepted">Accepté</string>
 
     <!-- Agences -->
+    <string name="agence_title">Agences 2a</string>
+    <string name="agence">Agence </string>
+    <string name="agence_btn_liste">Voir sur liste</string>
+    <string name="agence_btn_carte">Voir sur carte</string>
 
 
     <!-- Agences details -->

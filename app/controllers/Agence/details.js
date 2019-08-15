@@ -5,29 +5,31 @@ var log = require( 'utility/logger' )( {
 		tag: "Agence_details",
 		hideLog: false
 	} ),
-    navManager = require("/utility/navmanager");
+    navManager = require("/utility/navmanager"),
+    dataService = require("/dataHandler/agenciesService"),
 
 (function constructor(){
-    var agency = {
-        name: "Agence Sidi Yahia",
-        adresse: "71, cité elfath Oued kniss, Alger",
-        tlf:["0555362849","0555362849"],
-        email:"a@a.com",
-        code:"1604"
-    };
-    updateUI(agency);
+
+    dataService.getAgencyDetails(1,
+        (agency)=>{
+            updateUI(agency);
+        },
+        (error)=>{
+            log(error);
+        }
+    );
 })();
 
 
 // Private Functions ----------------------------------------------------------------
 function updateUI(agency){
-    $.agence_name.text = agency.name;
-    $.agence_adresse.text = agency.adresse;
+    $.agence_name.text = L('agence') + agency.region;
+    $.agence_adresse.text = agency.address;
     $.agence_email.text = agency.email;
-    $.agence_code.text = $.agence_code.text + agency.code;
-    for (var i = 0; i < agency.tlf.length; i++) {
+    $.agence_code.text = $.agence_code.text + agency.agency_id;
+    for (var i = 0; i < agency.phone.length; i++) {
         let tlf = Ti.UI.createLabel({
-            text: agency.tlf[i]
+            text: agency.phone[i]
         });
         $.addClass(tlf,'tlf');
         tlf.addEventListener("click",(e)=>{
@@ -36,7 +38,7 @@ function updateUI(agency){
         });
         $.phoneNumbers.add(tlf);
         //add separator
-        if (i<agency.tlf.length-1) {
+        if (i<agency.phone.length-1) {
             let separator = Ti.UI.createLabel({
                 text: ' - '
             });

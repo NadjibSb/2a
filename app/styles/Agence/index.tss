@@ -1,4 +1,101 @@
 
 ".container" : {
-  
+
+}
+
+'.btMarging': {
+    top: 16,
+    left: 16,
+    right: 16
+}
+
+'.tabButton': {
+    height: 50,
+    width: "48%",
+    borderRadius: 5,
+}
+'.enabled': {
+    backgroundColor: Alloy.CFG.design.colors.PrimaryColor,
+}
+
+'.disabled': {
+    borderWidth: 2,
+    borderRadius: 5,
+    borderStyle: Ti.UI.INPUT_BORDERSTYLE_NONE,
+    borderColor: Alloy.CFG.design.colors.PrimaryColor,
+}
+'.btTitle': {
+    font: {
+        fontSize: 16,
+        fontFamily: Alloy.CFG.design.fonts.Medium
+    },
+}
+'.whiteFont': {
+    color: "white"
+}
+
+'.blueFont': {
+    color: Alloy.CFG.design.fonts.PrimaryColor
+}
+'#btListe': {
+    left: 0
+}
+
+'#btCarte': {
+    right: 0
+}
+
+'.btIcon': {
+    height: 16,
+    right: 16
+}
+
+'.itemTitle': {
+    font: {
+        fontSize: 16,
+        fontFamily: Alloy.CFG.design.fonts.Heavy
+    },
+    color: Alloy.CFG.design.fonts.PrimaryColor
+}
+
+'.itemText': {
+    left: 24,
+    font: {
+        fontSize: 14,
+        fontFamily: Alloy.CFG.design.fonts.Light
+    },
+    color: Alloy.CFG.design.fonts.PrimaryColor
+}
+
+
+
+'.itemContainer': {
+    top: 16,
+    bottom: 8,
+    left: 24,
+    right: 24
+}
+
+'.subItem': {
+    left: 0,
+    top: 8
+}
+
+'.icon': {
+    width: 14,
+    left: 0,
+    top: 0
+}
+'#agenceList': {
+    top: 16
+}
+
+'#maps': {
+    top: 16,
+    visible: false
+}
+'.bottomView': {
+    height: 42,
+    bottom: 0,
+    backgroundColor: 'white'
 }

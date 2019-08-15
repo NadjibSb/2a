@@ -2,3 +2,91 @@
 ".container" : {
   
 }
+
+"#lineSeparator":{
+    image: "/images/line_separation_grey.png",
+    top: 26
+}
+
+"#infoContainer":{
+    top : 200,
+}
+
+"#editionContainer":{
+    top : 24,
+}
+
+"#buttonDeconnexion":{
+    top : 29,
+    backgroundColor: "#d52505",
+    title: "Deconnexion"
+}
+
+".buttonTop":{
+    top:14
+}
+
+"#imageAssurance":{
+    image: "/images/icn_nos_assurances_white.png"
+}
+"#imageNotification":{
+    image: "/images/icn_notifications.png"
+}
+"#imageNumeroUtil":{
+    image: "/images/icn_numeros_utile_white.png"
+}
+"#imageEditionProfil":{
+    image: "/images/icn_editer_profil_white.png"
+}
+"#imageEditionPassword":{
+    image: "/images/icn_modif_motdepasse_white.png"
+}
+"#imageDeconnexion":{
+    image: "/images/icn_deconnexion.png"
+}
+
+".imageInsideButton":{
+    left: 15
+}
+
+"#labelAssurance":{
+    text :"Nos assurances"
+}
+"#labelNotification":{
+    text : "Notifications"
+}
+"#labelNumeroUtil":{
+    text : "Numéros utiles"
+}
+"#labelEditionProfil":{
+    text : "Éditer mon profil"
+}
+"#labelEditionPassword":{
+    title : "islem"
+}
+"#labelDeconnexion":{
+    text : "Déconnexion"
+}
+
+".lebelInsideButton":{
+    left: 43,
+    color: "#ffffff"
+}
+
+"#containerAppel":{
+    top: 27
+}
+
+"#ApplerAssitanceImage":{
+    image : "/images/icn_tel_assistance.png"
+}
+
+"#labelAppelAssitance":{
+	font : {
+		fontSize : 18,
+		fontFamily : Alloy.CFG.design.fonts.Medium	
+	},
+	color : "#cd7e43",
+	text : "Appeler l’assistance",
+	underlineText:"Appeler l’assistance"
+}

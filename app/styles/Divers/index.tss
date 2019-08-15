@@ -9,7 +9,7 @@
 }
 
 "#infoContainer":{
-    top : 250,
+    top : 200,
 }
 
 "#editionContainer":{
@@ -50,25 +50,43 @@
 }
 
 "#labelAssurance":{
-    text : "islem"
+    text :"Nos assurances"
 }
 "#labelNotification":{
-    title : "islem"
+    text : "Notifications"
 }
 "#labelNumeroUtil":{
-    title : "islem"
+    text : "Numéros utiles"
 }
 "#labelEditionProfil":{
-    title : "islem"
+    text : "Éditer mon profil"
 }
 "#labelEditionPassword":{
     title : "islem"
 }
 "#labelDeconnexion":{
-    title : "islem"
+    text : "Déconnexion"
 }
 
 ".lebelInsideButton":{
     left: 43,
     color: "#ffffff"
+}
+
+"#containerAppel":{
+    top: 27
+}
+
+"#ApplerAssitanceImage":{
+    image : "/images/icn_tel_assistance.png"
+}
+
+"#labelAppelAssitance":{
+	font : {
+		fontSize : 18,
+		fontFamily : Alloy.CFG.design.fonts.Medium	
+	},
+	color : "#cd7e43",
+	text : "Appeler l’assistance",
+	underlineText:"Appeler l’assistance"
 }

@@ -6,36 +6,37 @@
         <Require src="/Commun/ecranLogo"></Require>
         <View class="hSize vlayout">
           <View id="infoContainer" class="hSize vlayout">
+            
             <Button id="buttonAssurance" class="diversButton">
               <ImageView id="imageAssurance" class="imageInsideButton"></ImageView>
-              <Label id="labelAssurance" class="lebelInsideButton"></Label>
+              <Label id="labelAssurance" class="lebelInsideButton fontMedium"></Label>
             </Button>
             <Button id="buttonNotification" class="diversButton buttonTop">
               <ImageView id="imageNotification" class="imageInsideButton" ></ImageView>
-              <Label id="labelAssurance" class="lebelInsideButton"></Label>
+              <Label id="labelNotification" class="lebelInsideButton fontMedium"></Label>
             </Button>
             <Button id="buttonNumeroUtil" class="diversButton buttonTop">
               <ImageView id="imageNumeroUtil" class="imageInsideButton"></ImageView>
-              <Label id="labelAssurance" class="lebelInsideButton"></Label>
+              <Label id="labelNumeroUtil" class="lebelInsideButton fontMedium"></Label>
             </Button>
           </View>
           <ImageView id="lineSeparator"></ImageView>
           <View id="editionContainer" class="hSize vlayout">
             <Button id="buttonEditionProfil" class="diversButton">
               <ImageView id="imageEditionProfil" class="imageInsideButton"></ImageView>
-              <Label id="labelAssurance" class="lebelInsideButton"></Label>
+              <Label id="labelEditionProfil" class="lebelInsideButton fontMedium"></Label>
             </Button>
             <!--<Button id="buttonEditionPassword" class="diversButton buttonTop">
               <ImageView id="imageEditionPassword" class="imageInsideButton"></ImageView>
             </Button>-->
             <Button id="buttonDeconnexion" class="diversButton buttonTop">
               <ImageView id="imageDeconnexion" class="imageInsideButton" ></ImageView>
-              <Label id="labelDeconnexion" class="lebelInsideButton"></Label>
+              <Label id="labelDeconnexion" class="lebelInsideButton fontMedium"></Label>
             </Button>
           </View>
-          <View class="hSize">
-            <ImageView></ImageView>
-            <Label module="module/underlineText" class="imageInsideButton"></Label>
+          <View id="containerAppel" class="hSize">
+            <ImageView id="ApplerAssitanceImage"></ImageView>
+            <Label id="labelAppelAssitance" module="module/underlineText"  ></Label>
           </View>
         </View>      
       </ScrollView>  

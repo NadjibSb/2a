@@ -26,8 +26,24 @@ var log = require( 'utility/logger' )( {
 
     setup_refreshController();
     loadPage(1);
+})();
 
+function addAnnotations(list){
+    $.view_map.annotations = [];
+    _.each(list,(item)=>{
+        var annotation = Map.createAnnotation({
+            latitude: item.ltd,
+            longitude: item.lgt,
+            title: L('agence') + item.region + ' - ' + item.agency_id,
+            //subtitle: 'Mountain View, CA',
+            pincolor: Map.ANNOTATION_BLUE,
+            myid: item.agency_id // Custom property to uniquely identify this annotation.
+        });
+        $.view_map.annotations.push(annotation);
+    });
+}
 
+function setupMaps(){
     var hasLocationPermission = Ti.Geolocation.hasLocationPermissions(Ti.Geolocation.AUTHORIZATION_ALWAYS);
     if (!hasLocationPermission) {
         Ti.Geolocation.requestLocationPermissions(Ti.Geolocation.AUTHORIZATION_ALWAYS, function(e) {
@@ -49,30 +65,13 @@ var log = require( 'utility/logger' )( {
             longitudeDelta: 0.7
         };
     });
-
-
-})();
-
-function addAnnotations(list){
-    $.view_map.annotations = [];
-    _.each(list,(item)=>{
-        var annotation = Map.createAnnotation({
-            latitude: item.ltd,
-            longitude: item.lgt,
-            title: L('agence') + item.region + ' - ' + item.agency_id,
-            //subtitle: 'Mountain View, CA',
-            pincolor: Map.ANNOTATION_BLUE,
-            myid: item.agency_id // Custom property to uniquely identify this annotation.
-        });
-        $.view_map.annotations.push(annotation);
-    });
 }
 
 function loadPage(id,successCallback,errorCallback){
     dataService.getAgencies(id,
         (response)=>{
             updateList(response);
-            addAnnotations(response);
+            //addAnnotations(response);
             _.isFunction( successCallback ) && successCallback( response );
         },
         (error)=>{
@@ -141,6 +140,10 @@ function displayCarte(e){
     $.btCarteImg.image = "/images/icn_localization_white_big.png";
     $.agenceList.hide();
     $.maps.show();
+    if (Alloy.Globals.isIOS) {
+        setupMaps();
+    }
+
 
 }
 

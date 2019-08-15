@@ -75,8 +75,7 @@
   top: 259,
 }
 
-'#labelIns
-crire[platform=android]': {
+'#labelInscrire[platform=android]': {
   top: 610,
   bottom : 30,
   right: 25,

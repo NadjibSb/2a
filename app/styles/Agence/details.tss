@@ -18,7 +18,6 @@
         fontFamily: Alloy.CFG.design.fonts.Heavy
     },
     color: Alloy.CFG.design.fonts.PrimaryColor,
-    text: "tetetettetete"
 }
 
 '.icon': {

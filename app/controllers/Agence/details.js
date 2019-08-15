@@ -6,11 +6,12 @@ var log = require( 'utility/logger' )( {
 		hideLog: false
 	} ),
     navManager = require("/utility/navmanager"),
-    dataService = require("/dataHandler/agenciesService"),
+    dataService = require("/dataHandler/agenciesService");
 
 (function constructor(){
+    log(args);
 
-    dataService.getAgencyDetails(1,
+    dataService.getAgencyDetails(args.item.id,
         (agency)=>{
             updateUI(agency);
         },

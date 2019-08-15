@@ -99,3 +99,35 @@
     bottom: 0,
     backgroundColor: 'white'
 }
+
+'#view_map': {
+    animate: true,
+    regionFit: true,
+}
+
+'.dot': {
+    height: 14,
+    width: 14,
+    borderRadius: 7,
+}
+
+'.bottomViewText': {
+    left: 16,
+    font: {
+        fontSize: 14,
+        fontFamily: Alloy.CFG.design.fonts.Medium
+    },
+    color: Alloy.CFG.design.fonts.PrimaryColor
+}
+
+'.bottomViewItem': {
+    width: '40%'
+}
+
+'.left': {
+    left: 32
+}
+
+'.right': {
+    right: 32
+}

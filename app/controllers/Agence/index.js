@@ -6,6 +6,7 @@ var log = require( 'utility/logger' )( {
 		hideLog: false
 	} ),
     navManager = require("/utility/navmanager"),
+    Map = require('ti.map'),
     dataService = require("/dataHandler/agenciesService");
 
 
@@ -27,12 +28,51 @@ var log = require( 'utility/logger' )( {
     loadPage(1);
 
 
+    var hasLocationPermission = Ti.Geolocation.hasLocationPermissions(Ti.Geolocation.AUTHORIZATION_ALWAYS);
+    if (!hasLocationPermission) {
+        Ti.Geolocation.requestLocationPermissions(Ti.Geolocation.AUTHORIZATION_ALWAYS, function(e) {
+            if (e.success) {
+                log(e);
+                Ti.Geolocation.getCurrentPosition((l)=>{
+                    log(l);
+                });
+            } else {
+                log(e);
+            }
+        })
+    }
+    Ti.Geolocation.getCurrentPosition((l)=>{
+        $.view_map.region = {
+            latitude: l.coords.latitude,
+            longitude: l.coords.longitude,
+            latitudeDelta: 0.7,
+            longitudeDelta: 0.7
+        };
+    });
+
+
 })();
+
+function addAnnotations(list){
+    $.view_map.annotations = [];
+    _.each(list,(item)=>{
+        var annotation = Map.createAnnotation({
+            latitude: item.ltd,
+            longitude: item.lgt,
+            title: L('agence') + item.region + ' - ' + item.agency_id,
+            //subtitle: 'Mountain View, CA',
+            pincolor: Map.ANNOTATION_BLUE,
+            myid: item.agency_id // Custom property to uniquely identify this annotation.
+        });
+        $.view_map.annotations.push(annotation);
+    });
+}
 
 function loadPage(id,successCallback,errorCallback){
     dataService.getAgencies(id,
         (response)=>{
             updateList(response);
+            addAnnotations(response);
             _.isFunction( successCallback ) && successCallback( response );
         },
         (error)=>{
@@ -47,9 +87,10 @@ function updateList(list){
     _.each(list,(item)=>{
         listToDisplay.push({
             template: "agenceTemplate",
+            id:item.agency_id,
             title: {text: item.region + ' - '+ item.agency_id},
             adresse: {text: item.address},
-            tlf: {text: item.phone},
+            tlf: {text: item.phone[0]},
             email: {text: item.email},
         });
     });
@@ -63,9 +104,14 @@ function setup_refreshController(){
     $.agenceList.refreshControl = control;
     control.addEventListener('refreshstart',function(e){
         log('refreshstart');
-        loadPage(1,()=>{
-            control.endRefreshing();
-        });
+        loadPage(1,
+            ()=>{
+                control.endRefreshing();
+            },
+            ()=>{
+                control.endRefreshing();
+            }
+        );
     });
 }
 
@@ -99,5 +145,5 @@ function displayCarte(e){
 }
 
 function onItemclick(e){
-    navManager.openWindow("/Agence/details");
+    navManager.openWindow("/Agence/details",1,{item:$.agencesSection.items[e.itemIndex]});
 }

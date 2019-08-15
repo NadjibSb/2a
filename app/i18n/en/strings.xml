@@ -69,6 +69,8 @@
     <string name="agence">Agence </string>
     <string name="agence_btn_liste">Voir sur liste</string>
     <string name="agence_btn_carte">Voir sur carte</string>
+    <string name="agence_open">Agence ouverte</string>
+    <string name="agence_closed">Agence fermée</string>
 
 
     <!-- Agences details -->

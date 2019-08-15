@@ -24,7 +24,7 @@
                             <View class="itemContainer vlayout hSize" >
                                 <Label class="subItem itemTitle" bindId="title"></Label>
                                 <View class="subItem hSize">
-                                    <ImageView class="icon" image="/images/icn_localization_blue_tabbar.png"></ImageView>
+                                    <ImageView class="icon" image="/images/icn_localization_blue_tabbar.png" width="12"></ImageView>
                                     <Label class="itemText" bindId="adresse"></Label>
                                 </View>
                                 <View class="subItem hSize">
@@ -44,10 +44,17 @@
             </ListView>
             <View id="maps">
                 <View backgroundColor="olive">
-
+                    <Module module="ti.map" id="view_map"></Module>
                 </View>
                 <View class="bottomView hSize">
-
+                    <View class="bottomViewItem left hSize hlayout">
+                        <View class="dot" backgroundColor="green"></View>
+                        <Label class="bottomViewText" text="L('agence_open')" ></Label>
+                    </View>
+                    <View class="bottomViewItem right hSize hlayout">
+                        <View class="dot" backgroundColor="red"></View>
+                        <Label class="bottomViewText" text="L('agence_closed')"></Label>
+                    </View>
                 </View>
             </View>
         </View>

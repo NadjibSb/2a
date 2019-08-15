@@ -16,7 +16,7 @@ var $ = module.exports = {
 
 function getAgencyDetails(id,successCallback, errorCallback){
     var args = {
-        url: "http://abc.dzmob.com/api/agency/"+id,
+        url: "http://abc.dzmob.com/api/agency/detail/"+id,
         method:'GET',
         header: Alloy.Globals.header
     }
@@ -31,6 +31,21 @@ function getAgencyDetails(id,successCallback, errorCallback){
 }
 
 function getAgencies(page=1,successCallback,errorCallback){
+    var args = {
+        url: "http://abc.dzmob.com/api/agency/",
+        method:'GET',
+        header: Alloy.Globals.header
+    }
+    httpClient.request(args,
+        (response)=>{
+            _.isFunction( successCallback ) && successCallback( response );
+        },
+        (response)=>{
+            _.isFunction( errorCallback ) && errorCallback( response );
+        }
+    );
+}
+function getAgenciesPerPage(successCallback,errorCallback){
     var args = {
         url: "http://abc.dzmob.com/api/agency/",
         method:'GET',

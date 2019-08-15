@@ -1,7 +1,44 @@
 <Alloy>
   <Window>
     <View id="container">
-      <Label> Divers </Label>
+      <ImageView id="Imagebackground" class="Fill"/>
+      <ScrollView>
+        <Require src="/Commun/ecranLogo"></Require>
+        <View class="hSize vlayout">
+          <View id="infoContainer" class="hSize vlayout">
+            <Button id="buttonAssurance" class="diversButton">
+              <ImageView id="imageAssurance" class="imageInsideButton"></ImageView>
+              <Label id="labelAssurance" class="lebelInsideButton"></Label>
+            </Button>
+            <Button id="buttonNotification" class="diversButton buttonTop">
+              <ImageView id="imageNotification" class="imageInsideButton" ></ImageView>
+              <Label id="labelAssurance" class="lebelInsideButton"></Label>
+            </Button>
+            <Button id="buttonNumeroUtil" class="diversButton buttonTop">
+              <ImageView id="imageNumeroUtil" class="imageInsideButton"></ImageView>
+              <Label id="labelAssurance" class="lebelInsideButton"></Label>
+            </Button>
+          </View>
+          <ImageView id="lineSeparator"></ImageView>
+          <View id="editionContainer" class="hSize vlayout">
+            <Button id="buttonEditionProfil" class="diversButton">
+              <ImageView id="imageEditionProfil" class="imageInsideButton"></ImageView>
+              <Label id="labelAssurance" class="lebelInsideButton"></Label>
+            </Button>
+            <!--<Button id="buttonEditionPassword" class="diversButton buttonTop">
+              <ImageView id="imageEditionPassword" class="imageInsideButton"></ImageView>
+            </Button>-->
+            <Button id="buttonDeconnexion" class="diversButton buttonTop">
+              <ImageView id="imageDeconnexion" class="imageInsideButton" ></ImageView>
+              <Label id="labelDeconnexion" class="lebelInsideButton"></Label>
+            </Button>
+          </View>
+          <View class="hSize">
+            <ImageView></ImageView>
+            <Label module="module/underlineText" class="imageInsideButton"></Label>
+          </View>
+        </View>      
+      </ScrollView>  
   	</View>
   </Window>
 </Alloy>

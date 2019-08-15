@@ -140,6 +140,21 @@ overrode the settings with other TSS, XML, or JS settings:
 
 }
 
+".diversButton" : {
+    color: "white",
+    backgroundColor: "#374379",
+    height: 46,
+    borderRadius: 5,
+    left: 25,
+    right: 25,
+    textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+    font: {
+        fontSize: 16,
+        fontWeight: "semibold"
+    },
+
+}
+
 '#Imagebackground': {
   image: "/images/background image.png"
 }

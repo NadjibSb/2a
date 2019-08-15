@@ -2,3 +2,73 @@
 ".container" : {
   
 }
+
+"#lineSeparator":{
+    image: "/images/line_separation_grey.png",
+    top: 26
+}
+
+"#infoContainer":{
+    top : 250,
+}
+
+"#editionContainer":{
+    top : 24,
+}
+
+"#buttonDeconnexion":{
+    top : 29,
+    backgroundColor: "#d52505",
+    title: "Deconnexion"
+}
+
+".buttonTop":{
+    top:14
+}
+
+"#imageAssurance":{
+    image: "/images/icn_nos_assurances_white.png"
+}
+"#imageNotification":{
+    image: "/images/icn_notifications.png"
+}
+"#imageNumeroUtil":{
+    image: "/images/icn_numeros_utile_white.png"
+}
+"#imageEditionProfil":{
+    image: "/images/icn_editer_profil_white.png"
+}
+"#imageEditionPassword":{
+    image: "/images/icn_modif_motdepasse_white.png"
+}
+"#imageDeconnexion":{
+    image: "/images/icn_deconnexion.png"
+}
+
+".imageInsideButton":{
+    left: 15
+}
+
+"#labelAssurance":{
+    text : "islem"
+}
+"#labelNotification":{
+    title : "islem"
+}
+"#labelNumeroUtil":{
+    title : "islem"
+}
+"#labelEditionProfil":{
+    title : "islem"
+}
+"#labelEditionPassword":{
+    title : "islem"
+}
+"#labelDeconnexion":{
+    title : "islem"
+}
+
+".lebelInsideButton":{
+    left: 43,
+    color: "#ffffff"
+}

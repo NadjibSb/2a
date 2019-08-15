@@ -12,10 +12,10 @@
   <fullscreen>false</fullscreen>
   <navbar-hidden>false</navbar-hidden>
   <analytics>true</analytics>
-  <!-- Iselm 
-  <guid>51c8f22d-bf81-4570-9999-a01554cbfc65</guid>-->
-  <!--nadjib-->
-  <guid>a5aedf31-be3d-4fd4-9444-1459404ae74f</guid>
+  <!-- Iselm -->
+  <guid>51c8f22d-bf81-4570-9999-a01554cbfc65</guid>
+  <!--nadjib
+  <guid>a5aedf31-be3d-4fd4-9444-1459404ae74f</guid>-->
   <property name="ti.ui.defaultunit" type="string">dp</property>
   <property name="run-on-main-thread" type="bool">true</property>
   <ios>
@@ -74,8 +74,8 @@
     <plugin version="1.0">ti.alloy</plugin>
   </plugins>
   <!-- Islem
-  <property name="appc-app-id" type="string">5d41ae3653dcf96c96247fb7</property>
-  -->
+  <property name="appc-app-id" type="string">5d41ae3653dcf96c96247fb7</property>-->
+  <!-- nadjib -->
   <property name="appc-app-id" type="string">5d41a26653dcf96c96247eb9</property>
   <property name="acs-authbase-url-development" type="string"/>
   <property name="acs-base-url-development" type="string">https://api.cloud.appcelerator.com</property>

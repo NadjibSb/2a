@@ -140,8 +140,9 @@ function displayCarte(e){
     $.btCarteImg.image = "/images/icn_localization_white_big.png";
     $.agenceList.hide();
     $.maps.show();
+    setupMaps();
     if (Alloy.Globals.isIOS) {
-        setupMaps();
+        //setupMaps();
     }
 
 

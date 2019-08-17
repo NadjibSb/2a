@@ -44,7 +44,7 @@
             </ListView>
             <View id="maps">
                 <View backgroundColor="olive">
-                    <Module module="ti.map" id="view_map" platform="ios"></Module>
+                    <Module module="ti.map" id="view_map"></Module>
                 </View>
                 <View class="bottomView hSize">
                     <View class="bottomViewItem left hSize hlayout">

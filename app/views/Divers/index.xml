@@ -7,36 +7,39 @@
         <View class="hSize vlayout">
           <View id="infoContainer" class="hSize vlayout">
             
-            <Button id="buttonAssurance" class="diversButton">
+            <Button id="buttonAssurance" class="diversButton" onClick="buttonClick" buttonId="assurance">
               <ImageView id="imageAssurance" class="imageInsideButton"></ImageView>
               <Label id="labelAssurance" class="lebelInsideButton fontMedium"></Label>
             </Button>
-            <Button id="buttonNotification" class="diversButton buttonTop">
+            <Button id="buttonNotification" class="diversButton buttonTop" onClick="buttonClick" buttonId="notification">
               <ImageView id="imageNotification" class="imageInsideButton" ></ImageView>
               <Label id="labelNotification" class="lebelInsideButton fontMedium"></Label>
             </Button>
-            <Button id="buttonNumeroUtil" class="diversButton buttonTop">
+            <Button id="buttonNumeroUtil" class="diversButton buttonTop" onClick="buttonClick" buttonId="numeroUtils">
               <ImageView id="imageNumeroUtil" class="imageInsideButton"></ImageView>
               <Label id="labelNumeroUtil" class="lebelInsideButton fontMedium"></Label>
             </Button>
           </View>
           <ImageView id="lineSeparator"></ImageView>
           <View id="editionContainer" class="hSize vlayout">
-            <Button id="buttonEditionProfil" class="diversButton">
+            <Button id="buttonEditionProfil" class="diversButton" onClick="buttonClick" buttonId="editionProfil">
               <ImageView id="imageEditionProfil" class="imageInsideButton"></ImageView>
               <Label id="labelEditionProfil" class="lebelInsideButton fontMedium"></Label>
             </Button>
             <!--<Button id="buttonEditionPassword" class="diversButton buttonTop">
               <ImageView id="imageEditionPassword" class="imageInsideButton"></ImageView>
             </Button>-->
-            <Button id="buttonDeconnexion" class="diversButton buttonTop">
+            <Button id="buttonDeconnexion" class="diversButton buttonTop" onClick="buttonLogout">
               <ImageView id="imageDeconnexion" class="imageInsideButton" ></ImageView>
               <Label id="labelDeconnexion" class="lebelInsideButton fontMedium"></Label>
             </Button>
           </View>
+
           <View id="containerAppel" class="hSize">
-            <ImageView id="ApplerAssitanceImage"></ImageView>
-            <Label id="labelAppelAssitance" module="module/underlineText"  ></Label>
+            <View class="hSize wSize hlayout">
+              <ImageView id="ApplerAssitanceImage"></ImageView>
+              <Label id="labelAppelAssitance" module="module/underlineText"  ></Label>
+            </View>
           </View>
         </View>      
       </ScrollView>  

@@ -1,4 +1,9 @@
 <Alloy>
-	<View class="container">
-	</View>
+	<Window>
+		<View id="container">
+			<Widget src="customNavBar" id="navBar" class="navBar" onLeftButtonClick="pressBack"></Widget>
+			<Label> Edition Profil</Label>
+		</View>
+	</Window>
+	
 </Alloy>

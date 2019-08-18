@@ -156,6 +156,12 @@ var updateTitle = function(evt) {
 	previousStackSize = currentStack.length;
 };
 
-exports.closetabGroup = function(){
+const closetabGroup = exports.closetabGroup = function(){
   tabGroupWindow.close();
 };
+
+
+exports.openAndCloseTab = function(path){
+  openWindow(path,0);
+  closetabGroup()
+}

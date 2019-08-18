@@ -16,7 +16,8 @@ var $ = module.exports = {
 	login: login,
   isLogedIn : isLogedIn,
   resetPassword : resetPassword,
-  signup : signup
+  signup : signup,
+  deleteUserData :deleteUserData
 };
 
 
@@ -26,6 +27,8 @@ const SESSION_DATA = "SESSION_DATA";
 const SESSION_ID = "SESSION_ID";
 const apiUrl = "http://abc.dzmob.com/api/";
 var sessionId = Ti.App.Properties.getString( SESSION_ID, null );
+var sessionData = Ti.App.Properties.getObject( SESSION_DATA, null );
+
 
 // PRIVATE FONCTIONS
 
@@ -49,7 +52,7 @@ function onSuccessLogin(e){
   log(e)
   saveSessionInfo(e);
   //navmanager.setTabGroup("tabs/index");
-  navigationWindow.openWindow("Home/index",0,{});
+  navmanager.openWindow("Home/index",0,{});
 }
 
 //save the sessionInfo in device
@@ -101,3 +104,11 @@ function signup( params, error ) {
 	httpClient.request( args, onSuccessLogin, error );
 }
 
+
+function deleteUserData(){
+	sessionId = null
+	sessionData = null
+	Ti.App.Properties.setString( SESSION_ID, null );
+	Ti.App.Properties.setObject( SESSION_DATA, null );
+	navmanager.openAndCloseTab("Auth/login")
+}

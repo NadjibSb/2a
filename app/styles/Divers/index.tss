@@ -88,5 +88,6 @@
 	},
 	color : "#cd7e43",
 	text : "Appeler l’assistance",
-	underlineText:"Appeler l’assistance"
+	underlineText:"Appeler l’assistance",
+    left: 10
 }

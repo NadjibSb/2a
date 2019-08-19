@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ti:app
+<ti:app 
   xmlns:ti="http://ti.appcelerator.org">
   <id>com.aa.assures</id>
   <name>aa_assures</name>
@@ -64,9 +64,9 @@
       </dict>
     </plist>
   </ios>
-  <android
+  <android 
     xmlns:android="http://schemas.android.com/apk/res/android">
-    <manifest
+    <manifest 
       xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1">
       <application>
         <meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyAdn-hCRrwidUopo0gQ93bhJ7W53I8qyfQ"/>

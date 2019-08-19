@@ -55,7 +55,8 @@
         fontSize: 16,
         fontFamily: Alloy.CFG.design.fonts.Heavy
     },
-    color: Alloy.CFG.design.fonts.PrimaryColor
+    color: Alloy.CFG.design.fonts.PrimaryColor,
+    left: 0
 }
 
 '.itemText': {
@@ -103,12 +104,12 @@
 '#view_map': {
     animate: true,
     regionFit: true,
+    userLocation: true,
 }
 
 '.dot': {
-    height: 14,
-    width: 14,
-    borderRadius: 7,
+    height: 15,
+    width: 15,
 }
 
 '.bottomViewText': {
@@ -130,4 +131,57 @@
 
 '.right': {
     right: 32
+}
+
+'#agencyDetailsCard': {
+    bottom: 50,
+    width: "95%",
+    backgroundColor: 'white',
+    opacity: 0.95,
+    borderRadius: 5,
+    viewShadowOffset: {x:0,y:1},
+    viewShadowColor: "gray",
+    visible: false
+}
+
+'#closeCard': {
+    top: 8,
+    right: 8,
+    image: '/images/icn_close_blue.png'
+}
+
+'.cardContainer': {
+    left: 16,
+    right: 16,
+    bottom: 16
+}
+
+'#btItineraire': {
+    height: 35,
+    borderRadius: 5,
+    backgroundColor: Alloy.CFG.design.colors.PrimaryColor,
+}
+
+'.btContent': {
+    top: 8,
+    left: 16,
+    right: 16,
+}
+
+'.moreDetailsContainer': {
+    height: 35
+}
+
+'#moreDetails': {
+    bottom: 0,
+    right: 0,
+    font: {
+        fontSize: 14,
+        fontFamily: Alloy.CFG.design.fonts.Medium
+    },
+    color: Alloy.CFG.design.fonts.SecondaryColorDark
+}
+
+'.topMargin': {
+    top: 8
 }

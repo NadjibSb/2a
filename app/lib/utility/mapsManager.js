@@ -6,36 +6,46 @@ const log = require('/utility/logger')({
 
 //PUBLIC INTERFACE
 var $ = module.exports = {
-	checkConfig: checkConfig
+	checkConfig: checkConfig,
+    checkPermissions:checkPermissions
 };
 
 // PRIVATE FUNCTIONS
 function checkConfig(){
-    var MapModule = require('ti.map');
-    var rc = MapModule.isGooglePlayServicesAvailable();
-    switch (rc) {
-        case MapModule.SUCCESS:
-            log('Google Play services is installed.');
-            break;
-        case MapModule.SERVICE_MISSING:
-            alert('Google Play services is missing. Please install Google Play services from the Google Play store.');
-            return false;
-        case MapModule.SERVICE_VERSION_UPDATE_REQUIRED:
-            alert('Google Play services is out of date. Please update Google Play services.');
-            return false;
-        case MapModule.SERVICE_DISABLED:
-            alert('Google Play services is disabled. Please enable Google Play services.');
-            return false;
-        case MapModule.SERVICE_INVALID:
-            alert('Google Play services cannot be authenticated. Reinstall Google Play services.');
-            return false;
-        default:
-            alert('Unknown error.');
-            return false;
+
+    if (Alloy.Globals.isAndroid) {
+        var MapModule = require('ti.map');
+        var rc = MapModule.isGooglePlayServicesAvailable();
+        switch (rc) {
+            case MapModule.SUCCESS:
+                log('Google Play services is installed.');
+                return true;
+            case MapModule.SERVICE_MISSING:
+                alert('Google Play services is missing. Please install Google Play services from the Google Play store.');
+                break;
+            case MapModule.SERVICE_VERSION_UPDATE_REQUIRED:
+                alert('Google Play services is out of date. Please update Google Play services.');
+                break;
+            case MapModule.SERVICE_DISABLED:
+                alert('Google Play services is disabled. Please enable Google Play services.');
+                break;
+            case MapModule.SERVICE_INVALID:
+                alert('Google Play services cannot be authenticated. Reinstall Google Play services.');
+                break;
+            default:
+                alert('Unknown error.');
+                break;
+        }
+        return false;
+    }else { // ON iOS
+        return true;
     }
 
-    if(Ti.Platform.Android.API_LEVEL >= 23){
-        log('Ti.Platform.Android.API_LEVEL >= 23');
+}
+
+function checkPermissions(){
+    if(Alloy.Globals.isIOS || Ti.Platform.Android.API_LEVEL >= 23){
+        log('os= iOS || Ti.Platform.Android.API_LEVEL >= 23');
         var hasLocationPermission = Ti.Geolocation.hasLocationPermissions(Ti.Geolocation.AUTHORIZATION_ALWAYS);
         if (!hasLocationPermission) {
             Ti.Geolocation.requestLocationPermissions(Ti.Geolocation.AUTHORIZATION_ALWAYS, function(e) {
@@ -47,10 +57,11 @@ function checkConfig(){
                     return false;
                 }
             })
+        }else { // permission already given
+            return true;
         }
     }else {
         log("Ti.Platform.Android.API_LEVEL < 23")
         return true;
     }
-
 }

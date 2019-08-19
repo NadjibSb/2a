@@ -58,7 +58,7 @@
 
 '#agence_image': {
     image: "/images/img_onboarding_1.png",
-    width: Ti.UI.FILL,
+    width: '100%',
 }
 
 '#seeMaps': {

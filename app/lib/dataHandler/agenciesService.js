@@ -5,18 +5,21 @@ var log = require( "/utility/logger" )( {
 	} ),
 	httpClient = require( "/utility/httpManager" );
 
+var apiURL = Alloy.Globals.API_URL;
+
 
 
 
 // PUBLIC INTERFACE
 var $ = module.exports = {
 	getAgencyDetails: getAgencyDetails,
-    getAgencies: getAgencies
+    getAgenciesPerPage: getAgenciesPerPage,
+    getAgencies: getAgencies,
 };
 
 function getAgencyDetails(id,successCallback, errorCallback){
     var args = {
-        url: "http://abc.dzmob.com/api/agency/detail/"+id,
+        url: apiURL + "/agency/detail/"+id,
         method:'GET',
         header: Alloy.Globals.header
     }
@@ -30,9 +33,9 @@ function getAgencyDetails(id,successCallback, errorCallback){
     );
 }
 
-function getAgencies(page=1,successCallback,errorCallback){
+function getAgenciesPerPage(page=1,successCallback,errorCallback){
     var args = {
-        url: "http://abc.dzmob.com/api/agency/",
+        url: apiURL + "/agency/"+page,
         method:'GET',
         header: Alloy.Globals.header
     }
@@ -45,9 +48,9 @@ function getAgencies(page=1,successCallback,errorCallback){
         }
     );
 }
-function getAgenciesPerPage(successCallback,errorCallback){
+function getAgencies(successCallback,errorCallback){
     var args = {
-        url: "http://abc.dzmob.com/api/agency/",
+        url: apiURL + "/agency/",
         method:'GET',
         header: Alloy.Globals.header
     }

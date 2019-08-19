@@ -1,19 +1,18 @@
 <Alloy>
   <Window>
-  <Widget src="customIndicator" id="activityIndicator" blockScreen="true"/>
-  <ImageView id="Imagebackground" class="Fill"/>
-  <ScrollView>
-  <View class="container hSize">
-      <ImageView id="ImageLogo"></ImageView>
-      <View id="ViewLine"/>
-      <Label id="labelIdentification" class="fontBlack"></Label>
-      <Widget src="dzmob.widget.TextField" id="textFieldEmail" ></Widget>
-      <Widget src="dzmob.widget.TextField" id="textFieldPassword"></Widget>
-      <Button id="btnLogin" class="validationButton" onClick="clickLogin" ></Button>
-      <Label id="lbForgotPassword" class="fontLight" module="module/underlineText" onClick="clickForgot" ></Label>
-      <Label id="labelInscrire" class="fontLight" module="module/underlineText" onClick="clickInscrire"></Label>    
-  	</View>
-  </ScrollView>
-  	
+      <Widget src="customIndicator" id="activityIndicator" blockScreen="true"/>
+      <ImageView id="Imagebackground" class="Fill"/>
+      <ScrollView>
+          <View class="container hSize">
+              <ImageView id="ImageLogo"></ImageView>
+              <View id="ViewLine"/>
+              <Label id="labelIdentification" class="fontBlack"></Label>
+              <Widget src="dzmob.widget.TextField" id="textFieldEmail" ></Widget>
+              <Widget src="dzmob.widget.TextField" id="textFieldPassword"></Widget>
+              <Button id="btnLogin" class="validationButton" onClick="clickLogin" ></Button>
+              <Label id="lbForgotPassword" class="fontLight" module="module/underlineText" onClick="clickForgot" ></Label>
+              <Label id="labelInscrire" class="fontLight" module="module/underlineText" onClick="clickInscrire"></Label>
+          	</View>
+      </ScrollView>
   </Window>
 </Alloy>

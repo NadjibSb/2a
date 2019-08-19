@@ -13,5 +13,7 @@ function pressBack(e){
     log("test press")
     navManager.closeWindow($.editionPassword)
   }
-
+  function SauvgarderButton(){
+  
+  }
 //traitement

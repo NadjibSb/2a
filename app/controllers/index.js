@@ -11,8 +11,8 @@ var appAlready;
 function init(){
   log("init");
   var rootView;
-  //if (isLoginIn) {
-    if(true){
+  if (isLoginIn) {
+    //if(true){
     log("islogdin");
     rootView = "Home/index"; 
     //navigationWindow.setTabGroup(rootView)

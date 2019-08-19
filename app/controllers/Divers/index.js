@@ -20,4 +20,22 @@ function buttonLogout(e){
     session.deleteUserData()
 }
 
+function changeTab(e){
+        navManager.changeTab(1) 
+}
+
+function DoCall(){
+    log("do a call")
+    if(OS_ANDROID){
+        Titanium.Platform.openURL('tel:0556989898');
+    }else{
+        Ti.Platform.openURL('tel:055-698-9890', {
+            'UIApplicationOpenURLOptionsSourceApplicationKey': true
+        }, function(e) {
+            Ti.API.info('URL open successfully? ' + JSON.stringify(e));
+        });
+    }
+    
+}
+
 // traintemnet

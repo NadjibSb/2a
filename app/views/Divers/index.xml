@@ -1,47 +1,45 @@
 <Alloy>
   <Window>
     <View id="container">
-      <ImageView id="Imagebackground" class="Fill"/>
+      <ImageView id="Imagebackground" class="Fill hSize"/>
       <ScrollView>
-        <Require src="/Commun/ecranLogo"></Require>
-        <View class="hSize vlayout">
-          <View id="infoContainer" class="hSize vlayout">
-            
-            <Button id="buttonAssurance" class="diversButton" onClick="buttonClick" buttonId="assurance">
-              <ImageView id="imageAssurance" class="imageInsideButton"></ImageView>
-              <Label id="labelAssurance" class="lebelInsideButton fontMedium"></Label>
-            </Button>
-            <Button id="buttonNotification" class="diversButton buttonTop" onClick="buttonClick" buttonId="notification">
-              <ImageView id="imageNotification" class="imageInsideButton" ></ImageView>
-              <Label id="labelNotification" class="lebelInsideButton fontMedium"></Label>
-            </Button>
-            <Button id="buttonNumeroUtil" class="diversButton buttonTop" onClick="buttonClick" buttonId="numeroUtils">
-              <ImageView id="imageNumeroUtil" class="imageInsideButton"></ImageView>
-              <Label id="labelNumeroUtil" class="lebelInsideButton fontMedium"></Label>
-            </Button>
-          </View>
-          <ImageView id="lineSeparator"></ImageView>
-          <View id="editionContainer" class="hSize vlayout">
-            <Button id="buttonEditionProfil" class="diversButton" onClick="buttonClick" buttonId="editionProfil">
-              <ImageView id="imageEditionProfil" class="imageInsideButton"></ImageView>
-              <Label id="labelEditionProfil" class="lebelInsideButton fontMedium"></Label>
-            </Button>
-            <!--<Button id="buttonEditionPassword" class="diversButton buttonTop">
-              <ImageView id="imageEditionPassword" class="imageInsideButton"></ImageView>
-            </Button>-->
-            <Button id="buttonDeconnexion" class="diversButton buttonTop" onClick="buttonLogout">
-              <ImageView id="imageDeconnexion" class="imageInsideButton" ></ImageView>
-              <Label id="labelDeconnexion" class="lebelInsideButton fontMedium"></Label>
-            </Button>
-          </View>
-
-          <View id="containerAppel" class="hSize">
-            <View class="hSize wSize hlayout">
-              <ImageView id="ApplerAssitanceImage"></ImageView>
-              <Label id="labelAppelAssitance" module="module/underlineText"  ></Label>
+          <Require src="/Commun/ecranLogo" id="logo"></Require> 
+          <View class="hSize vlayout">
+            <View id="infoContainer" class="hSize vlayout">
+              <View id="buttonAssurance" class="diversButton" onClick="changeTab" buttonId="assurance">
+                <ImageView id="imageAssurance" class="imageInsideButton" buttonId="assurance"></ImageView>
+                <Label id="labelAssurance" class="lebelInsideButton fontMedium" buttonId="assurance"></Label>
+              </View>
+              <View id="buttonNotification" class="diversButton buttonTop" onClick="buttonClick" buttonId="notification">
+                <ImageView id="imageNotification" class="imageInsideButton" buttonId="notification"></ImageView>
+                <Label id="labelNotification" class="lebelInsideButton fontMedium" buttonId="notification"></Label>
+              </View>
+              <View id="buttonNumeroUtil" class="diversButton buttonTop" onClick="buttonClick" buttonId="numeroUtils">
+                <ImageView id="imageNumeroUtil" class="imageInsideButton" buttonId="numeroUtils"></ImageView>
+                <Label id="labelNumeroUtil" class="lebelInsideButton fontMedium" buttonId="numeroUtils"></Label>
+              </View>
             </View>
-          </View>
-        </View>      
+            <ImageView id="lineSeparator"></ImageView>
+            <View id="editionContainer" class="hSize vlayout">
+              <View id="buttonEditionProfil" class="diversButton" onClick="buttonClick" buttonId="editionProfil">
+                <ImageView id="imageEditionProfil" class="imageInsideButton" buttonId="editionProfil"></ImageView>
+                <Label id="labelEditionProfil" class="lebelInsideButton fontMedium" buttonId="editionProfil"></Label>
+              </View>
+              <!--<Button id="buttonEditionPassword" class="diversButton buttonTop">
+                <ImageView id="imageEditionPassword" class="imageInsideButton"></ImageView>
+              </Button>-->
+              <View id="buttonDeconnexion" class="diversButton buttonTop" onClick="buttonLogout">
+                <ImageView id="imageDeconnexion" class="imageInsideButton" ></ImageView>
+                <Label id="labelDeconnexion" class="lebelInsideButton fontMedium"></Label>
+              </View>
+            </View>
+            <View id="containerAppel" class="hSize">
+              <View class="hSize wSize hlayout" onClick="DoCall" >
+                <ImageView id="ApplerAssitanceImage"></ImageView>
+                <Label id="labelAppelAssitance" module="module/underlineText"  ></Label>
+              </View>
+            </View>
+          </View>      
       </ScrollView>  
   	</View>
   </Window>

@@ -8,3 +8,69 @@
   leftIcon: "/images/icn_topbar_back.png",
   zIndex: 200,
 }
+
+"#labelListExpiration":{
+  top : 30,
+  text: "Choisissez combien de temps avant l'expiration\ndu contract vous souhaiter recevoir une\nnotification",
+  font: {
+    fontSize : 15,
+    fontFamily: Alloy.CFG.design.fonts.Heavy,
+    fontWeight: "bold"
+  },
+  left: 33,
+}
+
+"#labelExpiration":{
+    text: "Expiration Notification",
+    font: {
+        fontSize : 16,    
+    },
+    color: "#929292",
+    left : 0    
+}
+
+"#spinnerImage":{
+    image: "/images/icn_downtriangle_blue.png",
+    right: 0
+}
+"#lineExpiration":{
+    top: 8,
+  height: 1,
+  borderWidth: 1,
+  borderStyle: Ti.UI.INPUT_BORDERSTYLE_LINE,
+  borderColor: '#979797',
+}
+
+".ExperationContainer":{
+  top : 25,
+  right: 34,
+  left : 34
+}
+
+"#iconPassword":{
+  image: "/images/icn_checkhand_grey_tapbar.png",
+  left: 34
+}
+
+"#labePassword":{
+  left: 10,
+  font : {fontSize : 20},
+	color : "#374379",
+  text : "Modifier mot de passe",
+	underlineText:"Modifier mot de passe"
+}
+
+"#buttonSauvgarder":{
+  title: "Sauvgarder",
+  top: 30,
+  bottom : 33,
+}
+
+".editProfilContainer": {
+  top : 110	
+}
+
+".containerEditPass":{
+  top : 30
+}
+

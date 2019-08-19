@@ -28,7 +28,7 @@
 }
 
 ".stackView":{
-	bottom : 50,
+	bottom : 57,
 	visible : false
 }
 

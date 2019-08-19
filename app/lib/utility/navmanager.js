@@ -6,6 +6,8 @@ const log = require('/utility/logger')({
   tag : "navigation",
   hidelag : false
 })
+var previousEvent;
+var previousStackSize = 0;
 
 // set Tabgroup
 exports.setTabGroup = function(path,tabActive) {
@@ -126,8 +128,6 @@ exports.openAndCloseAll = function(path,tabgroup,params){
   }
 };
 
-var previousEvent;
-var previousStackSize = 0;
 var tailleStack = function(stackController){
   return stackController.length
 }
@@ -160,8 +160,18 @@ const closetabGroup = exports.closetabGroup = function(){
   tabGroupWindow.close();
 };
 
-
+// for logout 
 exports.openAndCloseTab = function(path){
   openWindow(path,0);
   closetabGroup()
+};
+
+// if i want to change the tab in tab group with active tab
+exports.changeTab = function(activeTab){
+  if(OS_ANDROID){
+    tabGroup.onTabSelected(activeTab)
+  }else{
+    tabGroup.setActiveTab(activeTab)
+  }
+  
 }

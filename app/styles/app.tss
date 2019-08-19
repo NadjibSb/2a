@@ -214,3 +214,101 @@ overrode the settings with other TSS, XML, or JS settings:
   }
 }
 
+'#textFieldNumClient': {
+    hintText : "Saisissez votre numéro client *",
+	errorColor : "#db2500",
+	focusBarColor : "rgb(55, 67, 121)",
+	blurBarColor : "rgb(151, 151, 151)",
+	validations : {lengthstrict : 11},
+	autocapitalization : Titanium.UI.TEXT_AUTOCAPITALIZATION_NONE,
+	errorMessage : "le Numéro Client saisie n’est pas valide.",
+    defaultErrorMessage : "champ requis",
+	keyboardType : Titanium.UI.KEYBOARD_NUMBER_PAD,
+	
+}
+'#textFieldNom': {
+  hintText : "Nom *",
+	errorColor : "#db2500",
+	validations : { nom: ""},
+	focusBarColor : "rgb(55, 67, 121)",
+	blurBarColor : "rgb(151, 151, 151)",
+	autocapitalization : Titanium.UI.TEXT_AUTOCAPITALIZATION_NONE,
+	errorMessage : "le nom contient des caractere speciaux.",
+    defaultErrorMessage : "champ requis",
+}
+
+'#textFieldPrenom': {
+  hintText : "Prénom *",
+	errorColor : "#db2500",
+	focusBarColor : "rgb(55, 67, 121)",
+	blurBarColor : "rgb(151, 151, 151)",
+	validations : { nom: ""},
+	autocapitalization : Titanium.UI.TEXT_AUTOCAPITALIZATION_NONE,
+	errorMessage : "le prénom contient des caractere speciaux.",
+    defaultErrorMessage : "champ requis",
+}
+
+'#textFieldNumTel': {
+    hintText : "N°Téléphone *",
+	errorColor : "#db2500",
+	focusBarColor : "rgb(55, 67, 121)",
+	blurBarColor : "rgb(151, 151, 151)",
+	validations : {Tel : ""},
+	autocapitalization : Titanium.UI.TEXT_AUTOCAPITALIZATION_NONE,
+	errorMessage : "le N°Téléphone saisie n’est pas valide.",
+  defaultErrorMessage : "champ requis",
+	keyboardType : Ti.UI.KEYBOARD_NUMBER_PAD,
+}
+
+'#textFieldEmailR': {
+  hintText : "Adresse e-mail *",
+	errorColor : "#db2500",
+	focusBarColor : "rgb(55, 67, 121)",
+	blurBarColor : "rgb(151, 151, 151)",
+	validations : {email : ""},
+	autocapitalization : Titanium.UI.TEXT_AUTOCAPITALIZATION_NONE,
+	errorMessage : "L’adresse e-mail saisie n’est pas valide.",
+    defaultErrorMessage : "champ requis",
+	keyboardType : Titanium.UI.KEYBOARD_TYPE_EMAIL,
+}
+".textFeildRegistre":{
+	right: 34,
+	left: 34
+}
+"#labelErreur":{
+	height : 0,
+	top :7,
+	left: 0,
+	text: "champ requis",
+	color: "#db2500",
+	font: {
+		fontSize : 13	
+	}
+}
+
+'#Imagebackground': {
+  image: "/images/background image.png"
+}
+
+'#ImageLogo': {
+  image: "/images/logo_2a_blue.png",
+  top: 43,
+}
+
+// the line view
+'#ViewLine': {
+  height: 5,
+  width: 242,
+  borderWidth: 5,
+  borderStyle: Ti.UI.INPUT_BORDERSTYLE_LINE,
+  borderColor: 'rgb(206, 170, 140)',
+  top: 227,
+}
+'#ViewLineP': {
+  height: 5,
+  width: 242,
+  borderWidth: 5,
+  borderStyle: Ti.UI.INPUT_BORDERSTYLE_LINE,
+  borderColor: 'rgb(206, 170, 140)',
+  top: 37,
+}

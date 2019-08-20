@@ -12,10 +12,10 @@
   <fullscreen>false</fullscreen>
   <navbar-hidden>false</navbar-hidden>
   <analytics>true</analytics>
-  <!-- Iselm -->
-  <guid>51c8f22d-bf81-4570-9999-a01554cbfc65</guid>
-  <!--nadjib
-  <guid>a5aedf31-be3d-4fd4-9444-1459404ae74f</guid>-->
+  <!-- Iselm
+  <guid>51c8f22d-bf81-4570-9999-a01554cbfc65</guid>-->
+  <!--nadjib-->
+  <guid>a5aedf31-be3d-4fd4-9444-1459404ae74f</guid>
   <property name="ti.ui.defaultunit" type="string">dp</property>
   <property name="run-on-main-thread" type="bool">true</property>
   <ios>
@@ -46,10 +46,21 @@
         <key>CFBundleLocalizations</key>
         <array>
           <string>fr</string>
-          <string>en</string>
         </array>
         <key>CFBundleDevelopmentRegion</key>
         <string>fr</string>
+        <key>NSLocationAlwaysUsageDescription</key>
+        <string>
+            Cette fonctionnalité nécessite l’accès à votre position pour mieux fonctionner, voulez-vous autorisation l’application à utiliser votre position ?
+        </string>
+        <key>NSLocationWhenInUseUsageDescription</key>
+        <string>
+            Cette fonctionnalité nécessite l’accès à votre position pour mieux fonctionner, voulez-vous autorisation l’application à utiliser votre position ?
+        </string>
+        <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+        <string>
+            Cette fonctionnalité nécessite l’accès à votre position pour mieux fonctionner, voulez-vous autorisation l’application à utiliser votre position ?
+        </string>
       </dict>
     </plist>
   </ios>
@@ -57,12 +68,16 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
     <manifest 
       xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1">
+      <application>
+        <meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyAdn-hCRrwidUopo0gQ93bhJ7W53I8qyfQ"/>
+      </application>
     </manifest>
   </android>
   <modules>
     <module platform="android">hyperloop</module>
     <module platform="iphone">hyperloop</module>
     <module platform="commonjs">ti.cloud</module>
+    <module>ti.map</module>
   </modules>
   <deployment-targets>
     <target device="android">true</target>

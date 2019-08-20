@@ -1,0 +1,35 @@
+<Alloy>
+  <Window>
+    <View id="container" class="background vlayout">
+        <Widget src="customNavBar" id="navBar" class="navBar" onLeftButtonClick="pressBack"></Widget>
+        <ScrollView>
+            <View class="container vlayout">
+                <Label id="agence_name"></Label>
+                <View class="hSize marginTop">
+                    <ImageView class="icon" image="/images/icn_localisation_blue_input.png"></ImageView>
+                    <Label id="agence_adresse" class="text marginLeft"></Label>
+                </View>
+                <View class="hSize marginTop">
+                    <ImageView class="icon" image="/images/icn_tel_blue.png"></ImageView>
+                    <View id="phoneNumbers" class="hlayout hSize marginLeft">
+                    </View>
+                </View>
+                <View class="hSize marginTop">
+                    <ImageView class="icon" image="/images/icn_email_blue.png"></ImageView>
+                    <Label id="agence_email" class="text marginLeft"></Label>
+                </View>
+                <View class="hSize marginTop">
+                    <Label id="agence_code"></Label>
+                </View>
+                <View class="imageContainer hSize">
+                    <ImageView id="agence_image"></ImageView>
+                </View>
+                <View class="hSize wSize marginTop seeMaps">
+                    <ImageView class="icon" image="/images/icn_localization_gold.png"></ImageView>
+                    <Label id="seeMaps"></Label>
+                </View>
+            </View>
+        </ScrollView>
+  	</View>
+  </Window>
+</Alloy>

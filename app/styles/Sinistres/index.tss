@@ -124,5 +124,5 @@
 }
 
 '#navBar': {
-  title : "Mes sinistres",
+  title : L("sinistres_title"),
 }

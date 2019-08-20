@@ -82,10 +82,12 @@
 }
 
 "#ApplerAssitanceImage":{
+    
     image : "/images/icn_tel_assistance.png"
 }
 
 "#labelAppelAssitance":{
+    left : 10,
 	font : {
 		fontSize : 18,
 		fontFamily : Alloy.CFG.design.fonts.Medium	

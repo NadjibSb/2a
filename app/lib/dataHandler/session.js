@@ -9,11 +9,11 @@ var log = require( "/utility/logger" )( {
 httpClient = require( "/utility/httpManager" );
 const AppSession = require('/utility/AppSession');
 const appSession = AppSession.AppSession()
-
+const timeSession = 18000000 // 30minute
 
 // PUBLIC INTERFACE
 var $ = module.exports = {
-	login: login,
+  login: login,
   isLogedIn : isLogedIn,
   resetPassword : resetPassword,
   signup : signup,
@@ -36,7 +36,8 @@ function login( params, error ) {
 	var args = {
 		method: "POST",
 		url: apiUrl + "login",
-		params: params
+		params: params,
+		ignoreAlert : true,
 	};
 	httpClient.request( args, onSuccessLogin, error );
 }
@@ -69,7 +70,8 @@ function resetPassword( params, success, error ) {
 	var args = {
 		method: "POST",
 		url: apiUrl + "",
-		params: params
+		params: params,
+		ignoreAlert : true,
 	};
 	httpClient.request( args, success, error );
 }
@@ -79,7 +81,9 @@ function signup( params, error ) {
 	var args = {
 		method: "POST",
 		url: apiUrl + "register",
-		params: params
+		params: params,
+		ignoreAlert : true,
+
 	};
 	httpClient.request( args, onSuccessLogin, error );
 }

@@ -1,0 +1,10 @@
+<Alloy>
+	<Window>
+        <View id="container" class="background vlayout">
+            <Widget src="customNavBar" id="navBar" class="navBar" onLeftButtonClick="pressBack"></Widget>
+            <View>
+                <Label id="lb"></Label>
+            </View>
+        </View>
+    </Window>
+</Alloy>

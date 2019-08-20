@@ -10,21 +10,25 @@ var default_font = {
 /*  *
     * change the font and the color of "textToAdd"
 */
-exports.labelStyling = function(label, textToAdd, color=default_color ,font=default_font){
+exports.labelStyling = function(label, textToAdd,args){
+    var attributes = [],range;
+    if (args.color) {
+        attributes.push({
+            type: Ti.UI.ATTRIBUTE_FOREGROUND_COLOR,
+            value: args.color,
+            range: [label.text.length, textToAdd.length]
+        })
+    }
+    if(args.font){
+        attributes.push({
+            type: Ti.UI.ATTRIBUTE_FONT,
+            value: args.font,
+            range: [label.text.length, textToAdd.length]
+        })
+    }
     var attr = Ti.UI.createAttributedString({
         text: label.text + textToAdd,
-        attributes: [
-            {
-                type: Ti.UI.ATTRIBUTE_FONT,
-                value: font,
-                range: [label.text.length, textToAdd.length]
-            },
-            {
-                type: Ti.UI.ATTRIBUTE_FOREGROUND_COLOR,
-                value: color,
-                range: [label.text.length, textToAdd.length]
-            }
-        ]
+        attributes: attributes
     });
     label.attributedString = attr;
 }

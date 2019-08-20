@@ -1,7 +1,124 @@
 <Alloy>
   <Window>
-    <View id="container">
-      <Label> contract </Label>
+    <View id="container" class="vlayout background">
+        <Widget src="customNavBar" id="navBar" class="navBar"></Widget>
+        <View>
+            <Widget src="customIndicatorInsideView" id="customIndicator"></Widget>
+            <View id="emptyList">
+                <Label>empty</Label>
+            </View>
+            <ListView id="contractList" class="noBackground" onItemclick="onItemClick">
+                <Templates>
+                    <ItemTemplate name="userContractTemplate" class="noBackground">
+                        <View class="vlayout hSize">
+                            <View class="itemContainer hlayout hSize noWrap" >
+                                <View class="heightsmall imageContainer">
+                                    <ImageView  bindId="icon"></ImageView>
+                                </View>
+                                <View class="heightsmall vlayout" >
+                                    <View class="detailItem">
+                                        <View class="hlayout hSize noWrap" >
+                                            <Label class="detailText" text="L('contract_type')"></Label>
+                                            <View class="hSize">
+                                                <Label class="detailContent" bindId="type"></Label>
+                                            </View>
+                                        </View>
+                                    </View>
+                                    <View class="detailItem">
+                                        <View class="hlayout hSize noWrap">
+                                            <Label class="detailText" text="L('contract_num')"></Label>
+                                            <View class="hSize">
+                                                <Label class="detailContent" bindId="num"></Label>
+                                            </View>
+                                        </View>
+                                    </View>
+                                    <View class="detailItem">
+                                        <View class="hlayout hSize noWrap">
+                                            <Label class="detailText" bindId="addressOrVehiculeText"></Label>
+                                            <View class="hSize">
+                                                <Label class="detailContent" bindId="addressOrVehicule"></Label>
+                                            </View>
+                                        </View>
+                                    </View>
+                                    <View class="detailItem">
+                                        <View class="hlayout hSize noWrap">
+                                            <Label class="detailText" text="L('contract_end')"></Label>
+                                            <View class="hSize">
+                                                <Label class="detailContent" bindId="end"></Label>
+                                            </View>
+                                        </View>
+                                    </View>
+                                </View>
+                            </View>
+                            <ImageView class="hSize" image="/images/line_separation_grey.png"></ImageView>
+                        </View>
+                    </ItemTemplate>
+                    <ItemTemplate name="otherContractTemplate" class="noBackground">
+                        <View class="vlayout hSize">
+                            <View class="itemContainer hlayout hSize noWrap" >
+                                <View class="heightlarge imageContainer">
+                                    <ImageView  bindId="icon"></ImageView>
+                                </View>
+                                <View class="heightlarge vlayout">
+                                    <View class="detailItem2">
+                                        <View class="hlayout hSize noWrap" >
+                                            <Label class="detailName" bindId="name"></Label>
+                                        </View>
+                                    </View>
+                                    <View class="detailItem2">
+                                        <View class="hlayout hSize noWrap" >
+                                            <Label class="detailText" text="L('contract_type')"></Label>
+                                            <View class="hSize">
+                                                <Label class="detailContent" bindId="type"></Label>
+                                            </View>
+                                        </View>
+                                    </View>
+                                    <View class="detailItem2">
+                                        <View class="hlayout hSize noWrap">
+                                            <Label class="detailText" text="L('contract_num')"></Label>
+                                            <View class="hSize">
+                                                <Label class="detailContent" bindId="num"></Label>
+                                            </View>
+                                        </View>
+                                    </View>
+                                    <View class="detailItem2">
+                                        <View class="hlayout hSize noWrap">
+                                            <Label class="detailText" bindId="addressOrVehiculeText"></Label>
+                                            <View class="hSize">
+                                                <Label class="detailContent" bindId="addressOrVehicule"></Label>
+                                            </View>
+                                        </View>
+                                    </View>
+                                    <View class="detailItem2">
+                                        <View class="hlayout hSize noWrap">
+                                            <Label class="detailText" text="L('contract_end')"></Label>
+                                            <View class="hSize">
+                                                <Label class="detailContent" bindId="end"></Label>
+                                            </View>
+                                        </View>
+                                    </View>
+                                </View>
+                            </View>
+                            <ImageView class="hSize" image="/images/line_separation_grey.png"></ImageView>
+                        </View>
+                    </ItemTemplate>
+                </Templates>
+                <ListSection id="userContractList">
+                    <HeaderView>
+                            <View class="sectionHead hSize">
+                                <Label class="sectionHeadText" text="L('contract_my_contract')"></Label>
+                            </View>>
+                    </HeaderView>
+                </ListSection>
+                <ListSection id="otherContractList">
+                    <HeaderView>
+                            <View class="sectionHead">
+                                <Label class="sectionHeadText" text="L('contract_other_contract')"></Label>
+                            </View>>
+                    </HeaderView>
+                </ListSection>
+            </ListView>
+        </View>
   	</View>
   </Window>
 </Alloy>

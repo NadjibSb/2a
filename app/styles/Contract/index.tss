@@ -1,8 +1,92 @@
 
-".container" : {
 
+'#navBar': {
+    title : L("contract_title"),
 }
 
-'#container': {
-  backgroundColor: 'red'
+
+'#contractList': {
+    top: 0,
+    visible: false
+}
+
+'.itemContainer': {
+    top: 16,
+    bottom: 16,
+    right: 32,
+    left: 32
+}
+
+'.imageContainer': {
+    width: 36,
+    backgroundColor: Alloy.CFG.design.colors.SecondaryColor,
+    borderRadius: 5,
+}
+'.heightsmall':{
+    height: 90
+}
+'.heightlarge':{
+    height: 110
+}
+
+'.detailItem': {
+    left: 8,
+    height: "25%",
+}
+'.detailItem2': {
+    left: 8,
+    height: "20%",
+}
+'.detailText': {
+    font: {
+        fontSize: 14,
+        fontFamily: Alloy.CFG.design.fonts.Light
+    },
+    color: Alloy.CFG.design.fonts.PrimaryColor
+}
+
+'.detailContent': {
+    font: {
+        fontSize: 14,
+        fontFamily: Alloy.CFG.design.fonts.Medium
+    },
+    color: Alloy.CFG.design.fonts.PrimaryColor,
+    ellipsize: Ti.UI.TEXT_ELLIPSIZE_TRUNCATE_END,
+    wordWrap: false,
+    maxLines: 1,
+    left: 0
+}
+
+'.sectionHead': {
+    backgroundColor: "#FFF",
+    height: 35,
+}
+
+'.sectionHeadText': {
+    font: {
+        fontSize: 16,
+        fontFamily: Alloy.CFG.design.fonts.Heavy
+    },
+    color: Alloy.CFG.design.fonts.PrimaryColor
+}
+
+'.noWrap': {
+    horizontalWrap: false
+}
+
+'.detailName': {
+    font: {
+        fontSize: 14,
+        fontFamily: Alloy.CFG.design.fonts.Heavy
+    },
+    color: Alloy.CFG.design.fonts.PrimaryColor,
+    ellipsize: Ti.UI.TEXT_ELLIPSIZE_TRUNCATE_END,
+    wordWrap: false,
+    maxLines: 1,
+    left: 0
+}
+
+'#emptyList': {
+    top: 0,
+    visible: false
 }

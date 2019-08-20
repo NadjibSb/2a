@@ -1,7 +1,7 @@
 <Alloy autoStyle="true">
     <Window class="androidNoActionBar">
         <View id="container" class="vlayout background">
-            <Widget src="customNavBar" id="navBar" class="navBar" onLeftButtonClick="pressBack"></Widget>
+            <Widget src="customNavBar" id="navBar" class="navBar"></Widget>
             <View class="marging hSize" >
                 <View id="btMesSinistres" class="tabButton enabled" onClick="displayMesSinistres">
                     <Label class="btTitle whiteFont" text="L('sinistres_MesSinistres')"></Label>

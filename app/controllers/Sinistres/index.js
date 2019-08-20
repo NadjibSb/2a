@@ -106,6 +106,3 @@ function onItemclick(e){
     log(e.itemIndex);
     navManager.openWindow("/Sinistres/Details/details");
 }
-
-function pressBack(e){
-}

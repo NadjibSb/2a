@@ -1,0 +1,6 @@
+
+
+'#navBar': {
+    title: L("contract_details_title"),
+    leftIcon: "/images/icn_topbar_back.png"
+}

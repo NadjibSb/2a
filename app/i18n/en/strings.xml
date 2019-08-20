@@ -24,6 +24,21 @@
     <string name="on_boarding_title_3">Les indispensables</string>
     <string name="on_boarding_text_3">My 2a vous facilite votre quotidien. vous n'aurez plus à vous soucier de l'échéancier de vos contrats d'assurances, du contrôle technique de votre véhicule et bien d'autres tâches selon vos besoins</string>
 
+	<!-- contract index -->
+    <string name="contract_title">Contrats</string>
+    <string name="contract_my_contract">Mes contrats</string>
+    <string name="contract_other_contract">Contrats de tiers</string>
+    <string name="contract_type">Type de contrat : </string>
+    <string name="contract_num">Numéro : </string>
+    <string name="contract_adresse">Adresse : </string>
+    <string name="contract_vehicule">Véhicule : </string>
+    <string name="contract_end">Fin de contrat : </string>
+    <string name="today">Aujourd’hui</string>
+    <string name="tomorrow">Demain</string>
+
+	<!-- contract details -->
+    <string name="contract_details_title">Détails contrat</string>
+
 	<!-- Sinistres index -->
     <string name="sinistres_title">Mes sinistres</string>
     <string name="sinistres_type">Type de sinistres : </string>

@@ -32,7 +32,7 @@ var agenciesListForMaps = [];
     //$.agencesSection.items = data;
 
     setup_refreshController();
-    loadPage(1);
+    //loadPage(1);
 })();
 
 

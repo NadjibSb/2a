@@ -4,14 +4,15 @@
 }
 
 '#navBar': {
-  title : "Notifications",
+  title : L('notifications_title'),
   leftIcon: "/images/icn_topbar_back.png",
   zIndex: 200,
 }
 
 '#notificationsList': {
     separatorStyle: Ti.UI.TABLE_VIEW_SEPARATOR_STYLE_NONE,
-    top: 0
+    top: 0,
+    visible: false
 }
 
 '.itemContainer': {
@@ -41,7 +42,7 @@
     color: Alloy.CFG.design.fonts.SecondaryColorDark
 }
 
-'.type': {
+'.fontmedium': {
     font: {
         fontSize: 14,
         fontFamily: Alloy.CFG.design.fonts.Medium
@@ -49,7 +50,7 @@
     color: Alloy.CFG.design.fonts.PrimaryColor
 }
 
-'.num': {
+'.fontlight': {
     font: {
         fontSize: 14,
         fontFamily: Alloy.CFG.design.fonts.Light
@@ -57,7 +58,7 @@
     color: Alloy.CFG.design.fonts.PrimaryColor
 }
 
-'.date': {
+'.fontlightSmall': {
     font: {
         fontSize: 12,
         fontFamily: Alloy.CFG.design.fonts.Light
@@ -67,4 +68,8 @@
 
 '.right': {
     right: 0
+}
+
+'#emptyList': {
+    visible: false
 }

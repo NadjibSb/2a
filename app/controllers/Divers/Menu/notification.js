@@ -16,7 +16,10 @@ var notifications = [];
 // CONSTRUCTOR ------------------------------------------------------------
 (function constructor(){
     setup_refreshController();
-    getData();
+    $.customIndicator.show();
+    getData(()=>{
+        $.customIndicator.hide();
+    });
 })();
 
 
@@ -40,18 +43,33 @@ function onItemClick(e){
 function getData(callback){
     dataService.getNotifications(
         (response)=>{
-            log( response);
-            let data = JSON.parse( response );
-            notifications = data;
-            updateList(data);
-            
+            if (response.length>0) {
+                notifications = response;
+                displayList(response);
+            }else {
+                displayEmptyList();
+            }
             _.isFunction( callback ) && callback();
         },
         (error)=>{
             log(error);
+            if (notifications.length==0) {
+                displayEmptyList();
+            }
             _.isFunction( callback ) && callback();
         }
     )
+}
+
+function displayList(list){
+    updateList(list);
+    $.emptyList.hide();
+    $.notificationsList.show();
+}
+
+function displayEmptyList(){
+    $.notificationsList.hide();
+    $.emptyList.show();
 }
 
 
@@ -65,7 +83,7 @@ function updateList(list){
             title: {text: item.message},
             type:{text: item.category + ' - ' + item.text},
             num:{text: item.num},
-            date: {text:'date'}
+            date: {text: item.timestamp}
         });
     });
     $.notifSection.items = listToDisplay;

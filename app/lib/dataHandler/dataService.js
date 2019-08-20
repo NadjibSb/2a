@@ -86,7 +86,7 @@ function getNotifications(successCallback,errorCallback){
     var args = {
         url: apiURL + "/notification",
         method:'GET',
-        fullResponse:true,
+        //fullResponse:true,
         header: Alloy.Globals.header
     }
     httpClient.request(args,

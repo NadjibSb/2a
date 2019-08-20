@@ -11,7 +11,7 @@ var log = require( 'utility/logger' )( {
 
 // PRIVATE VAR ----------------------------------------------------------------
 const USER_CONTRACT_LIST = 0, OTHER_CONTRACT_LIST = 1;
-var userContractList , otherContractList;
+var userContractList=[] , otherContractList=[];
 
 
 
@@ -57,7 +57,7 @@ function getData(callback){
         },
         (error)=>{
             log(error);
-            if (userContractList.length + otherContractList.length <=0) {
+            if ((userContractList.length==0) && (otherContractList.length ==0)) {
                 displayEmptyList();
             }
             _.isFunction( callback ) && callback();

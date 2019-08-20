@@ -3,6 +3,10 @@
 		<View id="container" class="background vlayout">
 			<Widget src="customNavBar" id="navBar" class="navBar" onLeftButtonClick="pressBack"></Widget>
 			<View>
+                <Widget src="customIndicatorInsideView" id="customIndicator"></Widget>
+                <View id="emptyList" class="hSize">
+                    <Label class="fontlight" text="L('notifications_empty_list')"></Label>
+                </View>
                 <ListView id="notificationsList" class="noBackground" onItemclick="onItemClick">
                     <Templates>
                         <ItemTemplate name="notifTemplate" class="noBackground">
@@ -13,9 +17,9 @@
                                     </View>
                                     <View class="contentContainer vlayout hSize">
                                         <Label class="contentItem title" bindId="title"></Label>
-                                        <Label class="contentItem type" bindId="type"></Label>
-                                        <Label class="contentItem num" bindId="num"></Label>
-                                        <Label class="date right" bindId="date"></Label>
+                                        <Label class="contentItem fontmedium" bindId="type"></Label>
+                                        <Label class="contentItem fontlight" bindId="num"></Label>
+                                        <Label class="fontlightSmall right" bindId="date"></Label>
                                     </View>
                                 </View>
                                 <ImageView class="hSize" image="/images/line_separation_grey.png"></ImageView>

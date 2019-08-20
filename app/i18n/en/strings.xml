@@ -98,4 +98,8 @@
     <string name="agence_details_see_maps">Voir sur la carte</string>
 
 
+    <!-- Notifications -->
+    <string name="notifications_title">Notifications</string>
+    <string name="notifications_empty_list">Vous n'avez aucune notification pour le moment</string>
+
 </Ressources>

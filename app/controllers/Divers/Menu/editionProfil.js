@@ -44,13 +44,20 @@ function SauvgarderButton(){
       if(!emailTest || !telephoneTest || !nomTest || !prenomTest ){
         return false
       }else{
+        var token = Ti.App.Properties.getString( SESSION_ID, null );
         const userUpdateData = {
           email : email.getValue(),
 			    lastname : prenomClient.getValue(),
 			    name : nomClient.getValue(),
 			    phone : telephone.getValue(),
         }
-        var token = Ti.App.Properties.getString( SESSION_ID, null );
+        const header = {
+          Authorization : "Bearer "+token
+        }
+
+        session.updateUserData(userUpdateData,header,(code,response)=>{
+          
+        })
 
       }
 

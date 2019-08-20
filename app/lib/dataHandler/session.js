@@ -88,3 +88,13 @@ function signup( params, error ) {
 function deleteUserData(){
 	appSession.endSession()
 }
+
+// update user
+function updateUserData(params,header,error){
+	var args = {
+		merthod : "POST",
+		url : apiUrl+"user/update",
+		params : params,
+
+	}
+}

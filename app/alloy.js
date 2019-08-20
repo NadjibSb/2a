@@ -50,3 +50,6 @@ ACS.Users.login({
 
 Alloy.Globals.isAndroid = (Ti.Platform.osname=='android') ? true : false;
 Alloy.Globals.isIOS = (Ti.Platform.osname=='iphone') ? true : false;
+Alloy.Globals.SESSION_ID = "SESSION_ID";
+Alloy.Globals.SESSION_DATA = "SESSION_DATA";
+Alloy.Globals.apiUrl = "http://abc.dzmob.com/api/";

@@ -29,6 +29,7 @@ function changeExpiration(){
 }
 
 function SauvgarderButton(){
+    var emailTest,nomTest,prenomTest,telephoneTest = null
     // aucun champ n'a ete modifier
     if(!dejaChanger()){
       // aller a divers
@@ -36,15 +37,20 @@ function SauvgarderButton(){
       return
     }else{
       // if format non valid
-      if(email.getValue() !== emailUser) emailTest = email.isValid()
-      if(nomClient.getValue() !== nomClientUser) nomTest = nomClient.isValid()
-      if(prenomClient.getValue() !== prenomClientUser) prenomTest = prenomClient.isValid()
-      if(telephone.getValue() !== telephoneUser) telephoneTest = telephone.isValid()
+      emailTest = email.isValid()
+      nomTest = nomClient.isValid()
+      prenomTest = prenomClient.isValid()
+      telephoneTest = telephone.isValid()
       log("verifier le format")
+      log(emailTest)
+      log(telephoneTest)
+      log(nomTest)
+      log(prenomTest)
       if(!emailTest || !telephoneTest || !nomTest || !prenomTest ){
+        log("return because false format")
         return false
       }else{
-        var token = Ti.App.Properties.getString( SESSION_ID, null );
+        var token = Ti.App.Properties.getString( Alloy.Globals.SESSION_ID, null );
         const userUpdateData = {
           email : email.getValue(),
 			    lastname : prenomClient.getValue(),
@@ -54,20 +60,39 @@ function SauvgarderButton(){
         const header = {
           Authorization : "Bearer "+token
         }
-
-        session.updateUserData(userUpdateData,header,(code,response)=>{
-          
+        $.activityIndicator.show();
+        session.updateUserData(userUpdateData,header,(res)=>{
+          log("succes")  
+        },(code,response)=>{
+          $.activityIndicator.hide();
+          var listError = response.errors
+          var numberError = response.errors.length
+          log(listError)
+          log("nombre : "+numberError)
+          if(numberError > 1){
+            alert(response.errorMessage)
+          } 
+          listError.forEach((error,index)=>{
+            var objectValid = {valid : false, message :error[0].message};
+            log(error[0].code)
+            switch(error[0].code){
+              case "128" :
+                log("error tel")
+                telephone.setInvalid(objectValid)
+              break;
+              case "129" : 
+              log("error email")
+                email.setInvalid(objectValid)
+              break;
+              case "130" : 
+              log("error client");
+                numClient.setInvalid(objectValid)
+              break;
+            }
+          })
         })
-
-      }
-
-      
-      
+      } 
     }
-
-
-
-
 }
 
 function toEditPassword(){

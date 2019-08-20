@@ -24,7 +24,7 @@ var $ = module.exports = {
 
 // PRIVATE VARIABLES
 const SESSION_ID = "SESSION_ID";
-const apiUrl = "http://abc.dzmob.com/api/";
+const apiUrl = Alloy.Globals.apiUrl 
 var sessionId = Ti.App.Properties.getString( SESSION_ID, null );
 
 
@@ -94,11 +94,12 @@ function deleteUserData(){
 }
 
 // update user
-function updateUserData(params,header,error){
+function updateUserData(params,header,succes,error){
 	var args = {
 		merthod : "POST",
 		url : apiUrl+"user/update",
 		params : params,
-
+		header : header
 	}
+	httpClient.request(args,succes,error)
 }

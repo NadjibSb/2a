@@ -1,6 +1,7 @@
 <Alloy>
 	<Window>
 		<View id="container">
+		<Widget src="customIndicator" id="activityIndicator" blockScreen="true"/>
 			<Widget src="customNavBar" id="navBar" class="navBar" onLeftButtonClick="pressBack"></Widget>
 			<View class="editProfilContainer hSize vlayout">
 				<Widget src="dzmob.widget.TextField" id="textFieldNom" class="textFeildRegistre"></Widget>

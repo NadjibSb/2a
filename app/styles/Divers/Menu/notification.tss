@@ -1,10 +1,70 @@
 
 ".container" : {
-  
+
 }
 
 '#navBar': {
   title : "Notifications",
   leftIcon: "/images/icn_topbar_back.png",
   zIndex: 200,
+}
+
+'#notificationsList': {
+    separatorStyle: Ti.UI.TABLE_VIEW_SEPARATOR_STYLE_NONE,
+    top: 0
+}
+
+'.itemContainer': {
+    top: 16,
+    bottom: 8,
+    left: 32,
+    right: 32
+}
+
+'.iconContainer': {
+    height: 40,
+    width: 40,
+    borderRadius: 20,
+    backgroundColor: Alloy.CFG.design.colors.SecondaryColor
+}
+
+'.contentItem': {
+    left: 16,
+    top: 2
+}
+
+'.title': {
+    font: {
+        fontSize: 14,
+        fontFamily: Alloy.CFG.design.fonts.Medium
+    },
+    color: Alloy.CFG.design.fonts.SecondaryColorDark
+}
+
+'.type': {
+    font: {
+        fontSize: 14,
+        fontFamily: Alloy.CFG.design.fonts.Medium
+    },
+    color: Alloy.CFG.design.fonts.PrimaryColor
+}
+
+'.num': {
+    font: {
+        fontSize: 14,
+        fontFamily: Alloy.CFG.design.fonts.Light
+    },
+    color: Alloy.CFG.design.fonts.PrimaryColor
+}
+
+'.date': {
+    font: {
+        fontSize: 12,
+        fontFamily: Alloy.CFG.design.fonts.Light
+    },
+    color: Alloy.CFG.design.fonts.PrimaryColor
+}
+
+'.right': {
+    right: 0
 }

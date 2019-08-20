@@ -5,7 +5,7 @@ var log = require( 'utility/logger' )( {
 	} ),
     navManager = require("/utility/navmanager"),
     stringUtil = require("/utility/stringUtil"),
-    dataService = require("/dataHandler/contractService");
+    dataService = require("/dataHandler/dataService");
 
 
 
@@ -57,7 +57,9 @@ function getData(callback){
         },
         (error)=>{
             log(error);
-            displayEmptyList();
+            if (userContractList.length + otherContractList.length <=0) {
+                displayEmptyList();
+            }
             _.isFunction( callback ) && callback();
         }
     );
@@ -137,18 +139,22 @@ function updateList(list,listType){
     }
     // private function
     function getDateArgs(givenDate,currentDate){
-        let [day,month,year] = givenDate.split('/');
-        let [d,m,y] = [currentDate.getDate(),currentDate.getMonth(),currentDate.getFullYear()];
-        let current = (y*365) + ((m+1)*31) + d;
-        let date = (parseInt(year)*365) +  (parseInt(month)*31) + parseInt(day);
-        if (date-current == 0) {
-            return { color: Alloy.CFG.design.fonts.RedColor, text: L('today')}; //red
-        }else if (date-current == 1) {
-            return { color: Alloy.CFG.design.fonts.RedColor, text: L('tomorrow')}; //red
-        }else if (date-current<8) {
-            return { color: Alloy.CFG.design.fonts.SecondaryColorDark, text: givenDate}; //orange
-        }else {
-            return { color: Alloy.CFG.design.fonts.PrimaryColor, text: givenDate}; //blue
+        try {
+            let [day,month,year] = givenDate.split('/');
+            let [d,m,y] = [currentDate.getDate(),currentDate.getMonth(),currentDate.getFullYear()];
+            let current = (y*365) + ((m+1)*31) + d;
+            let date = (parseInt(year)*365) +  (parseInt(month)*31) + parseInt(day);
+            if (date-current == 0) {
+                return { color: Alloy.CFG.design.fonts.RedColor, text: L('today')}; //red
+            }else if (date-current == 1) {
+                return { color: Alloy.CFG.design.fonts.RedColor, text: L('tomorrow')}; //red
+            }else if (date-current<8) {
+                return { color: Alloy.CFG.design.fonts.SecondaryColorDark, text: givenDate}; //orange
+            }else {
+                return { color: Alloy.CFG.design.fonts.PrimaryColor, text: givenDate}; //blue
+            }
+        } catch (e) { //if the date format change from the api
+            return { color: Alloy.CFG.design.fonts.PrimaryColor, text: givenDate};
         }
     }
 }

@@ -1,8 +1,30 @@
 <Alloy>
 	<Window>
-		<View id="container">
+		<View id="container" class="background vlayout">
 			<Widget src="customNavBar" id="navBar" class="navBar" onLeftButtonClick="pressBack"></Widget>
-			<Label> Notification</Label>
+			<View>
+                <ListView id="notificationsList" class="noBackground" onItemclick="onItemClick">
+                    <Templates>
+                        <ItemTemplate name="notifTemplate" class="noBackground">
+                            <View class="vlayout hSize">
+                                <View class="itemContainer hlayout hSize">
+                                    <View class="iconContainer hSize">
+                                        <ImageView bindId="icon"></ImageView>
+                                    </View>
+                                    <View class="contentContainer vlayout hSize">
+                                        <Label class="contentItem title" bindId="title"></Label>
+                                        <Label class="contentItem type" bindId="type"></Label>
+                                        <Label class="contentItem num" bindId="num"></Label>
+                                        <Label class="date right" bindId="date"></Label>
+                                    </View>
+                                </View>
+                                <ImageView class="hSize" image="/images/line_separation_grey.png"></ImageView>
+                            </View>
+                        </ItemTemplate>
+                    </Templates>
+                    <ListSection id="notifSection"></ListSection>
+                </ListView>
+            </View>
 		</View>
 	</Window>
 </Alloy>

@@ -6,7 +6,7 @@ var log = require( 'utility/logger' )( {
 		hideLog: false
 	} ),
     navManager = require("/utility/navmanager"),
-    dataService = require("/dataHandler/agenciesService");
+    dataService = require("/dataHandler/dataService");
 
 (function constructor(){
     log(args);

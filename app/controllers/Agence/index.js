@@ -8,7 +8,7 @@ var log = require( 'utility/logger' )( {
     navManager = require("/utility/navmanager"),
     mapsManager = require("/utility/mapsManager"),
     MapModule = require('ti.map'),
-    dataService = require("/dataHandler/agenciesService");
+    dataService = require("/dataHandler/dataService");
 
 
 // PRIVATE VARIABLES------------------------------------------------------------------------------

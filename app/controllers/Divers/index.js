@@ -10,10 +10,10 @@ var args = $.args;
 
 
 // function
-
 function buttonClick(e){
-    screen = e.source.buttonId
-    navManager.openWindow("Divers/Menu/"+screen)
+    screen = e.source.buttonId;
+    log(screen);
+    navManager.openWindow("Divers/Menu/"+screen,1)
 }
 
 function buttonLogout(e){
@@ -21,7 +21,7 @@ function buttonLogout(e){
 }
 
 function changeTab(e){
-        navManager.changeTab(1) 
+        navManager.changeTab(1)
 }
 
 function DoCall(){
@@ -35,7 +35,7 @@ function DoCall(){
             Ti.API.info('URL open successfully? ' + JSON.stringify(e));
         });
     }
-    
+
 }
 
 // traintemnet

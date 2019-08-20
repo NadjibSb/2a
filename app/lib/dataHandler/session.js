@@ -9,7 +9,7 @@ var log = require( "/utility/logger" )( {
 httpClient = require( "/utility/httpManager" );
 const AppSession = require('/utility/AppSession');
 const appSession = AppSession.AppSession()
-const timeSession = 18000000 // 30minute
+const timeSession = 999918000000 // 30minute
 
 // PUBLIC INTERFACE
 var $ = module.exports = {
@@ -62,7 +62,7 @@ function startSession(e){
 	setInterval(()=>{
 		log(appSession.isLive() ? "liveSessionText" : "deadSessionText");
 	},100000)
-	
+
 	appSession.startNewSession(e)
 }
 //reset Password

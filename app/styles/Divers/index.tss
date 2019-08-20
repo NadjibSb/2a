@@ -11,6 +11,9 @@
 "#infoContainer":{
     top : 200,
 }
+"#infoContainer[platform=android]":{
+    top : 268,
+}
 
 "#editionContainer":{
     top : 24,
@@ -75,7 +78,7 @@
 
 "#containerAppel":{
     top: 27,
-    
+    bottom: 30
 }
 
 "#ApplerAssitanceImage":{
@@ -91,5 +94,7 @@
 	},
 	color : "#cd7e43",
 	text : "Appeler l’assistance",
-	underlineText:"Appeler l’assistance"
+	underlineText:"Appeler l’assistance",
+    left: 10
 }
+

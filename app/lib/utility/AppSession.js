@@ -1,6 +1,11 @@
 const navmanager = require("/utility/navmanager");
+var log = require( "/utility/logger" )( {
+	tag: 'AppSession',
+	hideLog: false
+} ),
+httpClient = require( "/utility/httpManager" );
+const SESSION_DATA = "SESSION_DATA";
 const SESSION_ID = "SESSION_ID";
-
 exports.AppSession = function(args) {
 	// +-----------------------+
 	// | Private members.      |
@@ -16,6 +21,7 @@ exports.AppSession = function(args) {
 	var lastAccessTime = null;
 	var heartbeatTimer = null;
 	var sessionInfo = null;
+	var sessionId = null;
 
 	// Determine if the Session can ever timeout.
 	var usingTimeout = function() {
@@ -25,6 +31,7 @@ exports.AppSession = function(args) {
 	// Remove the entry for the sessionInfo.
 	var clearSessionInfo = function() {
 		sessionInfo = null;
+		sessionId = null;
 	};
 	
 	// Start the internal heartbeat thread (if timeout is enabled).
@@ -87,10 +94,27 @@ exports.AppSession = function(args) {
 	
 	// Start a new Session.
 	var startNewSession = function(_sessionInfo) {
-		_sessionInfo && (sessionInfo = _sessionInfo);
+		_sessionInfo && (sessionInfo = _sessionInfo.user) && (sessionId = _sessionInfo.token);
 		lastAccessTime = new Date(); // now
+		saveSessionInfo(_sessionInfo)
 		startHeartbeat();
 	};
+	//save the sessionInfo in device
+	function saveSessionInfo(e){
+    	log("save session info")
+		sessionId = e.token;
+		Ti.App.Properties.setString( SESSION_ID, sessionId );
+		saveUserData( e.user );
+	}
+	// save the session Data
+	function saveUserData( data ) {
+		log("saveuserData")
+		sessionData = data;
+		Ti.App.Properties.setObject( SESSION_DATA, sessionData );
+		
+		log(Ti.App.Properties.getString( SESSION_ID, null ))
+		log(Ti.App.Properties.getObject( SESSION_DATA, null ))
+	}
 	
 	// Determine if the Session has expired since the last request.
 	var isSessionLive = function() {
@@ -109,9 +133,11 @@ exports.AppSession = function(args) {
 		stopHeartbeat();
 		lastAccessTime = null;
         clearSessionInfo();
-        Ti.App.Properties.setString( SESSION_ID, null)
-        navmanager.openAndCloseAll("Auth/login",0,{})
-        navmanager.closetabGroup();
+		Ti.App.Properties.setString( SESSION_ID, null)
+		Ti.App.Properties.setObject( SESSION_DATA, null )
+		//navmanager.openAndCloseAll("Auth/login",0,{})
+		navmanager.openAndCloseTab("Auth/login")
+        //navmanager.closetabGroup();
 		Ti.API.info('Your Session has ended!');
 	};
 	

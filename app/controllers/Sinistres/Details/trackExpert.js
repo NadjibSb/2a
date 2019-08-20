@@ -4,9 +4,13 @@ var str = require('/utility/stringUtil');
 (function constructor(){
 
     // fill the choosen expert details
-    str.labelStyling($.choisenExpert,"Ali benDahou");
-    str.labelStyling($.dateRendezvous,"13/02/2019",Alloy.CFG.design.fonts.SecondaryColorDark);
-    str.labelStyling($.numtlf,"0553859482",Alloy.CFG.design.fonts.SecondaryColorDark);
+    let font = {
+            fontSize: 14,
+            fontFamily: Alloy.CFG.design.fonts.Medium
+        };
+    str.labelStyling($.choisenExpert,"Ali benDahou",{font:font});
+    str.labelStyling($.dateRendezvous,"13/02/2019", {font:font,color:Alloy.CFG.design.fonts.SecondaryColorDark});
+    str.labelStyling($.numtlf,"0553859482", {font:font,color:Alloy.CFG.design.fonts.SecondaryColorDark});
 })();
 
 

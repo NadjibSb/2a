@@ -85,13 +85,18 @@ function updateView(type){
 
 function UIsetup(sinistre){
     $.topBar_text.text = sinistre.type;
-    str.labelStyling($.num_contrat,sinistre.numContrat);
-    str.labelStyling($.adresse,sinistre.adresse);
-    str.labelStyling($.date,sinistre.date);
-    str.labelStyling($.lieu,sinistre.lieu);
-    str.labelStyling($.degats,sinistre.degats);
-    str.labelStyling($.circonstances,sinistre.circonstances);
-    str.labelStyling($.status,sinistre.status,'red');
+    let font = {
+            fontSize: 14,
+            fontFamily: Alloy.CFG.design.fonts.Medium
+        };
+
+    str.labelStyling($.num_contrat, sinistre.numContrat,{font:font});
+    str.labelStyling($.adresse, sinistre.adresse,{font:font});
+    str.labelStyling($.date, sinistre.date,{font:font});
+    str.labelStyling($.lieu, sinistre.lieu,{font:font});
+    str.labelStyling($.degats, sinistre.degats,{font:font});
+    str.labelStyling($.circonstances, sinistre.circonstances,{font:font});
+    str.labelStyling($.status, sinistre.status, {font:font,color: Alloy.CFG.design.fonts.RedColor});
 }
 
 function pressBack(e){

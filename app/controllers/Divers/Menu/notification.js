@@ -10,6 +10,7 @@ var args = $.args;
 
 
 // PRIVATE VAR ------------------------------------------------------------
+const CONTRACT='Contrat',SINISTRE='Sinistre';
 var notifications = [];
 
 
@@ -34,7 +35,19 @@ function pressBack(e){
   }
 
 function onItemClick(e){
-  log(e);
+    let item = notifications[e.itemIndex];
+    switch (item.category) {
+        case CONTRACT:
+            log(item);
+            navManager.openWindow("/Contract/detail",1,{data:item});
+            break;
+        case SINISTRE:
+            log(item);
+            navManager.openWindow("/Sinistres/Details/details",1,{data:item});
+            break;
+        default:
+            log(item);
+    }
 }
 
 

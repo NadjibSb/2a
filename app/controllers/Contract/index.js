@@ -36,6 +36,9 @@ function onItemClick(e){
     log("click on "+list[e.itemIndex]);
     navManager.openWindow("/Contract/detail",1,{data:list[e.itemIndex]});
 }
+function demandeDevis(e){
+    log('GO to Devis Tab');
+}
 
 
 
@@ -43,7 +46,7 @@ function onItemClick(e){
 function getData(callback){
     dataService.getContracts(
         (response)=>{
-            if (response.data) {
+            if (response.userContracts) {
                 displayList(response.userContracts,response.otherContracts);
                 userContractList = response.userContracts;
                 otherContractList = response.otherContracts;

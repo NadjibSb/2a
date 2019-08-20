@@ -74,12 +74,11 @@
     horizontalWrap: false
 }
 
-'.detailName': {
-    font: {
-        fontSize: 14,
-        fontFamily: Alloy.CFG.design.fonts.Heavy
-    },
-    color: Alloy.CFG.design.fonts.PrimaryColor,
+'.detailName': {font : {
+    fontSize: 14,
+    fontFamily: Alloy.CFG.design.fonts.Heavy
+},
+color: Alloy.CFG.design.fonts.PrimaryColor,
     ellipsize: Ti.UI.TEXT_ELLIPSIZE_TRUNCATE_END,
     wordWrap: false,
     maxLines: 1,
@@ -89,4 +88,30 @@
 '#emptyList': {
     top: 0,
     visible: false
+}
+
+'.emptyListText': {
+    font: {
+        fontSize: 16,
+        fontFamily: Alloy.CFG.design.fonts.Light
+    },
+    color: Alloy.CFG.design.fonts.PrimaryColor,
+    top: 32
+}
+
+'.btDevis': {
+    bottom: 32,
+    height: 50,
+    width: "90%",
+    backgroundColor: Alloy.CFG.design.colors.PrimaryColor,
+    borderRadius: 5,
+
+}
+
+'.btDevisText': {
+    color: 'white',
+    font: {
+        fontSize: 16,
+        fontFamily: Alloy.CFG.design.fonts.Medium
+    }
 }

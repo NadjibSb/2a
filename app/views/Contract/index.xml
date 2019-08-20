@@ -5,7 +5,10 @@
         <View>
             <Widget src="customIndicatorInsideView" id="customIndicator"></Widget>
             <View id="emptyList">
-                <Label>empty</Label>
+                <Label class="emptyListText" text="L('contract_empty_list')"></Label>
+                <View class="btDevis" onClick="demandeDevis">
+                    <Label class="btDevisText" text="L('contract_demande_devis')"></Label>
+                </View>
             </View>
             <ListView id="contractList" class="noBackground" onItemclick="onItemClick">
                 <Templates>

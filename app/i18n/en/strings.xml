@@ -33,6 +33,8 @@
     <string name="contract_adresse">Adresse : </string>
     <string name="contract_vehicule">Véhicule : </string>
     <string name="contract_end">Fin de contrat : </string>
+    <string name="contract_demande_devis">Demandez un devis</string>
+    <string name="contract_empty_list">Vous n'avez aucune contrat pour le moment</string>
     <string name="today">Aujourd’hui</string>
     <string name="tomorrow">Demain</string>
 

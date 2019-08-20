@@ -3,6 +3,7 @@ var log = require( 'utility/logger' )( {
     hideLog: false
 } );
 const navManager = require("/utility/navmanager");
+const session = require("/dataHandler/session");
 // Arguments passed into this controller can be accessed via the `$.args` object directly or:
 var args = $.args;
 var dataUser = Ti.App.Properties.getObject( "SESSION_DATA", null )
@@ -35,10 +36,25 @@ function SauvgarderButton(){
       return
     }else{
       // if format non valid
-      if(email.getValue() != emailUser) email.isValid()
-      if(nomClient.getValue() != nomClientUser) nomClient.isValid()
-      if(prenomClient.getValue() != prenomClientUser) prenomClient.isValid()
-      if(telephone.getValue() != telephoneUser) telephone.isValid()
+      if(email.getValue() !== emailUser) emailTest = email.isValid()
+      if(nomClient.getValue() !== nomClientUser) nomTest = nomClient.isValid()
+      if(prenomClient.getValue() !== prenomClientUser) prenomTest = prenomClient.isValid()
+      if(telephone.getValue() !== telephoneUser) telephoneTest = telephone.isValid()
+      log("verifier le format")
+      if(!emailTest || !telephoneTest || !nomTest || !prenomTest ){
+        return false
+      }else{
+        const userUpdateData = {
+          email : email.getValue(),
+			    lastname : prenomClient.getValue(),
+			    name : nomClient.getValue(),
+			    phone : telephone.getValue(),
+        }
+        var token = Ti.App.Properties.getString( SESSION_ID, null );
+
+      }
+
+      
       
     }
 

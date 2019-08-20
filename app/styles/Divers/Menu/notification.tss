@@ -2,3 +2,9 @@
 ".container" : {
   
 }
+
+'#navBar': {
+  title : "Notifications",
+  leftIcon: "/images/icn_topbar_back.png",
+  zIndex: 200,
+}

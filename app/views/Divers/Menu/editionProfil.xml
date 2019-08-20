@@ -1,4 +1,28 @@
 <Alloy>
-	<View class="container">
-	</View>
+	<Window>
+		<View id="container">
+			<Widget src="customNavBar" id="navBar" class="navBar" onLeftButtonClick="pressBack"></Widget>
+			<View class="editProfilContainer hSize vlayout">
+				<Widget src="dzmob.widget.TextField" id="textFieldNom" class="textFeildRegistre"></Widget>
+				<Widget src="dzmob.widget.TextField" id="textFieldPrenom" class="textFeildRegistre"></Widget>
+				<Widget src="dzmob.widget.TextField" id="textFieldNumTel" class="textFeildRegistre"></Widget>
+				<Widget src="dzmob.widget.TextField" id="textFieldEmailR" class="textFeildRegistre"></Widget>
+				<Label id="labelListExpiration" class="labelLogin"></Label>
+				<View class="ExperationContainer hSize vlayout">
+					<View class="hSize" onClick="changeExpiration">
+						<Label id="labelExpiration" class="fontMedium"></Label>
+						<ImageView id="spinnerImage"></ImageView>
+					</View>
+					<View id="lineExpiration" class="hSize"/>
+              		<Label id="labelErreur" class="fontMedium"></Label>
+            	</View>
+				<View class="containerEditPass hSize hlayout" >
+					<ImageView id="iconPassword"></ImageView>
+					<Label id="labePassword" module="module/underlineText" onClick="toEditPassword"></Label>	
+              	</View> 
+				<Button id="buttonSauvgarder" class="validationButton" onClick="SauvgarderButton"></Button>
+			</View>	
+		</View>
+	</Window>
+	
 </Alloy>

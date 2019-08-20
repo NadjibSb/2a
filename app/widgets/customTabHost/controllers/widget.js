@@ -149,7 +149,7 @@ function createTabViewController(args) {
 	});
 }
 
-function onTabSelected(selectedIndex) {
+var onTabSelected = exports.onTabSelected = function(selectedIndex) {
 	log("debut on tab selected")
 	if ($.activeTab !== selectedIndex) {
 		log("onTabSelected : selectedindex : "+selectedIndex)
@@ -172,6 +172,8 @@ function onTabSelected(selectedIndex) {
 			stackViewHolder.remove(currentStack[i].container);
 			currentStack.pop();
 		}
+		currentStack[0].container.show()
+		
 	}
 
 	fireOnChange();

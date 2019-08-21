@@ -11,7 +11,6 @@ var apiURL = Alloy.Globals.API_URL;
 // PUBLIC INTERFACE
 var $ = module.exports = {
 	getAgencyDetails: getAgencyDetails,
-    getAgenciesPerPage: getAgenciesPerPage,
     getAgencies: getAgencies,
     getContracts: getContracts,
     getNotifications:getNotifications,
@@ -33,21 +32,6 @@ function getAgencyDetails(id,successCallback, errorCallback){
     );
 }
 
-function getAgenciesPerPage(page=1,successCallback,errorCallback){
-    var args = {
-        url: apiURL + "/agency/"+page,
-        method:'GET',
-        header: Alloy.Globals.header
-    }
-    httpClient.request(args,
-        (response)=>{
-            _.isFunction( successCallback ) && successCallback( response );
-        },
-        (response)=>{
-            _.isFunction( errorCallback ) && errorCallback( response );
-        }
-    );
-}
 function getAgencies(successCallback,errorCallback){
     var args = {
         url: apiURL + "/agency/",

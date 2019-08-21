@@ -14,25 +14,18 @@ var log = require( 'utility/logger' )( {
 // PRIVATE VARIABLES------------------------------------------------------------------------------
 var MapsConfigured = false;
 var selectedAnnotation = null;
-var agenciesListForMaps = [];
+var agenciesList = [];
+var page=1;
+const PAGE_COUNT = 10;
 
 
 // CONSTRUCTOR------------------------------------------------------------------------------
 (function constructor(){
-    var data = [];
-    for (var i = 0; i < 7; i++) {
-        data.push({
-            template: "agenceTemplate",
-            title: {text:"Sidi Mhemmed - 1604"},
-            adresse: {text:"71, Rue Belkacemi Mohammed Oued Kniss"},
-            tlf: {text:"027536490"},
-            email: {text:"a.dzmob.com"},
-        });
-    }
-    //$.agencesSection.items = data;
 
     setup_refreshController();
-    //loadPage(1);
+    getData(
+        ()=>{loadNextPage();}
+    );
 })();
 
 
@@ -60,32 +53,50 @@ function displayListe(e){
 
 // FUNCTIONS -------------------- List
 
-function loadPage(id,successCallback,errorCallback){
-    dataService.getAgenciesPerPage(id,
+function getData(callback){
+    dataService.getAgencies(
         (response)=>{
-            updateList(response);
-            _.isFunction( successCallback ) && successCallback( response );
+            agenciesList = response;
+            _.isFunction( callback ) && callback();
         },
         (error)=>{
             log(error);
-            _.isFunction( errorCallback ) && errorCallback( error );
+            _.isFunction( callback ) && callback();
         }
     );
 }
 
-function updateList(list){
-    var listToDisplay = [];
-    _.each(list,(item)=>{
-        listToDisplay.push({
-            template: "agenceTemplate",
-            id:item.agency_id,
-            title: {text: item.region + ' - '+ item.agency_id},
-            adresse: {text: item.address},
-            tlf: {text: item.phone[0]},
-            email: {text: item.email},
+function loadNextPage(){
+    if (agenciesList.length >0) {
+        let start = (page-1) * PAGE_COUNT,
+            end = page * PAGE_COUNT,
+            listToDisplay = $.agencesSection.items;
+
+        //check if the whole list is displayed
+        if (end > agenciesList.length) {
+            end = agenciesList.length
+        }else {
+            $.agenceList.setMarker({
+                sectionIndex:0,
+                itemIndex: end-1
+            });
+        }
+        // add the next page to the list
+        log('Load element => ' + start + ' - ' +end);
+        let list = agenciesList.slice(start,end);
+        _.each(list,(item)=>{
+            listToDisplay.push({
+                template: "agenceTemplate",
+                id:item.agency_id,
+                title: {text: item.region + ' - '+ item.agency_id},
+                adresse: {text: item.address},
+                tlf: {text: item.phone[0]},
+                email: {text: item.email},
+            });
         });
-    });
-    $.agencesSection.items = listToDisplay;
+        $.agencesSection.items = listToDisplay;
+        page++;
+    }
 }
 
 function setup_refreshController(){
@@ -95,9 +106,14 @@ function setup_refreshController(){
     $.agenceList.refreshControl = control;
     control.addEventListener('refreshstart',function(e){
         log('refreshstart');
-        loadPage(1,
-            ()=>{control.endRefreshing();},
-            ()=>{control.endRefreshing();}
+        getData(
+            ()=>{
+                control.endRefreshing();
+                // initialize the list
+                page = 1;
+                $.agencesSection.items = []
+                loadNextPage();
+            }
         );
     });
 }
@@ -157,8 +173,8 @@ function setupMaps(){
             // display agencies list
             dataService.getAgencies(
                 (response)=>{
-                    agenciesListForMaps = response;
-                    addAnnotations(agenciesListForMaps);
+                    agenciesList = response;
+                    addAnnotations(agenciesList);
                 },
                 (error)=>{
                     log(error);

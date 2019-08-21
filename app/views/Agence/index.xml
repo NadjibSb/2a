@@ -17,13 +17,13 @@
             </View>
         </View>
         <View>
-            <ListView id="agenceList" class="noBackground" onItemclick="onItemclick">
+            <ListView id="agenceList" class="noBackground" onItemclick="onItemclick" onMarker="loadNextPage">
                 <Templates>
                     <ItemTemplate name="agenceTemplate" class="noBackground">
                         <View class="vlayout hSize">
                             <View class="itemContainer vlayout hSize" >
                                 <Label class="subItem itemTitle" bindId="title"></Label>
-                                <View class="subItem hSize">
+                                <View class="subItem hSize noWrap">
                                     <ImageView class="icon" image="/images/icn_localization_blue_tabbar.png" width="12"></ImageView>
                                     <Label class="itemText" bindId="adresse"></Label>
                                 </View>

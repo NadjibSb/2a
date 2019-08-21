@@ -192,25 +192,25 @@ overrode the settings with other TSS, XML, or JS settings:
 
 ".fontMedium" : {
   font: {
-    fontFamily : Alloy.CFG.design.fonts.Medium,	
+    fontFamily : Alloy.CFG.design.fonts.Medium,
   }
 }
 ".fontLight" : {
   font: {
-    fontFamily : Alloy.CFG.design.fonts.Light,	
+    fontFamily : Alloy.CFG.design.fonts.Light,
   }
 }
 
 ".fontHeavy" : {
   font: {
-    fontFamily : Alloy.CFG.design.fonts.Heavy,	
+    fontFamily : Alloy.CFG.design.fonts.Heavy,
   }
 }
 
 
 ".fontBlack" : {
   font: {
-    fontFamily : Alloy.CFG.design.fonts.Black,	
+    fontFamily : Alloy.CFG.design.fonts.Black,
   }
 }
 
@@ -224,7 +224,7 @@ overrode the settings with other TSS, XML, or JS settings:
 	errorMessage : "le Numéro Client saisie n’est pas valide.",
     defaultErrorMessage : "champ requis",
 	keyboardType : Titanium.UI.KEYBOARD_NUMBER_PAD,
-	
+
 }
 '#textFieldNom': {
   hintText : "Nom *",
@@ -282,7 +282,7 @@ overrode the settings with other TSS, XML, or JS settings:
 	text: "champ requis",
 	color: "#db2500",
 	font: {
-		fontSize : 13	
+		fontSize : 13
 	}
 }
 
@@ -311,4 +311,9 @@ overrode the settings with other TSS, XML, or JS settings:
   borderStyle: Ti.UI.INPUT_BORDERSTYLE_LINE,
   borderColor: 'rgb(206, 170, 140)',
   top: 37,
+}
+
+
+'.noWrap': {
+    horizontalWrap: false
 }

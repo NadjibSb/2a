@@ -65,7 +65,10 @@
         fontSize: 14,
         fontFamily: Alloy.CFG.design.fonts.Light
     },
-    color: Alloy.CFG.design.fonts.PrimaryColor
+    color: Alloy.CFG.design.fonts.PrimaryColor,
+    ellipsize: Ti.UI.TEXT_ELLIPSIZE_TRUNCATE_END,
+    wordWrap: false,
+    maxLines: 1,
 }
 
 

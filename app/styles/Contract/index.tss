@@ -71,10 +71,6 @@
     color: Alloy.CFG.design.fonts.PrimaryColor
 }
 
-'.noWrap': {
-    horizontalWrap: false
-}
-
 '.detailName': {font : {
     fontSize: 14,
     fontFamily: Alloy.CFG.design.fonts.Heavy

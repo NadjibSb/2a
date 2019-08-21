@@ -138,7 +138,7 @@ exports.AppSession = function(args) {
 		//navmanager.openAndCloseAll("Auth/login",0,{})
 		navmanager.openAndCloseTab("Auth/login")
         //navmanager.closetabGroup();
-		Ti.API.info('Your Session has ended!');
+		log('Your Session has ended!');
 	};
 	
 	

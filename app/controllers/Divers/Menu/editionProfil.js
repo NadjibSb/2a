@@ -18,6 +18,7 @@ var telephone =$.textFieldNumTel
 var nomClient = $.textFieldNom
 var prenomClient = $.textFieldPrenom
 var expiration = $.labelExpiration
+const listValueExperiation = {}
 //variable
 
 
@@ -113,6 +114,8 @@ function SauvgarderButton(){
         if(prenomClient.getValue() != prenomClientUser) userUpdateData.lastname = prenomClient.getValue()
         if(nomClient.getValue()!= nomClientUser) userUpdateData.name = nomClient.getValue()
         if(telephone.getValue() != telephoneUser) userUpdateData.phone = telephone.getValue()
+
+        log(userUpdateData)
         const header = {
           Authorization : "Bearer "+token
         }

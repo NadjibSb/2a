@@ -2,7 +2,9 @@ var log = require( "/utility/logger" )( {
 	tag: 'navbar',
 	hideLog: false
 } );
-
+$.close = function(){
+	$.tabHost.close()
+}
 $.open = function(e) {
 	log("open tabhost")
 	$.tabHost.open(e);

@@ -14,6 +14,7 @@ exports.setTabGroup = function(path,tabActive) {
   // sauvgarder tab group
   var controller = Alloy.createController(path, {});
   tabGroupWindow = controller.getView();
+  log("le tab group est met ")
 	tabGroup = controller.tabGroup;
   //si androidf
 	if (OS_ANDROID) {
@@ -157,7 +158,9 @@ var updateTitle = function(evt) {
 };
 
 const closetabGroup = exports.closetabGroup = function(){
-  tabGroupWindow.close();
+  if(tabGroupWindow != null) log("pas de null")
+  if(OS_IOS) tabGroupWindow.close();
+  else tabGroup.close()
 };
 
 // for logout 

@@ -1,0 +1,29 @@
+<Alloy>
+	<Window class="container">
+		<View id="container" >
+			<Widget src="customNavBar" id="navBar" class="navBar" onLeftButtonClick="pressBack"></Widget>
+			<ListView id="list" onItemclick="selectValue">
+			
+			<ListSection>
+				<FooterView>
+					<View height="150"/>
+				</FooterView>
+			</ListSection>
+		</View>
+		
+			
+			<!-- List Item Template -->
+			
+			<Templates>
+				<ItemTemplate name="value_template" height="32">
+					<View class="list_item hlayout">
+						<ImageView class="value_checkbox" bindId="value_checkbox"/>
+						<Label class="value_label" bindId="value_label"/>
+					</View>
+				</ItemTemplate>
+			</Templates>
+			
+		</ListView>
+		<Button id="save" onClick="save" class="validationButton"/>
+	</Window>
+</Alloy>

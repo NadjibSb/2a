@@ -1,9 +1,10 @@
 <Alloy>
 	<Window>
-		<View id="container">
 		<Widget src="customIndicator" id="activityIndicator" blockScreen="true"/>
+		<View id="container" class="vlayout">
 			<Widget src="customNavBar" id="navBar" class="navBar" onLeftButtonClick="pressBack"></Widget>
-			<View class="editProfilContainer hSize vlayout">
+			<ScrollView >
+				<View class="editProfilContainer hSize vlayout">
 				<Widget src="dzmob.widget.TextField" id="textFieldNom" class="textFeildRegistre"></Widget>
 				<Widget src="dzmob.widget.TextField" id="textFieldPrenom" class="textFeildRegistre"></Widget>
 				<Widget src="dzmob.widget.TextField" id="textFieldNumTel" class="textFeildRegistre"></Widget>
@@ -23,6 +24,8 @@
               	</View> 
 				<Button id="buttonSauvgarder" class="validationButton" onClick="SauvgarderButton"></Button>
 			</View>	
+			</ScrollView>
+			
 		</View>
 	</Window>
 	

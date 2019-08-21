@@ -17,14 +17,16 @@ var $ = module.exports = {
   isLogedIn : isLogedIn,
   resetPassword : resetPassword,
   signup : signup,
-  deleteUserData :deleteUserData
+  deleteUserData :deleteUserData,
+  updateUserData : updateUserData,
+  changePassword:changePassword
 };
 
 
 
 // PRIVATE VARIABLES
 const SESSION_ID = "SESSION_ID";
-const apiUrl = Alloy.Globals.apiUrl 
+const apiUrl = Alloy.Globals.apiUrl ;
 var sessionId = Ti.App.Properties.getString( SESSION_ID, null );
 
 
@@ -50,7 +52,8 @@ function onSuccessLogin(e){
   console.log("debut on succes");
   startSession(e)
   //navmanager.setTabGroup("tabs/index");
-  navmanager.openWindow("Home/index",0,{});
+  navmanager.openAndCloseAll("Home/index",0,{});
+  
 }
 
 //session with time
@@ -58,11 +61,7 @@ function startSession(e){
 	log("start session")
 	var timeOut = e.TTL*60*1000
 	appSession.setTimeoutMs(timeOut);
-	//ajouter les donner de user a la fonction
-	setInterval(()=>{
-		log(appSession.isLive() ? "liveSessionText" : "deadSessionText");
-	},100000)
-	
+	//ajouter les donner de user a la fonctio
 	appSession.startNewSession(e)
 }
 //reset Password
@@ -96,10 +95,24 @@ function deleteUserData(){
 // update user
 function updateUserData(params,header,succes,error){
 	var args = {
-		merthod : "POST",
-		url : apiUrl+"user/update",
-		params : params,
-		header : header
-	}
-	httpClient.request(args,succes,error)
+		method: "POST",
+		url: apiUrl + "user/update",
+		params: params,
+		header : header,
+		ignoreAlert : true,
+	};
+	log('after args')
+	httpClient.request(args,succes,error);
+}
+
+function changePassword(params,header,succes,error){
+	var args = {
+		method: "POST",
+		url: apiUrl + "user/update",
+		params: params,
+		header : header,
+		ignoreAlert : true,
+	};
+	log('after args')
+	httpClient.request(args,succes,error);
 }

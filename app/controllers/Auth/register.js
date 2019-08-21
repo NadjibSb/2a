@@ -29,6 +29,7 @@ var civiliteChoisie = {
 	text : ""
 };
 const colorLabelCivilite = "#374379"
+
 //function
 function pressBack(e){
   log("test press")

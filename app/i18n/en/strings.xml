@@ -90,6 +90,7 @@
     <string name="agence_closed">Agence fermée</string>
     <string name="agence_btn_itineraire">iténiraire</string>
     <string name="agence_more_details">Plus de détails</string>
+    <string name="agence_list_empty">La liste des agences n'est pas diponible</string>
 
 
     <!-- Agences details -->

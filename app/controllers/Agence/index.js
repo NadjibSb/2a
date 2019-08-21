@@ -23,8 +23,12 @@ const PAGE_COUNT = 10;
 (function constructor(){
 
     setup_refreshController();
+    $.customIndicator.show();
     getData(
-        ()=>{loadNextPage();}
+        ()=>{
+            loadNextPage();
+            $.customIndicator.hide();
+        }
     );
 })();
 
@@ -67,7 +71,9 @@ function getData(callback){
 }
 
 function loadNextPage(){
+    log('load page ' + page);
     if (agenciesList.length >0) {
+        displayData(true);
         let start = (page-1) * PAGE_COUNT,
             end = page * PAGE_COUNT,
             listToDisplay = $.agencesSection.items;
@@ -78,7 +84,7 @@ function loadNextPage(){
         }else {
             $.agenceList.setMarker({
                 sectionIndex:0,
-                itemIndex: end-1
+                itemIndex: end-2
             });
         }
         // add the next page to the list
@@ -96,6 +102,18 @@ function loadNextPage(){
         });
         $.agencesSection.items = listToDisplay;
         page++;
+    }else{
+        displayData(false);
+    }
+}
+
+function displayData(isNotEmpty){
+    if (isNotEmpty) {
+        $.agenceList.visible = true;
+        $.emptyList.visible = false;
+    }else {
+        $.emptyList.visible = true;
+        $.agenceList.visible = false;
     }
 }
 

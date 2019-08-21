@@ -91,7 +91,8 @@
     top: 0
 }
 '#agenceList': {
-    top: 16
+    top: 16,
+    visible: false
 }
 
 '#maps': {
@@ -187,4 +188,8 @@
 
 '.topMargin': {
     top: 8
+}
+
+'#emptyList': {
+    visible: false
 }

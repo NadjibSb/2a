@@ -17,6 +17,10 @@
             </View>
         </View>
         <View>
+            <Widget src="customIndicatorInsideView" id="customIndicator"></Widget>
+            <View id="emptyList">
+                <Label class="fontLight blueFont" text="L('agence_list_empty')"></Label>
+            </View>
             <ListView id="agenceList" class="noBackground" onItemclick="onItemclick" onMarker="loadNextPage">
                 <Templates>
                     <ItemTemplate name="agenceTemplate" class="noBackground">

@@ -313,12 +313,10 @@ overrode the settings with other TSS, XML, or JS settings:
   top: 37,
 }
 
-<<<<<<< HEAD
 
 '.noWrap': {
     horizontalWrap: false
 }
-=======
 // siniste + contract
 '.separator': {
     height: 1,
@@ -360,4 +358,3 @@ overrode the settings with other TSS, XML, or JS settings:
     image: "/images/icn_close_blue.png",
     height: 16
 }
->>>>>>> contrat

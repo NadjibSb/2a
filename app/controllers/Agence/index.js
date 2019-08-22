@@ -38,7 +38,7 @@ const PAGE_COUNT = 10;
 // EVENT HANDLERS -------------------- List
 
 function onItemclick(e){
-    navManager.openWindow("/Agence/details",1,{item:$.agencesSection.items[e.itemIndex]});
+    navManager.openWindow("/Agence/details",1,{data: agenciesList[e.itemIndex]});
 }
 
 function displayListe(e){

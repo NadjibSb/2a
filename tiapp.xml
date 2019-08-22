@@ -49,6 +49,13 @@
         </array>
         <key>CFBundleDevelopmentRegion</key>
         <string>fr</string>
+        <!-- Apps to open -->
+        <key>LSApplicationQueriesSchemes</key>
+        <array>
+          <string>googlechromes</string>
+          <string>comgooglemaps</string>
+        </array>
+        <!-- Permisions -->
         <key>NSLocationAlwaysUsageDescription</key>
         <string>
             Cette fonctionnalité nécessite l’accès à votre position pour mieux fonctionner, voulez-vous autorisation l’application à utiliser votre position ?

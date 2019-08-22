@@ -6,19 +6,13 @@ var log = require( 'utility/logger' )( {
 		hideLog: false
 	} ),
     navManager = require("/utility/navmanager"),
+    str = require("/utility/stringUtil"),
+    alertDialog = require("/utility/alertManager"),
     dataService = require("/dataHandler/dataService");
 
 (function constructor(){
     log(args);
-
-    dataService.getAgencyDetails(args.item.id,
-        (agency)=>{
-            updateUI(agency);
-        },
-        (error)=>{
-            log(error);
-        }
-    );
+    updateUI(args.data);
 })();
 
 
@@ -26,13 +20,15 @@ var log = require( 'utility/logger' )( {
 function updateUI(agency){
     $.agence_name.text = L('agence') + agency.region;
     $.agence_adresse.text = agency.address;
-    $.agence_email.text = agency.email;
     $.agence_code.text = $.agence_code.text + agency.agency_id;
+    $.agence_image.image = agency.photo;
+    str.labelStyling($.seeMaps, L("agence_details_see_maps"), {underline:true}); //underline email
+    str.labelStyling($.agence_email, agency.email, {underline:true}); //underline email
+    // creat labels for phones
     for (var i = 0; i < agency.phone.length; i++) {
-        let tlf = Ti.UI.createLabel({
-            text: agency.phone[i]
-        });
+        let tlf = Ti.UI.createLabel();
         $.addClass(tlf,'tlf');
+        str.labelStyling(tlf,agency.phone[i],{underline:true});
         tlf.addEventListener("click",(e)=>{
             Ti.Platform.openURL("tel:"+tlf.text);
             log("call : "+tlf.text);
@@ -54,4 +50,57 @@ function updateUI(agency){
 
 function pressBack(e){
     navManager.closeWindow($.details);
+}
+
+function seeOnMap(e){
+    let lat = "36.488112",
+        long = "2.817002";
+    let url = "geo:?q="+lat+","+long+"&z=17";
+    //if url accepted
+    if (Ti.Platform.canOpenURL(url)) {
+        log("'see on maps' accepted");
+        Ti.Platform.openURL(url,{},(e)=>{
+            log(e);
+        });
+
+    }else if (Alloy.Globals.isIOS) { //if ios
+        url = "comgooglemaps://?center="+lat+","+long;
+        let urliOS = "maps:?q="+lat+","+long+"&z=17";
+        if (Ti.Platform.canOpenURL(url)) { //if GoogleMaps installed
+            log("iOS => 'see on maps' accepted => GoogleMaps");
+            Ti.Platform.openURL(url,{},(e)=>{
+                log(e);
+            });
+        }else if (Ti.Platform.canOpenURL(urliOS)) { //if url accepted
+            log("iOS => 'see on maps' accepted => Native maps");
+            Ti.Platform.openURL(urliOS,{},(e)=>{
+                log(e);
+            });
+        } else {
+            url = "https://www.google.com/maps/?q="+lat+"+"+long;
+            Ti.Platform.openURL(url,{},(e)=>{
+                log(e);
+            });
+            log("iOS => see on maps not accepted => Browser");
+        }
+
+    }else {
+        url = "https://www.google.com/maps/?q="+lat+"+"+long;
+        Ti.Platform.openURL(url,{},(e)=>{
+            log(e);
+        });
+        log("Browser => see on maps not accepted");
+    }
+}
+
+function sendEmail(e){
+    let url = "mailto:"+ $.agence_email.text;
+    if (Ti.Platform.canOpenURL(url)) {
+        log("send email accepted");
+        Ti.Platform.openURL(url,{},(e)=>{
+            log(e);
+        });
+    }else {
+        log("send email not accepted");
+    }
 }

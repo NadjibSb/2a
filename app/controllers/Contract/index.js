@@ -90,11 +90,11 @@ function updateList(list,listType){
 
     _.each(list,(item)=>{
         let image ,
-            dateArgs = getDateArgs(item.EndDate,currentDate),
-            addressOrVehicule=item.Address,
+            dateArgs = getDateArgs(item.endDate,currentDate),
+            addressOrVehicule = item.address,
             addressOrVehiculeText = L("contract_adresse") ;
         // diffrent icons for each category
-        switch (item.Type) {
+        switch (item.type) {
             case "habitat":
                 image = "/images/icn_house_white.png";
                 break;
@@ -116,12 +116,12 @@ function updateList(list,listType){
         // push item to display
         listToDisplay.push({
             template: template,
-            name: {text:item.Name +' '+ item.Lastname},
+            name: {text:item.name +' '+ item.lastname},
             type: {
-                text: item.Type,
+                text: item.longType,
                 font: font
             },
-            num: {text: item.Id},
+            num: {text: item.contract_id},
             addressOrVehiculeText:{text: addressOrVehiculeText},
             addressOrVehicule: {text: addressOrVehicule},
             end: {
@@ -153,7 +153,7 @@ function updateList(list,listType){
             }else {
                 return { color: Alloy.CFG.design.fonts.PrimaryColor, text: givenDate}; //blue
             }
-        } catch (e) { //if the date format change from the api
+        } catch (e) { //if the date format has changed from the api
             return { color: Alloy.CFG.design.fonts.PrimaryColor, text: givenDate};
         }
     }

@@ -53,16 +53,16 @@
     borderWidth: 5,
     borderColor: '#cd7e43',
     borderRadius: 5,
+    backgroundColor: "#EEE"
 
 }
 
 '#agence_image': {
-    image: "/images/img_onboarding_1.png",
+    defaultImage:"/images/icn_image_placeholder.png",
     width: '100%',
 }
 
 '#seeMaps': {
-    text: L("agence_details_see_maps"),
     left: 20,
     font: {
         fontSize: 14,

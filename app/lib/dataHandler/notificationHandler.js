@@ -12,7 +12,7 @@ var $ = module.exports = {
   };
 
   // PRIVATE VARIABLES
-const apiUrl = Alloy.Globals.apiUrl ;
+const apiUrl = Alloy.Globals.API_URL;
 
 
 // PRIVATE FONCTIONS
@@ -20,7 +20,7 @@ function getExperation(header,succes, error ) {
     console.log("debut getExpiration");
       var args = {
           method: "GET",
-          url: apiUrl + "notification/options",
+          url: apiUrl + "/notification/options",
           header : header,
           ignoreAlert : true,
       };

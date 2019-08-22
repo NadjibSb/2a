@@ -1,7 +1,8 @@
 <Alloy>
   <Window>
     <View class="container">
-    <ScrollView>
+    <ScrollView id="container" >
+      <View id="containerShadow" ></View>
       <Require src="/Commun/ecranLogo"></Require>
       <View id="containerContact" class="containerItem" onClick="clickItem" itemId="Contract">
         <ImageView id="imageIconContact" itemId="Contract"></ImageView>
@@ -23,7 +24,13 @@
         <ImageView id="imageIconDivers" itemId="diver"></ImageView>
         <Label id="lableDivers" class="labelHome fontMedium" itemId="diver"></Label>
       </View>
+      <View id="containerAssistance" class="containerAssistance" onClick="clickAssist" itemId="assistance">
+        <View id="redRectangle"></View>
+        <ImageView id="imageIconAssistance" itemId="assistance"></ImageView>
+        <Label id="lableAssistance" class="labelHome fontMedium" itemId="assistance"></Label>
+      </View>
     </ScrollView>
+    <Require src="/Home/Assistance/assistance" id="appelAssistance" onClose="close"></Require>
     </View>
   </Window>
 </Alloy>

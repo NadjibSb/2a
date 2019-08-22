@@ -33,7 +33,7 @@ var userContractList=[] , otherContractList=[];
 function onItemClick(e){
     let list;
     e.sectionIndex == 0 ? list = userContractList : list = otherContractList;
-    log("click on "+list[e.itemIndex]);
+    log("click on "+JSON.stringify(list[e.itemIndex]));
     navManager.openWindow("/Contract/detail",1,{data:list[e.itemIndex]});
 }
 function demandeDevis(e){

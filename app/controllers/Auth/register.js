@@ -5,6 +5,7 @@ var log = require( 'utility/logger' )( {
 	} );
 httpClient = require( "/utility/httpManager" );
 session = require("/dataHandler/session");
+const alert = require("/utility/alertManager");
 // Arguments passed into this controller can be accessed via the `$.args` object directly or:
 
 //variable
@@ -96,37 +97,41 @@ function registerButton(e){
 		//envoyer requete
 		session.signup(userData,(code,response)=>{
 			$.activityIndicator.hide();
-			var listError = response.errors
-			var numberError = response.errors.length
-			log(listError)
-			log("nombre : "+numberError)
-			if(numberError > 1){
-				alert(response.errorMessage)
-			} 
-			listError.forEach((error,index)=>{
-				var objectValid = {valid : false, message :error[0].message};
-				log(error[0].code)
-				switch(error[0].code){
-					case "128" :
-						log("error tel")
-						telephone.setInvalid(objectValid)
-					break;
-					case "129" : 
-					log("error email")
-						email.setInvalid(objectValid)
-					break;
-					case "130" : 
-					log("error client");
-						numClient.setInvalid(objectValid)
-					break;
-				}
-			})
+			log(response)
+			if(code == "HTTP_CLIENT_NETWORK_OFFLINE") alert.show(" vérifier votre connexion est réessayer");
+			else{
+				var listError = response.errors
+				var numberError = response.errors.length
+				log(listError)
+				log("nombre : "+numberError)
+				if(numberError > 1){
+					alert(response.errorMessage)
+				} 
+				listError.forEach((error,index)=>{
+					var objectValid = {valid : false, message :error[0].message};
+					log(error[0].code)
+					switch(error[0].code){
+						case "200" :
+							log("error tel")
+							telephone.setInvalid(objectValid)
+						break;
+						case "201" : 
+						log("error email")
+							email.setInvalid(objectValid)
+						break;
+						case "202" : 
+						log("error client");
+							numClient.setInvalid(objectValid)
+						break;
+					}
+				})
 			
+			}
 
 		})
 	}// fin if accepte
 	else{
-		alert("Veuillez vous accepter les condition d'utilisation et la politique de Confidentialité")
+		alert.show("Veuillez vous accepter les condition d'utilisation et la politique de Confidentialité")
 	}
 	
 

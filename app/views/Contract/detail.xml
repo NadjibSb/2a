@@ -1,9 +1,33 @@
 <Alloy>
 	<Window>
+        <Widget src="customIndicator" id="activityIndicator" blockScreen="true"/>
         <View id="container" class="background vlayout">
             <Widget src="customNavBar" id="navBar" class="navBar" onLeftButtonClick="pressBack"></Widget>
             <View>
-                <Label id="lb"></Label>
+                <ScrollView class="vlayout">
+                    <View id="topBar">
+                        <View class="hlayout wSize hSize">
+                            <ImageView id="topBar_img" class="wSize hSize"></ImageView>
+                            <Label id="topBar_text" class="wSize hSize"></Label>
+                        </View>
+                    </View>
+                    <View id="details" class="details vlayout hSize">
+                    </View>
+                    <View id="containerAppel" class="hSize">
+                        <View class="hSize wSize hlayout" onClick="DoCall">
+                            <ImageView id="ApplerAssitanceImage"></ImageView>
+                            <Label id="labelAppelAssitance" module="module/underlineText"></Label>
+                        </View>
+                    </View>
+                    <View class="hSize vlayout" onClick="lecteurPdf">
+                        <Label id="labelContractPdf" class="labellogin"></Label>
+                        <ImageView id="imageArrow"></ImageView>
+                        <View class="rounded hSize wSize">
+                            <ImageView id="imagePdf" ></ImageView>
+                        </View>
+                        
+                    </View>
+                </ScrollView>
             </View>
         </View>
     </Window>

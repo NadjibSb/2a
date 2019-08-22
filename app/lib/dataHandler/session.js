@@ -19,14 +19,15 @@ var $ = module.exports = {
   signup : signup,
   deleteUserData :deleteUserData,
   updateUserData : updateUserData,
-  changePassword:changePassword
+  changePassword:changePassword,
+  getHeader : getHeader
 };
 
 
 
 // PRIVATE VARIABLES
 const SESSION_ID = "SESSION_ID";
-const apiUrl = Alloy.Globals.API_URL ;
+const apiUrl = Alloy.Globals.API_URL;
 var sessionId = Ti.App.Properties.getString( SESSION_ID, null );
 
 
@@ -79,7 +80,7 @@ function resetPassword( params, success, error ) {
 function signup( params, error ) {
 	var args = {
 		method: "POST",
-		url: apiUrl + "register",
+		url: apiUrl + "/register",
 		params: params,
 		ignoreAlert : true,
 
@@ -115,4 +116,11 @@ function changePassword(params,header,succes,error){
 	};
 	log('after args')
 	httpClient.request(args,succes,error);
+}
+
+function getHeader(){
+	var header = {
+		Authorization : "Bearer "+Ti.App.Properties.getString( SESSION_ID, null )
+	}
+	return header
 }

@@ -1,15 +1,14 @@
 
 
-'#topBar': {
-    height: 55,
-    top: 0,
-    backgroundColor: 'white',
-}
+
 
 '#topBar_img': {
     image: "/images/icn_house_blue_title.png",
     right: 16
 }
+
+
+
 
 '#topBar_text': {
     font: {
@@ -20,16 +19,6 @@
     bottom: 0
 }
 
-'.details': {
-    top: 16,
-    left: 32,
-    right: 32
-}
-
-'.separator': {
-    height: 1,
-    backgroundColor: "rgba(151,151,151,0.2)"
-}
 
 '.textItem': {
     top: 16,

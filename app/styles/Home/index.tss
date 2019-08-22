@@ -9,7 +9,15 @@
   width: 124,
   backgroundImage: "/images/img_button_main_menu.png"
 }
-
+'.containerAssistance': {
+  borderRadius: 5,
+  height: 112.9,
+  width: 124,
+  backgroundImage: "/images/img_button_main_menu.png"
+}
+"#redRectangle":{
+  backgroundColor: "rgba(255,35,35,0.6)"
+}
 '.imageBackgroundItem': {
   image: '/images/img_button_main_menu.png'
 }
@@ -86,6 +94,7 @@
 // divers
 '#containerDivers': {
   top: 523,
+  left: 53,
 }
 
 '#imageIconDivers': {
@@ -95,4 +104,28 @@
 
 '#lableDivers': {
   text: "DIVERS",
+}
+// divers
+'#containerAssistance': {
+  top: 523,
+  right: 52
+}
+
+'#imageIconAssistance': {
+  image: "/images/icn_tel_assistance_white.png", 
+  top: 24
+}
+
+'#lableAssistance': {
+  text: "ASSISTANCE",
+}
+
+"#containerShadow":{
+  backgroundColor:"rgba(0,0,0,0.5)" ,
+  zIndex:100,
+  visible: false
+}
+
+"#container":{
+  bottom : 20
 }

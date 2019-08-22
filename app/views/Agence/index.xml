@@ -83,14 +83,14 @@
                             <Label id="agencyStatus_Map" class="itemText">test</Label>
                         </View>
                         <View class="hSize hlayout topMargin">
-                            <View id="btItineraire" class="wSize" onClick="displayListe">
+                            <View id="btItineraire" class="wSize" onClick="seeOnMap">
                                 <View class="hSize wSize hlayout btContent">
                                     <ImageView class="btIcon" image="/images/icn_itineraire.png"></ImageView>
                                     <Label class="btTitle whiteFont" text="L('agence_btn_itineraire')"></Label>
                                 </View>
                             </View>
                             <View class="moreDetailsContainer">
-                                <Label id="moreDetails" text="L('agence_more_details')"></Label>
+                                <Label id="moreDetails"></Label>
                             </View>
                         </View>
                     </View>

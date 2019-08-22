@@ -8,6 +8,7 @@ var log = require( 'utility/logger' )( {
     navManager = require("/utility/navmanager"),
     str = require("/utility/stringUtil"),
     alertDialog = require("/utility/alertManager"),
+    call_to_actions = require("/utility/calltoActions"),
     dataService = require("/dataHandler/dataService");
 
 (function constructor(){
@@ -52,55 +53,10 @@ function pressBack(e){
     navManager.closeWindow($.details);
 }
 
-function seeOnMap(e, ltd =args.data.ltd, lgt = args.data.lgt){
-    let lat = ltd,
-        long = lgt;
-    let url = "geo:?q="+lat+","+long+"&z=17";
-    //if url accepted
-    if (Ti.Platform.canOpenURL(url)) {
-        log("'see on maps' accepted");
-        Ti.Platform.openURL(url,{},(e)=>{
-            log(e);
-        });
-
-    }else if (Alloy.Globals.isIOS) { //if ios
-        url = "comgooglemaps://?center="+lat+","+long;
-        let urliOS = "maps:?q="+lat+","+long;
-        if (Ti.Platform.canOpenURL(url)) { //if GoogleMaps installed
-            log("iOS => 'see on maps' accepted => GoogleMaps");
-            Ti.Platform.openURL(url,{},(e)=>{
-                log(e);
-            });
-        }else if (Ti.Platform.canOpenURL(urliOS)) { //if url accepted
-            log("iOS => 'see on maps' accepted => Native maps");
-            Ti.Platform.openURL(urliOS,{},(e)=>{
-                log(e);
-            });
-        } else {
-            url = "https://www.google.com/maps/?q="+lat+"+"+long;
-            Ti.Platform.openURL(url,{},(e)=>{
-                log(e);
-            });
-            log("iOS => see on maps not accepted => Browser");
-        }
-
-    }else {
-        url = "https://www.google.com/maps/?q="+lat+"+"+long;
-        Ti.Platform.openURL(url,{},(e)=>{
-            log(e);
-        });
-        log("Browser => see on maps not accepted");
-    }
+function seeOnMap(e){
+    call_to_actions.openMaps(args.data.ltd,args.data.lgt)
 }
 
 function sendEmail(e){
-    let url = "mailto:"+ $.agence_email.text;
-    if (Ti.Platform.canOpenURL(url)) {
-        log("send email accepted");
-        Ti.Platform.openURL(url,{},(e)=>{
-            log(e);
-        });
-    }else {
-        log("send email not accepted");
-    }
+    call_to_actions.mailTo(args.data.email);
 }

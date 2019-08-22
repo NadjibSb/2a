@@ -19,11 +19,11 @@ exports.labelStyling = function(label, textToAdd,args){
     let attributes = [],
         range,
         text;
-    //if label has no text
+    //if label has no text => style textToAdd
     if (label.text) {
         range = [label.text.length,textToAdd.length];
         text = label.text + textToAdd;
-    }else {
+    }else { //else => style just textToAdd
         range = [0,textToAdd.length];
         text = textToAdd;
     }

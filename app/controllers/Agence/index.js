@@ -6,6 +6,8 @@ var log = require( 'utility/logger' )( {
     navManager = require("/utility/navmanager"),
     mapsManager = require("/utility/mapsManager"),
     MapModule = require('ti.map'),
+    call_to_actions = require('/utility/calltoActions'),
+    str = require("/utility/stringUtil"),
     dataService = require("/dataHandler/dataService");
 
 
@@ -49,25 +51,6 @@ var myCoords= {};
 
 // PRIVATE FUNCTIONS ------------------------------------------------------------------------------
 
-// EVENT HANDLERS -------------------- List
-
-function onItemclick(e){
-    navManager.openWindow("/Agence/details",1,{data: agenciesList[e.itemIndex]});
-}
-
-function displayListe(e){
-    // button setup
-    $.removeClass($.btCarte, 'enabled');
-    $.removeClass($.btListe, 'disabled');
-    $.addClass($.btCarte, 'disabled');
-    $.addClass($.btListe, 'enabled');
-    $.btCarteText.color = Alloy.CFG.design.colors.PrimaryColor;
-    $.btListeText.color = "white";
-    $.btListeImg.image = "/images/icn_divers_white_big.png";
-    $.btCarteImg.image = "/images/icn_localization_blue_tabbar.png";
-    $.agenceList.show();
-    $.maps.hide();
-}
 
 // FUNCTIONS -------------------- List
 
@@ -170,37 +153,24 @@ function setup_refreshController(){
     });
 }
 
+// EVENT HANDLERS -------------------- List
 
-// EVENT HANDLERS -------------------- Maps
-function displayMaps(e){
-    // button setup
-    $.removeClass($.btListe, 'enabled');
-    $.removeClass($.btCarte, 'disabled');
-    $.addClass($.btListe, 'disabled');
-    $.addClass($.btCarte, 'enabled');
-    $.btListeText.color = Alloy.CFG.design.colors.PrimaryColor;
-    $.btCarteText.color = "white";
-    $.btListeImg.image = "/images/icn_divers_blue.png";
-    $.btCarteImg.image = "/images/icn_localization_white_big.png";
-    $.agenceList.hide();
-    $.maps.show();
-    //$.mapsViewContainer.add(MapModule);
-    setupMaps();
-
+function onItemclick(e){
+    navManager.openWindow("/Agence/details",1,{data: agenciesList[e.itemIndex]});
 }
-function onClickMap(e){
 
-    log("selectedAnnotation " + selectedAnnotation);
-    if (selectedAnnotation) {
-        selectedAnnotation.customView.children[0].width = 40;
-        selectedAnnotation.customView.children[1].width = 15;
-    }
-    log(e.annotation.agency.agency_id);
-    log(e);
-    e.annotation.customView.children[0].width = 60;
-    e.annotation.customView.children[1].width = 25;
-    showCard(e.annotation.agency);
-    selectedAnnotation = e.annotation;
+function displayListe(e){
+    // button setup
+    $.removeClass($.btCarte, 'enabled');
+    $.removeClass($.btListe, 'disabled');
+    $.addClass($.btCarte, 'disabled');
+    $.addClass($.btListe, 'enabled');
+    $.btCarteText.color = Alloy.CFG.design.colors.PrimaryColor;
+    $.btListeText.color = "white";
+    $.btListeImg.image = "/images/icn_divers_white_big.png";
+    $.btCarteImg.image = "/images/icn_localization_blue_tabbar.png";
+    $.agenceList.show();
+    $.maps.hide();
 }
 
 
@@ -299,6 +269,7 @@ function addAnnotations(list){
 }
 
 function showCard(agency){
+    str.labelStyling($.moreDetails,L('agence_more_details'),{underline:true}); //underline text
     $.agencyTitle_Map.text = agency.region + ' - ' + agency.agency_id;
     $.agencyAdresse_Map.text = agency.address;
     $.agencyPhone_Map.text = agency.phone[0];
@@ -312,7 +283,7 @@ function showCard(agency){
         });
     }
     $.moreDetails.addEventListener('click',(e)=>{
-        navManager.openWindow("/Agence/details",1,{item:agency});
+        navManager.openWindow("/Agence/details",1,{data:agency});
     })
 }
 
@@ -328,4 +299,43 @@ function closeCard(e){
         selectedAnnotation.customView.children[1].width = 15;
         selectedAnnotation = null;
     }
+}
+
+
+
+
+// EVENT HANDLERS -------------------- Maps
+function displayMaps(e){
+    // button setup
+    $.removeClass($.btListe, 'enabled');
+    $.removeClass($.btCarte, 'disabled');
+    $.addClass($.btListe, 'disabled');
+    $.addClass($.btCarte, 'enabled');
+    $.btListeText.color = Alloy.CFG.design.colors.PrimaryColor;
+    $.btCarteText.color = "white";
+    $.btListeImg.image = "/images/icn_divers_blue.png";
+    $.btCarteImg.image = "/images/icn_localization_white_big.png";
+    $.agenceList.hide();
+    $.maps.show();
+    setupMaps();
+
+}
+function onClickMap(e){
+
+    log("selectedAnnotation " + selectedAnnotation);
+    if (selectedAnnotation) {
+        selectedAnnotation.customView.children[0].width = 40;
+        selectedAnnotation.customView.children[1].width = 15;
+    }
+    log(e.annotation.agency.agency_id);
+    log(e);
+    e.annotation.customView.children[0].width = 60;
+    e.annotation.customView.children[1].width = 25;
+    showCard(e.annotation.agency);
+    selectedAnnotation = e.annotation;
+}
+
+
+function seeOnMap(e){
+    call_to_actions.openMaps(selectedAnnotation.agency.ltd, selectedAnnotation.agency.lgt);
 }

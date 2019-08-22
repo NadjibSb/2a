@@ -53,7 +53,7 @@
     borderWidth: 5,
     borderColor: '#cd7e43',
     borderRadius: 5,
-    backgroundColor: "#EEE"
+    backgroundColor: "#DDD"
 
 }
 

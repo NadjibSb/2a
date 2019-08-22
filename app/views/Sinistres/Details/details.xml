@@ -1,6 +1,6 @@
 <Alloy autoStyle="true">
-    <Window class="background androidNoActionBar">
-        <View id="container" class="vlayout">
+    <Window >
+        <View id="container" class="vlayout background">
             <Widget src="customNavBar" id="navBar" class="navBar" onLeftButtonClick="pressBack"></Widget>
             <View>
                 <ScrollView class="vlayout">

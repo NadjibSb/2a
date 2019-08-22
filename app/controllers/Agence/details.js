@@ -52,9 +52,9 @@ function pressBack(e){
     navManager.closeWindow($.details);
 }
 
-function seeOnMap(e){
-    let lat = "36.488112",
-        long = "2.817002";
+function seeOnMap(e, ltd =args.data.ltd, lgt = args.data.lgt){
+    let lat = ltd,
+        long = lgt;
     let url = "geo:?q="+lat+","+long+"&z=17";
     //if url accepted
     if (Ti.Platform.canOpenURL(url)) {
@@ -65,7 +65,7 @@ function seeOnMap(e){
 
     }else if (Alloy.Globals.isIOS) { //if ios
         url = "comgooglemaps://?center="+lat+","+long;
-        let urliOS = "maps:?q="+lat+","+long+"&z=17";
+        let urliOS = "maps:?q="+lat+","+long;
         if (Ti.Platform.canOpenURL(url)) { //if GoogleMaps installed
             log("iOS => 'see on maps' accepted => GoogleMaps");
             Ti.Platform.openURL(url,{},(e)=>{

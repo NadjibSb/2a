@@ -7,7 +7,7 @@
                 <View id="emptyList" class="hSize">
                     <Label class="fontlight" text="L('notifications_empty_list')"></Label>
                 </View>
-                <ListView id="notificationsList" class="noBackground" onItemclick="onItemClick">
+                <ListView id="notificationsList" class="noBackground" onItemclick="onItemClick" onMarker="onMarkerReached">
                     <Templates>
                         <ItemTemplate name="notifTemplate" class="noBackground">
                             <View class="vlayout hSize">

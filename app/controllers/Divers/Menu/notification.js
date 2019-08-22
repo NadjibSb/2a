@@ -1,24 +1,25 @@
 // DEPENDENCIES ------------------------------------------------------------
 var log = require( 'utility/logger' )({
-        tag: "notifScreen",
+        tag: "Divers_Notifications",
         hideLog: false
     }),
     dataService = require("/dataHandler/dataService");
     navManager = require("/utility/navmanager");
-var args = $.args;
 
 
 
 // PRIVATE VAR ------------------------------------------------------------
 const CONTRACT='Contrat',SINISTRE='Sinistre';
-var notifications = [];
+var notifications = [],
+    page = 1;
+
 
 
 // CONSTRUCTOR ------------------------------------------------------------
 (function constructor(){
     setup_refreshController();
     $.customIndicator.show();
-    getData(()=>{
+    loadNextPage(()=>{
         $.customIndicator.hide();
     });
 })();
@@ -34,8 +35,14 @@ function pressBack(e){
     navManager.closeWindow($.notification)
   }
 
+function onMarkerReached(e){
+    loadNextPage();
+}
+
 function onItemClick(e){
     let item = notifications[e.itemIndex];
+    log('onItemClick');
+    log(item);
     switch (item.category) {
         case CONTRACT:
             log(item);
@@ -53,16 +60,19 @@ function onItemClick(e){
 
 // PRIVATE FUNCTIONS ------------------------------------------------------------
 
-function getData(callback){
-    dataService.getNotifications(
+function loadNextPage(callback){
+    log("load page " +page);
+    dataService.getNotificationsPerPage(page,
         (response)=>{
-            if (response.length>0) {
-                notifications = response;
-                displayList(response);
-            }else {
+            if (response.list.length>0) {
+                if(page==1){$.notifSection.items = []} // initialize in case of pull to refreshstart
+                notifications.push(...response.list);
+                displayList(response.list);
+            }else if(notifications.length==0){
                 displayEmptyList();
             }
             _.isFunction( callback ) && callback();
+            page++;
         },
         (error)=>{
             log(error);
@@ -87,7 +97,7 @@ function displayEmptyList(){
 
 
 function updateList(list){
-    let listToDisplay = [];
+    let listToDisplay = $.notifSection.items;
     _.each(list,(item)=>{
         let image = getImage(item.type);
         listToDisplay.push({
@@ -100,6 +110,10 @@ function updateList(list){
         });
     });
     $.notifSection.items = listToDisplay;
+    $.notificationsList.setMarker({
+        sectionIndex:0,
+        itemIndex: listToDisplay.length-4
+    });
 
     function getImage(type){
         let image;
@@ -131,6 +145,11 @@ function setup_refreshController(){
     $.notificationsList.refreshControl = control;
     control.addEventListener('refreshstart',function(e){
         log('refreshstart');
-        getData(()=>{control.endRefreshing()});
+        //initialize
+        notifications = [];
+        page =1;
+        loadNextPage(()=>{
+            control.endRefreshing();
+        });
     });
 }

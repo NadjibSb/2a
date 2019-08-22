@@ -13,7 +13,7 @@ var $ = module.exports = {
 	getAgencyDetails: getAgencyDetails,
     getAgencies: getAgencies,
     getContracts: getContracts,
-    getNotifications:getNotifications,
+    getNotificationsPerPage:getNotificationsPerPage,
 };
 
 function getAgencyDetails(id,successCallback, errorCallback){
@@ -65,20 +65,25 @@ function getContracts(successCallback,errorCallback){
     );
 }
 
-function getNotifications(successCallback,errorCallback){
+function getNotificationsPerPage(page,successCallback,errorCallback){
 
     var args = {
-        url: apiURL + "/notification",
+        url: apiURL + "/notification/"+page,
         method:'GET',
-        //fullResponse:true,
+        fullResponse:true,
         header: Alloy.Globals.header
     }
     httpClient.request(args,
         (response)=>{
-            _.isFunction( successCallback ) && successCallback( response );
+            try {
+                response = JSON.parse(response);
+            } catch (e) {
+                log("JSON parse error");
+            }
+            _.isFunction( successCallback ) && successCallback( { total:response.total, list:response.data} );
         },
-        (response)=>{
-            _.isFunction( errorCallback ) && errorCallback( response );
+        (error)=>{
+            _.isFunction( errorCallback ) && errorCallback( error );
         }
     );
 }

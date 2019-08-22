@@ -312,3 +312,38 @@ overrode the settings with other TSS, XML, or JS settings:
   borderColor: 'rgb(206, 170, 140)',
   top: 37,
 }
+
+// siniste + contract
+'.separator': {
+    height: 1,
+    backgroundColor: "rgba(151,151,151,0.2)"
+}
+
+'.details': {
+    top: 16,
+    left: 32,
+    right: 32
+}
+
+'#topBar': {
+    height: 55,
+    top: 0,
+    backgroundColor: 'white',
+}
+'.rounded': {
+    backgroundColor: 'white',
+    top: 16,
+    height: 80,
+    width: 80,
+    borderRadius: 40
+}
+'.textItem': {
+    top: 16,
+    left: 0,
+    bottom: 8,
+    font: {
+        fontSize: 14,
+        fontFamily: Alloy.CFG.design.fonts.Light
+    },
+    color: Alloy.CFG.design.fonts.PrimaryColor,
+}

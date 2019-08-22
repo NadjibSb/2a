@@ -124,7 +124,7 @@ exports.openAndCloseAll = function(path,tabgroup,params){
     tmpControllers=currentNavWindow;
     currentNavWindow = null;
     openWindow(path,tabgroup,params);
-    tmpControllers.close();
+    if(tmpControllers != null) tmpControllers.close();
 
   }
 };

@@ -4,3 +4,56 @@
     title: L("contract_details_title"),
     leftIcon: "/images/icn_topbar_back.png"
 }
+
+
+"#topBar_img":{
+    right : 16
+}
+
+'#topBar_text': {
+    font: {
+        fontSize: 18,
+        fontFamily: Alloy.CFG.design.fonts.Heavy
+    },
+    color: Alloy.CFG.design.fonts.PrimaryColor,
+    bottom: 0
+}
+"#containerAppel":{
+    top: 27,
+    bottom: 30
+}
+
+"#ApplerAssitanceImage":{
+    
+    image : "/images/icn_tel_assistance.png"
+}
+
+"#labelAppelAssitance":{
+    left : 10,
+	font : {
+		fontSize : 18,
+		fontFamily : Alloy.CFG.design.fonts.Medium	
+	},
+	color : "#cd7e43",
+	text : "Appeler l’assistance",
+	underlineText:"Appeler l’assistance",
+    left: 10
+}
+"#labelContractPdf":{
+    text :  "Jetez un coup d’oeil sur votre contrat",
+    top: 16,
+    font: {
+        fontSize: 16,
+        fontFamily: Alloy.CFG.design.fonts.Light
+    },
+    color: Alloy.CFG.design.fonts.PrimaryColor,
+    textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER
+}
+"#imageArrow":{
+    image: "/images/icn_downtriangle_blue_pdf.png",
+    top: 8
+}
+"#imagePdf":{
+    image: "/images/icn_pdf.png"
+}
+

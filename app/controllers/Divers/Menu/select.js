@@ -34,7 +34,7 @@ function fillSection(values, sectionIndex){
         items.push({
             template: 'value_template',
             id: value.id,
-            value_checkbox: {visible:  multiselect, image: selected? "/images/icn_oval_checked.png" : "/images/icn_oval_unchecked.png"},
+            value_checkbox: {visible:  multiselect, image: selected? "/images/icn_checkbox.png" : "/images/icn_checkbox_empty.png"},
             value_label: {
                 left: multiselect? 15 : 50,
                 right: multiselect? 50 : 15,
@@ -97,7 +97,7 @@ function selectValue(e) {
 }
 
 function checkItem(item, section_index, item_index, check = true) {
-    if(multiselect) item.value_checkbox.image = check? "/images/icn_oval_checked.png" : "/images/icn_oval_unchecked.png";
+    if(multiselect) item.value_checkbox.image = check? "/images/icn_checkbox.png" : "/images/icn_checkbox_empty.png";
     // item.value_label.font.fontWeight = check? 'bold' : 'normal'; // this was producing a bug
     item.value_label.color = check? '#000' : '#626262';
     log("item indx : "+item_index)

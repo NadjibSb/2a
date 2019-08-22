@@ -48,7 +48,7 @@
 }
 
 "#iconPassword":{
-  image: "/images/icn_checkhand_grey_tapbar.png",
+  image: "/images/icn_modif_motdepasse_blue.png",
   left: 34
 }
 
@@ -67,7 +67,7 @@
 }
 
 ".editProfilContainer": {
-  top : 56	
+  top : 25	
 }
 
 ".containerEditPass":{

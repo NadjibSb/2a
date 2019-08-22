@@ -111,15 +111,15 @@ function registerButton(e){
 					var objectValid = {valid : false, message :error[0].message};
 					log(error[0].code)
 					switch(error[0].code){
-						case "128" :
+						case "200" :
 							log("error tel")
 							telephone.setInvalid(objectValid)
 						break;
-						case "129" : 
+						case "201" : 
 						log("error email")
 							email.setInvalid(objectValid)
 						break;
-						case "130" : 
+						case "202" : 
 						log("error client");
 							numClient.setInvalid(objectValid)
 						break;

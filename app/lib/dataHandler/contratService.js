@@ -11,7 +11,8 @@ var apiURL = Alloy.Globals.API_URL;
 
 //Public Interface
 var $ = module.exports = {
-    getContractDetail : getContractDetail
+    getContractDetail : getContractDetail,
+    getPhoneNumber :getPhoneNumber
 };
 
 //function
@@ -24,4 +25,16 @@ function getContractDetail(id,header,succes,error){
           ignoreAlert : true,
       };
       httpClient.request( args, succes, error );
+}
+
+function getPhoneNumber(header,succes,error){
+    log("debut getNumbers")
+    var args = {
+        method: "GET",
+        url : apiURL+"/contact/assistance",
+        header : header,
+        ignoreAlert : true,
+    }
+    httpClient.request(args,succes,error)
+    
 }

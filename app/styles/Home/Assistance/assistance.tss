@@ -1,0 +1,32 @@
+
+".container" : {
+  
+}
+
+'#listAppelContainer': {
+    bottom: 8,
+    left: 8,
+    right: 8,
+    height: "5%",
+    opacity: 0.1,
+    viewShadowOffset: {x:0,y:1},
+    viewShadowColor: "gray",
+    backgroundColor: 'olive',
+    visible: false,
+    zIndex: 200,
+}
+
+'.border[if=Alloy.Globals.isAndroid]': {
+    borderWidth: 1,
+    borderColor: "#19999999"
+}
+
+"#labelAssistanceAppel":{
+    text : "Quelle assistance vous souhaiter\nappeler ?",
+    left: 30,
+    font: {
+            fontSize: 16,
+            fontWeight: "semibold"
+    },
+    bottom: 15
+}

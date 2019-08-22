@@ -347,3 +347,10 @@ overrode the settings with other TSS, XML, or JS settings:
     },
     color: Alloy.CFG.design.fonts.PrimaryColor,
 }
+
+'#btclose': {
+    right: 8,
+    top:8,
+    image: "/images/icn_close_blue.png",
+    height: 16
+}

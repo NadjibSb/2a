@@ -88,10 +88,10 @@
   <plugins>
     <plugin version="1.0">ti.alloy</plugin>
   </plugins>
-  <!-- Islem
-  <property name="appc-app-id" type="string">5d41ae3653dcf96c96247fb7</property>-->
-  <!-- nadjib -->
-  <property name="appc-app-id" type="string">5d41a26653dcf96c96247eb9</property>
+  <!-- Islem-->
+  <property name="appc-app-id" type="string">5d41ae3653dcf96c96247fb7</property>
+  <!-- nadjib 
+  <property name="appc-app-id" type="string">5d41a26653dcf96c96247eb9</property>-->
   <property name="acs-authbase-url-development" type="string"/>
   <property name="acs-base-url-development" type="string">https://api.cloud.appcelerator.com</property>
   <property name="acs-oauth-secret-development" type="string">7R1xgyMgp35IKIxkdNtbmp3fEbBaIWQr</property>

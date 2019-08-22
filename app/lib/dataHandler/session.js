@@ -26,7 +26,7 @@ var $ = module.exports = {
 
 // PRIVATE VARIABLES
 const SESSION_ID = "SESSION_ID";
-const apiUrl = Alloy.Globals.apiUrl ;
+const apiUrl = Alloy.Globals.API_URL ;
 var sessionId = Ti.App.Properties.getString( SESSION_ID, null );
 
 
@@ -37,7 +37,7 @@ function login( params, error ) {
   console.log("debut fct login");
 	var args = {
 		method: "POST",
-		url: apiUrl + "login",
+		url: apiUrl + "/login",
 		params: params,
 		ignoreAlert : true,
 	};
@@ -53,7 +53,7 @@ function onSuccessLogin(e){
   startSession(e)
   //navmanager.setTabGroup("tabs/index");
   navmanager.openAndCloseAll("Home/index",0,{});
-  
+
 }
 
 //session with time
@@ -96,7 +96,7 @@ function deleteUserData(){
 function updateUserData(params,header,succes,error){
 	var args = {
 		method: "POST",
-		url: apiUrl + "user/update",
+		url: apiUrl + "/user/update",
 		params: params,
 		header : header,
 		ignoreAlert : true,
@@ -108,7 +108,7 @@ function updateUserData(params,header,succes,error){
 function changePassword(params,header,succes,error){
 	var args = {
 		method: "POST",
-		url: apiUrl + "user/update",
+		url: apiUrl + "/user/update",
 		params: params,
 		header : header,
 		ignoreAlert : true,

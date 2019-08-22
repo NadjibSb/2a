@@ -7,8 +7,12 @@ const log = require('/utility/logger')({
 //PUBLIC INTERFACE
 var $ = module.exports = {
 	checkConfig: checkConfig,
-    checkPermissions:checkPermissions
+    checkPermissions: checkPermissions,
+    getMyCoords: getMyCoords
 };
+
+// PRIVATE VAR
+var hasPermission = false;
 
 // PRIVATE FUNCTIONS
 function checkConfig(){
@@ -51,6 +55,7 @@ function checkPermissions(){
             Ti.Geolocation.requestLocationPermissions(Ti.Geolocation.AUTHORIZATION_ALWAYS, function(e) {
                 if (e.success) {
                     log(e);
+                    hasPermission = true;
                     return true;
                 } else {
                     log(e);
@@ -58,10 +63,20 @@ function checkPermissions(){
                 }
             })
         }else { // permission already given
+            hasPermission = true;
             return true;
         }
     }else {
-        log("Ti.Platform.Android.API_LEVEL < 23")
+        log("Ti.Platform.Android.API_LEVEL < 23");
+        hasPermission = true;
         return true;
+    }
+}
+
+function getMyCoords(callback){
+    if (hasPermission) {
+        Ti.Geolocation.getCurrentPosition((myPosition)=>{
+            _.isFunction( callback ) && callback( myPosition.coords );
+        });
     }
 }

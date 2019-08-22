@@ -1,5 +1,3 @@
-// Arguments passed into this controller can be accessed via the `$.args` object directly or:
-var args = $.args;
 // Dependencies------------------------------------------------------------------------------
 var log = require( 'utility/logger' )( {
 		tag: "Agence_index",
@@ -17,6 +15,8 @@ var selectedAnnotation = null;
 var agenciesList = [];
 var page=1;
 const PAGE_COUNT = 10;
+var hasLocationPermission = false;
+var myCoords= {};
 
 
 // CONSTRUCTOR------------------------------------------------------------------------------
@@ -24,12 +24,26 @@ const PAGE_COUNT = 10;
 
     setup_refreshController();
     $.customIndicator.show();
-    getData(
-        ()=>{
-            loadNextPage();
-            $.customIndicator.hide();
-        }
-    );
+
+    if (mapsManager.checkPermissions()) {
+        hasLocationPermission= true;
+        mapsManager.getMyCoords((myPosition)=>{
+            myCoords = myPosition;
+            getData(
+                ()=>{
+                    loadNextPage();
+                    $.customIndicator.hide();
+                }
+            );
+        });
+    }else {
+        getData(
+            ()=>{
+                loadNextPage();
+                $.customIndicator.hide();
+            }
+        );
+    }
 })();
 
 
@@ -60,7 +74,7 @@ function displayListe(e){
 function getData(callback){
     dataService.getAgencies(
         (response)=>{
-            agenciesList = response;
+            agenciesList = sortList(response);
             _.isFunction( callback ) && callback();
         },
         (error)=>{
@@ -69,6 +83,25 @@ function getData(callback){
         }
     );
 }
+
+
+function sortList(list){
+    let sorted = [];
+    if (list.length >0) {
+        if (hasLocationPermission) {
+            sorted = _.sortBy(list,function(agency){
+                let ltd = Math.abs(myCoords.latitude)-Math.abs(agency.ltd),
+                    lgt = Math.abs(myCoords.longitude)-Math.abs(agency.lgt);
+                return (ltd+lgt)/2;
+            });
+        }else{
+            sorted = _.sortBy(list,'region');
+        }
+    }
+    log("sorted "+sorted.length);
+    return sorted;
+}
+
 
 function loadNextPage(){
     log('load page ' + page);
@@ -117,6 +150,7 @@ function displayData(isNotEmpty){
     }
 }
 
+
 function setup_refreshController(){
     var control = Ti.UI.createRefreshControl({
         tintColor: Alloy.CFG.design.colors.PrimaryColor
@@ -150,6 +184,7 @@ function displayMaps(e){
     $.btCarteImg.image = "/images/icn_localization_white_big.png";
     $.agenceList.hide();
     $.maps.show();
+    //$.mapsViewContainer.add(MapModule);
     setupMaps();
 
 }
@@ -173,18 +208,33 @@ function onClickMap(e){
 
 function setupMaps(){
     if(!MapsConfigured){
-        if (mapsManager.checkConfig() && mapsManager.checkPermissions()) {
+        if (mapsManager.checkConfig()) {
             log('Maps config successful');
-            //zoom into my position
-            Ti.Geolocation.getCurrentPosition((myPosition)=>{
-                log(myPosition.coords);
-                $.view_map.region = {
-                    latitude: myPosition.coords.latitude,
-                    longitude: myPosition.coords.longitude,
-                    latitudeDelta: 0.5,
-                    longitudeDelta: 0.5
-                };
-            });
+            if (mapsManager.checkPermissions()) {
+                //zoom into my position
+                Ti.Geolocation.getCurrentPosition((myPosition)=>{
+                    log(myPosition.coords);
+                    $.view_map.region = {
+                        latitude: myPosition.coords.latitude,
+                        longitude: myPosition.coords.longitude,
+                        latitudeDelta: 0.5,
+                        longitudeDelta: 0.5
+                    };
+                });
+            }else {
+                //zoom into Algiers
+                Ti.Geolocation.getCurrentPosition((myPosition)=>{
+                    let ltd = '36.739572',
+                        lgt = "3.088480";
+                    $.view_map.region = {
+                        latitude: ltd,
+                        longitude: lgt,
+                        latitudeDelta: 2,
+                        longitudeDelta: 2
+                    };
+                });
+            }
+
             // add event listner
             $.view_map.addEventListener("click",onClickMap);
 
@@ -198,8 +248,6 @@ function setupMaps(){
                     log(error);
                 }
             );
-
-
         }else {
             // TODO: handle maps not displayed
         }

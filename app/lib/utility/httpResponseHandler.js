@@ -79,7 +79,10 @@ function handleErrorResponse( reqArgs, errorType, responseError, callback ) {
 			try {
 				responseError = typeof( responseError.responseText ) == "string" ? JSON.parse( responseError.responseText ) : responseError.responseText;
 			}
-			catch (e) { log.e( e, "json parse error " ); log.e( responseError.responseText, "response " ); }
+			catch (e) {
+                log.e( e, "json parse error " );
+                log.e( responseError.responseText, "response " );
+            }
 		}
 	} else {
 		responseError = {};

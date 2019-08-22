@@ -47,7 +47,7 @@
                 <ListSection id="agencesSection"></ListSection>
             </ListView>
             <View id="maps">
-                <View backgroundColor="gray">
+                <View id="mapsViewContainer" backgroundColor="gray">
                     <Module module="ti.map" id="view_map"></Module>
                 </View>
                 <View class="bottomView hSize">

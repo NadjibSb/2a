@@ -13,6 +13,7 @@
 	<string name="HTTP_CLIENT_ERROR_ONERROR">Une erreur s'est produite, merci de réessayer plus tard.</string>
 	<string name="HTTP_CLIENT_ERROR_SEND">Une erreur s'est produite, merci de réessayer plus tard.</string>
 	<string name="HTTP_DEFAULT_ERROR">Une erreur s'est produite, merci de réessayer plus tard.</string>
+	<string name="HTTP_DEFAULT_ERROR_MESSAGE">Une erreur s'est produite, merci de réessayer plus tard.</string>
 
 
 	<!-- on Boarding -->

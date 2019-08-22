@@ -5,6 +5,7 @@ var log = require( "/utility/logger" )( {
 	} );
 httpClient = require( "/utility/httpManager" );
 session = require("/dataHandler/session");
+const alert = require("/utility/alertManager");
 // Arguments passed into this controller can be accessed via the `$.args` object directly or:
 
 //variable
@@ -28,7 +29,9 @@ function clickLogin(e){
   session.login(data,function onError(code,response){
     $.activityIndicator.hide();
     log(code);
-    alert(response.error);
+    if(code == "HTTP_CLIENT_NETWORK_OFFLINE") alert.show(" vérifier votre connexion est réessayer");
+    else alert.show(response)
+    
   })
 
 }

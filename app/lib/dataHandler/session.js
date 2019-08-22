@@ -19,14 +19,15 @@ var $ = module.exports = {
   signup : signup,
   deleteUserData :deleteUserData,
   updateUserData : updateUserData,
-  changePassword:changePassword
+  changePassword:changePassword,
+  getHeader : getHeader
 };
 
 
 
 // PRIVATE VARIABLES
 const SESSION_ID = "SESSION_ID";
-const apiUrl = Alloy.Globals.apiUrl ;
+const apiUrl = Alloy.Globals.API_URL;
 var sessionId = Ti.App.Properties.getString( SESSION_ID, null );
 
 
@@ -37,7 +38,7 @@ function login( params, error ) {
   console.log("debut fct login");
 	var args = {
 		method: "POST",
-		url: apiUrl + "login",
+		url: apiUrl + "/login",
 		params: params,
 		ignoreAlert : true,
 	};
@@ -79,7 +80,7 @@ function resetPassword( params, success, error ) {
 function signup( params, error ) {
 	var args = {
 		method: "POST",
-		url: apiUrl + "register",
+		url: apiUrl + "/register",
 		params: params,
 		ignoreAlert : true,
 
@@ -96,7 +97,7 @@ function deleteUserData(){
 function updateUserData(params,header,succes,error){
 	var args = {
 		method: "POST",
-		url: apiUrl + "user/update",
+		url: apiUrl + "/user/update",
 		params: params,
 		header : header,
 		ignoreAlert : true,
@@ -108,11 +109,18 @@ function updateUserData(params,header,succes,error){
 function changePassword(params,header,succes,error){
 	var args = {
 		method: "POST",
-		url: apiUrl + "user/update",
+		url: apiUrl + "/user/update",
 		params: params,
 		header : header,
 		ignoreAlert : true,
 	};
 	log('after args')
 	httpClient.request(args,succes,error);
+}
+
+function getHeader(){
+	var header = {
+		Authorization : "Bearer "+Ti.App.Properties.getString( SESSION_ID, null )
+	}
+	return header
 }

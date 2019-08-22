@@ -67,13 +67,6 @@
     color: Alloy.CFG.design.fonts.PrimaryColor,
 }
 
-'.rounded': {
-    backgroundColor: 'white',
-    top: 16,
-    height: 80,
-    width: 80,
-    borderRadius: 40
-}
 
 
 '#choisenExpert': {

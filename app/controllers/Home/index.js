@@ -12,6 +12,7 @@ var args = $.args;
 // function
 // click en un item pour aller a une fenetre
 function clickItem(e){
+
   var item = e.source.itemId;
   var activeTab;
   switch(item) {
@@ -35,3 +36,20 @@ function clickItem(e){
   
   // envoyer un a ecran par rapport a item
 }
+
+function clickAssist(){
+  openRendezvousView()
+}
+
+function openRendezvousView(e){
+  $.appelAssistance.open();
+  $.containerShadow.visible = true
+}
+function close(e){
+  log(e);
+  $.containerShadow.visible = false
+}
+
+
+// traitement
+

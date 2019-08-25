@@ -2,7 +2,9 @@
 	<Window>
 		<View id="container">
 			<Widget src="customNavBar" id="navBar" class="navBar" onLeftButtonClick="pressBack"></Widget>
-			
+			<ScrollView class="vlayout" > 
+				<Label id="labelEntete"></Label>
+			</ScrollView>
 		</View>
 	</Window>	
 </Alloy>

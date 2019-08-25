@@ -85,16 +85,7 @@ function remplireButton(type,longType,phone){
     view.add(image)
     view.add(label)
     view.addEventListener('click',()=>{
-        log("do a call")
-        if(OS_ANDROID){
-            Titanium.Platform.openURL('tel:'+phone);
-        }else{
-            Ti.Platform.openURL('tel:'+phone, {
-                'UIApplicationOpenURLOptionsSourceApplicationKey': true
-            }, function(e) {
-                Ti.API.info('URL open successfully? ' + JSON.stringify(e));
-            });
-        }
+        require("/utility/callUtil").doCall(phone)
     })
     buttonContainer.add(view)
 

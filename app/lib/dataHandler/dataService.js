@@ -14,6 +14,7 @@ var $ = module.exports = {
     getAgencies: getAgencies,
     getContracts: getContracts,
     getNotificationsPerPage:getNotificationsPerPage,
+    getPhoneContact :getPhoneContact
 };
 
 function getAgencyDetails(id,successCallback, errorCallback){
@@ -86,4 +87,13 @@ function getNotificationsPerPage(page,successCallback,errorCallback){
             _.isFunction( errorCallback ) && errorCallback( error );
         }
     );
+}
+
+function getPhoneContact(header,succes,error){
+    const args = {
+        method : "GET",
+        url : apiURL+"/contact/numbers",
+        header : header
+    }
+    httpClient.request(args,succes,error)
 }

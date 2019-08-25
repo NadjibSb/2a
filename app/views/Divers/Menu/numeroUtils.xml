@@ -1,8 +1,11 @@
-<Alloy>
+<Alloy autoStyle="true">
 	<Window>
-		<View id="container">
+		<Widget src="customIndicator" id="activityIndicator" blockScreen="true"/>
+		<View id="container" class="vlayout">
 			<Widget src="customNavBar" id="navBar" class="navBar" onLeftButtonClick="pressBack"></Widget>
-			<Label> Numero Utils</Label>
+			<ScrollView class="vlayout" id="scrollContainer"> 
+				<Label id="labelEntete" class="labelLogin fontHeavy"></Label>	
+			</ScrollView>
 		</View>
 	</Window>	
 </Alloy>

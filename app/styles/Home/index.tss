@@ -95,6 +95,7 @@
 '#containerDivers': {
   top: 523,
   left: 53,
+  bottom: 20
 }
 
 '#imageIconDivers': {
@@ -108,7 +109,8 @@
 // divers
 '#containerAssistance': {
   top: 523,
-  right: 52
+  right: 52,
+  bottom: 20
 }
 
 '#imageIconAssistance': {
@@ -126,6 +128,3 @@
   visible: false
 }
 
-"#container":{
-  bottom : 20
-}

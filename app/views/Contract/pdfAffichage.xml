@@ -1,0 +1,13 @@
+<Alloy>
+	<Window>
+		<Widget src="customIndicator" id="activityIndicator" blockScreen="true"/>
+		<View id="container" class="background vlayout">
+			<Widget src="customNavBar" id="navBar" class="navBar" onLeftButtonClick="pressBack"></Widget>
+			<View>
+				<WebView id="webviewPdf">
+				
+				</WebView>
+			</View>
+		</View>
+	</Window>
+</Alloy>

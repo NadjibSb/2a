@@ -50,13 +50,14 @@ var myCoords= {
 
 function checkPositionConfig(successCallback,erroeCallback){
     //if has permission to access my position
-    if (mapsManager.checkPermissions()) {
+    if (mapsManager.checkPermissions() && mapsManager.checkGPS()) {
         hasLocationPermission= true;
         mapsManager.getMyCoords((myPosition)=>{
             myCoords = myPosition;
             _.isFunction( successCallback ) && successCallback();
         });
     }else { // if no permission
+        hasLocationPermission= false;
         _.isFunction( erroeCallback ) && erroeCallback();
     }
 }
@@ -194,40 +195,48 @@ function setupMaps(){
 
     if (mapsManager.checkGoogleServices()) { // if true display map
         log('Google Services installed' , tag);
-        // add map
-        mapView = MapModule.createView({
-            mapType: MapModule.NORMAL_TYPE,
-            animate: true,
-            regionFit: true,
-            userLocation: true
-        });
+        if (!MapsConfigured) {
+            // add map
+            mapView = MapModule.createView({
+                mapType: MapModule.NORMAL_TYPE,
+                animate: true,
+                regionFit: true,
+                userLocation: true
+            });
 
-        if (mapsManager.checkPermissions()) {
-            log('Maps permission guarteed', tag);
-            //zoom into my position
-            log(myCoords, "My Coords");
-            mapView.region = {
-                latitude: myCoords.latitude,
-                longitude: myCoords.longitude,
-                latitudeDelta: 0.5,
-                longitudeDelta: 0.5
-            };
-        }else {
-            log('Maps permission not guarteed', tag);
-            //zoom into Algiers
-            let ltd = '36.739572',
-                lgt = "3.088480";
-            mapView.region = {
-                latitude: ltd,
-                longitude: lgt,
-                latitudeDelta: 2,
-                longitudeDelta: 2
-            };
+            if (mapsManager.checkPermissions() && mapsManager.checkGPS()) {
+                log('Maps permission guarteed', tag);
+                //zoom into my position
+                log(myCoords, "My Coords");
+                mapView.region = {
+                    latitude: myCoords.latitude,
+                    longitude: myCoords.longitude,
+                    latitudeDelta: 0.5,
+                    longitudeDelta: 0.5
+                };
+            }else {
+                log('Maps permission not guarteed', tag);
+                //zoom into Algiers
+                let ltd = '36.739572',
+                    lgt = "3.088480";
+                mapView.region = {
+                    latitude: ltd,
+                    longitude: lgt,
+                    latitudeDelta: 2,
+                    longitudeDelta: 2
+                };
+            }
+            $.mapsViewContainer.add(mapView);
+
+            //add annotations
+            setTimeout(()=>{
+                addAnnotations(agenciesList);
+            }, 1000);
+
+            // add event listner
+            mapView.addEventListener("click",onClickMap);
+            MapsConfigured = true;
         }
-        $.mapsViewContainer.add(mapView);
-        addAnnotations(agenciesList);
-        // add event listner
-        mapView.addEventListener("click",onClickMap);
 
     }else { // handle maps not displayed
 

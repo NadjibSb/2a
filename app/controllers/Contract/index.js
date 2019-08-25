@@ -170,3 +170,9 @@ function setup_refreshController(){
         getData(()=>{control.endRefreshing();});
     });
 }
+
+
+function open(e){
+    log("dans le contract")
+    $.trigger('close', _.extend(e.source,{id:"test"}));
+}

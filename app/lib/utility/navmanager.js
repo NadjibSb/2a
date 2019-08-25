@@ -25,8 +25,8 @@ exports.setTabGroup = function(path,tabActive) {
 		exports.userPressedBackButton = tabGroup.userPressedBackButton;
   }
   
-  controller.getView().open();
   tabGroup.setActiveTab(tabActive)
+  controller.getView().open();
   if (OS_IOS && currentNavWindow) {
     currentNavWindow.close();
     currentNavWindow = null;

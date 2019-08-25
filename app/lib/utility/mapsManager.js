@@ -75,7 +75,10 @@ function checkPermissions(){
 function getMyCoords(callback){
     if (hasPermission) {
         Ti.Geolocation.getCurrentPosition((myPosition)=>{
+            log(myPosition,'myCoords');
             _.isFunction( callback ) && callback( myPosition.coords );
+        },(e)=>{
+            log(e,'myCoords');
         });
     }
 }

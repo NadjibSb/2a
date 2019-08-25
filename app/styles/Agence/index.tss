@@ -107,6 +107,7 @@
 
 '#mapsViewContainer': {
     bottom: 42,
+    backgroundColor: '#DDD'
 }
 
 '#view_map': {

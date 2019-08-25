@@ -19,7 +19,10 @@ var agenciesList = [];
 var page=1;
 const PAGE_COUNT = 10;
 var hasLocationPermission = false;
-var myCoords= {};
+var myCoords= {
+    latitude:0,
+    longitude:0
+};
 
 
 // CONSTRUCTOR------------------------------------------------------------------------------
@@ -239,9 +242,9 @@ function addAnnotations(list){
 
         var annotation = MapModule.createAnnotation({
             latitude: 36.499290466308594-0.1*i,
-            longitude: 2.381362199783325,
+            longitude: 2.681362199783325,
         	title : item.region + ' - ' + item.agency_id,
-            image: "/images/icn_localization_2a_blue.png",
+            image: true ? "/images/icn_localization_2a_blue.png" : "/images/icn_localization_2a_blue.png",
             //customView:getCustumView({statusOpen:true}),
             agency:item
         });
@@ -250,34 +253,9 @@ function addAnnotations(list){
     });
     log("done","Annotations");
     mapView.annotations = annotations;
-
-
-    /*
-    function getCustumView(args){
-        let view = Ti.UI.createView({
-            width:Ti.UI.SIZE,
-            height:Ti.UI.SIZE,
-            autoStyle:true,
-        });
-        let logo = Ti.UI.createImageView({
-            width:40,
-            image: "/images/icn_localization_2a_blue.png",
-        });
-        let img;
-        args.statusOpen ? img ="/images/icn_oval_green_in_map.png" : img ="/images/icn_oval_red_in_map.png";
-        let statusImg = Ti.UI.createImageView({
-            image: img,
-            width:15,
-            top:0,
-            left:0
-        });
-        view.add(logo,statusImg);
-        return view
-    }*/
 }
 
 // Card view in Maps
-
 function showCard(agency){
 
     str.labelStyling($.moreDetails,L('agence_more_details'),{underline:true}); //underline text
@@ -305,9 +283,6 @@ function closeCard(e){
     },()=>{
         $.agencyDetailsCard.hide();
     });
-    if (selectedAnnotation) {
-        selectedAnnotation = null;
-    }
 }
 
 
@@ -331,11 +306,14 @@ function displayMaps(e){
 }
 function onClickMap(e){
 
-    log(e.annotation.agency.agency_id);
-    log(e);
-    let agency = e.annotation.agency;
-    showCard(agency);
-    selectedAnnotation = e.annotation;
+    if (e.annotation == selectedAnnotation) { // the maps triggers 2 click events of the same annotation
+        log("egnore event");
+    }else{
+        log(e.annotation.agency.agency_id);
+        let agency = e.annotation.agency;
+        showCard(agency);
+        selectedAnnotation = e.annotation;
+    }
 }
 
 

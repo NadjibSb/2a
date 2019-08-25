@@ -9,12 +9,14 @@ var navManager = require("/utility/navmanager");
 var contractService = require("/dataHandler/contratService")
 var session = require("/dataHandler/session")
 var stringUtil = require("/utility/stringUtil")
+var dateArgs = require("utility/dateUtil")
 //Variable
 const contratData = args.data;
 const idContrat = contratData.id
 const containerLabelView = $.details
 const imageEntete  = $.topBar_img
 const titleEntete = $.topBar_text
+var phone="00000000000";
 //Function
 function pressBack(e){
     navManager.closeWindow($.detail);
@@ -22,26 +24,38 @@ function pressBack(e){
 
 function getDetail(idContrat,session){
 	log("le id : "+idContrat)
+	$.activityIndicator.show()
 	contractService.getContractDetail(idContrat,session.getHeader(),(res)=>{
 		//succes
 		log(res)
-		remplireDetail(res)
+		contractService.getPhoneNumber(session.getHeader(),(resPhone)=>{
+			phone = setPhone(resPhone.fields)
+			remplireDetail(res.fields)
+			$.activityIndicator.hide()
+		},(code,res)=>{
+			pressBack()
+		})
+		
 	},(code,res)=>{
 		//error
 		log(res)
 		log(code)
+		pressBack()
 	})
 }
 
+
 function remplireDetail(res){
-	remplireEntete(res)
-	for(var attribut in res){
-		log(attribut)
-		createView(attribut,res[attribut])
-	}
+	remplireEntete(contratData)
+	res.forEach(champ =>{
+		log(champ.fieldName)
+		createView(champ.fieldName,champ.value)
+	})
+		
 }
 
 function createView(attribut,value){
+	var dateitem;
 	var view = Ti.UI.createView({
 		height: Ti.UI.SIZE,
 		layout: 'vertical'
@@ -70,6 +84,12 @@ function createView(attribut,value){
 	let style = {
 		font : font
 	}
+
+	if(attribut == "Date de fin d'effet du contrat"){
+		dateitem = dateArgs.getDataArgs(value,new Date())
+		style.color = dateitem.color
+		value = dateitem.text
+	}
 	stringUtil.labelStyling(label,value,style)
 	view.add(label)
 	view.add(viewSeparator)
@@ -81,6 +101,7 @@ function remplireEntete(objectData){
 		case "habitat" :
 			imageEntete.image = "/images/icn_house_blue_title.png"
 			titleEntete.text = "Multirisque Habitation"
+			
 			break;
 		case "catnat" : 
 			imageEntete.image = "/images/icn_catnat_blue_title.png"
@@ -97,12 +118,19 @@ function remplireEntete(objectData){
 	}
 }
 
+function setPhone(listNumber){
+	var phoneNumber;
+	listNumber.forEach(value=>{
+		if(value.type == contratData.type) phoneNumber = value.phone 
+	})
+	return phoneNumber
+}
 function DoCall(){
-    log("do a call")
+	log(phone)
     if(OS_ANDROID){
-        Titanium.Platform.openURL('tel:0556989898');
+        Titanium.Platform.openURL('tel:'+phone);
     }else{
-        Ti.Platform.openURL('tel:055-698-9890', {
+        Ti.Platform.openURL('tel:'+phone, {
             'UIApplicationOpenURLOptionsSourceApplicationKey': true
         }, function(e) {
             Ti.API.info('URL open successfully? ' + JSON.stringify(e));
@@ -112,10 +140,9 @@ function DoCall(){
 }
 
 function lecteurPdf(){
-	
+	navManager.openWindow("/Contract/pdfAffichage")
 }
 //Traitment
 
 getDetail(idContrat,session)
 
-	

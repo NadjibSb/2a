@@ -2,7 +2,7 @@
 	<Window>
 		<View id="container">
 			<Widget src="customNavBar" id="navBar" class="navBar" onLeftButtonClick="pressBack"></Widget>
-			<Label> Numero Utils</Label>
+			
 		</View>
 	</Window>	
 </Alloy>

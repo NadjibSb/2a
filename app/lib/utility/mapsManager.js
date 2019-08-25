@@ -2,7 +2,8 @@
 const log = require('/utility/logger')({
               tag : "Maps_Manager",
               hidelag : false
-            });
+          }),
+        alertManager = require("/utility/alertManager");
 
 //PUBLIC INTERFACE
 var $ = module.exports = {
@@ -53,7 +54,7 @@ function checkPermissions(){
         //var hasLocationPermission = Ti.Geolocation.hasLocationPermissions(Ti.Geolocation.AUTHORIZATION_ALWAYS);
         var hasLocationPermission = Ti.Geolocation.hasLocationPermissions(Ti.Geolocation.AUTHORIZATION_WHEN_IN_USE);
         if (!hasLocationPermission) {
-            Ti.Geolocation.requestLocationPermissions(Ti.Geolocation.AUTHORIZATION_WHEN_IN_USE, function(e) {
+            Ti.Geolocation.requestLocationPermissions(Ti.Geolocation.AUTHORIZATION_ALWAYS, function(e) {
                 if (e.success) {
                     log(e);
                     hasPermission = true;
@@ -76,9 +77,31 @@ function checkPermissions(){
 
 function checkGPS(){
     if (Ti.Geolocation.locationServicesEnabled) {
+        log("locationServicesEnabled : true");
         return true
     } else {
-        alert(L("alert_GPS_disabled"));
+        alertManager.showDialog({
+            title:L("alert_activete_your_GPS"),
+            message: L("alert_GPS_disabled")
+        },
+        [L("settings"),L("no_thanks")],
+        (e)=>{
+            if (e.index==0) {
+                if (Alloy.Globals.isIOS) {
+            		Ti.Platform.openURL('app-settings:');
+            	}
+
+            	if (Alloy.Globals.isAndroid) {
+            		var intent = Ti.Android.createIntent({
+            			action: 'android.settings.SETTINGS',
+                        //action: 'android.settings.APPLICATION_SETTINGS',
+            		});
+            		intent.addFlags(Ti.Android.FLAG_ACTIVITY_NEW_TASK);
+            		Ti.Android.currentActivity.startActivity(intent);
+            	}
+            }
+        });
+
     }
     return false;
 }

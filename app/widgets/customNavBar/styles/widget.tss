@@ -5,6 +5,12 @@
 	height: 64
 }
 
+"#navBarContainer[platform=android]":{
+	left : 0,
+	top: 0,
+	height: 44
+}
+
 
 "#zoneClickLeft":{
 	top: 0,

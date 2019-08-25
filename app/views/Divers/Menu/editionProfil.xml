@@ -18,9 +18,9 @@
 						<View id="lineExpiration" class="hSize"/>
 						<Label id="labelErreur" class="fontMedium"></Label>
 					</View>
-					<View class="containerEditPass hSize hlayout" >
+					<View class="containerEditPass hSize hlayout" onClick="toEditPassword">
 						<ImageView id="iconPassword"></ImageView>
-						<Label id="labePassword" module="module/underlineText" onClick="toEditPassword"></Label>	
+						<Label id="labePassword" module="module/underlineText" ></Label>	
 					</View> 
 					<Button id="buttonSauvgarder" class="validationButton" onClick="SauvgarderButton"></Button>
 				</View>	

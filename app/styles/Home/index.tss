@@ -109,7 +109,7 @@
 // divers
 '#containerAssistance': {
   top: 523,
-  right: 52
+  right: 52,
   bottom: 20
 }
 

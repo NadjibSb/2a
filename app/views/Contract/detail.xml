@@ -19,7 +19,7 @@
                             <Label id="labelAppelAssitance" module="module/underlineText"></Label>
                         </View>
                     </View>
-                    <View class="hSize vlayout" onClick="lecteurPdf">
+                    <View id="lecturePdfContainer" class="hSize vlayout" onClick="lecteurPdf">
                         <Label id="labelContractPdf" class="labellogin"></Label>
                         <ImageView id="imageArrow"></ImageView>
                         <View class="rounded hSize wSize">

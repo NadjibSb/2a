@@ -17,6 +17,8 @@ const containerLabelView = $.details
 const imageEntete  = $.topBar_img
 const titleEntete = $.topBar_text
 var phone="00000000000";
+const containerAppel = $.containerAppel
+const containerPdf = $.lecturePdfContainer
 //Function
 function pressBack(e){
     navManager.closeWindow($.detail);
@@ -32,6 +34,8 @@ function getDetail(idContrat,session){
 			phone = setPhone(resPhone.fields)
 			remplireDetail(res.fields)
 			$.activityIndicator.hide()
+			containerAppel.show()
+			containerPdf.show()
 		},(code,res)=>{
 			pressBack()
 		})
@@ -143,6 +147,7 @@ function lecteurPdf(){
 	navManager.openWindow("/Contract/pdfAffichage")
 }
 //Traitment
-
+containerAppel.hide()
+containerPdf.hide()
 getDetail(idContrat,session)
 

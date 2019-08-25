@@ -10,3 +10,27 @@
   leftIcon: "/images/icn_topbar_back.png",
   zIndex: 200,
 }
+
+"#labelEntete":{
+  top : 35,
+  text: "Algérienne des assurances 2a met à \nvotre disposition des numéros d’appel \nutiles."
+}
+
+
+".labelNum":{
+  font: {
+    fontSize : 14	
+  },
+  color: "#374379",
+}
+
+
+".category":{
+  top: 33,
+  bottom: 5
+}
+
+".phone":{
+  left : 37,
+  top : 7
+}

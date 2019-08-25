@@ -15,6 +15,11 @@
 	<string name="HTTP_DEFAULT_ERROR">Une erreur s'est produite, merci de réessayer plus tard.</string>
 	<string name="HTTP_DEFAULT_ERROR_MESSAGE">Une erreur s'est produite, merci de réessayer plus tard.</string>
 
+	<string name="alert_GPS_disabled">La localisation de votre appareil est désactivée, veuillez changer les réglages pour accéder à toutes les fonctionnalités</string>
+	<string name="alert_activete_your_GPS">Activer votre localization</string>
+	<string name="settings">Réglages</string>
+	<string name="no_thanks">Non, Merci</string>
+
 
 	<!-- on Boarding -->
     <string name="on_boarding_btn_next">Suivant</string>

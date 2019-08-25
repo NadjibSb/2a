@@ -13,12 +13,16 @@ var log = require( 'utility/logger' )( {
 
 // PRIVATE VARIABLES------------------------------------------------------------------------------
 var MapsConfigured = false;
+var mapView;
 var selectedAnnotation = null;
 var agenciesList = [];
 var page=1;
 const PAGE_COUNT = 10;
 var hasLocationPermission = false;
-var myCoords= {};
+var myCoords= {
+    latitude:0,
+    longitude:0
+};
 
 
 // CONSTRUCTOR------------------------------------------------------------------------------
@@ -27,33 +31,36 @@ var myCoords= {};
     setup_refreshController();
     $.customIndicator.show();
 
-    if (mapsManager.checkPermissions()) {
-        hasLocationPermission= true;
-        mapsManager.getMyCoords((myPosition)=>{
-            myCoords = myPosition;
-            getData(
-                ()=>{
-                    loadNextPage();
-                    $.customIndicator.hide();
-                }
-            );
-        });
-    }else {
+    let callback = ()=>{
         getData(
             ()=>{
                 loadNextPage();
                 $.customIndicator.hide();
             }
         );
-    }
+    };
+    checkPositionConfig(callback,callback);
+
+
 })();
+
 
 
 // PRIVATE FUNCTIONS ------------------------------------------------------------------------------
 
-
-// FUNCTIONS -------------------- List
-
+function checkPositionConfig(successCallback,erroeCallback){
+    //if has permission to access my position
+    if (mapsManager.checkPermissions() && mapsManager.checkGPS()) {
+        hasLocationPermission= true;
+        mapsManager.getMyCoords((myPosition)=>{
+            myCoords = myPosition;
+            _.isFunction( successCallback ) && successCallback();
+        });
+    }else { // if no permission
+        hasLocationPermission= false;
+        _.isFunction( erroeCallback ) && erroeCallback();
+    }
+}
 function getData(callback){
     dataService.getAgencies(
         (response)=>{
@@ -68,6 +75,9 @@ function getData(callback){
 }
 
 
+
+// FUNCTIONS -------------------- List
+
 function sortList(list){
     let sorted = [];
     if (list.length >0) {
@@ -81,15 +91,15 @@ function sortList(list){
             sorted = _.sortBy(list,'region');
         }
     }
-    log("sorted "+sorted.length);
+    log("sorted list "+sorted.length);
     return sorted;
 }
 
 
-function loadNextPage(){
+function loadNextPage(){ //Pagination on the UI (not on the API)
     log('load page ' + page);
     if (agenciesList.length >0) {
-        displayData(true);
+        displayListData(true);
         let start = (page-1) * PAGE_COUNT,
             end = page * PAGE_COUNT,
             listToDisplay = $.agencesSection.items;
@@ -119,11 +129,11 @@ function loadNextPage(){
         $.agencesSection.items = listToDisplay;
         page++;
     }else{
-        displayData(false);
+        displayListData(false);
     }
 }
 
-function displayData(isNotEmpty){
+function displayListData(isNotEmpty){
     if (isNotEmpty) {
         $.agenceList.visible = true;
         $.emptyList.visible = false;
@@ -141,15 +151,19 @@ function setup_refreshController(){
     $.agenceList.refreshControl = control;
     control.addEventListener('refreshstart',function(e){
         log('refreshstart');
-        getData(
-            ()=>{
-                control.endRefreshing();
-                // initialize the list
-                page = 1;
-                $.agencesSection.items = []
-                loadNextPage();
-            }
-        );
+        let callback = ()=>{
+            getData(
+                ()=>{
+                    control.endRefreshing();
+                    // initialize the list
+                    page = 1;
+                    $.agencesSection.items = []
+                    loadNextPage();
+                }
+            );
+        };
+        checkPositionConfig(callback,callback);
+
     });
 }
 
@@ -177,128 +191,107 @@ function displayListe(e){
 // FUNCTIONS -------------------- Maps
 
 function setupMaps(){
-    if(!MapsConfigured){
-        if (mapsManager.checkConfig()) {
-            log('Maps config successful');
-            if (mapsManager.checkPermissions()) {
+    let tag = "MAPS";
+
+    if (mapsManager.checkGoogleServices()) { // if true display map
+        log('Google Services installed' , tag);
+        if (!MapsConfigured) {
+            // add map
+            mapView = MapModule.createView({
+                mapType: MapModule.NORMAL_TYPE,
+                animate: true,
+                regionFit: true,
+                userLocation: true
+            });
+
+            if (mapsManager.checkPermissions() && mapsManager.checkGPS()) {
+                log('Maps permission guarteed', tag);
                 //zoom into my position
-                Ti.Geolocation.getCurrentPosition((myPosition)=>{
-                    log(myPosition.coords);
-                    $.view_map.region = {
-                        latitude: myPosition.coords.latitude,
-                        longitude: myPosition.coords.longitude,
-                        latitudeDelta: 0.5,
-                        longitudeDelta: 0.5
-                    };
-                });
+                log(myCoords, "My Coords");
+                mapView.region = {
+                    latitude: myCoords.latitude,
+                    longitude: myCoords.longitude,
+                    latitudeDelta: 0.5,
+                    longitudeDelta: 0.5
+                };
             }else {
+                log('Maps permission not guarteed', tag);
                 //zoom into Algiers
-                Ti.Geolocation.getCurrentPosition((myPosition)=>{
-                    let ltd = '36.739572',
-                        lgt = "3.088480";
-                    $.view_map.region = {
-                        latitude: ltd,
-                        longitude: lgt,
-                        latitudeDelta: 2,
-                        longitudeDelta: 2
-                    };
-                });
+                let ltd = '36.739572',
+                    lgt = "3.088480";
+                mapView.region = {
+                    latitude: ltd,
+                    longitude: lgt,
+                    latitudeDelta: 2,
+                    longitudeDelta: 2
+                };
             }
+            $.mapsViewContainer.add(mapView);
+
+            //add annotations
+            setTimeout(()=>{
+                addAnnotations(agenciesList);
+            }, 1000);
 
             // add event listner
-            $.view_map.addEventListener("click",onClickMap);
-
-            // display agencies list
-            dataService.getAgencies(
-                (response)=>{
-                    agenciesList = response;
-                    addAnnotations(agenciesList);
-                },
-                (error)=>{
-                    log(error);
-                }
-            );
-        }else {
-            // TODO: handle maps not displayed
+            mapView.addEventListener("click",onClickMap);
+            MapsConfigured = true;
         }
-        MapsConfigured = true;
+
+    }else { // handle maps not displayed
+
     }
 }
 
 
 function addAnnotations(list){
-    var i =1, annotations = [];
+    let i =1, annotations = [];
 
     _.each(list,(item)=>{
 
         var annotation = MapModule.createAnnotation({
             latitude: 36.499290466308594-0.1*i,
-            longitude: 2.381362199783325,
-            //image: img.image,
-            customView:getCustumView(true),
+            longitude: 2.681362199783325,
+        	title : item.region + ' - ' + item.agency_id,
+            image: true ? "/images/icn_localization_2a_blue.png" : "/images/icn_localization_2a_blue.png",
+            //customView:getCustumView({statusOpen:true}),
             agency:item
         });
         annotations.push(annotation);
         i++;
     });
-    log("annotations done");
-    $.view_map.annotations = annotations;
-
-    //
-    function getCustumView(status){
-        let view = Ti.UI.createView({
-            width:Ti.UI.SIZE,
-            height:Ti.UI.SIZE,
-            autoStyle:true,
-        });
-        let logo = Ti.UI.createImageView({
-            width:40,
-            image: "/images/icn_localization_2a_blue.png",
-        });
-        let img;
-        status ? img ="/images/icn_oval_green_in_map.png" : img ="/images/icn_oval_red_in_map.png";
-        let statusImg = Ti.UI.createImageView({
-            image: img,
-            width:15,
-            top:0,
-            left:0
-        });
-        view.add(logo,statusImg);
-        return view
-    }
+    log("done","Annotations");
+    mapView.annotations = annotations;
 }
 
+// Card view in Maps
 function showCard(agency){
+
     str.labelStyling($.moreDetails,L('agence_more_details'),{underline:true}); //underline text
     $.agencyTitle_Map.text = agency.region + ' - ' + agency.agency_id;
     $.agencyAdresse_Map.text = agency.address;
     $.agencyPhone_Map.text = agency.phone[0];
     $.agencyEmail_Map.text = agency.email;
-    $.agencyDetailsCard.show();
     if (!$.agencyDetailsCard.visible) {
-        $.agencyDetailsCard.height = 10;
         $.agencyDetailsCard.animate({
-            height : Ti.UI.SIZE,
-            duration: 300,
+            opacity:1,
+            duration: 100,
         });
+        $.agencyDetailsCard.show();
     }
+
     $.moreDetails.addEventListener('click',(e)=>{
         navManager.openWindow("/Agence/details",1,{data:agency});
-    })
+    });
 }
 
 function closeCard(e){
     $.agencyDetailsCard.animate({
-        height : 50,
-        duration: 300,
+        opacity: 0.2,
+        duration: 100,
     },()=>{
         $.agencyDetailsCard.hide();
     });
-    if (selectedAnnotation) {
-        selectedAnnotation.customView.children[0].width = 40;
-        selectedAnnotation.customView.children[1].width = 15;
-        selectedAnnotation = null;
-    }
 }
 
 
@@ -322,17 +315,14 @@ function displayMaps(e){
 }
 function onClickMap(e){
 
-    log("selectedAnnotation " + selectedAnnotation);
-    if (selectedAnnotation) {
-        selectedAnnotation.customView.children[0].width = 40;
-        selectedAnnotation.customView.children[1].width = 15;
+    if (e.annotation == selectedAnnotation) { // the maps triggers 2 click events of the same annotation
+        log("egnore event");
+    }else{
+        log(e.annotation.agency.agency_id);
+        let agency = e.annotation.agency;
+        showCard(agency);
+        selectedAnnotation = e.annotation;
     }
-    log(e.annotation.agency.agency_id);
-    log(e);
-    e.annotation.customView.children[0].width = 60;
-    e.annotation.customView.children[1].width = 25;
-    showCard(e.annotation.agency);
-    selectedAnnotation = e.annotation;
 }
 
 

@@ -32,7 +32,7 @@ function updateUI(agency){
         str.labelStyling(tlf,agency.phone[i],{underline:true});
         tlf.addEventListener("click",(e)=>{
             Ti.Platform.openURL("tel:"+tlf.text);
-            log("call : "+tlf.text);
+            log("call : "+ agency.phone[i]);
         });
         $.phoneNumbers.add(tlf);
         //add separator

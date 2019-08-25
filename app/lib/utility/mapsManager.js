@@ -6,7 +6,7 @@ const log = require('/utility/logger')({
 
 //PUBLIC INTERFACE
 var $ = module.exports = {
-	checkConfig: checkConfig,
+	checkGoogleServices: checkGoogleServices,
     checkPermissions: checkPermissions,
     getMyCoords: getMyCoords
 };
@@ -15,8 +15,7 @@ var $ = module.exports = {
 var hasPermission = false;
 
 // PRIVATE FUNCTIONS
-function checkConfig(){
-
+function checkGoogleServices(){
     if (Alloy.Globals.isAndroid) {
         var MapModule = require('ti.map');
         var rc = MapModule.isGooglePlayServicesAvailable();

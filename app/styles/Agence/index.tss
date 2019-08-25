@@ -105,6 +105,10 @@
     backgroundColor: 'white'
 }
 
+'#mapsViewContainer': {
+    bottom: 42,
+}
+
 '#view_map': {
     animate: true,
     regionFit: true,
@@ -141,7 +145,6 @@
     bottom: 50,
     width: "95%",
     backgroundColor: 'white',
-    opacity: 0.95,
     borderRadius: 5,
     viewShadowOffset: {x:0,y:1},
     viewShadowColor: "gray",
@@ -151,6 +154,7 @@
 '#closeCard': {
     top: 8,
     right: 8,
+    height: 16,
     image: '/images/icn_close_blue.png'
 }
 

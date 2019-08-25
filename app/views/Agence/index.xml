@@ -48,7 +48,7 @@
             </ListView>
             <View id="maps">
                 <View id="mapsViewContainer" backgroundColor="gray">
-                    <Module module="ti.map" id="view_map"></Module>
+                    <!--<Module module="ti.map" id="view_map"></Module>-->
                 </View>
                 <View class="bottomView hSize">
                     <View class="bottomViewItem left hSize hlayout">
@@ -64,23 +64,24 @@
                     <View class="hSize">
                         <ImageView id="closeCard" onClick="closeCard"></ImageView>
                     </View>
+
                     <View class="vlayout hSize cardContainer">
-                        <Label id="agencyTitle_Map" class="itemTitle">Sidi Mhemmed</Label>
+                        <Label id="agencyTitle_Map" class="itemTitle"></Label>
                         <View class="subItem hSize">
                             <ImageView class="icon" image="/images/icn_localization_blue_tabbar.png" width="12"></ImageView>
-                            <Label id="agencyAdresse_Map" class="itemText">test</Label>
+                            <Label id="agencyAdresse_Map" class="itemText"></Label>
                         </View>
                         <View class="subItem hSize">
                             <ImageView class="icon" image="/images/icn_tel_blue.png"></ImageView>
-                            <Label id="agencyPhone_Map" class="itemText">test</Label>
+                            <Label id="agencyPhone_Map" class="itemText"></Label>
                         </View>
                         <View class="subItem hSize">
                             <ImageView class="icon" image="/images/icn_email_blue.png"></ImageView>
-                            <Label id="agencyEmail_Map" class="itemText">test</Label>
+                            <Label id="agencyEmail_Map" class="itemText"></Label>
                         </View>
                         <View class="subItem hSize">
                             <ImageView class="icon" image="/images/icn_date_blue_input.png"></ImageView>
-                            <Label id="agencyStatus_Map" class="itemText">test</Label>
+                            <Label id="agencyStatus_Map" class="itemText"></Label>
                         </View>
                         <View class="hSize hlayout topMargin">
                             <View id="btItineraire" class="wSize" onClick="seeOnMap">

@@ -65,7 +65,6 @@ function request( args, successCallback, errorCallback ) {
 
 	client.onload = function() {
 		try {
-			log(this.responseText)
 			if( requestAborted ) {
 				log.w( ' Request Aborted ignore successCallback' );
 				return;

@@ -3,14 +3,15 @@
         <View id="container" class="vlayout background">
             <Widget src="customNavBar" id="navBar" class="navBar"></Widget>
             <View class="marging hSize" >
-                <View id="btMesSinistres" class="tabButton enabled" onClick="displayMesSinistres">
+                <View id="btMesSinistres" class="tabButton enabled" onClick="tabChanged">
                     <Label class="btTitle whiteFont" text="L('sinistres_MesSinistres')"></Label>
                 </View>
-                <View id="btHistorique" class="tabButton disabled" onClick="displayHistorique">
+                <View id="btHistorique" class="tabButton disabled" onClick="tabChanged">
                     <Label class="btTitle blueFont" text="L('sinistres_Hisorique')"></Label>
                 </View>
             </View>
             <View id="contentView">
+                <Widget src="customIndicatorInsideView" id="customIndicator"></Widget>
                 <View id="bottomMargin">
                     <ListView id="sinistreList" class="noBackground" onItemclick="onItemclick">
                         <Templates>

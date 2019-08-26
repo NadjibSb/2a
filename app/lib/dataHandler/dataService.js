@@ -16,18 +16,13 @@ var $ = module.exports = {
     getContracts: getContracts,
     getNotificationsPerPage: getNotificationsPerPage,
     getPhoneContact: getPhoneContact,
-    getSinistresPerPage: getSinistresPerPage,
+    getMySinistresPerPage: getMySinistresPerPage,
+    getSinistresHistoryPerPage: getSinistresHistoryPerPage,
     getSinistreDetails: getSinistreDetails
 };
 
-function getAgencyDetails(id,successCallback, errorCallback){
-    var args = {
-        url: apiURL + "/agency/detail/"+id,
-        method:'GET',
-        header: session.getHeader()
-    }
-    httpClient.request(args,successCallback,errorCallback);
-}
+
+// PRIVATE FUUNCTIONS ------------------------------------------------------------
 
 function getAgencies(successCallback,errorCallback){
     var args = {
@@ -38,6 +33,17 @@ function getAgencies(successCallback,errorCallback){
     httpClient.request(args,successCallback,errorCallback);
 }
 
+function getAgencyDetails(id,successCallback, errorCallback){
+    var args = {
+        url: apiURL + "/agency/detail/"+id,
+        method:'GET',
+        header: session.getHeader()
+    }
+    httpClient.request(args,successCallback,errorCallback);
+}
+
+
+
 function getContracts(successCallback,errorCallback){
 
     var args = {
@@ -47,6 +53,8 @@ function getContracts(successCallback,errorCallback){
     }
     httpClient.request(args,successCallback,errorCallback);
 }
+
+
 
 function getNotificationsPerPage(page,successCallback,errorCallback){
 
@@ -68,9 +76,21 @@ function getNotificationsPerPage(page,successCallback,errorCallback){
         errorCallback
     );
 }
-function getSinistresPerPage(page,successCallback,errorCallback){
+
+
+
+function getMySinistresPerPage(page,successCallback,errorCallback){
     var args = {
         url: apiURL + "/disasters/open/"+page,
+        method:'GET',
+        header: session.getHeader()
+    }
+    httpClient.request(args,successCallback,errorCallback);
+}
+
+function getSinistresHistoryPerPage(page,successCallback,errorCallback){
+    var args = {
+        url: apiURL + "/disasters/closed/"+page,
         method:'GET',
         header: session.getHeader()
     }
@@ -85,6 +105,8 @@ function getSinistreDetails(id,successCallback,errorCallback){
     }
     httpClient.request(args,successCallback,errorCallback);
 }
+
+
 
 function getPhoneContact(header,succes,error){
     const args = {

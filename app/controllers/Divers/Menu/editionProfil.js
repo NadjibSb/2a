@@ -20,6 +20,7 @@ var prenomClient = $.textFieldPrenom
 var expiration = $.labelExpiration
 const listValueExperiation = {}
 var values = []
+var emailChanged = false;
 // selectedValues
 var selected_values=[]
 var selected_value_id_original=[]
@@ -72,7 +73,10 @@ function SauvgarderButton(){
       }else{
         var token = Ti.App.Properties.getString( Alloy.Globals.SESSION_ID, null );
         const userUpdateData = {}
-        if(email.getValue() != emailUser) userUpdateData.email = email.getValue()
+        if(email.getValue() != emailUser) {
+          userUpdateData.email = email.getValue()
+          emailChanged=true
+        }
         if(prenomClient.getValue() != prenomClientUser) userUpdateData.lastname = prenomClient.getValue()
         if(nomClient.getValue()!= nomClientUser) userUpdateData.name = nomClient.getValue()
         if(telephone.getValue() != telephoneUser) userUpdateData.phone = telephone.getValue()
@@ -89,6 +93,14 @@ function SauvgarderButton(){
         session.updateUserData(userUpdateData,header,function(){
           $.activityIndicator.hide();
           log("succes")
+          if(!emailChanged){
+            var dataUser = Ti.App.Properties.getObject( "SESSION_DATA", null )
+            log(dataUser.name)
+            dataUser.name = nomClient.getValue();
+            dataUser.lastname = prenomClient.getValue();
+            dataUser.phone = telephone.getValue();
+            Ti.App.Properties.setObject( "SESSION_DATA", dataUser )
+          }
           pressBack()  
         },(code,response)=>{
           $.activityIndicator.hide();

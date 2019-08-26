@@ -1,8 +1,8 @@
 <Alloy>
 	<Window class="container">
-		<View id="container" class="background">
+		<View id="container">
 			<Widget src="customNavBar" id="navBar" class="navBar" onLeftButtonClick="pressBack"></Widget>
-			<ListView id="list" onItemclick="selectValue">
+			<ListView id="list" onItemclick="selectValue" > 
 			
 			<ListSection>
 				<FooterView>

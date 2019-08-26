@@ -27,6 +27,7 @@ function getNumeroContact(){
     log(res)
     remplireView(res)
     $.activityIndicator.hide()
+    labelContainer.show()
   },(code,res)=>{
     log(res)
     log(code)
@@ -123,4 +124,5 @@ function addPhones(phones){
   }
 }
 //traitement
+labelContainer.hide()
 getNumeroContact()

@@ -57,7 +57,7 @@ function remplireButton(type,longType,phone){
     var view = Ti.UI.createView({
         color: "white",
         backgroundColor: "#374379",
-        height: 46,
+        height: 40,
         borderRadius: 5,
         left: 25,
         right: 25,

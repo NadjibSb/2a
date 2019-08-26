@@ -24,7 +24,9 @@ var myCoords= {
     longitude:0
 };
 
-
+//_.extend($,{
+    //constructor : constructor
+//})
 // CONSTRUCTOR------------------------------------------------------------------------------
 (function constructor(){
 
@@ -40,8 +42,6 @@ var myCoords= {
         );
     };
     checkPositionConfig(callback,callback);
-
-
 })();
 
 

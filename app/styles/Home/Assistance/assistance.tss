@@ -30,3 +30,7 @@
     },
     bottom: 15
 }
+
+"#containerButton":{
+    bottom: 20
+}

@@ -12,12 +12,17 @@ var log = require( 'utility/logger' )( {
 // PRIVATE VAR ----------------------------------------------------------------
 const USER_CONTRACT_LIST = 0, OTHER_CONTRACT_LIST = 1;
 var userContractList=[] , otherContractList=[];
-
-
+var sourceOpen;
+// PUBLIC INTERFACE
+//_.extend($,{
+    //constructor : constructor
+//})
 
 // TODO: when this tab is open, if the list is empty, send another request to get the list
 // CONSTRUCTOR ----------------------------------------------------------------
 (function constructor(){
+    log("const")
+    //$.trigger('close', _.extend(sourceOpen.source,{id:"test"}));
     setup_refreshController();
     $.customIndicator.show();
     getData(()=>{
@@ -173,6 +178,7 @@ function setup_refreshController(){
 
 
 function open(e){
+    sourceOpen = e
+    //$.trigger('close', _.extend(sourceOpen.source,{id:"test"}));
     log("dans le contract")
-    $.trigger('close', _.extend(e.source,{id:"test"}));
 }

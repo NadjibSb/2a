@@ -26,9 +26,7 @@ function getNumeroContact(){
   dataService.getPhoneContact(session.getHeader(),(res)=>{
     log(res)
     remplireView(res)
-    labelContainer.show()
     $.activityIndicator.hide()
-
   },(code,res)=>{
     log(res)
     log(code)
@@ -56,7 +54,7 @@ function remplireCategorieView(category,phones){
 
 function addCategory(category){
   var categoryView = Ti.UI.createView()
-  component.addClass($.categoryView,[
+  component.addClass($,categoryView,[
     "hSize",
     "category"
   ])
@@ -76,7 +74,7 @@ function addCategory(category){
 function addPhones(phones){
   for(phone in phones){
     var viewPhone = Ti.UI.createView()
-    component.addClass($.viewPhone,[
+    component.addClass($,viewPhone,[
       "hlayout",
       "hSize",
       "phone"
@@ -84,7 +82,7 @@ function addPhones(phones){
     let labelPhone = Ti.UI.createLabel({
       text : phone+" : "
     })
-    component.addClass($.labelPhone,[
+    component.addClass($,labelPhone,[
       'labelLogin',
       "fontLight",
       "labelNum"
@@ -99,7 +97,7 @@ function addPhones(phones){
       }
       let labelPhone = Ti.UI.createLabel({
       })
-      component.addClass($.labelPhone,[
+      component.addClass($,labelPhone,[
         'labelLogin',
         "fontLight"
       ])  
@@ -112,7 +110,7 @@ function addPhones(phones){
       let labelslash= Ti.UI.createLabel({
         text : " / "
       })
-      component.addClass($.labelslash,[
+      component.addClass($,labelslash,[
         'labelLogin',
         "fontLight",
         "labelNum"
@@ -125,5 +123,4 @@ function addPhones(phones){
   }
 }
 //traitement
-labelContainer.hide()
 getNumeroContact()

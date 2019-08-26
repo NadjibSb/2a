@@ -7,11 +7,15 @@ var log = require( 'utility/logger' )( {
 
 var data = [];
 var _data = [];
+//_.extend($,{
+    //constructor : constructor
+//})
+
 
 (function constructor(){
     defaultData();
     $.sinistreSection.items = data;
-})();
+})()
 
 
 function defaultData(){

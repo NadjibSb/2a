@@ -2,38 +2,39 @@ var log = require( 'utility/logger' )( {
     tag: "tab_index",
     hideLog: false
 } );
-
+//var contact = require("/alloy/controllers/Contract/index")
 // Arguments passed into this controller can be accessed via the `$.args` object directly or:
 var args = $.args;
 
 var tabgroup;
 
 
-if(OS_IOS){
+/*if(OS_IOS){
     tabgroup = $.tabGroup;
 }
 
 
 function selectedTab(e){
-    switch(e.source.tabId){
+    switch(e.source.tabId){ 
         case "contract" :
-            log("c")
+            $.contract.constructor()
         break;
         case "devis" : 
-            log("de")
+            $.devis.constructor()
         break;
         case "sinistre" :
-            log("s")
+            $.sinistre.constructor()
         break;
         case "agance" : 
-            log("a")
+            $.agance.constructor()
         break;
         case "divers" : 
             log("di")
         break 
     }
+    
 }
 
 function selectedAndroid(e){
-    log(e)
-}
+    log("je suis clique ")
+}*/

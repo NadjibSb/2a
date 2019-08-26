@@ -324,6 +324,7 @@ overrode the settings with other TSS, XML, or JS settings:
   borderStyle: Ti.UI.INPUT_BORDERSTYLE_LINE,
   borderColor: 'rgb(206, 170, 140)',
   top: 227,
+  backgroundColor: "rgb(206, 170, 140)"
 }
 '#ViewLineP': {
   height: 5,
@@ -332,6 +333,7 @@ overrode the settings with other TSS, XML, or JS settings:
   borderStyle: Ti.UI.INPUT_BORDERSTYLE_LINE,
   borderColor: 'rgb(206, 170, 140)',
   top: 37,
+  backgroundColor: 'rgb(206, 170, 140)'
 }
 
 

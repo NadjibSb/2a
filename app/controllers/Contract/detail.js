@@ -34,8 +34,8 @@ function getDetail(idContrat,session){
 			phone = setPhone(resPhone.fields)
 			remplireDetail(res.fields)
 			$.activityIndicator.hide()
-			containerAppel.show()
-			containerPdf.show()
+			//containerAppel.show()
+			//containerPdf.show()
 		},(code,res)=>{
 			pressBack()
 		})
@@ -147,7 +147,7 @@ function lecteurPdf(){
 	navManager.openWindow("/Contract/pdfAffichage")
 }
 //Traitment
-containerAppel.hide()
-containerPdf.hide()
+//containerAppel.hide()
+//containerPdf.hide()
 getDetail(idContrat,session)
 

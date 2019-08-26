@@ -11,6 +11,10 @@ const navManager = require("/utility/navmanager");
 const alert = require("/utility/alertManager")
 const component = require("/utility/componeneUtil")
 const str = require("/utility/stringUtil");
+
+//_.extend($,{
+    //constructor : constructor
+//})
 // variable 
 
 var buttonContainer = $.containerButton
@@ -197,7 +201,10 @@ function avoirAgenceNonDisop(){
 
 
 //traintement
-$.reesayer.hide()
-$.scrollContainer.hide()
-avoirPhoneNumber()
-avoirAgenceNonDisop()
+
+(function constructor(){
+    $.reesayer.hide()
+    $.scrollContainer.hide()
+    avoirPhoneNumber()
+    avoirAgenceNonDisop()
+})()

@@ -1,6 +1,6 @@
 <Alloy autoStyle="true">
 	<Window>
-		<Widget src="customIndicator" id="activityIndicator" blockScreen="true"/>
+		<Widget src="customIndicatorInsideView" id="activityIndicator"></Widget>
 		<View id="container" class="vlayout">
 			<Widget src="customNavBar" id="navBar" class="navBar" onLeftButtonClick="pressBack"></Widget>
 			<ScrollView class="vlayout" id="scrollContainer"> 

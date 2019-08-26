@@ -1,5 +1,5 @@
 <Alloy>
-  <Window>
+  <Window class="background">
     <View class="container">
     <ScrollView id="container" >
       <View id="containerShadow" ></View>

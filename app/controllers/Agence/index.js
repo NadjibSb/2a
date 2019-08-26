@@ -12,17 +12,20 @@ var log = require( 'utility/logger' )( {
 
 
 // PRIVATE VARIABLES------------------------------------------------------------------------------
-var MapsConfigured = false;
-var mapView;
-var selectedAnnotation = null;
-var agenciesList = [];
-var page=1;
+
 const PAGE_COUNT = 10;
-var hasLocationPermission = false;
-var myCoords= {
-    latitude:0,
-    longitude:0
-};
+let MapsConfigured = false,
+    mapView,
+    selectedAnnotation = null,
+    agenciesList = [],
+    page=1,
+    hasLocationPermission = false,
+    myCoords= {
+        latitude:0,
+        longitude:0
+    },
+    goToDetailsEvent,
+    ignoreLocationAlert = false;
 
 
 // CONSTRUCTOR------------------------------------------------------------------------------
@@ -31,9 +34,17 @@ var myCoords= {
     setup_refreshController();
     $.customIndicator.show();
 
+    $.moreDetails.addEventListener('click',(e)=>{
+        goToDetailsEvent();
+    });
+
     let callback = ()=>{
         getData(
             ()=>{
+                //desactivat the map till we get the list
+                $.btCarte.addEventListener("click",(e)=>{
+                    displayMaps(e);
+                });
                 loadNextPage();
                 $.customIndicator.hide();
             }
@@ -50,7 +61,7 @@ var myCoords= {
 
 function checkPositionConfig(successCallback,erroeCallback){
     //if has permission to access my position
-    if (mapsManager.checkPermissions() && mapsManager.checkGPS()) {
+    if (mapsManager.checkPermissions() && mapsManager.checkGPS(ignoreLocationAlert)) {
         hasLocationPermission= true;
         mapsManager.getMyCoords((myPosition)=>{
             myCoords = myPosition;
@@ -60,7 +71,9 @@ function checkPositionConfig(successCallback,erroeCallback){
         hasLocationPermission= false;
         _.isFunction( erroeCallback ) && erroeCallback();
     }
+    ignoreLocationAlert = true;
 }
+
 function getData(callback){
     dataService.getAgencies(
         (response)=>{
@@ -87,11 +100,12 @@ function sortList(list){
                     lgt = Math.abs(myCoords.longitude)-Math.abs(agency.lgt);
                 return (ltd+lgt)/2;
             });
+            log("sorted list (distance) "+sorted.length);
         }else{
             sorted = _.sortBy(list,'region');
+            log("sorted list (A-Z) "+sorted.length);
         }
     }
-    log("sorted list "+sorted.length);
     return sorted;
 }
 
@@ -239,7 +253,7 @@ function setupMaps(){
         }
 
     }else { // handle maps not displayed
-
+        log('Google Services not installed' , tag);
     }
 }
 
@@ -264,6 +278,7 @@ function addAnnotations(list){
     mapView.annotations = annotations;
 }
 
+
 // Card view in Maps
 function showCard(agency){
 
@@ -279,10 +294,9 @@ function showCard(agency){
         });
         $.agencyDetailsCard.show();
     }
-
-    $.moreDetails.addEventListener('click',(e)=>{
+    goToDetailsEvent = (e)=>{
         navManager.openWindow("/Agence/details",1,{data:agency});
-    });
+    };
 }
 
 function closeCard(e){
@@ -314,14 +328,15 @@ function displayMaps(e){
 
 }
 function onClickMap(e){
-
-    if (e.annotation == selectedAnnotation) { // the maps triggers 2 click events of the same annotation
-        log("egnore event");
-    }else{
-        log(e.annotation.agency.agency_id);
-        let agency = e.annotation.agency;
-        showCard(agency);
-        selectedAnnotation = e.annotation;
+    if (e.annotation) {
+        if (e.annotation == selectedAnnotation) { // the maps triggers 2 click events of the same annotation
+            log("egnore event");
+        }else{
+            log(e.annotation.agency.agency_id);
+            let agency = e.annotation.agency;
+            showCard(agency);
+            selectedAnnotation = e.annotation;
+        }
     }
 }
 

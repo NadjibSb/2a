@@ -30,10 +30,12 @@ function updateUI(agency){
         let tlf = Ti.UI.createLabel();
         $.addClass(tlf,'tlf');
         str.labelStyling(tlf,agency.phone[i],{underline:true});
-        tlf.addEventListener("click",(e)=>{
-            Ti.Platform.openURL("tel:"+tlf.text);
-            log("call : "+ agency.phone[i]);
-        });
+        (function(ii){
+            tlf.addEventListener("click",(e)=>{
+                Ti.Platform.openURL("tel:"+ agency.phone[ii]);
+                log('call: ' + agency.phone[ii]);
+            });
+        })(i);
         $.phoneNumbers.add(tlf);
         //add separator
         if (i<agency.phone.length-1) {

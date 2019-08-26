@@ -1,6 +1,6 @@
 <Alloy>
   <Window class="background">
-    <View class="container">
+    <View class="container background">
     <ScrollView id="container" >
       <View id="containerShadow" ></View>
       <Require src="/Commun/ecranLogo"></Require>

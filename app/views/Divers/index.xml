@@ -1,7 +1,6 @@
 <Alloy>
   <Window>
-    <View id="container">
-      <ImageView id="Imagebackground" class="Fill hSize"/>
+    <View id="container" class="background">
       <ScrollView>
           <Require src="/Commun/ecranLogo" id="logo"></Require> 
           <View class="hSize vlayout">

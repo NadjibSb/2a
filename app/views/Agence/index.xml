@@ -9,7 +9,7 @@
                     <Label id="btListeText" class="btTitle whiteFont" text="L('agence_btn_liste')"></Label>
                 </View>
             </View>
-            <View id="btCarte" class="tabButton disabled" onClick="displayMaps">
+            <View id="btCarte" class="tabButton disabled">
                 <View class="hSize wSize hlayout">
                     <ImageView id="btCarteImg" class="btIcon" image="/images/icn_localization_blue_tabbar.png"></ImageView>
                     <Label id="btCarteText" class="btTitle blueFont" text="L('agence_btn_carte')"></Label>

@@ -114,4 +114,8 @@
     <string name="notifications_title">Notifications</string>
     <string name="notifications_empty_list">Vous n'avez aucune notification pour le moment</string>
 
+
+    <!-- Devis Detail-->
+    <string name="devis_details_title">Devis et Achat</string>
+
 </Ressources>

@@ -53,7 +53,7 @@ args.right && $.container.setRight(args.right);
 args.height && $.container.setHeight(args.height);
 args.width && $.container.setWidth(args.width);
 args.backgroundColor && $.container.setBackgroundColor(args.backgroundColor);
-
+$.tfInput.setKeyboardType(args.keyboardType);
 //Input Style
 $.tfInput.color = inputColor;
 $.tfInput.hintText = hintText;
@@ -65,7 +65,6 @@ args.autocapitalization != undefined && $.tfInput.setAutocapitalization(args.aut
 args.enableReturnKey != undefined && $.tfInput.setEnableReturnKey(args.enableReturnKey);
 args.disabled && $.tfInput.setTouchEnabled(false);
 $.tfInput.passwordMask = args.passwordMask;
-
 
 
 // lineBar style

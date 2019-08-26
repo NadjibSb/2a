@@ -277,6 +277,7 @@ function callFocusOnWindow(windowController) {
 
 var fireOnChange = function() {
 	try {
+		Ti.API.info("dans fire in change");
 		$.trigger('tabChange', {
 			type : 'tabHost tab changed',
 			source : $.activity,

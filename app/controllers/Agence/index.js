@@ -27,7 +27,9 @@ let MapsConfigured = false,
     goToDetailsEvent,
     ignoreLocationAlert = false;
 
-
+//_.extend($,{
+    //constructor : constructor
+//})
 // CONSTRUCTOR------------------------------------------------------------------------------
 (function constructor(){
 
@@ -51,8 +53,6 @@ let MapsConfigured = false,
         );
     };
     checkPositionConfig(callback,callback);
-
-
 })();
 
 

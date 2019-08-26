@@ -20,10 +20,7 @@
     color: Alloy.CFG.design.fonts.PrimaryColor,
 }
 
-'.icon': {
-    width: 12,
-    left: 0
-}
+
 
 '.text': {
     font: {
@@ -33,9 +30,7 @@
     color: Alloy.CFG.design.fonts.PrimaryColor,
 }
 
-'.marginTop': {
-    top: 16
-}
+
 
 '#agence_code': {
     top: 0,
@@ -66,7 +61,7 @@
     left: 20,
     font: {
         fontSize: 14,
-        fontFamily: Alloy.CFG.design.fonts.Medium
+        
     },
     color: Alloy.CFG.design.fonts.SecondaryColorDark,
 }

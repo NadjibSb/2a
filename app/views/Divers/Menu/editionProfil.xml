@@ -1,7 +1,7 @@
 <Alloy>
 	<Window>
 		<Widget src="customIndicator" id="activityIndicator" blockScreen="true"/>
-		<View id="container" class="vlayout">
+		<View id="container" class="vlayout background">
 			<Widget src="customNavBar" id="navBar" class="navBar" onLeftButtonClick="pressBack"></Widget>
 			<ScrollView >
 				<View class="editProfilContainer hSize vlayout">

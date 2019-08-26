@@ -7,6 +7,10 @@ var log = require( 'utility/logger' )( {
     dataService = require("/dataHandler/dataService");
 
 
+//_.extend($,{
+    //constructor : constructor
+//})
+
 // PRIVATE VARIABLES ---------------------------------------------------------------
 const MySinistre_TAB = 0, History_TAB = 1;
 var mesSinistresList = [];

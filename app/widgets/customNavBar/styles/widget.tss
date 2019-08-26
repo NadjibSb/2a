@@ -43,8 +43,12 @@
     height: 24,
     width: 24
 }
+
 ".iconContainer[platform=android]" : {
-    bottom: 18
+    left: 16,
+    right: 16,
+    height: 24,
+    width: 24
 }
 
 '#titleWindow': {
@@ -58,5 +62,4 @@
 }
 '#titleWindow[platform=ios]': {
   bottom:5,
-
 }

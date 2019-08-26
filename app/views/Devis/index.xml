@@ -1,7 +1,17 @@
-<Alloy>
-  <Window>
-    <View id="container">
-      <Label> Devis </Label>
-  	</View>
-  </Window>
+<Alloy autoStyle="true">
+	<Window>
+		<Widget src="customIndicator" id="activityIndicator" blockScreen="true"/>
+		<View id="container" class="vlayout background">
+			<Widget src="customNavBar" id="navBar" class="navBar"></Widget>
+			<ScrollView class="vlayout" id="scrollContainer"> 
+				<Label id="labelEntete" class="labelLogin fontHeavy"></Label>	
+        <View id="containerButton" class="hSize vlayout"/>
+        <ImageView id="lineSeparator"></ImageView>
+        <View id="containerDispo" class="hSize vlayout"></View>
+			</ScrollView> 
+      <View id="reesayer">
+        <Button onClick="reesayer">Réessayer</Button>
+      </View>
+		</View>
+	</Window>	
 </Alloy>

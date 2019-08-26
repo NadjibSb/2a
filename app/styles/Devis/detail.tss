@@ -1,0 +1,21 @@
+
+".container" : {
+  
+}
+
+'#navBar': {
+    title: L("devis_details_title"),
+    leftIcon: "/images/icn_topbar_back.png"
+}
+"#topBar_img":{
+    right : 16
+}
+
+'#topBar_text': {
+    font: {
+        fontSize: 18,
+        fontFamily: Alloy.CFG.design.fonts.Heavy
+    },
+    color: Alloy.CFG.design.fonts.PrimaryColor,
+    bottom: 0
+}

@@ -3,6 +3,26 @@
   
 }
 
-'#container': {
-  backgroundColor: 'red'
+
+"#labelEntete":{
+  top : 35,
+  text: "Souhaitez vous bénéficier de nouvelles offres ? La 2a vous propose différentes solutions :",
+  width: "80%"
+}
+
+"#navBar":{
+  title : "Nos assusrance",
+  zIndex: 100
+}
+
+"#lineSeparator":{
+    image: "/images/line_separation_grey.png",
+    top: 26
+}
+
+"#containerButton":{
+  top : 27
+}
+"#containerDispo":{
+  top : 27
 }

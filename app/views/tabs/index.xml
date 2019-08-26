@@ -1,20 +1,21 @@
 <Alloy>
 	<TabGroup id="tabGroup" backgroundColor = "white" platform="ios">
-		<Tab id="contractTab">
-			<Require src="/Contract/index" type="view"/>
+		<Tab id="contractTab"  tabId="contract">
+			<Require src="/Contract/index" type="view" id="contract"/>
 		</Tab>
-		<Tab id="devisTab">
-			<Require src="/Devis/index" type="view"/>
+		<Tab id="devisTab"  tabId="devis">
+			<Require src="/Devis/index" type="view" id="devis"/>
 		</Tab>
-		<Tab id="sinistreTab" >
-			<Require src="/Sinistres/index" type="view"/>
+		<Tab id="sinistreTab"  tabId="sinistre">
+			<Require src="/Sinistres/index" type="view" id="sinistre" />
 		</Tab>
-		<Tab id="agenceTab">
-			<Require src="/Agence/index" type="view"/>
+		<Tab id="agenceTab"  tabId="agance">
+			<Require src="/Agence/index" type="view" id="agance"/>
 		</Tab>
-		<Tab id="diversTab" >
+		<Tab id="diversTab"  tabId="divers">
 			<Require src="/Divers/index" type="view"/>
 		</Tab>
 	</TabGroup>
-	<Widget id="tabGroup" src="customTabHost" platform="android"/>
+	<Widget id="tabGroup" src="customTabHost" platform="android" />
+	<!--onTabChange="selectedAndroid" onSelected="selectedTab"-->
 </Alloy>

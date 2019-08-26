@@ -152,7 +152,20 @@ overrode the settings with other TSS, XML, or JS settings:
         fontSize: 16,
         fontWeight: "semibold"
     },
+}
 
+".devisButton":{
+   color: "white",
+    backgroundColor: "#b0b0b0",
+    height: 46,
+    borderRadius: 5,
+    left: 25,
+    right: 25,
+    textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+    font: {
+        fontSize: 16,
+        fontWeight: "semibold"
+    },
 }
 
 '#Imagebackground': {
@@ -164,6 +177,14 @@ overrode the settings with other TSS, XML, or JS settings:
     fontSize: 16
   },
   color: "#374379",
+}
+
+'.labelDivers':{
+  font: {
+    fontSize : 12	
+  },
+  color : "#374379"
+
 }
 "Window[platform=android]":{
     theme : 'Theme.AppCompat.NoTitleBar',
@@ -303,6 +324,7 @@ overrode the settings with other TSS, XML, or JS settings:
   borderStyle: Ti.UI.INPUT_BORDERSTYLE_LINE,
   borderColor: 'rgb(206, 170, 140)',
   top: 227,
+  backgroundColor: "rgb(206, 170, 140)"
 }
 '#ViewLineP': {
   height: 5,
@@ -311,6 +333,7 @@ overrode the settings with other TSS, XML, or JS settings:
   borderStyle: Ti.UI.INPUT_BORDERSTYLE_LINE,
   borderColor: 'rgb(206, 170, 140)',
   top: 37,
+  backgroundColor: 'rgb(206, 170, 140)'
 }
 
 
@@ -357,4 +380,21 @@ overrode the settings with other TSS, XML, or JS settings:
     top:8,
     image: "/images/icn_close_blue.png",
     height: 16
+}
+
+//Agance
+'.icon': {
+    width: 12,
+    left: 0
+}
+
+
+// detailAgance
+'.marginTop': {
+    top: 16
+}
+
+'.icon': {
+    width: 12,
+    left: 0
 }

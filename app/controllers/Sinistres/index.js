@@ -88,11 +88,25 @@ function switchList(currentTab){
     let list;
     switch (currentTab) {
         case MySinistre_TAB:
-            mesSinistresList.length > 0 ? $.sinistreSection.items = serializeList(mesSinistresList) : initializeList(MySinistre_TAB);
+            if(mesSinistresList.length > 0){
+                $.sinistreSection.items = serializeList(mesSinistresList);
+            }else {
+                $.customIndicator.show();
+                initializeList(MySinistre_TAB, ()=>{
+                    $.customIndicator.hide();
+                });
+            }
             break;
 
         case History_TAB:
-            historiqueList.length > 0 ? $.sinistreSection.items = serializeList(historiqueList) : initializeList(History_TAB);
+            if (historiqueList.length > 0) {
+                $.sinistreSection.items = serializeList(historiqueList)
+            }else {
+                $.customIndicator.show();
+                initializeList(History_TAB, ()=>{
+                    $.customIndicator.hide();
+                });
+            }
             break;
     }
 }

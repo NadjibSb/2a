@@ -43,9 +43,7 @@
     height: 24,
     width: 24
 }
-".iconContainer[platform=android]" : {
-    
-}
+
 
 '#titleWindow': {
   color: "white",

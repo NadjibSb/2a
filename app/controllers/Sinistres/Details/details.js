@@ -1,4 +1,5 @@
 // Dependencies
+var args = $.args;
 var log = require( 'utility/logger' )({
 		tag: "Sinistres_details",
 		hideLog: false
@@ -13,12 +14,13 @@ const ACTIVE_STATE = 1;
 const ONGOING_ENABLED_STATE = 2;
 const ONGOING_DISABLED_STATE = 3;
 
+var id = args.data;
+
 
 // Constructor----------------------------------------------
 (function constructor(){
-
     $.customIndicator.show();
-    getData(1, (sinistre)=>{
+    getData(id, (sinistre)=>{
 
         $.mainContent.show()
         $.customIndicator.hide();

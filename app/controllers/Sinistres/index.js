@@ -232,6 +232,8 @@ function creatSinistre(e){
 }
 
 function onItemclick(e){
-    log(e.itemIndex);
-    navManager.openWindow("/Sinistres/Details/details");
+    let list;
+    selectedTab == MySinistre_TAB ? list = mesSinistresList : list = historiqueList;
+    log(list[e.itemIndex].id, 'item clicked ');
+    navManager.openWindow("/Sinistres/Details/details",1,{data: list[e.itemIndex].id});
 }

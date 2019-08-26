@@ -20,16 +20,16 @@ function selectedTab(e){
             log("c")
         break;
         case "devis" : 
-            log("devis")
+            log("de")
         break;
         case "sinistre" :
-            log("sinistre")
+            log("s")
         break;
         case "agance" : 
-            log("agance")
+            log("a")
         break;
         case "divers" : 
-            log("divers")
+            log("di")
         break 
     }
 }

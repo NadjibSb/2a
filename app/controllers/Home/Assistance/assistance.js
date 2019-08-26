@@ -53,7 +53,7 @@ function close(e){
     $.trigger('close', _.extend(e.source,{id:"test"}));
 }
 
-exports.remplireButton = function remplireButton(type,longType,phone){
+function remplireButton(type,longType,phone){
     var view = Ti.UI.createView({
         color: "white",
         backgroundColor: "#374379",
@@ -92,7 +92,7 @@ exports.remplireButton = function remplireButton(type,longType,phone){
 }
 
 
-exports.avoirPhoneNumber = function avoirPhoneNumber(){
+function avoirPhoneNumber(){
     log("avoir phone number")
     if(!dejaOuvert){
         contractService.getPhoneNumber(session.getHeader(),(res)=>{
@@ -109,7 +109,7 @@ exports.avoirPhoneNumber = function avoirPhoneNumber(){
     }
   };
 
-exports.avoirIconButton = function avoirIconButton(type){
+function avoirIconButton(type){
     var image = ""
     switch(type){
         case "habitat":

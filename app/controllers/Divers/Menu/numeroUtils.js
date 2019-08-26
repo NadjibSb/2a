@@ -6,6 +6,7 @@ const navManager = require("/utility/navmanager");
 const dataService = require("/dataHandler/dataService")
 const session = require("/dataHandler/session")
 var stringUtil = require("/utility/stringUtil")
+const component = require("/utility/componeneUtil")
 // Arguments passed into this controller can be accessed via the `$.args` object directly or:
 var args = $.args;
 var containerScroll = $.scrollContainer
@@ -50,16 +51,12 @@ function remplireCategorieView(category,phones){
 }
 
 
-function addClass(view,listClass){
-  listClass.forEach(classs =>{
-    $.addClass(view,classs)
-  })
-}
+
 
 
 function addCategory(category){
   var categoryView = Ti.UI.createView()
-  addClass(categoryView,[
+  component.addClass($.categoryView,[
     "hSize",
     "category"
   ])
@@ -67,7 +64,7 @@ function addCategory(category){
   var labelCategory = Ti.UI.createLabel({
   })
   labelCategory.text = category
-  addClass(labelCategory,[
+  component.addClass($,labelCategory,[
     "labelLogin",
     "fontHeavy",
   ])
@@ -79,7 +76,7 @@ function addCategory(category){
 function addPhones(phones){
   for(phone in phones){
     var viewPhone = Ti.UI.createView()
-    addClass(viewPhone,[
+    component.addClass($.viewPhone,[
       "hlayout",
       "hSize",
       "phone"
@@ -87,7 +84,7 @@ function addPhones(phones){
     let labelPhone = Ti.UI.createLabel({
       text : phone+" : "
     })
-    addClass(labelPhone,[
+    component.addClass($.labelPhone,[
       'labelLogin',
       "fontLight",
       "labelNum"
@@ -102,7 +99,7 @@ function addPhones(phones){
       }
       let labelPhone = Ti.UI.createLabel({
       })
-      addClass(labelPhone,[
+      component.addClass($.labelPhone,[
         'labelLogin',
         "fontLight"
       ])  
@@ -115,7 +112,7 @@ function addPhones(phones){
       let labelslash= Ti.UI.createLabel({
         text : " / "
       })
-      addClass(labelslash,[
+      component.addClass($.labelslash,[
         'labelLogin',
         "fontLight",
         "labelNum"

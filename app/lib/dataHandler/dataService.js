@@ -3,7 +3,8 @@ var log = require( "/utility/logger" )( {
 		tag: 'data_service',
 		hideLog: false
 	} ),
-	httpClient = require( "/utility/httpManager" );
+	httpClient = require( "/utility/httpManager" ),
+    session = require("/dataHandler/session");
 
 var apiURL = Alloy.Globals.API_URL;
 
@@ -13,40 +14,28 @@ var $ = module.exports = {
 	getAgencyDetails: getAgencyDetails,
     getAgencies: getAgencies,
     getContracts: getContracts,
-    getNotificationsPerPage:getNotificationsPerPage,
-    getPhoneContact :getPhoneContact
+    getNotificationsPerPage: getNotificationsPerPage,
+    getPhoneContact: getPhoneContact,
+    getSinistresPerPage: getSinistresPerPage,
+    getSinistreDetails: getSinistreDetails
 };
 
 function getAgencyDetails(id,successCallback, errorCallback){
     var args = {
         url: apiURL + "/agency/detail/"+id,
         method:'GET',
-        header: Alloy.Globals.header
+        header: session.getHeader()
     }
-    httpClient.request(args,
-        (response)=>{
-            _.isFunction( successCallback ) && successCallback( response );
-        },
-        (response)=>{
-            _.isFunction( errorCallback ) && errorCallback( response );
-        }
-    );
+    httpClient.request(args,successCallback,errorCallback);
 }
 
 function getAgencies(successCallback,errorCallback){
     var args = {
         url: apiURL + "/agency/",
         method:'GET',
-        header: Alloy.Globals.header
+        header: session.getHeader()
     }
-    httpClient.request(args,
-        (response)=>{
-            _.isFunction( successCallback ) && successCallback( response );
-        },
-        (response)=>{
-            _.isFunction( errorCallback ) && errorCallback( response );
-        }
-    );
+    httpClient.request(args,successCallback,errorCallback);
 }
 
 function getContracts(successCallback,errorCallback){
@@ -54,16 +43,9 @@ function getContracts(successCallback,errorCallback){
     var args = {
         url: apiURL + "/contracts",
         method:'GET',
-        header: Alloy.Globals.header
+        header: session.getHeader()
     }
-    httpClient.request(args,
-        (response)=>{
-            _.isFunction( successCallback ) && successCallback( response );
-        },
-        (response)=>{
-            _.isFunction( errorCallback ) && errorCallback( response );
-        }
-    );
+    httpClient.request(args,successCallback,errorCallback);
 }
 
 function getNotificationsPerPage(page,successCallback,errorCallback){
@@ -72,7 +54,7 @@ function getNotificationsPerPage(page,successCallback,errorCallback){
         url: apiURL + "/notification/"+page,
         method:'GET',
         fullResponse:true,
-        header: Alloy.Globals.header
+        header: session.getHeader()
     }
     httpClient.request(args,
         (response)=>{
@@ -83,10 +65,25 @@ function getNotificationsPerPage(page,successCallback,errorCallback){
             }
             _.isFunction( successCallback ) && successCallback( { total:response.total, list:response.data} );
         },
-        (error)=>{
-            _.isFunction( errorCallback ) && errorCallback( error );
-        }
+        errorCallback
     );
+}
+function getSinistresPerPage(page,successCallback,errorCallback){
+    var args = {
+        url: apiURL + "/disasters/open/"+page,
+        method:'GET',
+        header: session.getHeader()
+    }
+    httpClient.request(args,successCallback,errorCallback);
+}
+
+function getSinistreDetails(id,successCallback,errorCallback){
+    var args = {
+        url: apiURL + "/disasters/"+id,
+        method:'GET',
+        header: session.getHeader()
+    }
+    httpClient.request(args,successCallback,errorCallback);
 }
 
 function getPhoneContact(header,succes,error){

@@ -3,7 +3,8 @@
         <View id="container" class="vlayout background">
             <Widget src="customNavBar" id="navBar" class="navBar" onLeftButtonClick="pressBack"></Widget>
             <View>
-                <ScrollView class="vlayout">
+                <Widget src="customIndicatorInsideView" id="customIndicator"></Widget>
+                <ScrollView id="mainContent" class="vlayout">
                     <View id="topBar">
                         <View class="hlayout wSize hSize">
                             <ImageView id="topBar_img" class="wSize hSize"></ImageView>

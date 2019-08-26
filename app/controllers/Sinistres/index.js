@@ -1,67 +1,86 @@
-// Dependencies
+// Dependencies ---------------------------------------------------------------
 var log = require( 'utility/logger' )( {
 		tag: "Sinistres_index",
 		hideLog: false
 	} ),
-    navManager = require("/utility/navmanager");
+    navManager = require("/utility/navmanager"),
+    dataService = require("/dataHandler/dataService");
 
-var data = [];
-var _data = [];
 
+// PRIVATE VARIABLES ---------------------------------------------------------------
+var mesSinistresList = [];
+var historiqueList = [];
+
+
+// CONSTRUCTOR ---------------------------------------------------------------
 (function constructor(){
-    defaultData();
-    $.sinistreSection.items = data;
+    setup_refreshController();
+    getData();
 })();
 
 
-function defaultData(){
-    // fill data
-    for (var i = 0; i < 7; i++) {
-        var c,
-        font = {
+// Private Functions ---------------------------------------------------------------
+
+function getData(callback){
+    dataService.getSinistresPerPage(1,
+        (response)=>{
+            log(response);
+            mesSinistresList = serializeList(response);
+            $.sinistreSection.items = mesSinistresList;
+            _.isFunction( callback ) && callback();
+        },
+        (error)=>{
+            log(error);
+            _.isFunction( callback ) && callback();
+    });
+}
+
+function serializeList(list){
+    let listToDisplay = [], c,
+        font= {
             fontSize: 14,
             fontFamily: Alloy.CFG.design.fonts.Heavy
         };
-        i%2==0 ? c=Alloy.CFG.design.fonts.PrimaryColor : c = Alloy.CFG.design.fonts.GreenColor;
-        data.push({
+
+    _.each(list,(item)=>{
+        fontColor = Alloy.CFG.design.fonts.PrimaryColor;
+
+        listToDisplay.push({
             template: "sinistreTemplate",
             type: {
-                text: "type",
+                text: item.type,
                 font: font
             },
-            numContrat: {text: "type"},
-            date: {text: "type"},
+            numContrat: {text: item.contract_id},
+            date: {text: item.disasterDate},
             status: {
-                text: "type",
-                color:c,
+                text: item.status,
+                color: fontColor,
                 font: font
             },
             image: {image: "/images/icn_cars_white.png"}
-        });
-        i%2==1 ? c=Alloy.CFG.design.fonts.PrimaryColor : c = Alloy.CFG.design.fonts.GreenColor;
-        _data.push({
-            template: "sinistreTemplate",
-            type: {
-                text: "histo",
-                font: font
-            },
-            numContrat: {text: "histo"},
-            date: {text: "histo"},
-            status: {
-                text: "histo",
-                color:c,
-                font: font
-            },
-            image: {image: "/images/icn_building_white.png"}
-        });
-    }
+        })
+    });
+    return listToDisplay;
 }
 
 
 
-// Private Functions
+function setup_refreshController(){
+    var control = Ti.UI.createRefreshControl({
+        tintColor: Alloy.CFG.design.colors.PrimaryColor
+    });
+    $.sinistreList.refreshControl = control;
+    control.addEventListener('refreshstart',function(e){
+        log('refreshstart');
+        getData((e)=>{
+            control.endRefreshing();
+        });
+    });
+}
 
 
+// EVENT HANDLERS ---------------------------------------------------------------
 function displayMesSinistres(e){
     // show the bottom button
     $.creatSinistre.show();
@@ -74,7 +93,7 @@ function displayMesSinistres(e){
     $.btHistorique.children[0].color = Alloy.CFG.design.colors.PrimaryColor;
     $.btMesSinistres.children[0].color = "white";
     // update list
-    $.sinistreSection.items = data;
+    $.sinistreSection.items = mesSinistresList;
     $.sinistreList.scrollToItem(0,0);
 }
 
@@ -90,7 +109,7 @@ function displayHistorique(e){
     $.btMesSinistres.children[0].color = Alloy.CFG.design.colors.PrimaryColor;
     $.btHistorique.children[0].color = "white";
     // update list
-    $.sinistreSection.items = _data;
+    $.sinistreSection.items = mesSinistresList;
     setTimeout(function(){
         $.sinistreList.scrollToItem(0,0);
     }, 5);

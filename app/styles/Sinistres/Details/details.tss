@@ -3,7 +3,6 @@
 
 
 '#topBar_img': {
-    image: "/images/icn_house_blue_title.png",
     right: 16
 }
 
@@ -82,4 +81,8 @@
 '#navBar': {
     title: L('sinistres_details_title'),
     leftIcon: "/images/icn_topbar_back.png"
+}
+
+'#mainContent': {
+    visible: false
 }

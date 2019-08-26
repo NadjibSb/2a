@@ -29,7 +29,7 @@ function resetPassword(){
 		alert('E-mail de réinitialisation du mot de passe envoyé')
 		pressBack();
 	},(code,response)=>{
-		log(e+" "+response);
+		log(code+" "+response);
 		$.activityIndicator.hide();
 		alert('L’utilisateur n’existe pas, veuillez vérifier l’identifiant spécifié')
 	})

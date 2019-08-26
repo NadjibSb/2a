@@ -1,6 +1,6 @@
 <Alloy>
-  <Window>
-    <View class="container " >
+  <Window >
+    <View class="container" class="background">
       <Widget src="customIndicator" id="activityIndicator" blockScreen="true"/>
       <ImageView id="Imagebackground" class="Fill"/>
       <View class="vlayout">

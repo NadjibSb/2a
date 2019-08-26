@@ -1,11 +1,9 @@
 
-".container" : {
 
-}
 "#textFieldEmail" : {
 	left : 34,
 	right : 34,
-	top : 343,
+	top : 20,
 	hintText : "Adresse email ou N° de téléphone ",
 	errorColor : "red",
 	focusBarColor : "rgb(55, 67, 121)",
@@ -20,7 +18,7 @@
 "#textFieldPassword" : {
 	left : 34,
 	right : 34,
-	top : 405,
+	top : 13,
 	hintText : "Mot de passe",
 	passwordMask : true,
 	errorColor : "red",
@@ -34,12 +32,12 @@
 "#btnLogin" : {
 	left : 24,
 	right : 25,
-	top : 540,
+	top : 12,
 	title : "Se connecter"
 },
 
 "#lbForgotPassword" : {
-  top: 500,
+  top: 35,
   right: 25,
 	font : {fontSize : 14},
 	color : "rgb(55 ,67 ,121)",
@@ -49,7 +47,7 @@
 
 '#labelIdentification': {
   text: "Identification",
-  top : 310,
+  top : 30,
   font: {
     fontSize: 20,
     fontWeight: "bold",
@@ -72,11 +70,12 @@
   borderWidth: 5,
   borderStyle: Ti.UI.INPUT_BORDERSTYLE_LINE,
   borderColor: 'rgb(206, 170, 140)',
-  top: 259,
+  backgroundColor: 'rgb(206, 170, 140)',
+  top: 20,
 }
 
 '#labelInscrire[platform=android]': {
-  top: 610,
+  top: 30,
   bottom : 30,
   right: 25,
     font : {fontSize : 20},
@@ -85,7 +84,7 @@
 	underlineText:"S’inscrire"
 }
 '#labelInscrire[platform=ios]': {
-  top: 650,
+  top: 30,
   right: 25,
   bottom : 40,
     font : {fontSize : 20},

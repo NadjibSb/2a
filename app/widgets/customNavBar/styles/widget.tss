@@ -44,7 +44,7 @@
     width: 24
 }
 ".iconContainer[platform=android]" : {
-    bottom: 18
+    
 }
 
 '#titleWindow': {
@@ -58,5 +58,4 @@
 }
 '#titleWindow[platform=ios]': {
   bottom:5,
-
 }

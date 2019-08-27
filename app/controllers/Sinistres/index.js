@@ -36,13 +36,14 @@ var historiqueList = [],
 function initializeList(currentTab, callback){
     switch (currentTab) {
         case MySinistre_TAB:
-            currentPage_s = 1;
+            currentPage_s = 1; // initialize list
             mesSinistresList = [];
             getData(currentPage_s, MySinistre_TAB, (e)=>{
                 if (mesSinistresList.length > 0) {
                     displayEmptyList(false);
                     $.sinistreSection.items = serializeList(mesSinistresList);
-                }else {
+                    setMarker(mesSinistresList.length-4);
+                }else { // if there is no data to display
                     displayEmptyList(true);
                 }
                 _.isFunction( callback ) && callback();
@@ -56,13 +57,21 @@ function initializeList(currentTab, callback){
                 if (historiqueList.length > 0) {
                     $.sinistreSection.items = serializeList(historiqueList);
                     displayEmptyList(false);
-                }else {
+                    setMarker(historiqueList.length-4);
+                }else { // if there is no data to display
                     displayEmptyList(true);
                 }
                 _.isFunction( callback ) && callback();
             });
             break;
     }
+}
+
+function setMarker(index){
+    $.sinistreList.setMarker({
+        sectionIndex:0,
+        itemIndex: index
+    });
 }
 
 function displayEmptyList(boolean){
@@ -81,7 +90,9 @@ function getData(page, currentTab, callback){
         case MySinistre_TAB:
             dataService.getMySinistresPerPage(page,
                 (response)=>{
-                    mesSinistresList = response;
+                    if (response.length > 0) {
+                        mesSinistresList.push(...response);
+                    }
                     _.isFunction( callback ) && callback();
                 },
                 (error)=>{
@@ -93,7 +104,9 @@ function getData(page, currentTab, callback){
         case History_TAB:
             dataService.getSinistresHistoryPerPage(page,
                 (response)=>{
-                    //historiqueList = response;
+                    if (response.length > 0) {
+                        historiqueList.push(...response);
+                    }
                     _.isFunction( callback ) && callback();
                 },
                 (error)=>{
@@ -109,10 +122,16 @@ function switchList(currentTab){
     let list;
     switch (currentTab) {
         case MySinistre_TAB:
-            if(mesSinistresList.length > 0){
+            if(mesSinistresList.length > 0){ // if the list has data
                 displayEmptyList(false);
                 $.sinistreSection.items = serializeList(mesSinistresList);
-            }else {
+                setTimeout(function(){
+                    $.sinistreList.scrollToItem(0,0);
+                    setTimeout(function(){
+                        setMarker(mesSinistresList.length-4);
+                    }, 1000);
+                }, 5);
+            }else { //else trigger an other request
                 $.customIndicator.show();
                 initializeList(MySinistre_TAB, ()=>{
                     $.customIndicator.hide();
@@ -123,7 +142,13 @@ function switchList(currentTab){
         case History_TAB:
             if (historiqueList.length > 0) {
                 displayEmptyList(false);
-                $.sinistreSection.items = serializeList(historiqueList)
+                $.sinistreSection.items = serializeList(historiqueList);
+                setTimeout(function(){
+                    $.sinistreList.scrollToItem(0,0);
+                    setTimeout(function(){
+                        setMarker(historiqueList.length-4);
+                    }, 1000);
+                }, 5);
             }else {
                 $.customIndicator.show();
                 initializeList(History_TAB, ()=>{
@@ -239,11 +264,6 @@ function tabChanged(e){
             $.btHistorique.children[0].color = "white";
             // update list
             switchList(selectedTab);
-            setTimeout(function(){
-                if ($.sinistreSection.items.length > 0) {
-                    $.sinistreList.scrollToItem(0,0);
-                }
-            }, 5);
             break;
 
         case History_TAB: // display MySinistre_TAB
@@ -260,15 +280,39 @@ function tabChanged(e){
             $.btMesSinistres.children[0].color = "white";
             // update list
             switchList(selectedTab);
-            if ($.sinistreSection.items.length > 0) {
-                $.sinistreList.scrollToItem(0,0);
-            }
             break;
     }
 }
 
+function onMarkerReached(e){
+    switch (selectedTab) {
+        case MySinistre_TAB:
+            currentPage_s++;
+            var oldLength = mesSinistresList.length; // to test if there is no pages to diplay
+            getData(currentPage_s, MySinistre_TAB, ()=>{
+                $.sinistreSection.items = serializeList(mesSinistresList);
+                if (mesSinistresList.length != oldLength) { // a new page has loaded
+                    setMarker(mesSinistresList.length-4);
+                }
+            });
+            break;
+        case History_TAB:
+            currentPage_h++;
+            var oldLength = historiqueList.length; // to test if there is no pages to diplay
+            getData(currentPage_h, History_TAB, ()=>{
+                $.sinistreSection.items = serializeList(historiqueList);
+                if (historiqueList.length != oldLength) {// a new page has loaded
+                    setMarker(historiqueList.length-4);
+                }
+            });
+            break;
+        default:
+
+    }
+
+}
+
 function creatSinistre(e){
-    //Alloy.createController("/Sinistres/Details/details").getView().open();
     log("Create Sinistre");
 }
 

@@ -14,7 +14,7 @@
                 <Widget src="customIndicatorInsideView" id="customIndicator"></Widget>
                 <View id="bottomMargin">
                     <Label id="emptyList"></Label>
-                    <ListView id="sinistreList" class="noBackground" onItemclick="onItemclick">
+                    <ListView id="sinistreList" class="noBackground" onItemclick="onItemclick" onMarker="onMarkerReached">
                         <Templates>
                             <ItemTemplate name="sinistreTemplate" class="noBackground">
                                 <View class="vlayout hSize">

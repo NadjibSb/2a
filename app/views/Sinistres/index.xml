@@ -13,6 +13,7 @@
             <View id="contentView">
                 <Widget src="customIndicatorInsideView" id="customIndicator"></Widget>
                 <View id="bottomMargin">
+                    <Label id="emptyList"></Label>
                     <ListView id="sinistreList" class="noBackground" onItemclick="onItemclick">
                         <Templates>
                             <ItemTemplate name="sinistreTemplate" class="noBackground">

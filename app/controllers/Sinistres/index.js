@@ -39,7 +39,12 @@ function initializeList(currentTab, callback){
             currentPage_s = 1;
             mesSinistresList = [];
             getData(currentPage_s, MySinistre_TAB, (e)=>{
-                $.sinistreSection.items = serializeList(mesSinistresList);
+                if (mesSinistresList.length > 0) {
+                    displayEmptyList(false);
+                    $.sinistreSection.items = serializeList(mesSinistresList);
+                }else {
+                    displayEmptyList(true);
+                }
                 _.isFunction( callback ) && callback();
             });
             break;
@@ -48,10 +53,26 @@ function initializeList(currentTab, callback){
             currentPage_h = 1;
             historiqueList = [];
             getData(currentPage_h, History_TAB, (e)=>{
-                $.sinistreSection.items = serializeList(historiqueList);
+                if (historiqueList.length > 0) {
+                    $.sinistreSection.items = serializeList(historiqueList);
+                    displayEmptyList(false);
+                }else {
+                    displayEmptyList(true);
+                }
                 _.isFunction( callback ) && callback();
             });
             break;
+    }
+}
+
+function displayEmptyList(boolean){
+    if (boolean) {
+        $.emptyList.show();
+        $.sinistreList.hide();
+    }else {
+        $.emptyList.hide();
+        $.sinistreList.show();
+
     }
 }
 
@@ -72,7 +93,7 @@ function getData(page, currentTab, callback){
         case History_TAB:
             dataService.getSinistresHistoryPerPage(page,
                 (response)=>{
-                    historiqueList = response;
+                    //historiqueList = response;
                     _.isFunction( callback ) && callback();
                 },
                 (error)=>{
@@ -89,6 +110,7 @@ function switchList(currentTab){
     switch (currentTab) {
         case MySinistre_TAB:
             if(mesSinistresList.length > 0){
+                displayEmptyList(false);
                 $.sinistreSection.items = serializeList(mesSinistresList);
             }else {
                 $.customIndicator.show();
@@ -100,6 +122,7 @@ function switchList(currentTab){
 
         case History_TAB:
             if (historiqueList.length > 0) {
+                displayEmptyList(false);
                 $.sinistreSection.items = serializeList(historiqueList)
             }else {
                 $.customIndicator.show();

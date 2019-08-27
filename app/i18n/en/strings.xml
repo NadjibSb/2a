@@ -57,6 +57,7 @@
     <string name="sinistres_create_sinistre">Déclarer un sinistre</string>
     <string name="sinistres_MesSinistres">Mes sinistes</string>
     <string name="sinistres_Hisorique">Hisorique</string>
+    <string name="sinistres_empty_list">Aucun sinistre à afficher</string>
     <string name="sinistre_rejected">Rejeté</string>
     <string name="sinistre_accepted">Accepté</string>
     <string name="sinistre_open">Ouvert</string>

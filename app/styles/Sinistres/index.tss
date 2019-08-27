@@ -126,3 +126,13 @@
 '#navBar': {
   title : L("sinistres_title"),
 }
+
+'#emptyList': {
+    text: L('sinistres_empty_list'),
+    font: {
+        fontSize: 14,
+        fontFamily: Alloy.CFG.design.fonts.Light
+    },
+    color: Alloy.CFG.design.fonts.PrimaryColor,
+    visible: false
+}

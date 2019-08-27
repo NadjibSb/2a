@@ -14,21 +14,21 @@ const USER_CONTRACT_LIST = 0, OTHER_CONTRACT_LIST = 1;
 var userContractList=[] , otherContractList=[];
 var sourceOpen;
 // PUBLIC INTERFACE
-//_.extend($,{
-    //constructor : constructor
-//})
+_.extend($,{
+    constructor : constructor
+})
 
 // TODO: when this tab is open, if the list is empty, send another request to get the list
 // CONSTRUCTOR ----------------------------------------------------------------
-(function constructor(){
+function constructor(){
     log("const")
-    //$.trigger('close', _.extend(sourceOpen.source,{id:"test"}));
+    $.trigger('close', _.extend(sourceOpen.source,{id:"test"}));
     setup_refreshController();
     $.customIndicator.show();
     getData(()=>{
         $.customIndicator.hide();
     });
-})();
+};
 
 
 

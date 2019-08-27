@@ -6,35 +6,37 @@ var log = require( 'utility/logger' )( {
 // Arguments passed into this controller can be accessed via the `$.args` object directly or:
 var args = $.args;
 
-var tabgroup;
-
-
-/*if(OS_IOS){
-    tabgroup = $.tabGroup;
-}
 
 
 function selectedTab(e){
-    switch(e.source.tabId){ 
-        case "contract" :
-            $.contract.constructor()
-        break;
-        case "devis" : 
-            $.devis.constructor()
-        break;
-        case "sinistre" :
-            $.sinistre.constructor()
-        break;
-        case "agance" : 
-            $.agance.constructor()
-        break;
-        case "divers" : 
-            log("di")
-        break 
-    }
-    
+    tabChoosed(e.source.tabId)
 }
 
 function selectedAndroid(e){
-    log("je suis clique ")
-}*/
+    tabChoosed(e)
+}
+
+function tabChoosed(tab){
+    if(OS_IOS){
+        switch(tab){ 
+            case "contract" :
+                $.contract.constructor()
+            break;
+            case "devis" : 
+                $.devis.constructor()
+            break;
+            case "sinistre" :
+                $.sinistre.constructor()
+            break;
+            case "agance" : 
+                $.agance.constructor()
+            break;
+            case "divers" : 
+                log("di")
+            break 
+        }
+    }else{
+        tab.controller.constructor()
+    }
+    
+}

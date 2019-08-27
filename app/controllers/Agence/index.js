@@ -27,11 +27,11 @@ let MapsConfigured = false,
     goToDetailsEvent,
     ignoreLocationAlert = false;
 
-//_.extend($,{
-    //constructor : constructor
-//})
+_.extend($,{
+    constructor : constructor
+})
 // CONSTRUCTOR------------------------------------------------------------------------------
-(function constructor(){
+function constructor(){
 
     setup_refreshController();
     $.customIndicator.show();
@@ -53,7 +53,7 @@ let MapsConfigured = false,
         );
     };
     checkPositionConfig(callback,callback);
-})();
+};
 
 
 

@@ -32,7 +32,7 @@ var stackTabContact = [],
     stackTabSinistre = [],
     stackTabAgance = [],
     stackTabDivers = [];
-
+var currentTab;
 exports.openWindow = function(windowController) {
 	if (OS_ANDROID) {
 		log("openWindow")
@@ -239,22 +239,27 @@ function getCurrentStack() {
 	case 0:
 		Ti.API.info('returning currentStack : Contract');
 		currentStack = stackTabContact;
+		currentTab = "contract"
 		break;
 	case 1:
 		Ti.API.info('returning currentStack : Devis');
 		currentStack = stackTabDevis;
+		currentTab = "devis"
 		break;
 	case 2:
 		Ti.API.info('returning currentStack : emploi');
 		currentStack = stackTabSinistre;
+		currentTab = "sinistre"
 		break;
 	case 3:
 		Ti.API.info('returning currentStack : Agence');
 		currentStack = stackTabAgance;
+		currentTab = "agance"
 		break;
 	case 4:
 		Ti.API.info('returning currentStack : Divers Divers');
 		currentStack = stackTabDivers;
+		currentTab = "divers"
 		break;
 	default:
 		break;
@@ -284,6 +289,7 @@ var fireOnChange = function() {
 			caller : $,
 			stack : getCurrentStack(),
 			controller: getCurrentStackController(),
+			tab : currentTab
 		});
 	} catch(e) {
 		// most likely couldn't get a reference on the activity . do nothing

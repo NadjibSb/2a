@@ -12,9 +12,9 @@ const alert = require("/utility/alertManager")
 const component = require("/utility/componeneUtil")
 const str = require("/utility/stringUtil");
 
-//_.extend($,{
-    //constructor : constructor
-//})
+_.extend($,{
+    constructor : constructor
+})
 // variable 
 
 var buttonContainer = $.containerButton
@@ -202,9 +202,9 @@ function avoirAgenceNonDisop(){
 
 //traintement
 
-(function constructor(){
+function constructor(){
     $.reesayer.hide()
     $.scrollContainer.hide()
     avoirPhoneNumber()
     avoirAgenceNonDisop()
-})()
+};

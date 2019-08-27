@@ -1,18 +1,7 @@
-Welcome to your Appcelerator Titanium Mobile Project
+Deux applications sont à réaliser pour 2a, une application pour les assurés et une autre pour les experts.
 
-This is a blank project.  Start by editing your application's app.js to 
-make your first mobile project using Titanium.
+La première permet aux utilisateurs de souscrire aux offres et services de l’Algérienne des Assurances. Les services principaux accessible via l’application sont; la localisation des agences 2a, le devis et l’achat d’assurances en ligne via carte bancaire, la déclaration de sinistres et le suivi de l’état de leur traitement.
 
+La seconde quant à elle permet aux experts de voir la liste des sinistres déclarés par les utilisateurs de l’application assurés. Une fois le traitement d’un sinistre accepté, l’expert pourra se déplacer pour faire son constat.
 
-
-----------------------------------
-Stuff our legal folk make us say:
-
-Appcelerator, Appcelerator Titanium and associated marks and logos are 
-trademarks of Appcelerator, Inc. 
-
-Titanium is Copyright (c) 2008-2016 by Appcelerator, Inc. All Rights Reserved.
-
-Titanium is licensed under the Apache Public License (Version 2). Please
-see the LICENSE file for the full license.
-
+Ces deux applications ciblent le marché Algérien.

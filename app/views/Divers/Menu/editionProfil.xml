@@ -1,5 +1,5 @@
 <Alloy>
-	<Window>
+	<Window >
 		<Widget src="customIndicator" id="activityIndicator" blockScreen="true"/>
 		<View id="container" class="vlayout background">
 			<Widget src="customNavBar" id="navBar" class="navBar" onLeftButtonClick="pressBack"></Widget>

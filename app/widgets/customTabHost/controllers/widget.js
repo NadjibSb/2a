@@ -136,6 +136,34 @@ $.init = function(tabActive) {
 	fistTab = tabActive
 };
 
+
+/**
+ * update the tab
+ * @param {updat} args 
+ */
+
+ function updateTab(index){
+	var rootController
+	 switch(index){
+		 case 0:
+				rootController = Alloy.createController('/Contract/index');
+		 break
+		 case 1:
+				rootController = Alloy.createController('/Devis/index');
+		 break
+		 case 2:
+				rootController = Alloy.createController('/Sinistres/index');
+		 break
+		 case 3:
+				rootController = Alloy.createController('/Agence/index');
+		 break
+		 case 4:
+				rootController = Alloy.createController('/Divers/index');
+		 break
+	 }
+	 return rootController
+
+ }
 /*
  * create the tab button not the content, just the tab : title + icon
  */
@@ -153,15 +181,28 @@ function createTabViewController(args) {
 
 var onTabSelected = exports.onTabSelected = function(selectedIndex) {
 	log("debut on tab selected")
+	
 	if ($.activeTab !== selectedIndex) {
 		log("onTabSelected : selectedindex : "+selectedIndex)
 		if ($.activeTab !== null) {
 			tabViewControllers[$.activeTab].updateTabSelectionState(false);
 		}
-		
 		tabViewControllers[selectedIndex].updateTabSelectionState(true);
-		displayRequestedStack(selectedIndex);
 		$.activeTab = selectedIndex;
+		//add
+		var currentStack = getCurrentStack();
+		var stackViewHolder = getCurrentStackView();
+		if(currentStack.length == 1){
+			stackViewHolder.remove(currentStack[0].container);
+			currentStack.pop();
+			var rootController = updateTab(selectedIndex)
+			currentStack.push(rootController)
+			stackViewHolder.add(rootController.container)
+			rootController.constructor()
+		}
+		//end add
+		displayRequestedStack(selectedIndex);
+		
 	} else {
 		// on tab reselected.
 		var currentStack = getCurrentStack();
@@ -239,27 +280,27 @@ function getCurrentStack() {
 	case 0:
 		Ti.API.info('returning currentStack : Contract');
 		currentStack = stackTabContact;
-		currentTab = "contract"
+		currentTab = 0
 		break;
 	case 1:
 		Ti.API.info('returning currentStack : Devis');
 		currentStack = stackTabDevis;
-		currentTab = "devis"
+		currentTab = 1
 		break;
 	case 2:
 		Ti.API.info('returning currentStack : emploi');
 		currentStack = stackTabSinistre;
-		currentTab = "sinistre"
+		currentTab = 2
 		break;
 	case 3:
 		Ti.API.info('returning currentStack : Agence');
 		currentStack = stackTabAgance;
-		currentTab = "agance"
+		currentTab = 3
 		break;
 	case 4:
 		Ti.API.info('returning currentStack : Divers Divers');
 		currentStack = stackTabDivers;
-		currentTab = "divers"
+		currentTab = 4
 		break;
 	default:
 		break;
@@ -289,7 +330,8 @@ var fireOnChange = function() {
 			caller : $,
 			stack : getCurrentStack(),
 			controller: getCurrentStackController(),
-			tab : currentTab
+			tab : currentTab,
+			update : updateTab
 		});
 	} catch(e) {
 		// most likely couldn't get a reference on the activity . do nothing
@@ -299,6 +341,7 @@ var fireOnChange = function() {
 function hideAllPrevious(){
   var currentStack = getCurrentStack();
   for (var i = 0; i < currentStack.length; i++) {
+	log("hide"+i)
     currentStack[i].container.hide();
   }
 }

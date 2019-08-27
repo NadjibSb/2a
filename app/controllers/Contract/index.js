@@ -22,7 +22,7 @@ _.extend($,{
 // CONSTRUCTOR ----------------------------------------------------------------
 function constructor(){
     log("const")
-    $.trigger('close', _.extend(sourceOpen.source,{id:"test"}));
+    //$.trigger('close', _.extend(sourceOpen.source,{id:"test"}));
     setup_refreshController();
     $.customIndicator.show();
     getData(()=>{

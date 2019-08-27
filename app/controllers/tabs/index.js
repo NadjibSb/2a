@@ -36,7 +36,7 @@ function tabChoosed(tab){
             break 
         }
     }else{
-        tab.controller.constructor()
+        
     }
     
 }

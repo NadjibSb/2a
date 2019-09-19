@@ -181,7 +181,7 @@ overrode the settings with other TSS, XML, or JS settings:
 
 '.labelDivers':{
   font: {
-    fontSize : 12	
+    fontSize : 12
   },
   color : "#374379"
 

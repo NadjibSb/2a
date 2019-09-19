@@ -7,13 +7,16 @@ const navManager = require("/utility/navmanager");
 const session = require("/dataHandler/session")
 // Variable
 var args = $.args;
-
+_.extend($,{
+    constructor : constructor
+})
 
 // function
 function buttonClick(e){
     screen = e.source.buttonId;
     log(screen);
     navManager.openWindow("Divers/Menu/"+screen,1)
+
 }
 
 function buttonLogout(e){
@@ -37,5 +40,7 @@ function DoCall(){
     }
 
 }
-
+function constructor(){
+    
+};
 // traintemnet

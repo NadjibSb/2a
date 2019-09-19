@@ -36,7 +36,7 @@ var currentTab;
 exports.openWindow = function(windowController) {
 	if (OS_ANDROID) {
 		log("openWindow")
-        hideAllPrevious()
+    hideAllPrevious()
 		getCurrentStackView().add(windowController.container);
 		getCurrentStack().push(windowController);
 		callFocusOnWindow(windowController);
@@ -139,7 +139,7 @@ $.init = function(tabActive) {
 
 /**
  * update the tab
- * @param {updat} args 
+ * @param {updat} args
  */
 
  function updateTab(index){
@@ -181,7 +181,7 @@ function createTabViewController(args) {
 
 var onTabSelected = exports.onTabSelected = function(selectedIndex) {
 	log("debut on tab selected")
-	
+
 	if ($.activeTab !== selectedIndex) {
 		log("onTabSelected : selectedindex : "+selectedIndex)
 		if ($.activeTab !== null) {
@@ -202,7 +202,7 @@ var onTabSelected = exports.onTabSelected = function(selectedIndex) {
 		}
 		//end add
 		displayRequestedStack(selectedIndex);
-		
+
 	} else {
 		// on tab reselected.
 		var currentStack = getCurrentStack();
@@ -216,7 +216,7 @@ var onTabSelected = exports.onTabSelected = function(selectedIndex) {
 			currentStack.pop();
 		}
 		currentStack[0].container.show()
-		
+
 	}
 
 	fireOnChange();
@@ -339,10 +339,12 @@ var fireOnChange = function() {
 };
 
 function hideAllPrevious(){
+
   var currentStack = getCurrentStack();
+  log("hide lenght"+currentStack.length)
   for (var i = 0; i < currentStack.length; i++) {
-	log("hide"+i)
-    currentStack[i].container.hide();
+	   log("hide"+currentTab)
+     currentStack[i].container.visible = false;
   }
 }
 exports.addEventListner = $.on;

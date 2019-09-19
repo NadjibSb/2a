@@ -18,25 +18,25 @@ function selectedAndroid(e){
 
 function tabChoosed(tab){
     if(OS_IOS){
-        switch(tab){ 
+        switch(tab){
             case "contract" :
                 $.contract.constructor()
             break;
-            case "devis" : 
+            case "devis" :
                 $.devis.constructor()
             break;
             case "sinistre" :
                 $.sinistre.constructor()
             break;
-            case "agance" : 
+            case "agance" :
                 $.agance.constructor()
             break;
-            case "divers" : 
-                log("di")
-            break 
+            case "divers" :
+                $.divers.constructor()
+            break
         }
     }else{
-        
+
     }
-    
+
 }

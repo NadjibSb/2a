@@ -30,8 +30,8 @@ function clickLogin(e){
     $.activityIndicator.hide();
     log(code);
     if(code == "HTTP_CLIENT_NETWORK_OFFLINE") alert.show(" vérifier votre connexion est réessayer");
-    else alert.show(response)
-    
+    else alert.show(response.error)
+
   })
 
 }

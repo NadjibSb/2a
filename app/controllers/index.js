@@ -1,32 +1,31 @@
-
-const navigationWindow = require('/utility/navmanager');
-const session = require('/dataHandler/session');
 const log = require('/utility/logger')({
-  tag : "index",
-  hidelag : false
-})
+          tag : "index",
+          hidelag : false
+      });
+const navigationWindow = require('/utility/navmanager'),
+    session = require('/dataHandler/session'),
+    properties = require("/dataHandler/properties");
+
+
 var isLoginIn = session.isLogedIn();
 var appAlready;
 
 function init(){
-  log("init");
+  log("____init____");
   var rootView;
+  log(isLoginIn, "is loged in");
   if (isLoginIn) {
-    //if(true){
-    log("islogdin");
-    rootView = "Home/index"; 
+    rootView = "Home/index";
     //navigationWindow.setTabGroup(rootView)
   }else{
-    var appAlready = Ti.App.Properties.getBool( "APP_ALREADY_OPEN", false );
+    var appAlready = properties.isAppAlreadyOpen();
     if (appAlready) {
-      log("login")
+      log("login", "go to");
       rootView = "Auth/login";
     }else {
-      log("boarding")
+      log("boarding", "go to");
       rootView = "onBoarding/index";
     }
-    log("openLog")
-    
   }
   navigationWindow.openWindow(rootView,0,{});
 }

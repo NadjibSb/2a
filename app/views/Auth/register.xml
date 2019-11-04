@@ -7,22 +7,22 @@
         <Widget src="customNavBar" id="navBar" class="navBar" onLeftButtonClick="pressBack"></Widget>
         <ScrollView id="containerScroll">
           <View class="containerRegister vlayout hSize" >
-            <Label id="labelIntro" class="labelLogin fontHeavy"></Label>
-            <Label id="labelClient" class="labelLogin fontHeavy"></Label>
+            <Label id="labelIntro" class="label fontHeavy"></Label>
+            <Label id="labelClient" class="label fontHeavy"></Label>
             <!-- le choix entre il a numero client ou nn -->
             <View class="clientContainer hSize">
               <ImageView id="imageUnchecked" class="check" onClick="enableClientNum"></ImageView>
               <Label id="labelOuiClient"></Label>
               <ImageView id="imageChecked" class="check" onClick="disableClientNum"></ImageView>
               <Label id="labelNonClient"></Label>
-            </View> 
+            </View>
             <!-- si on a client num -->
             <View id="clientContainer" class="containerAllClientNum hSize vlayout">
               <Widget src="dzmob.widget.TextField" id="textFieldNumClient" class="textFeildRegistre"></Widget>
               <View class="containerRecuperation hSize">
                 <Label id="recupNumClient" onClick="clickRecuperation" module="module/underlineText" ></Label>
                 <ImageView id="iconNumClient"></ImageView>
-              </View> 
+              </View>
             </View>
             <!-- civilite view -->
             <View class="civiliteContainer hSize vlayout">

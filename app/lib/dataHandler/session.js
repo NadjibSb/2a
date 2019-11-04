@@ -1,15 +1,18 @@
-
-
 // DEPENDENCIES
-const navmanager = require("/utility/navmanager");
 var log = require( "/utility/logger" )( {
 		tag: 'Session_Handler',
 		hideLog: false
-	} ),
-httpClient = require( "/utility/httpManager" );
-const AppSession = require('/utility/AppSession');
+	} );
+
+const navmanager = require("/utility/navmanager"),
+    httpClient = require( "/utility/httpManager" ),
+    properties = require("/dataHandler/properties"),
+    AppSession = require('/utility/AppSession');
+
+// VARIABLES
 const appSession = AppSession.AppSession()
 const timeSession = 999918000000 // 30minute
+
 
 // PUBLIC INTERFACE
 var $ = module.exports = {
@@ -26,16 +29,15 @@ var $ = module.exports = {
 
 
 // PRIVATE VARIABLES
-const SESSION_ID = "SESSION_ID";
 const apiUrl = Alloy.Globals.API_URL;
-var sessionId = Ti.App.Properties.getString( SESSION_ID, null );
+var sessionId = properties.getSessionID();
 
 
 
 // PRIVATE FONCTIONS
 
 function login( params, error ) {
-  console.log("debut fct login");
+    log("___login___");
 	var args = {
 		method: "POST",
 		url: apiUrl + "/login",
@@ -50,7 +52,7 @@ function isLogedIn(){
 }
 // if the login is succes
 function onSuccessLogin(e){
-  console.log("debut on succes");
+  log("___onSuccessLogin___");
   startSession(e)
   //navmanager.setTabGroup("tabs/index");
   navmanager.openAndCloseAll("Home/index",0,{});
@@ -59,7 +61,7 @@ function onSuccessLogin(e){
 
 //session with time
 function startSession(e){
-	log("start session")
+	log("___startSession___")
 	var timeOut = e.TTL*60*1000
 	appSession.setTimeoutMs(timeOut);
 	//ajouter les donner de user a la fonctio
@@ -102,7 +104,6 @@ function updateUserData(params,header,succes,error){
 		header : header,
 		ignoreAlert : true,
 	};
-	log('after args')
 	httpClient.request(args,succes,error);
 }
 
@@ -114,13 +115,12 @@ function changePassword(params,header,succes,error){
 		header : header,
 		ignoreAlert : true,
 	};
-	log('after args')
 	httpClient.request(args,succes,error);
 }
 
 function getHeader(){
 	var header = {
-		Authorization : "Bearer "+Ti.App.Properties.getString( SESSION_ID, null )
+		Authorization : "Bearer "+ properties.getSessionID()
 	}
 	return header
 }

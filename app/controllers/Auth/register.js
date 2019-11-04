@@ -1,39 +1,38 @@
-const navmanager = require("/utility/navmanager");
 var log = require( 'utility/logger' )( {
 		tag: "registre",
 		hideLog: false
 	} );
-httpClient = require( "/utility/httpManager" );
-session = require("/dataHandler/session");
-const alert = require("/utility/alertManager");
-// Arguments passed into this controller can be accessed via the `$.args` object directly or:
+
+const navmanager = require("/utility/navmanager"),
+    httpClient = require( "/utility/httpManager" ),
+    session = require("/dataHandler/session"),
+    alertManager = require("/utility/alertManager");
 
 //variable
-var args = $.args;
-var ouiCheck = $.imageUnchecked
-var nonCheck = $.imageChecked
-var clientContainer = $.clientContainer
-var accepte = false
-var enableClientNum = false
-var email = $.textFieldEmailR
-var telephone =$.textFieldNumTel
-var numClient = $.textFieldNumClient
-var nomClient = $.textFieldNom
-var prenomClient = $.textFieldPrenom
-var passwordCLient = $.textFieldPasswordR
-var listCivilite = [
-	'Mr',
-	'Mme'
-];
-var civiliteChoisie = {
-	choisie : false,
-	text : ""
-};
-const colorLabelCivilite = "#374379"
+var args = $.args,
+    ouiCheck = $.imageUnchecked,
+    nonCheck = $.imageChecked,
+    clientContainer = $.clientContainer,
+    accepte = false,
+    enableClientNum = false,
+    email = $.textFieldEmailR,
+    telephone =$.textFieldNumTel,
+    numClient = $.textFieldNumClient,
+    nomClient = $.textFieldNom,
+    prenomClient = $.textFieldPrenom,
+    passwordCLient = $.textFieldPasswordR ,
+    listCivilite = [
+    	L("Mr"),
+    	L("Mme")
+    ],
+    civiliteChoisie = {
+    	choisie : false,
+    	text : ""
+    },
+    colorLabelCivilite = Alloy.CFG.design.fonts.PrimaryColor;
 
 //function
 function pressBack(e){
-  log("test press")
   navmanager.closeWindow($.register,0)
 }
 
@@ -58,7 +57,7 @@ function acceptCondition(e){
 	}else{
 		e.source.image = "/images/icn_oval_checked.png";
 		accepte=true
-	} 
+	}
 }
 
 function registerButton(e){
@@ -73,15 +72,15 @@ function registerButton(e){
 	else $.labelErreur.height=0
 	// traitement a faire en cas de non validite
 	if (champVide()){
-		alert("Tous les champs du formulaire doivent être renseignés")
+		alertManager.show(L("signin_alert_fill_all_fields"))
 		return false;
-	} 
+	}
 	if(!emailTest || !numTelephoneTest || !nomTest || !prenomTest || !passwordCLient || (enableClientNum && !enableClientNum) ){
 		return false
 	}
 	if(accepte){
 		// traitement en cas de validite
-		const title = ((civiliteChoisie.text == "Mr") ? 1 : 0)
+		const title = ((civiliteChoisie.text == L("Mr")) ? 1 : 0)
 		const userData = {
 			email : email.getValue(),
 			password : passwordCLient.getValue(),
@@ -98,15 +97,15 @@ function registerButton(e){
 		session.signup(userData,(code,response)=>{
 			$.activityIndicator.hide();
 			log(response)
-			if(code == "HTTP_CLIENT_NETWORK_OFFLINE") alert.show(" vérifier votre connexion est réessayer");
+			if(code == "HTTP_CLIENT_NETWORK_OFFLINE") alertManager.show(L("HTTP_CLIENT_NETWORK_OFFLINE"));
 			else{
 				var listError = response.errors
 				var numberError = response.errors.length
 				log(listError)
 				log("nombre : "+numberError)
 				if(numberError > 1){
-					alert(response.errorMessage)
-				} 
+					alertManager.show(response.errorMessage)
+				}
 				listError.forEach((error,index)=>{
 					var objectValid = {valid : false, message :error[0].message};
 					log(error[0].code)
@@ -115,25 +114,23 @@ function registerButton(e){
 							log("error tel")
 							telephone.setInvalid(objectValid)
 						break;
-						case "201" : 
+						case "201" :
 						log("error email")
 							email.setInvalid(objectValid)
 						break;
-						case "202" : 
+						case "202" :
 						log("error client");
 							numClient.setInvalid(objectValid)
 						break;
 					}
 				})
-			
 			}
-
 		})
 	}// fin if accepte
 	else{
-		alert.show("Veuillez vous accepter les condition d'utilisation et la politique de Confidentialité")
+		alertManager.show(L("signin_alert_accept_conditions"))
 	}
-	
+
 
 }
 
@@ -159,7 +156,7 @@ function toPolitique(e){
 function changeCivilite(e){
 	const options = {
 		options : listCivilite,
-		title : "Civilité"
+		title : L("signin_status_hint")
 	}
 
 	const dialogCivilite = Ti.UI.createOptionDialog(options);
@@ -171,6 +168,6 @@ function changeCivilite(e){
 		civiliteChoisie.text = listCivilite[selectedIndex]
 		civiliteChoisie.choisie = true
 	})
-	
+
 }
 // traitement

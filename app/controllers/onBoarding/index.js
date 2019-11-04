@@ -1,11 +1,11 @@
-const navmanager = require('/utility/navmanager');
-
 // Dependencies
 var log = require( 'utility/logger' )( {
 		tag: "onBoarding",
 		hideLog: false
 	} );
 
+const navmanager = require('/utility/navmanager'),
+    properties = require("/dataHandler/properties");
 
 // constructor
 (function contructor(){
@@ -32,8 +32,7 @@ function onScroll(e){
 function btnClicked(e){
     if ($.scrollableView.currentPage == 2) {
         log("Go to Login");
-        Ti.App.Properties.setBool( "APP_ALREADY_OPEN", true )
-        log(Ti.App.Properties.getBool( "APP_ALREADY_OPEN", false ))
+        properties.appHasBeenOpened(true);
         navmanager.openAndCloseAll("Auth/login",0,{});
     }else {
         $.scrollableView.moveNext();

@@ -9,15 +9,15 @@
                 <ScrollableView id="scrollableView" onScrollend="onScrollend" onScroll="onScroll">
                     <View id="view1" class="vlayout">
                         <Label id="title1" class="title"></Label>
-                        <Label id="text1"class="text"></Label>
+                        <Label id="text1" class="text"></Label>
                     </View>
                     <View id="view2" class="vlayout">
                         <Label id="title2" class="title"></Label>
-                        <Label id="text2"class="text"></Label>
+                        <Label id="text2" class="text"></Label>
                     </View>
                     <View id="view3" class="vlayout">
                         <Label id="title3" class="title"></Label>
-                        <Label id="text3"class="text"></Label>
+                        <Label id="text3" class="text"></Label>
                     </View>
                 </ScrollableView>
                 <View id="treePoint">

@@ -1,28 +1,28 @@
 
-".container" : {
-}
 '.containerRegister':{
 	top : 33
 }
-'#labelIntro': {
-  text: "Inscrivez-vous et bénéficiez de toutes\nnos offres",
-  left: 35,
-  font: {
-	  fontSize : 16,
-	  fontWeight : "bold"	
-  }
 
+
+'.label': {
+    font: {
+  	  fontSize : 16,
+  	  fontWeight : "bold"
+    },
+    color: Alloy.CFG.design.fonts.PrimaryColor,
+}
+
+'#labelIntro': {
+  text: L("signin_txt1"),
+  left: 35,
+  horizontalWrap: true
 }
 
 
 '#labelClient': {
-  text: "Êtes-vous un client ?",
+  text: L("signin_txt2"),
   top: 26,
   left: 35,
-  font: {
-	  fontSize : 16,
-	  fontWeight : "bold"	
-  }
 }
 '.clientContainer':{
 	top: 15
@@ -33,23 +33,23 @@
 
 
 '#labelOuiClient': {
-  text: "Oui",
+  text: L("yes"),
   left: 62.9,
   font: {
 	  fontSize : 16,
-	  fontWeight : "bold"	
+	  fontWeight : "bold"
   },
-  color : "#434e85"
+  color : Alloy.CFG.design.fonts.PrimaryColor,
 }
 
 '#labelOuiClient[platform=android]': {
-  text: "Oui",
+  text: L("yes"),
   left: 70,
   font: {
 	  fontSize : 16,
-	  fontWeight : "bold"	
+	  fontWeight : "bold"
   },
-  color : "#434e85"
+  color : Alloy.CFG.design.fonts.PrimaryColor,
 }
 
 
@@ -59,22 +59,22 @@
 }
 
 '#labelNonClient': {
-  text: "Non",
+  text: L("no"),
   left:149.9,
   font: {
 	  fontSize : 16,
-	  fontWeight : "bold"	
+	  fontWeight : "bold"
   },
-  color :"#434e85"
+  color : Alloy.CFG.design.fonts.PrimaryColor,
 }
 '#labelNonClient[platform=android]': {
-  text: "Non",
+  text: L("no"),
   left:153,
   font: {
 	  fontSize : 16,
-	  fontWeight : "bold"	
+	  fontWeight : "bold"
   },
-  color :"#434e85"
+  color : Alloy.CFG.design.fonts.PrimaryColor,
 }
 
 
@@ -84,15 +84,16 @@
 ".containerRecuperation":{
 	top : 11,
 }
+
 '#recupNumClient': {
   right: 57,
 	font : {
 		fontSize : 12,
-		fontFamily : Alloy.CFG.design.fonts.Medium	
+		fontFamily : Alloy.CFG.design.fonts.Medium
 	},
-	color : "#374379",
-	text : "Comment récupérer votre n°client",
-	underlineText:"Comment récupérer votre n°client"
+	color : Alloy.CFG.design.fonts.PrimaryColor,
+	text : L("signin_clientNum_hint"),
+	underlineText: L("signin_clientNum_hint")
 }
 
 
@@ -106,27 +107,25 @@
 
 
 '#textFieldPasswordR': {
-  hintText : "Mot de passe *",
-	errorColor : "#db2500",
+    hintText : L("signin_pswd_hint"),
+	errorColor : "red",
 	passwordMask : true,
-	focusBarColor : "rgb(55, 67, 121)",
-	blurBarColor : "rgb(151, 151, 151)",
+	focusBarColor : Alloy.CFG.design.fonts.PrimaryColor,
+	blurBarColor : "#979797",
 	validations : {length : 8},
 	autocapitalization : Titanium.UI.TEXT_AUTOCAPITALIZATION_NONE,
-	errorMessage : "le mot de passe doit etre au minimum 8 caractère de longeur.",
-    defaultErrorMessage : "champ requis",
+	errorMessage : L("signin_pswd_error"),
+    defaultErrorMessage : L("signin_required_field"),
 }
 
 '#champsObligatoire': {
-	text: "* champs obligatoires",
+	text: L("signin_required_fields_lb"),
 	top :21,
 	left : 35.9,
-	color: "#434e85",
+	color: Alloy.CFG.design.fonts.PrimaryColor,
 	font: {
 		fontSize : 12,
-
 	}
-
 }
 
 '.check': {
@@ -140,18 +139,17 @@
 '#labelCondition': {
 	top :21,
 	left : 35.9,
-	color: "#434e85",
-	
+	color: Alloy.CFG.design.fonts.PrimaryColor,
 }
 
 '#buttonInscreption': {
-  title: "S’inscrire",
+  title: L("signin_btn_txt"),
   top: 14,
   bottom : 33,
-  
+
 }
 '#navBar': {
-  title : "Inscription",
+  title : L("signin_title"),
   leftIcon: "/images/icn_topbar_back.png",
   zIndex: 200,
 }
@@ -168,16 +166,14 @@
 "#imageCheckCondition":{
 	left: 34.4
 }
-"#accepteLabel":{
 
-}
 "#containerCondition":{
 	left: 63
 }
 
 ".labelCondition":{
 	font: {
-		fontSize : 12	
+		fontSize : 12
 	}
 }
 ".nonColoreLabel":{
@@ -185,7 +181,7 @@
 }
 
 ".labelColore":{
-	color : "#c38a5f"
+	color : Alloy.CFG.design.colors.SecondaryColor,
 }
 ".containerScroll":{
 	top : 65
@@ -197,23 +193,22 @@
 }
 "#lineCivilite":{
 	top: 8,
-  height: 1,
-  borderWidth: 1,
-  borderStyle: Ti.UI.INPUT_BORDERSTYLE_LINE,
-  borderColor: '#979797',
+    height: 1,
+    borderWidth: 1,
+    borderStyle: Ti.UI.INPUT_BORDERSTYLE_LINE,
+    borderColor: '#979797',
 }
 
 "#labelCivilite":{
-	text: "Civilité *",
+	text: L("signin_status_hint"),
 	font: {
-		fontSize : 16,	
+		fontSize : 16,
 	},
 	color: "#929292",
-	left : 0	
+	left : 0
 }
 
 "#spinnerImage":{
 	image: "/images/icn_downtriangle_blue.png",
 	right: 0
 }
-

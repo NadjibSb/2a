@@ -1,17 +1,19 @@
-const navmanager = require("/utility/navmanager");
 var log = require( 'utility/logger' )( {
 		tag: "passwordForgot",
 		hideLog: false
 	} );
-httpClient = require( "/utility/httpManager" );
-session = require("/dataHandler/session");
-// Arguments passed into this controller can be accessed via the `$.args` object directly or:
+
+const navmanager = require("/utility/navmanager"),
+    httpClient = require( "/utility/httpManager" ),
+    session = require("/dataHandler/session");
+
+
 var args = $.args;
 
 function pressBack(e){
-  log("test press")
   navmanager.closeWindow($.passwordForgot,0)
 }
+
 function resetPassword(){
 	var emailtest = $.textFieldemailForgot.isValid();
 	if (!emailtest) {
@@ -26,11 +28,11 @@ function resetPassword(){
 	session.resetPassword(data,e=>{
 		log(e.message);
 		$.activityIndicator.hide();
-		alert('E-mail de réinitialisation du mot de passe envoyé')
+		alert(L("pswdForgot_alert_success"));
 		pressBack();
 	},(code,response)=>{
 		log(code+" "+response);
 		$.activityIndicator.hide();
-		alert('L’utilisateur n’existe pas, veuillez vérifier l’identifiant spécifié')
+		alert(L("pswdForgot_alert_failed"));
 	})
 }

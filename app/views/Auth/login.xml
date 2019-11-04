@@ -2,14 +2,14 @@
   <Window class="background">
       <Widget src="customIndicator" id="activityIndicator" blockScreen="true"/>
       <ScrollView >
-          <View class="container vlayout hSize">
+          <View class="vlayout hSize">
               <ImageView id="ImageLogo"></ImageView>
               <View id="ViewLine"/>
               <Label id="labelIdentification" class="fontBlack"></Label>
               <Widget src="dzmob.widget.TextField" id="textFieldEmail" ></Widget>
               <Widget src="dzmob.widget.TextField" id="textFieldPassword"></Widget>
               <Label id="lbForgotPassword" class="fontLight" module="module/underlineText" onClick="clickForgot" ></Label>
-               <Button id="btnLogin" class="validationButton" onClick="clickLogin" ></Button>
+               <Button id="btnLogin" onClick="clickLogin" ></Button>
               <Label id="labelInscrire" class="fontLight" module="module/underlineText" onClick="clickInscrire"></Label>
           	</View>
       </ScrollView>

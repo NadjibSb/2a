@@ -48,7 +48,7 @@
 	width : 325,
 	height : 45,
 	borderRadius : 5,
-	backgroundColor : "rgb(241,238,238)",
+	backgroundColor : "#f1eeee",
     font: {
         fontFamily: Alloy.CFG.design.fonts.Medium,
         fontSize: 16

@@ -4,14 +4,14 @@
 	left : 34,
 	right : 34,
 	top : 20,
-	hintText : "Adresse email ou N° de téléphone ",
+	hintText : L("login_mail_hint"),
 	errorColor : "red",
-	focusBarColor : "rgb(55, 67, 121)",
-	blurBarColor : "rgb(151, 151, 151)",
+	focusBarColor : Alloy.CFG.design.colors.PrimaryColor,
+	blurBarColor : "#979797",
 	validations : {emailTel : ""},
 	autocapitalization : Titanium.UI.TEXT_AUTOCAPITALIZATION_NONE,
-	errorMessage : "L’adresse e-mail ou telephone saisie n’est pas valide.",
-  defaultErrorMessage : "remplie le champ de mail ou N° Telephone",
+	errorMessage : L("login_mail_error"),
+    defaultErrorMessage : L("login_mail_error_default"),
 	keyboardType : Titanium.UI.KEYBOARD_TYPE_EMAIL,
 },
 
@@ -19,41 +19,50 @@
 	left : 34,
 	right : 34,
 	top : 13,
-	hintText : "Mot de passe",
+	hintText : L("login_pswd_hint"),
 	passwordMask : true,
 	errorColor : "red",
-	focusBarColor : "rgb(55, 67, 121)",
-	blurBarColor : "rgb(151, 151, 151)",
+	focusBarColor : Alloy.CFG.design.colors.PrimaryColor,
+	blurBarColor : "#979797",
 	validations:{length : 8},
-	errorMessage : "Votre mot de passe doit avoir une longueur de 8 caractères minimum.",
-  defaultErrorMessage : "remplie le champ Mot de passe"
+	errorMessage : L("login_pswd_error"),
+    defaultErrorMessage : L("login_pswd_error_default")
 },
 
 "#btnLogin" : {
+    title : L("login_login_btn"),
 	left : 24,
 	right : 25,
 	top : 12,
-	title : "Se connecter"
+    height: 46,
+    borderRadius: 5,
+    color: "white",
+    backgroundColor: Alloy.CFG.design.colors.PrimaryColor,
+    textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+    font: {
+        fontSize: 16,
+        fontWeight: "semibold"
+    },
 },
 
 "#lbForgotPassword" : {
-  top: 35,
-  right: 25,
+    top: 35,
+    right: 25,
 	font : {fontSize : 14},
-	color : "rgb(55 ,67 ,121)",
-	text : "Mot de passe oublié ?",
-	underlineText:"Mot de passe oublié ?"
+	color : Alloy.CFG.design.fonts.PrimaryColor,
+	text : L("login_pswd_forgoten"),
+	underlineText: L("login_pswd_forgoten")
 }
 
 '#labelIdentification': {
-  text: "Identification",
+  text: L("login_Identification"),
   top : 30,
   font: {
     fontSize: 20,
     fontWeight: "bold",
   },
   textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
-  color: "rgb(55 ,67 ,121)"
+  color: Alloy.CFG.design.fonts.PrimaryColor,
 }
 
 
@@ -66,31 +75,26 @@
 // the line view
 '#ViewLine': {
   height: 5,
-  width: 242,
-  borderWidth: 5,
-  borderStyle: Ti.UI.INPUT_BORDERSTYLE_LINE,
-  borderColor: 'rgb(206, 170, 140)',
-  backgroundColor: 'rgb(206, 170, 140)',
+  width: "65%",
+  backgroundColor: Alloy.CFG.design.colors.SecondaryColor,
   top: 20,
 }
 
 '#labelInscrire[platform=android]': {
-  top: 30,
-  bottom : 30,
-  right: 25,
+    top: 30,
+    bottom : 30,
+    right: 25,
     font : {fontSize : 20},
-	color : "#374379",
-    text : "S’inscrire",
-	underlineText:"S’inscrire"
+	color : Alloy.CFG.design.fonts.PrimaryColor,
+    text : L("login_signup"),
+	underlineText: L("login_signup")
 }
 '#labelInscrire[platform=ios]': {
-  top: 30,
-  right: 25,
-  bottom : 40,
+    top: 30,
+    right: 25,
+    bottom : 40,
     font : {fontSize : 20},
-	color : "#374379",
-    text : "S’inscrire",
-	underlineText:"S’inscrire"
+	color : Alloy.CFG.design.fonts.PrimaryColor,
+    text : L("login_signup"),
+	underlineText: L("login_signup")
 }
-
-

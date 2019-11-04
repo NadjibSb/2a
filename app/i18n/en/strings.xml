@@ -21,6 +21,45 @@
 	<string name="no_thanks">Non, Merci</string>
 
 
+	<!-- Login -->
+    <string name="login_Identification">Identification</string>
+    <string name="login_mail_hint">Adresse email ou N° de téléphone</string>
+    <string name="login_mail_error">L’adresse e-mail ou telephone saisie n’est pas valide.</string>
+    <string name="login_mail_error_default">Remplie le champ de mail ou N° Telephone.</string>
+    <string name="login_pswd_hint">Mot de passe</string>
+    <string name="login_pswd_error">Votre mot de passe doit avoir une longueur de 8 caractères minimum.</string>
+    <string name="login_pswd_error_default">Remplie le champ Mot de passe.</string>
+    <string name="login_login_btn">Se connecter</string>
+    <string name="login_pswd_forgoten">Mot de passe oublié ?</string>
+    <string name="login_signup">S’inscrire</string>
+
+
+	<!-- Password Forgotten -->
+    <string name="pswdForgot_txt">Vous avez oublié votre mot de passe ?\n\nTapez votre adresse email ou votre numéro de téléphone, un mail de réinitialisation de votre mot de passe vous sera envoyé.</string>
+    <string name="pswdForgot_mail_hint">Adresse email ou N° de téléphone</string>
+    <string name="pswdForgot_mail_error">L’adresse e-mail ou N°Telephone saisie n’est pas valide.</string>
+    <string name="pswdForgot_mail_error_default">Remplie le champ de mail ou N° Telephone</string>
+    <string name="pswdForgot_btn_send">Envoyer</string>
+    <string name="pswdForgot_psw_forgotten">Mot de passe oublié</string>
+    <string name="pswdForgot_alert_success">E-mail de réinitialisation du mot de passe envoyé</string>
+    <string name="pswdForgot_alert_failed">L’utilisateur n’existe pas, veuillez vérifier l’identifiant spécifié</string>
+
+
+	<!-- Sign in -->
+    <string name="signin_title">Inscription</string>
+    <string name="signin_txt1">Inscrivez-vous et bénéficiez de toutes nos offres</string>
+    <string name="signin_txt2">Êtes-vous un client ?</string>
+    <string name="signin_clientNum_hint">Comment récupérer votre n°client</string>
+    <string name="signin_pswd_hint">Mot de passe *</string>
+    <string name="signin_pswd_error">Le mot de passe doit etre au minimum 8 caractère de longeur.</string>
+    <string name="signin_required_field">Champ requis</string>
+    <string name="signin_required_fields_lb">* Champs obligatoires</string>
+    <string name="signin_btn_txt">S’inscrire</string>
+    <string name="signin_status_hint">Civilité</string>
+    <string name="signin_alert_fill_all_fields">Tous les champs du formulaire doivent être renseignés</string>
+    <string name="signin_alert_accept_conditions">Veuillez vous accepter les condition d'utilisation et la politique de Confidentialité</string>
+
+
 	<!-- on Boarding -->
     <string name="on_boarding_btn_next">Suivant</string>
     <string name="on_boarding_btn_begin">Commencer</string>
@@ -118,5 +157,13 @@
 
     <!-- Devis Detail-->
     <string name="devis_details_title">Devis et Achat</string>
+
+
+
+
+    <string name="yes">Oui</string>
+    <string name="no">Non</string>
+    <string name="Mr">Mr</string>
+    <string name="Mme">Mme</string>
 
 </Ressources>

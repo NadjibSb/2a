@@ -1,14 +1,16 @@
-const navmanager = require("/utility/navmanager");
+// Dependencies --------------------------------------------------------
 var log = require( "/utility/logger" )( {
 		tag: 'login',
 		hideLog: false
 	} );
-httpClient = require( "/utility/httpManager" );
-session = require("/dataHandler/session");
-const alert = require("/utility/alertManager");
-// Arguments passed into this controller can be accessed via the `$.args` object directly or:
 
-//variable
+const navmanager = require("/utility/navmanager"),
+    httpClient = require( "/utility/httpManager" ),
+    session = require("/dataHandler/session"),
+    alert = require("/utility/alertManager");
+
+
+// variables--------------------------------------------------------
 var args = $.args;
 
 
@@ -25,16 +27,17 @@ function clickLogin(e){
     password : $.textFieldPassword.getValue()
   }
   $.activityIndicator.show();
-  log("debut de login")
+  log("debut de login");
   session.login(data,function onError(code,response){
     $.activityIndicator.hide();
     log(code);
-    if(code == "HTTP_CLIENT_NETWORK_OFFLINE") alert.show(" vérifier votre connexion est réessayer");
+    if(code) alert.show(L(code));
     else alert.show(response.error)
 
   })
 
 }
+
 function clickForgot(e){
   navmanager.openWindow("Auth/passwordForgot",0);
 }
@@ -42,6 +45,3 @@ function clickForgot(e){
 function clickInscrire(e){
   navmanager.openWindow("Auth/register",0);
 }
-
-// traintement
-log("login > ici")

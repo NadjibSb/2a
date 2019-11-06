@@ -24,7 +24,7 @@
 }
 
 "#ApplerAssitanceImage":{
-    
+
     image : "/images/icn_tel_assistance.png"
 }
 
@@ -32,15 +32,15 @@
     left : 10,
 	font : {
 		fontSize : 18,
-		fontFamily : Alloy.CFG.design.fonts.Medium	
+		fontFamily : Alloy.CFG.design.fonts.Medium
 	},
 	color : "#cd7e43",
-	text : "Appeler l’assistance",
-	underlineText:"Appeler l’assistance",
+	text : L("contract_details_call_assistance"),
+	underlineText: L("contract_details_call_assistance"),
     left: 10
 }
 "#labelContractPdf":{
-    text :  "Jetez un coup d’oeil sur votre contrat",
+    text :  L("contract_details_see_contract"),
     top: 16,
     font: {
         fontSize: 16,
@@ -56,4 +56,3 @@
 "#imagePdf":{
     image: "/images/icn_pdf.png"
 }
-

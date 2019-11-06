@@ -84,6 +84,8 @@
     <string name="assistance_lb">Quelle assistance vous souhaiter appeler ?</string>
 
 
+
+
 	<!-- contract index -->
     <string name="contract_title">Contrats</string>
     <string name="contract_my_contract">Mes contrats</string>
@@ -100,6 +102,8 @@
 
 	<!-- contract details -->
     <string name="contract_details_title">Détails contrat</string>
+    <string name="contract_details_call_assistance">Appeler l’assistance</string>
+    <string name="contract_details_see_contract">Jetez un coup d’oeil sur votre contrat</string>
 
 	<!-- Sinistres index -->
     <string name="sinistres_title">Mes sinistres</string>

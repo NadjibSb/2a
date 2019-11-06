@@ -3,9 +3,9 @@
 		<Widget src="customIndicatorInsideView" id="activityIndicator"></Widget>
 		<View id="container" class="vlayout background">
 			<Widget src="customNavBar" id="navBar" class="navBar" onLeftButtonClick="pressBack"></Widget>
-			<ScrollView class="vlayout" id="scrollContainer"> 
-				<Label id="labelEntete" class="labelLogin fontHeavy"></Label>
+			<ScrollView class="vlayout" id="scrollContainer">
+				<Label id="labelEntete" class=" fontHeavy"></Label>
 			</ScrollView>
 		</View>
-	</Window>	
+	</Window>
 </Alloy>

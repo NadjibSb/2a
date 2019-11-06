@@ -1,6 +1,6 @@
 
 ".container" : {
-  
+
 }
 
 '#navBar': {
@@ -18,15 +18,16 @@
     fontWeight: "bold"
   },
   left: 33,
+  color: Alloy.CFG.design.colors.PrimaryColor,
 }
 
 "#labelExpiration":{
     text: "Jamais",
     font: {
-        fontSize : 16,    
+        fontSize : 16,
     },
     color: "#374379",
-    left : 0    
+    left : 0
 }
 
 "#spinnerImage":{
@@ -67,10 +68,9 @@
 }
 
 ".editProfilContainer": {
-  top : 25	
+  top : 25
 }
 
 ".containerEditPass":{
   top : 30
 }
-

@@ -27,8 +27,14 @@ overrode the settings with other TSS, XML, or JS settings:
 	backgroundColor: 'white'
 }
 
-".androidNoActionBar[if=Alloy.Globals.isAndroid]": {
-    theme: "Theme.AppCompat.NoTitleBar"
+
+"Window[platform=android]":{
+    theme : 'Theme.AppCompat.NoTitleBar',
+    top: 25
+}
+
+"Window[platform=ios]":{
+  navBarHidden: "true",
 }
 
 ".iosMarginTop[if=Alloy.Globals.isIOS]" : {
@@ -43,14 +49,6 @@ overrode the settings with other TSS, XML, or JS settings:
     backgroundColor: "rgba(1,0,0,0)"
 }
 
-// Sizes
-".wFill":{
-	width: Ti.UI.FILL,
-}
-
-".hFill":{
-	height: Ti.UI.FILL,
-}
 
 ".wSize":{
 	width: Ti.UI.SIZE,
@@ -60,19 +58,11 @@ overrode the settings with other TSS, XML, or JS settings:
 	height: Ti.UI.SIZE,
 }
 
-".Fill":{
-	width: Ti.UI.FILL,
-	height: Ti.UI.FILL
-}
-
 ".Size":{
 	width: Ti.UI.SIZE,
 	height: Ti.UI.SIZE
 }
 
-".iOSwindowTop[if=Alloy.Globals.isIOS]":{
-    top: 25
-}
 //layouts
 
 ".vlayout":{
@@ -124,10 +114,9 @@ overrode the settings with other TSS, XML, or JS settings:
 	color: "blue"
 }
 
-// to delete ----------
 ".validationButton" : {
     color: "white",
-    backgroundColor: "rgb(55,67,121)",
+    backgroundColor: Alloy.CFG.design.colors.PrimaryColor,
     height: 46,
     borderRadius: 5,
     left: 25,
@@ -137,64 +126,6 @@ overrode the settings with other TSS, XML, or JS settings:
         fontSize: 16,
         fontWeight: "semibold"
     },
-}
-// -----------
-
-".diversButton" : {
-    color: "white",
-    backgroundColor: "#374379",
-    height: 46,
-    borderRadius: 5,
-    left: 25,
-    right: 25,
-    textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
-    font: {
-        fontSize: 16,
-        fontWeight: "semibold"
-    },
-}
-
-".devisButton":{
-   color: "white",
-    backgroundColor: "#b0b0b0",
-    height: 46,
-    borderRadius: 5,
-    left: 25,
-    right: 25,
-    textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
-    font: {
-        fontSize: 16,
-        fontWeight: "semibold"
-    },
-}
-
-'#Imagebackground': {
-  image: "/images/background image.png"
-}
-
-// to delete ---------
-'.labelLogin':{
-  font: {
-    fontSize: 16
-  },
-  color: "#374379",
-}
-// ------------
-
-'.labelDivers':{
-  font: {
-    fontSize : 12
-  },
-  color : "#374379"
-
-}
-"Window[platform=android]":{
-    theme : 'Theme.AppCompat.NoTitleBar',
-    top: 25
-}
-
-"Window[platform=ios]":{
-  navBarHidden: "true",
 }
 
 '.navBar': {
@@ -345,7 +276,7 @@ overrode the settings with other TSS, XML, or JS settings:
 // siniste + contract
 '.separator': {
     height: 1,
-    backgroundColor: "rgba(151,151,151,0.2)"
+    backgroundColor: "#20979797"
 }
 
 '.details': {
@@ -394,9 +325,4 @@ overrode the settings with other TSS, XML, or JS settings:
 // detailAgance
 '.marginTop': {
     top: 16
-}
-
-'.icon': {
-    width: 12,
-    left: 0
 }

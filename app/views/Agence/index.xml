@@ -1,5 +1,5 @@
 <Alloy autoStyle="true">
-  <Window class="androidNoActionBar">
+  <Window>
     <View id="container" class="vlayout background">
         <Widget src="customNavBar" class="navBar" title="L('agence_title')"></Widget>
         <View class="btMarging hSize" >

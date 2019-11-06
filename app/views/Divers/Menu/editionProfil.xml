@@ -9,7 +9,7 @@
 					<Widget src="dzmob.widget.TextField" id="textFieldPrenom" class="textFeildRegistre"></Widget>
 					<Widget src="dzmob.widget.TextField" id="textFieldNumTel" class="textFeildRegistre"></Widget>
 					<Widget src="dzmob.widget.TextField" id="textFieldEmailR" class="textFeildRegistre"></Widget>
-					<Label id="labelListExpiration" class="labelLogin"></Label>
+					<Label id="labelListExpiration"></Label>
 					<View class="ExperationContainer hSize vlayout">
 						<View class="hSize" onClick="changeExpiration">
 							<Label id="labelExpiration" class="fontMedium"></Label>
@@ -20,13 +20,13 @@
 					</View>
 					<View class="containerEditPass hSize hlayout" onClick="toEditPassword">
 						<ImageView id="iconPassword"></ImageView>
-						<Label id="labePassword" module="module/underlineText" ></Label>	
-					</View> 
+						<Label id="labePassword" module="module/underlineText" ></Label>
+					</View>
 					<Button id="buttonSauvgarder" class="validationButton" onClick="SauvgarderButton"></Button>
-				</View>	
+				</View>
 			</ScrollView>
-			
+
 		</View>
 	</Window>
-	
+
 </Alloy>

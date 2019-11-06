@@ -7,6 +7,7 @@ const navManager = require("/utility/navmanager");
 const session = require("/dataHandler/session")
 // Variable
 var args = $.args;
+
 _.extend($,{
     constructor : constructor
 })
@@ -40,7 +41,8 @@ function DoCall(){
     }
 
 }
+
 function constructor(){
-    
-};
+
+}
 // traintemnet

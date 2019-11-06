@@ -1,5 +1,5 @@
 <Alloy autoStyle="true">
-    <Window class="androidNoActionBar">
+    <Window>
         <View id="container" class="vlayout background">
             <Widget src="customNavBar" id="navBar" class="navBar"></Widget>
             <View class="marging hSize" >

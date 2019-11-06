@@ -20,12 +20,12 @@
                         </View>
                     </View>
                     <View id="lecturePdfContainer" class="hSize vlayout" onClick="lecteurPdf">
-                        <Label id="labelContractPdf" class="labellogin"></Label>
+                        <Label id="labelContractPdf"></Label>
                         <ImageView id="imageArrow"></ImageView>
                         <View class="rounded hSize wSize">
                             <ImageView id="imagePdf" ></ImageView>
                         </View>
-                        
+
                     </View>
                 </ScrollView>
             </View>

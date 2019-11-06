@@ -1,5 +1,5 @@
 <Alloy>
-	<Window class="container background androidNoActionBar iosMarginTop">
+	<Window class="container background iosMarginTop">
         <View id="container" class="vlayout">
             <View class="logoContainer">
                 <ImageView id="logo"></ImageView>

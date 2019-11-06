@@ -47,7 +47,7 @@
         fontFamily: Alloy.CFG.design.fonts.Light
     },
     color: Alloy.CFG.design.fonts.PrimaryColor,
-    textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER
+    textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
 }
 "#imageArrow":{
     image: "/images/icn_downtriangle_blue_pdf.png",

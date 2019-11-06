@@ -1,8 +1,12 @@
 
 "#labelEntete":{
-  top : 35,
-  text: L("devis_details_lb"),
-  width: "80%"
+    top : 35,
+    text: L("devis_details_lb"),
+    width: "80%",
+    font: {
+      fontSize: 16
+    },
+    color: Alloy.CFG.design.colors.PrimaryColor,
 }
 
 "#navBar":{

@@ -1,6 +1,6 @@
 
 ".container" : {
-  
+
 }
 
 
@@ -13,13 +13,17 @@
 
 "#labelEntete":{
   top : 35,
-  text: "Algérienne des assurances 2a met à \nvotre disposition des numéros d’appel \nutiles."
+  text: "Algérienne des assurances 2a met à \nvotre disposition des numéros d’appel \nutiles.",
+  font: {
+    fontSize: 16
+  },
+  color: Alloy.CFG.design.colors.PrimaryColor,
 }
 
 
 ".labelNum":{
   font: {
-    fontSize : 14	
+    fontSize : 14
   },
   color: "#374379",
 }

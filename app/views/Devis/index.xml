@@ -4,7 +4,7 @@
 		<View id="container" class="vlayout background">
 			<Widget src="customNavBar" id="navBar" class="navBar"></Widget>
 			<ScrollView class="vlayout" id="scrollContainer">
-				<Label id="labelEntete" class="labelLogin fontHeavy"></Label>
+				<Label id="labelEntete" class=" fontHeavy"></Label>
         <View id="containerButton" class="hSize vlayout"/>
         <ImageView id="lineSeparator"></ImageView>
         <View id="containerDispo" class="hSize vlayout"></View>

@@ -52,10 +52,6 @@
     image: "/images/icn_map_desactivated.png"
 }
 
-'.separator': {
-    height: 1,
-    backgroundColor: "rgba(151,151,151,0.2)"
-}
 '.textItem': {
     top: 16,
     left: 0,

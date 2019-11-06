@@ -1,35 +1,32 @@
 
-".container" : {
-
-}
 "#contractTab":{
   activeIcon: "/images/icn_checkhand_blue_tapbar.png" ,
   icon: "/images/icn_checkhand_grey_tapbar.png",
-	title: "Contracts"
+	title: L("tab_contracts")
 }
 
 "#devisTab": {
   activeIcon:"/images/icn_devis_blue_tabbar.png" ,
   icon: "/images/icn_devis_grey.png",
-	title:"Devis & Achat"
+	title: L("tab_devis")
 }
 
 "#sinistreTab": {
   activeIcon: "/images/icn_sinistre_blue_tabbar.png",
   icon: "/images/icn_sinistre_grey.png",
-	title: "Sinistres"
+	title: L("tab_sinistre")
 }
 
 "#agenceTab": {
   activeIcon: "/images/icn_localization_blue_tabbar.png",
   icon: "/images/icn_localization_grey_tapbar.png",
-	title: "Agences 2a"
+	title: L("tab_agencies")
 }
 
 "#diversTab": {
   activeIcon:"/images/icn_divers_blue.png" ,
   icon: "/images/icn_divers_grey_tapbar.png",
-	title: "Divers"
+	title: L("tab_divers")
 }
 'TabGroup': {
   navBarHidden: true,

@@ -3,16 +3,19 @@ var args = $.args;
 
 //Dependencies
 var log = require( 'utility/logger' )( {
-    tag: "pdf_index",
-    hideLog: false
-} ),
-navManager = require("/utility/navmanager"),
-contractService = require("/dataHandler/contratService")
+        tag: "pdf_index",
+        hideLog: false
+    } );
+
+var navManager = require("/utility/navmanager"),
+    contractService = require("/dataHandler/contratService");
+
+
 //variable
 var url = "https://www.google.com"
 const webView = $.webviewPdf
 
-// function 
+// function
 function pressBack(e){
     navManager.closeWindow($.pdfAffichage);
 }
@@ -27,8 +30,5 @@ function getUrlFromWebService(){
 
     })
 }
-
-
-
 // traintement
 setUrl(url)

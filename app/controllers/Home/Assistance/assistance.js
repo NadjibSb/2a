@@ -3,6 +3,7 @@ var log = require( 'utility/logger' )( {
     tag: "assistance_home",
     hideLog: false
 } );
+
 var contractService = require("/dataHandler/contratService")
 var session = require("/dataHandler/session")
 
@@ -12,8 +13,10 @@ var dejaOuvert = false;
 
 
 //variable
-var rootContainer  = $.listAppelContainer
-var buttonContainer = $.containerButton
+var rootContainer  = $.listAppelContainer,
+    buttonContainer = $.containerButton;
+
+
 //function
 exports.open = function open(){
     avoirPhoneNumber()
@@ -33,7 +36,7 @@ exports.open = function open(){
                 opacity:1,
                 duration: 300,
             });
-            
+
     });
 }
 
@@ -56,7 +59,7 @@ function close(e){
 function remplireButton(type,longType,phone){
     var view = Ti.UI.createView({
         color: "white",
-        backgroundColor: "#374379",
+        backgroundColor: Alloy.CFG.design.colors.PrimaryColor,
         height: 40,
         borderRadius: 5,
         left: 25,
@@ -78,7 +81,7 @@ function remplireButton(type,longType,phone){
         left: 43,
         color: "#ffffff",
         font: {
-            fontFamily : Alloy.CFG.design.fonts.Medium,    
+            fontFamily : Alloy.CFG.design.fonts.Medium,
           }
     })
 
@@ -119,7 +122,7 @@ function avoirIconButton(type){
             image = "/images/icn_building_white.png"
             break;
         case "auto":
-            image = "/images/icn_cars_white.png"    
+            image = "/images/icn_cars_white.png"
             break;
         case "catnat":
             image = "/images/icn_catnat_white.png"

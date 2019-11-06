@@ -1,13 +1,7 @@
 
-
-
-
 '#topBar_img': {
     right: 16
 }
-
-
-
 
 '#topBar_text': {
     font: {

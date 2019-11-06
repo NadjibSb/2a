@@ -11,7 +11,7 @@ var log = require( 'utility/logger' )( {
 
     for (var i = 0; i <6; i++) {
         var bg,text;
-        i==2 ? bg="rgb(176,176,176)" : bg=Alloy.CFG.design.colors.SecondaryColor;
+        i==2 ? bg="#b0b0b0" : bg=Alloy.CFG.design.colors.SecondaryColor;
         i==2 ? text = L('sinistres_rendezvous_btn_accepted') : text = L('sinistres_rendezvous_btn_accepte');
 
         data.push({

@@ -5,20 +5,26 @@ var log = require( '/utility/logger' )( {
 		tag: "detail_contract",
 		hideLog: false
 } );
-var navManager = require("/utility/navmanager");
-var contractService = require("/dataHandler/contratService")
-var session = require("/dataHandler/session")
-var stringUtil = require("/utility/stringUtil")
-var dateArgs = require("utility/dateUtil")
+
+
+var navManager = require("/utility/navmanager"),
+    contractService = require("/dataHandler/contratService"),
+    session = require("/dataHandler/session"),
+    stringUtil = require("/utility/stringUtil"),
+    dateArgs = require("utility/dateUtil");
+
+
 //Variable
-const contratData = args.data;
-const idContrat = contratData.id
-const containerLabelView = $.details
-const imageEntete  = $.topBar_img
-const titleEntete = $.topBar_text
+const contratData = args.data,
+    idContrat = contratData.id,
+    containerLabelView = $.details,
+    imageEntete  = $.topBar_img,
+    titleEntete = $.topBar_text,
+    containerAppel = $.containerAppel,
+    containerPdf = $.lecturePdfContainer;
+
 var phone="00000000000";
-const containerAppel = $.containerAppel
-const containerPdf = $.lecturePdfContainer
+
 //Function
 function pressBack(e){
     navManager.closeWindow($.detail);
@@ -27,24 +33,25 @@ function pressBack(e){
 function getDetail(idContrat,session){
 	log("le id : "+idContrat)
 	$.activityIndicator.show()
-	contractService.getContractDetail(idContrat,session.getHeader(),(res)=>{
-		//succes
-		log(res)
-		contractService.getPhoneNumber(session.getHeader(),(resPhone)=>{
-			phone = setPhone(resPhone.fields)
-			remplireDetail(res.fields)
-			$.activityIndicator.hide()
-			containerAppel.show()
-			containerPdf.show()
-		},(code,res)=>{
-			pressBack()
-		})
-		
-	},(code,res)=>{
-		//error
-		log(res)
-		log(code)
-		pressBack()
+	contractService.getContractDetail(idContrat,session.getHeader(),
+        (res)=>{
+    		//succes
+    		log(res)
+    		contractService.getPhoneNumber(session.getHeader(),(resPhone)=>{
+    			phone = setPhone(resPhone.fields)
+    			remplireDetail(res.fields)
+    			$.activityIndicator.hide()
+    			containerAppel.show()
+    			containerPdf.show()
+    		},(code,res)=>{
+    			pressBack()
+    		})
+
+    	},(code,error)=>{
+    		//error
+    		log(error)
+    		log(code)
+    		pressBack()
 	})
 }
 
@@ -55,7 +62,7 @@ function remplireDetail(res){
 		log(champ.fieldName)
 		createView(champ.fieldName,champ.value)
 	})
-		
+
 }
 
 function createView(attribut,value){
@@ -78,7 +85,7 @@ function createView(attribut,value){
 
 	var viewSeparator = Ti.UI.createView({
 		height: 1,
-    	backgroundColor: "rgba(151,151,151,0.2)"
+    	backgroundColor: "#20979797"
 	})
 	label.text = attribut + " : "
 	let font = {
@@ -105,15 +112,15 @@ function remplireEntete(objectData){
 		case "habitat" :
 			imageEntete.image = "/images/icn_house_blue_title.png"
 			titleEntete.text = "Multirisque Habitation"
-			
+
 			break;
-		case "catnat" : 
+		case "catnat" :
 			imageEntete.image = "/images/icn_catnat_blue_title.png"
 			titleEntete.text = "Catastrophes naturelles"
 			break;
 		case "auto" :
 			imageEntete.image = "/images/icn_cars_blue_title.png"
-			titleEntete.text = "Automobile" 
+			titleEntete.text = "Automobile"
 			break;
 		case "pro":
 			imageEntete.image = "/images/icn_building_blue_title.png"
@@ -125,7 +132,7 @@ function remplireEntete(objectData){
 function setPhone(listNumber){
 	var phoneNumber;
 	listNumber.forEach(value=>{
-		if(value.type == contratData.type) phoneNumber = value.phone 
+		if(value.type == contratData.type) phoneNumber = value.phone
 	})
 	return phoneNumber
 }
@@ -150,4 +157,3 @@ function lecteurPdf(){
 containerAppel.hide()
 containerPdf.hide()
 getDetail(idContrat,session)
-

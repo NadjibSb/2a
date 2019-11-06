@@ -1,7 +1,4 @@
 
-".container" : {
-  
-}
 
 '#navBar': {
     title: L("devis_details_title"),

@@ -1,17 +1,12 @@
 
-".container" : {
-  
-}
-
-
 "#labelEntete":{
   top : 35,
-  text: "Souhaitez vous bénéficier de nouvelles offres ? La 2a vous propose différentes solutions :",
+  text: L("devis_details_lb"),
   width: "80%"
 }
 
 "#navBar":{
-  title : "Nos assusrance",
+  title : L("devis_details_title"),
   zIndex: 100
 }
 
@@ -25,4 +20,8 @@
 }
 "#containerDispo":{
   top : 27
+}
+
+'#btn_reesayer': {
+    text: L("tryAgain")
 }

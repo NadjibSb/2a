@@ -2,8 +2,10 @@
 var log = require( 'utility/logger' )( {
 		tag: "Contract_index",
 		hideLog: false
-	} ),
-    navManager = require("/utility/navmanager"),
+	} );
+
+
+var navManager = require("/utility/navmanager"),
     stringUtil = require("/utility/stringUtil"),
     dataService = require("/dataHandler/dataService");
 
@@ -17,6 +19,7 @@ var sourceOpen;
 _.extend($,{
     constructor : constructor
 })
+
 
 // TODO: when this tab is open, if the list is empty, send another request to get the list
 // CONSTRUCTOR ----------------------------------------------------------------

@@ -15,7 +15,7 @@ const str = require("/utility/stringUtil");
 _.extend($,{
     constructor : constructor
 })
-// variable 
+// variable
 
 var buttonContainer = $.containerButton
 var nonDispoContainer = $.containerDispo
@@ -32,7 +32,7 @@ function avoirPhoneNumber(){
             })
             $.activityIndicator.hide()
             $.scrollContainer.show()
-            
+
         },(code,res)=>{
             log(res);
             log(code)
@@ -40,16 +40,16 @@ function avoirPhoneNumber(){
             $.scrollContainer.hide()
             $.reesayer.show()
             //alert.show("Vérifier votre connexion et réessayer")
-            
+
         })
-    
+
   };
 
 
 function remplireButton(type,longType,phone){
     var view = Ti.UI.createView({
         color: "white",
-        backgroundColor: "#374379",
+        backgroundColor: Alloy.CFG.design.colors.PrimaryColor,
         height: 46,
         borderRadius: 5,
         left: 25,
@@ -71,7 +71,7 @@ function remplireButton(type,longType,phone){
         left: 43,
         color: "#ffffff",
         font: {
-            fontFamily : Alloy.CFG.design.fonts.Medium,    
+            fontFamily : Alloy.CFG.design.fonts.Medium,
           }
     })
 
@@ -94,7 +94,7 @@ function avoirIconButton(type){
             image = "/images/icn_building_white.png"
             break;
         case "auto":
-            image = "/images/icn_cars_white.png"    
+            image = "/images/icn_cars_white.png"
             break;
         case "catnat":
             image = "/images/icn_catnat_white.png"
@@ -139,10 +139,10 @@ function avoirAgenceNonDisop(){
             left: 43,
             color: "#ffffff",
             font: {
-                fontFamily : Alloy.CFG.design.fonts.Medium,    
+                fontFamily : Alloy.CFG.design.fonts.Medium,
               }
         })
-        
+
         //LabelDesc
         var labeldesc = Ti.UI.createLabel({
             text : "Produit bientôt disponible, pour plus d’information veuillez passer à l’agence 2a la plus proche de chez vous.",
@@ -194,7 +194,7 @@ function avoirAgenceNonDisop(){
         viewContainer.add(view)
         viewContainer.add(labeldesc)
         viewContainer.add(viewAgence)
-        nonDispoContainer.add(viewContainer) 
+        nonDispoContainer.add(viewContainer)
     })
 
 }

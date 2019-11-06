@@ -174,7 +174,16 @@
 
 
     <!-- Devis Detail-->
-    <string name="devis_details_title">Devis et Achat</string>
+    <string name="devis_details_title">Nos assusrance</string>
+    <string name="devis_details_lb">Souhaitez vous bénéficier de nouvelles offres ? La 2a vous propose différentes solutions :</string>
+
+
+    <!-- Tabs-->
+    <string name="tab_contracts">Contracts</string>
+    <string name="tab_devis">Devis & Achat</string>
+    <string name="tab_sinistre">Sinistres</string>
+    <string name="tab_agencies">Agences 2a</string>
+    <string name="tab_divers">Divers</string>
 
 
 
@@ -183,5 +192,6 @@
     <string name="no">Non</string>
     <string name="Mr">Mr</string>
     <string name="Mme">Mme</string>
+    <string name="tryAgain">Réessayer</string>
 
 </Ressources>

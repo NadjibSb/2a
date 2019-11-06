@@ -1,22 +1,20 @@
 
-".container" : {
-
-}
-
 '.containerItem': {
   borderRadius: 5,
   height: 112.9,
   width: 124,
   backgroundImage: "/images/img_button_main_menu.png"
 }
+
 '.containerAssistance': {
   borderRadius: 5,
   height: 112.9,
   width: 124,
   backgroundImage: "/images/img_button_main_menu.png"
 }
+
 "#redRectangle":{
-  backgroundColor: "rgba(255,35,35,0.6)"
+  backgroundColor: "#90ff2323"
 }
 '.imageBackgroundItem': {
   image: '/images/img_button_main_menu.png'
@@ -34,7 +32,7 @@
 }
 
 '#lableContact': {
-  text: "MES\nCONTRACTS",
+  text: L("home_myContarcts"),
 }
 // label general
 '.labelHome': {
@@ -58,7 +56,7 @@
 
 
 '#lableDevis': {
-  text: "DEMANDER\n UN DEVIS"
+  text: L("home_devis")
 }
 
 // sinistre
@@ -73,7 +71,7 @@
 }
 
 '#lableSinistre': {
-  text: "MES\n SINISTRES",
+  text: L("home_sinistre"),
 }
 
 // agence
@@ -88,7 +86,7 @@
 }
 
 '#lableAgence': {
-  text: "TROUVER UNE\n AGENCE",
+  text: L("home_agency"),
 }
 
 // divers
@@ -104,7 +102,7 @@
 }
 
 '#lableDivers': {
-  text: "DIVERS",
+  text: L("home_divers"),
 }
 // divers
 '#containerAssistance': {
@@ -114,17 +112,16 @@
 }
 
 '#imageIconAssistance': {
-  image: "/images/icn_tel_assistance_white.png", 
+  image: "/images/icn_tel_assistance_white.png",
   top: 24
 }
 
 '#lableAssistance': {
-  text: "ASSISTANCE",
+  text: L("home_assistance"),
 }
 
 "#containerShadow":{
-  backgroundColor:"rgba(0,0,0,0.5)" ,
+  backgroundColor:"#80000000" ,
   zIndex:100,
   visible: false
 }
-

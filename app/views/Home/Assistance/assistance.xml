@@ -1,11 +1,11 @@
 <Alloy>
 	<View id="listAppelContainer" class="background border">
-		<View class="container vlayout">
+		<View class="vlayout">
 			<View class="hSize" >
-        <ImageView id="btclose" onClick="close"></ImageView>
-      </View>
+                <ImageView id="btclose" onClick="close"></ImageView>
+            </View>
 			<View id="containerButton" class="hSize vlayout">
-				<Label id="labelAssistanceAppel" class="labelLogin"></Label>
+				<Label id="labelAssistanceAppel"></Label>
 			</View>
 		</View>
 	</View>

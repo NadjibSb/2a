@@ -1,7 +1,4 @@
 
-".container" : {
-  
-}
 
 '#listAppelContainer': {
     bottom: 8,
@@ -22,13 +19,14 @@
 }
 
 "#labelAssistanceAppel":{
-    text : "Quelle assistance vous souhaiter\nappeler ?",
+    text : L("assistance_lb"),
     left: 30,
     font: {
             fontSize: 16,
             fontWeight: "semibold"
     },
-    bottom: 15
+    bottom: 15,
+    color: Alloy.CFG.design.fonts.PrimaryColor,
 }
 
 "#containerButton":{

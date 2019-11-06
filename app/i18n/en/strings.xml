@@ -21,6 +21,17 @@
 	<string name="no_thanks">Non, Merci</string>
 
 
+
+    <!-- on Boarding -->
+    <string name="on_boarding_btn_next">Suivant</string>
+    <string name="on_boarding_btn_begin">Commencer</string>
+    <string name="on_boarding_title_1">Bienvenu !</string>
+    <string name="on_boarding_text_1">Rejoigner My 2a, une application mobile qui permet au client d'avoir tous les services d'assurance sous la main là où ils veulent, quand ils veulent</string>
+    <string name="on_boarding_title_2">Prenez soin de vos déclarations</string>
+    <string name="on_boarding_text_2">Plus besoin de vous déplacer en agence pour déclarer vos sinistres, maintenant faites le à distance via votre application My2a App et un expert sera mis à votre disposition pour la visite</string>
+    <string name="on_boarding_title_3">Les indispensables</string>
+    <string name="on_boarding_text_3">My 2a vous facilite votre quotidien. vous n'aurez plus à vous soucier de l'échéancier de vos contrats d'assurances, du contrôle technique de votre véhicule et bien d'autres tâches selon vos besoins</string>
+
 	<!-- Login -->
     <string name="login_Identification">Identification</string>
     <string name="login_mail_hint">Adresse email ou N° de téléphone</string>
@@ -60,15 +71,18 @@
     <string name="signin_alert_accept_conditions">Veuillez vous accepter les condition d'utilisation et la politique de Confidentialité</string>
 
 
-	<!-- on Boarding -->
-    <string name="on_boarding_btn_next">Suivant</string>
-    <string name="on_boarding_btn_begin">Commencer</string>
-    <string name="on_boarding_title_1">Bienvenu !</string>
-    <string name="on_boarding_text_1">Rejoigner My 2a, une application mobile qui permet au client d'avoir tous les services d'assurance sous la main là où ils veulent, quand ils veulent</string>
-    <string name="on_boarding_title_2">Prenez soin de vos déclarations</string>
-    <string name="on_boarding_text_2">Plus besoin de vous déplacer en agence pour déclarer vos sinistres, maintenant faites le à distance via votre application My2a App et un expert sera mis à votre disposition pour la visite</string>
-    <string name="on_boarding_title_3">Les indispensables</string>
-    <string name="on_boarding_text_3">My 2a vous facilite votre quotidien. vous n'aurez plus à vous soucier de l'échéancier de vos contrats d'assurances, du contrôle technique de votre véhicule et bien d'autres tâches selon vos besoins</string>
+	<!-- Home -->
+    <string name="home_myContarcts">MES\nCONTRACTS</string>
+    <string name="home_devis">DEMANDER\n UN DEVIS</string>
+    <string name="home_sinistre">MES\n SINISTRES</string>
+    <string name="home_agency">TROUVER UNE\n AGENCE</string>
+    <string name="home_divers">DIVERS</string>
+    <string name="home_assistance">ASSISTANCE</string>
+
+
+	<!-- Assistance -->
+    <string name="assistance_lb">Quelle assistance vous souhaiter appeler ?</string>
+
 
 	<!-- contract index -->
     <string name="contract_title">Contrats</string>

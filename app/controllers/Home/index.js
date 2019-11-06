@@ -1,10 +1,9 @@
-const navmanager = require("/utility/navmanager");
 var log = require( "/utility/logger" )( {
 		tag: 'home',
 		hideLog: false
 	} );
 
-// Arguments passed into this controller can be accessed via the `$.args` object directly or:
+const navmanager = require("/utility/navmanager");
 
 // variable
 var args = $.args;
@@ -30,10 +29,10 @@ function clickItem(e){
     break;
     case "diver":
         activeTab = 4
-    break;  
+    break;
   }
   navmanager.setTabGroup("tabs/index",activeTab);
-  
+
   // envoyer un a ecran par rapport a item
 }
 
@@ -49,7 +48,3 @@ function close(e){
   log(e);
   $.containerShadow.visible = false
 }
-
-
-// traitement
-
